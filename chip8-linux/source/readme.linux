@@ -1,0 +1,6 @@
+I assume you have C++ development enviroment installed
+Install freeglut-dev/freeglut3-dev
+$make
+******************************************************
+Linux version ported by Ferran Fàbregas (ferri.fc@gmail.com)
+
