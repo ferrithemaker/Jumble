@@ -22,72 +22,16 @@ def colormap(pixel):
     red=(150,52,48)
     black=(25,22,22)
 
-    # color matching calculations
-    result=math.fabs(white[0]-pixel[0])+math.fabs(white[1]-pixel[1])+math.fabs(white[2]-pixel[2])
-    finalresult=result
-    color=0
-    result=math.fabs(orange[0]-pixel[0])+math.fabs(orange[1]-pixel[1])+math.fabs(orange[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=1
-    result=math.fabs(magenta[0]-pixel[0])+math.fabs(magenta[1]-pixel[1])+math.fabs(magenta[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=2
-    result=math.fabs(lightblue[0]-pixel[0])+math.fabs(lightblue[1]-pixel[1])+math.fabs(lightblue[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=3
-    result=math.fabs(yellow[0]-pixel[0])+math.fabs(yellow[1]-pixel[1])+math.fabs(yellow[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=4
-    result=math.fabs(lime[0]-pixel[0])+math.fabs(lime[1]-pixel[1])+math.fabs(lime[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=5
-    result=math.fabs(pink[0]-pixel[0])+math.fabs(pink[1]-pixel[1])+math.fabs(pink[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=6
-    result=math.fabs(gray[0]-pixel[0])+math.fabs(gray[1]-pixel[1])+math.fabs(gray[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=7
-    result=math.fabs(lightgray[0]-pixel[0])+math.fabs(lightgray[1]-pixel[1])+math.fabs(lightgray[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=8
-    result=math.fabs(cyan[0]-pixel[0])+math.fabs(cyan[1]-pixel[1])+math.fabs(cyan[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=9
-    result=math.fabs(purple[0]-pixel[0])+math.fabs(purple[1]-pixel[1])+math.fabs(purple[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=10
-    result=math.fabs(blue[0]-pixel[0])+math.fabs(blue[1]-pixel[1])+math.fabs(blue[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=11
-        result=math.fabs(brown[0]-pixel[0])+math.fabs(brown[1]-pixel[1])+math.fabs(brown[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=12
-    result=math.fabs(green[0]-pixel[0])+math.fabs(green[1]-pixel[1])+math.fabs(green[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=13
-    result=math.fabs(red[0]-pixel[0])+math.fabs(red[1]-pixel[1])+math.fabs(red[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=14
-    result=math.fabs(black[0]-pixel[0])+math.fabs(black[1]-pixel[1])+math.fabs(black[2]-pixel[2])
-    if result < finalresult:
-        finalresult=result
-        color=15
-    return color
+    colors=(white,orange,magenta,lightblue,yellow,lime,pink,gray,lightgray,cyan,purple,blue,brown,green,red,black)
 
+    thecolor=0
+    finalresult=256*256*256
+    for idx,color in enumerate(colors):
+        result=math.fabs(color[0]-pixel[0])+math.fabs(color[1]-pixel[1])+math.fabs(color[2]-pixel[2])
+        if result<finalresult:
+            finalresult=result
+            thecolor=idx
+    return thecolor
 # LOAD IMAGE FILE
 im= Image.open(sys.argv[1])
 pixels=im.load()
