@@ -11,10 +11,10 @@ TERMS = '@DIYProjectLog'
 
 
 # Twitter application authentication
-APP_KEY = 'wUQEDIMF5kGHJE8CucdwzKGRt'
-APP_SECRET = 'YXiKfBySvI8N06GY5lr2zsIwPHfqj8d9n0nQuGVmKs8hrgyP9T'
-OAUTH_TOKEN = '2609358157-22C6X9IqHZpPpZckA4HXTIu9v97QqalIg2PZWha'
-OAUTH_TOKEN_SECRET = 'bDR9BJ7ebMaqLBxppt9Xy7IoTz6yk3Y4c6r0EHlh8si76'
+APP_KEY = ''
+APP_SECRET = ''
+OAUTH_TOKEN = ''
+OAUTH_TOKEN_SECRET = ''
 
 # Setup callbacks from Twython Streamer
 class TalkingTwitter(TwythonStreamer):
