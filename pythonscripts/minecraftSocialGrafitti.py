@@ -51,6 +51,7 @@ class TalkingTwitter(TwythonStreamer):
 				xPos=int(stringParts[2])
 				yPos=int(stringParts[3])
 				# Parse and render
+				colorCode=15 # Default color
 				if xPos>0 and xPos<=20 and yPos>0 and yPos<=15: # Check boundaries
 					if colorName=="white":
 						colorCode=0
