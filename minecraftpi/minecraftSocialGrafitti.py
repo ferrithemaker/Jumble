@@ -40,7 +40,7 @@ OAUTH_TOKEN = ''
 OAUTH_TOKEN_SECRET = ''
 
 # Setup callbacks from Twython Streamer
-class TalkingTwitter(TwythonStreamer):
+class TwitterController(TwythonStreamer):
         def on_success(self, data):
                 if 'text' in data:
                         twitterString=data['text'].encode('utf-8')
@@ -51,6 +51,7 @@ class TalkingTwitter(TwythonStreamer):
 				xPos=int(stringParts[2])
 				yPos=int(stringParts[3])
 				# Parse and render
+				colorCode=15 # Default color
 				if xPos>0 and xPos<=20 and yPos>0 and yPos<=15: # Check boundaries
 					if colorName=="white":
 						colorCode=0
@@ -90,7 +91,7 @@ class TalkingTwitter(TwythonStreamer):
 
 # Create streamer
 try:
-	stream = TalkingTwitter(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
+	stream = TwitterController(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
         stream.statuses.filter(track=TERMS)
 except KeyboardInterrupt:
 	print "Bye Bye! :)"
