@@ -1,4 +1,5 @@
 use_synth :prophet
+use_synth_defaults sustain: 0.2, release: 1, attack_level: 0.5
 in_thread do
   loop do
     play 60, amp: 0.1
