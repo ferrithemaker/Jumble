@@ -28,13 +28,18 @@ DHT dht(DHTPIN, DHTTYPE);
 
 int lightPin=2;
 
+
 TFT TFTscreen = TFT(CS, DC, RESET);
 
-char tempSensorPrintout[6];
-char hSensorPrintout[7];
-char lightSensorPrintout[11];
+char tSensorPrintout[10];
+char hSensorPrintout[10];
+char lightSensorPrintout[10];
+char oldtSensorPrintout[10];
+char oldhSensorPrintout[10];
+char oldlightSensorPrintout[10];
 
-
+float h,t, oldh,oldt;
+int lightLevel,oldLightLevel;
 
 void setup() {
   Serial.begin(9600); 
@@ -42,30 +47,37 @@ void setup() {
  
   dht.begin();
   
+  // setup variables
+  oldh=0.0;
+  oldt=0.0;
+  oldLightLevel=0;
+  
   // TFT Screen setup
-TFTscreen.begin();
-TFTscreen.background(0, 0, 0);
-TFTscreen.stroke(255,20,20);
-TFTscreen.setTextSize(1);
-TFTscreen.text("Temperature (c): ",0,0);
-TFTscreen.text("Light (0-10): ",0,40);
-TFTscreen.text("Humidity (%): ",0,80);
-TFTscreen.setTextSize(1);
+  TFTscreen.begin();
+  TFTscreen.background(0, 0, 0);
+  TFTscreen.stroke(255,20,20);
+  TFTscreen.setTextSize(1);
+  TFTscreen.text("Temperature (c): ",0,0);
+  TFTscreen.text("Light (0-10): ",0,40);
+  TFTscreen.text("Humidity (%): ",0,80);
+  TFTscreen.setTextSize(1);
   
 }
 
 void loop() {
   // Reading temperature or humidity takes about 250 milliseconds!
   // Sensor readings may also be up to 2 seconds 'old' (its a very slow sensor)
-  int lightLevel= analogRead(lightPin);
-  float h = dht.readHumidity();
-  float t = dht.readTemperature();
+  lightLevel= analogRead(lightPin);
+  h = dht.readHumidity();
+  t = dht.readTemperature();
   lightLevel=map(lightLevel,0,900,0,10);
   lightLevel= constrain(lightLevel,0,10);
   // check if returns are valid, if they are NaN (not a number) then something went wrong!
   if (isnan(t) || isnan(h)) {
     Serial.println("Failed to read from DHT");
   } else {
+    // DHT Data is OK
+    // Print data on Serial (debug)
     Serial.print("Humidity: "); 
     Serial.print(h);
     Serial.println("%");
@@ -74,20 +86,39 @@ void loop() {
     Serial.println("c");
     Serial.print("Light Level (0-10): ");
     Serial.println(lightLevel);
-    String tempSensorVal = String(t);
-    String hSensorVal= String(h);
-    String lightSensorVal= String(lightLevel);
-    tempSensorVal.toCharArray(tempSensorPrintout, 6);
-    hSensorVal.toCharArray(hSensorPrintout,6);
-    lightSensorVal.toCharArray(lightSensorPrintout,3);
-    TFTscreen.stroke(20,255,20);
-    TFTscreen.text(tempSensorPrintout, 0, 20);
-    TFTscreen.text(lightSensorPrintout, 0, 60);
-    TFTscreen.text(hSensorPrintout,0,100);
+    if (oldh!=h) { // if humidity changes
+      String hSensorVal= String(h)+"%";
+      String oldhSensorVal= String(oldh)+"%";
+      hSensorVal.toCharArray(hSensorPrintout,10);
+      oldhSensorVal.toCharArray(oldhSensorPrintout,10);
+      TFTscreen.stroke(0,0,0);
+      TFTscreen.text(oldhSensorPrintout,0,100);
+      TFTscreen.stroke(20,255,20);
+      TFTscreen.text(hSensorPrintout,0,100);
+      oldh=h;
+    }
+    if (oldt!=t) {
+       String tSensorVal= String(t)+"c";
+       String oldtSensorVal= String(oldt)+"c";
+       tSensorVal.toCharArray(tSensorPrintout,10);
+       oldtSensorVal.toCharArray(oldtSensorPrintout,10);
+       TFTscreen.stroke(0,0,0);
+       TFTscreen.text(oldtSensorPrintout,0,20);
+       TFTscreen.stroke(20,255,20);
+       TFTscreen.text(tSensorPrintout,0,20);
+       oldt=t; 
+    }
+    if (lightLevel!=oldLightLevel) {
+       String lightSensorVal= String(lightLevel);
+       String oldlightSensorVal= String(oldLightLevel);
+       lightSensorVal.toCharArray(lightSensorPrintout,10);
+       oldlightSensorVal.toCharArray(oldlightSensorPrintout,10);
+       TFTscreen.stroke(0,0,0);
+       TFTscreen.text(oldlightSensorPrintout,0,60);
+       TFTscreen.stroke(20,255,20);
+       TFTscreen.text(lightSensorPrintout,0,60);
+       oldLightLevel=lightLevel; 
+    }
     delay(1000);
-    TFTscreen.stroke(0,0,0);
-    TFTscreen.text(tempSensorPrintout, 0, 20);
-    TFTscreen.text(lightSensorPrintout, 0, 60);
-    TFTscreen.text(hSensorPrintout,0,100);
   }
 }
