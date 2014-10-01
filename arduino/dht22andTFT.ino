@@ -33,10 +33,8 @@ TFT TFTscreen = TFT(CS, DC, RESET);
 
 char tSensorPrintout[10];
 char hSensorPrintout[10];
-char lightSensorPrintout[10];
 char oldtSensorPrintout[10];
 char oldhSensorPrintout[10];
-char oldlightSensorPrintout[10];
 
 float h,t, oldh,oldt;
 int lightLevel,oldLightLevel;
@@ -57,9 +55,9 @@ void setup() {
   TFTscreen.background(0, 0, 0);
   TFTscreen.stroke(255,20,20);
   TFTscreen.setTextSize(1);
-  TFTscreen.text("Temperature (c): ",0,0);
-  TFTscreen.text("Light (0-10): ",0,40);
-  TFTscreen.text("Humidity (%): ",0,80);
+  TFTscreen.text("Temperature: ",0,0);
+  TFTscreen.text("Light: ",0,40);
+  TFTscreen.text("Humidity: ",0,80);
   TFTscreen.setTextSize(1);
   
 }
@@ -84,7 +82,7 @@ void loop() {
     Serial.print("Temperature: "); 
     Serial.print(t);
     Serial.println("c");
-    Serial.print("Light Level (0-10): ");
+    Serial.print("Light Level: ");
     Serial.println(lightLevel);
     if (oldh!=h) { // if humidity changes
       String hSensorVal= String(h)+"%";
@@ -109,14 +107,24 @@ void loop() {
        oldt=t; 
     }
     if (lightLevel!=oldLightLevel) {
-       String lightSensorVal= String(lightLevel);
-       String oldlightSensorVal= String(oldLightLevel);
-       lightSensorVal.toCharArray(lightSensorPrintout,10);
-       oldlightSensorVal.toCharArray(oldlightSensorPrintout,10);
-       TFTscreen.stroke(0,0,0);
-       TFTscreen.text(oldlightSensorPrintout,0,60);
-       TFTscreen.stroke(20,255,20);
-       TFTscreen.text(lightSensorPrintout,0,60);
+       for (int i=0;i<11;i++) {
+         TFTscreen.stroke(0,0,0);
+         TFTscreen.fill(0,0,0);
+         TFTscreen.rect(10*i,60,10,10);
+       }
+       for (int i=0;i<=lightLevel;i++) {
+         if (i==0) { TFTscreen.stroke(83,90,7); TFTscreen.fill(83,90,7); TFTscreen.rect(10*i,60,10,10); }
+         if (i==1) { TFTscreen.stroke(99,108,10); TFTscreen.fill(99,108,10); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==2) { TFTscreen.stroke(116,126,13); TFTscreen.fill(116,126,13); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==3) { TFTscreen.stroke(132,144,17); TFTscreen.fill(132,144,17); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==4) { TFTscreen.stroke(149,162,20); TFTscreen.fill(149,162,20); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==5) { TFTscreen.stroke(165,181,23); TFTscreen.fill(165,181,23); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==6) { TFTscreen.stroke(182,199,27); TFTscreen.fill(182,199,27); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==7) { TFTscreen.stroke(198,217,30); TFTscreen.fill(198,217,30); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==8) { TFTscreen.stroke(215,235,33); TFTscreen.fill(215,235,33); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==9) { TFTscreen.stroke(232,254,37); TFTscreen.fill(232,254,37); TFTscreen.rect(10*i,60,10,10); } 
+         if (i==10) { TFTscreen.stroke(243,255,133); TFTscreen.fill(243,255,133); TFTscreen.rect(10*i,60,10,10); } 
+       }
        oldLightLevel=lightLevel; 
     }
     delay(1000);
