@@ -1,0 +1,6 @@
+To install PIL module with libjpeg enabled:
+
+sudo apt-get install python-dev
+sudo apt-get install libjpeg8-dev
+sudo ln -s /usr/lib/arm-linux-gnueabihf/libjpeg.so /usr/lib/
+sudo pip install PIL
