@@ -3,7 +3,7 @@ import Image
 
 savefile="/home/pi/capt.jpg"
 savefile_t="/home/pi/capt_t.jpg"
-size= 128,128
+size= 200,200
 camera=picamera.PiCamera()
 camera.start_preview()
 i=raw_input()
