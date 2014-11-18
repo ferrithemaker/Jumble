@@ -55,16 +55,21 @@ class TwitterController(TwythonStreamer):
 					if xPos==winposX and yPos==winposY:
 						mc.postToChat(data['in_reply_to_screen_name'].encode('utf-8')+" You WIN!!!")
 						print data['in_reply_to_screen_name'].encode('utf-8')+" You WIN!!!"
-						time.sleep(4)						
+						for x in range (-(winim.size[0]/2),(winim.size[0]/2)):
+    							for y in range (-(winim.size[1]/2),(winim.size[1]/2)):
+        							mc.setBlock(x,29,y,35,colormap(winpixels[x+(winim.size[0]/2),y+(winim.size[1]/2)]))
+						#mc.player.setTilePos(0,30,0)						
 						sys.exit()
 					else:
 						mc.postToChat(data['in_reply_to_screen_name'].encode('utf-8')+" Try again!!!")
 
 
-# LOAD IMAGE FILE
+# LOAD IMAGE FILES
 im=Image.open("./bitslogo.jpg")
 pixels=im.load()
 #print im.size
+winim=Image.open("./youwin.jpg")
+winpixels=winim.load()
 
 # CALCULATE WINNER NUMBERS
 winposX=random.randint(0,im.size[0])
