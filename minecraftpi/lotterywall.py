@@ -53,15 +53,15 @@ class TwitterController(TwythonStreamer):
 				if xPos>0 and xPos<=im.size[0]+1 and yPos>0 and yPos<=im.size[1]+1:
 					mc.setBlock(-(im.size[0]/2)+xPos-1,29,-(im.size[1]/2)+yPos-1,0)
 					if xPos==winposX and yPos==winposY:
-						mc.postToChat(data['in_reply_to_screen_name'].encode('utf-8')+" You WIN!!!")
-						print data['in_reply_to_screen_name'].encode('utf-8')+" You WIN!!!"
+						mc.postToChat(data['user']['screen_name'].encode('utf-8')+" You WIN!!!")
+						print data['user']['screen_name'].encode('utf-8')+" You WIN!!!"
 						for x in range (-(winim.size[0]/2),(winim.size[0]/2)):
     							for y in range (-(winim.size[1]/2),(winim.size[1]/2)):
         							mc.setBlock(x,29,y,35,colormap(winpixels[x+(winim.size[0]/2),y+(winim.size[1]/2)]))
 						#mc.player.setTilePos(0,30,0)						
 						sys.exit()
 					else:
-						mc.postToChat(data['in_reply_to_screen_name'].encode('utf-8')+" Try again!!!")
+						mc.postToChat(data['user']['screen_name'].encode('utf-8')+" Try again!!!")
 
 
 # LOAD IMAGE FILES
