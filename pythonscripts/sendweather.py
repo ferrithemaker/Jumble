@@ -1,4 +1,4 @@
-# Lottery Wall by Ferran Fabregas ferri.fc@gmail.com
+# Send Weather by Ferran Fabregas ferri.fc@gmail.com
 import random, math
 import Image, sys
 import time
