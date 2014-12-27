@@ -1,8 +1,6 @@
 # Lottery Wall by Ferran Fabregas ferri.fc@gmail.com
 import random, math
 import Image, sys
-sys.path.append("./mcpi/api/python/mcpi")
-import minecraft
 import time
 from twython import Twython
 from twython import TwythonStreamer
