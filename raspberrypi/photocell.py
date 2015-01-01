@@ -33,5 +33,4 @@ if result<0:
 #result=arduino_map(result,0,200,0,120)
 #result=result/4.0
 
-print 32-math.sqrt(result)
-
+print '%.2f' %(32-math.sqrt(result))
