@@ -11,7 +11,6 @@ import time
 
 board=Arduino("/dev/ttyACM0")
 board.digital[9].mode = SERVO
-board.digital[9].write(90)
 
 DEBUG = 1
 GPIO.setmode(GPIO.BCM)
