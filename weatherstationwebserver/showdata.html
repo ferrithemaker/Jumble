@@ -1,0 +1,57 @@
+<html>
+<head>
+<script type="text/javascript" src="dygraph-combined.js"></script>
+</head>
+<body>
+<div id="graphdiv" style="width:1100px; height:600px;"></div>
+<script type="text/javascript">
+ 
+  function addZero(num)
+  {
+    var s=num+"";
+    if (s.length < 2) s="0"+s;
+    return s;
+  }
+ 
+  function dateFormat(indate)
+  {
+    var hh = addZero(indate.getHours());
+    var MM = addZero(indate.getMinutes());
+    //var ss = addZero(indate.getSeconds());
+    var dd = addZero(indate.getDate());
+    var mm = addZero(indate.getMonth()+1);
+    var yyyy = addZero(indate.getFullYear());
+    return dd+'/'+mm+' '+hh+':'+MM;
+  }
+ 
+  g = new Dygraph(
+    document.getElementById("graphdiv"),
+    "temp.log",
+    {
+      xValueParser: function(x) {
+        var date = new Date(x.replace(
+          /^(\d{4})(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)$/,
+          '$4:$5:$6 $2/$3/$1'
+        ));
+        return date.getTime();
+      },
+      axes: {
+        x: {
+          ticker: Dygraph.dateTicker,
+          axisLabelFormatter: function(x) {
+            return dateFormat(new Date(x));
+          },
+          valueFormatter: function(x) {
+            return dateFormat(new Date(x));
+          }
+        }
+      },
+      labelsDivWidth: 600,
+      rollPeriod: 30,
+      strokeWidth: 2.0,
+      labels: ['Date','Humidity (%)','Temp (&deg;C)','Light (0 Min - 32 Max)']
+    }
+  );
+</script>
+</body>
+</html>
