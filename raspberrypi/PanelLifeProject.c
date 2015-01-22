@@ -8,6 +8,7 @@
 // This code is (c) Peter Onion (Peter.Onion@btinternet.com), and I too grant you the
 // permission to do whatever you want with it, as long as this header block
 // is retained in any code you may distribute that uses or is based on this code.
+// Life Simulator game is (c) of Ferran Fabregas (ferri.fc@gmail.com) 
 // gcc -o PanelLifeProject PanelLifeProject.c -lm -lpthread
 
 
