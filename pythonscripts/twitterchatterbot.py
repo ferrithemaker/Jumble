@@ -1,6 +1,6 @@
 # Send Weather by Ferran Fabregas ferri.fc@gmail.com
 import random, math
-import Image, sys
+import sys
 import time
 import re
 from twython import Twython
@@ -87,22 +87,22 @@ def elizabot(inputText):
     result = ""
     global previousInput
     inputText = " " + inputText.upper().replace("'", "") + " " # reformat inputText, remove the '
-    if previousInput != " " and inputText == previousInput: # repeat the last sentence?
-        return "DIDN'T YOU JUST SAY THAT?"
+    #if previousInput != " " and inputText == previousInput: # repeat the last sentence?
+    #    return "DIDN'T YOU JUST SAY THAT?"
     previousInput = inputText
     # search keywords on inputText
     keywordIndex = 0
-	while keywordIndex < len(CONVERSATION_KEYWORDS):
+    while keywordIndex < len(CONVERSATION_KEYWORDS):
         index=inputText.find(CONVERSATION_KEYWORDS[keywordIndex])
         if index != -1:
             break
         keywordIndex=keywordIndex+1
     afterKeyword = ""
-	# now, keywordIndex has the first keyword found in inputText, 36 if not any
+    # now, keywordIndex has the first keyword found in inputText, 36 if not any
     if keywordIndex == len(CONVERSATION_KEYWORDS):
         keywordIndex = 35 # 36 -> 35
     else:
-		index=inputText.find(CONVERSATION_KEYWORDS[keywordIndex])
+	index=inputText.find(CONVERSATION_KEYWORDS[keywordIndex])
         afterKeyword = inputText[index+len(CONVERSATION_KEYWORDS[keywordIndex]):] # get the input text after the keyword
         parts = re.split("\s+", afterKeyword) # afterKeyword is splited by word
         for i in xrange (0,len(WORDS_TO_REPLACE)/2): # go through the list of words to replace
@@ -115,12 +115,12 @@ def elizabot(inputText):
                     if parts[j]==second:
                         parts[j]=first
         afterKeyword = str.join(" ",parts) # join string again
-	question = QUESTIONS[responseCurrentIndices[keywordIndex] - 1] # map the expresion used by the user with a proper answer/question sequence
+    question = QUESTIONS[responseCurrentIndices[keywordIndex] - 1] # map the expresion used by the user with a proper answer/question sequence
     responseCurrentIndices[keywordIndex] = responseCurrentIndices[keywordIndex] + 1; # change the content of responseCurrentIndices, >> right
     if responseCurrentIndices[keywordIndex] > responseEnds[keywordIndex]: # if the sequence ends...
         responseCurrentIndices[keywordIndex] = responseStarts[keywordIndex] # ... start again
     result = result + question
-	if result.endswith("*"): # if question ends with a *, uses the inputText as part of the response
+    if result.endswith("*"): # if question ends with a *, uses the inputText as part of the response
             result = result[:-1]
             result = result + " " + afterKeyword;
     return result
@@ -132,16 +132,17 @@ class TwitterController(TwythonStreamer):
 		#print data
                 if 'text' in data:
                         twitterString=data['text'].encode('utf-8')
-						stringParts=twitterString.split(' ')                        
-						print twitterString
-						userInput=twitterString.replace("@Iamachatterbot","")
-						wdata="@"+data['user']['screen_name'].encode('utf-8')+" "+elizabot(userInput).encode('utf-8')
-						twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
-						twitter.update_status(status=wdata)
-						#print wdata
+			stringParts=twitterString.split(' ')                     
+			print twitterString
+			if twitterString.lower().find("eliza")>=0:
+				userInput=twitterString.replace("@DIYProjectLog","")
+				wdata="@"+data['user']['screen_name'].encode('utf-8')+" "+elizabot(userInput).encode('utf-8')+" o"+str(random.randint(0,999))
+				twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
+				twitter.update_status(status=wdata)
+				print wdata
 
 # Your twitter ID
-TERMS = '@Iamachatterbot'
+TERMS = '@DIYProjectLog'
 
 
 # Twitter application authentication
