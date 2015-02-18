@@ -134,15 +134,15 @@ class TwitterController(TwythonStreamer):
                         twitterString=data['text'].encode('utf-8')
 			stringParts=twitterString.split(' ')                     
 			print twitterString
-			if twitterString.lower().find("eliza")>=0:
-				userInput=twitterString.replace("@DIYProjectLog","")
-				wdata="@"+data['user']['screen_name'].encode('utf-8')+" "+elizabot(userInput).encode('utf-8')+" o"+str(random.randint(0,999))
+			if twitterString.count("@")==1:
+				userInput=twitterString.replace("@Iamachatterbot","")
+				wdata="@"+data['user']['screen_name'].encode('utf-8')+" "+elizabot(userInput).lower().encode('utf-8')+" o"+str(random.randint(0,999))
 				twitter = Twython(APP_KEY, APP_SECRET, OAUTH_TOKEN, OAUTH_TOKEN_SECRET)
 				twitter.update_status(status=wdata)
 				print wdata
 
 # Your twitter ID
-TERMS = '@DIYProjectLog'
+TERMS = '@Iamachatterbot'
 
 
 # Twitter application authentication
