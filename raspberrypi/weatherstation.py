@@ -33,6 +33,9 @@ board.digital[9].mode = SERVO # humidity
 board.digital[8].mode = SERVO # temp
 board.digital[11].mode = SERVO # light
 count=0
+lastlightvalue=0
+light=0
+servolightposition=arduino_map((math.sqrt(1024-light)),0,32,10,170)
 while True:
 	humidity, temperature = Adafruit_DHT.read_retry(Adafruit_DHT.AM2302, 4)
 	if humidity is not None and temperature is not None:
@@ -42,12 +45,14 @@ while True:
                 	light=1024
         	if light<0:
                 	light=0
-		sqdec=(math.sqrt(light/100))/2
-        	servolightposition=arduino_map((math.sqrt(1024-light))+sqdec,0,32,10,170)
-		#print "light:"
-		#print light
-		#print servolightposition
-        	#print '{0:0.1f},{1:0.1f}'.format(humidity, temperature)
+		if abs(light-lastlightvalue)>50:
+			lastlightvalue=light
+			sqdec=(math.sqrt(light/100))/3
+        		servolightposition=arduino_map((math.sqrt(1024-light))+sqdec,0,32,10,170)
+			#print "light:"
+			#print light
+			#print servolightposition
+        		#print '{0:0.1f},{1:0.1f}'.format(humidity, temperature)
         	servotemp=arduino_map(math.fabs(temperature),0,45,10,170)
         	servohum=arduino_map(math.fabs(humidity),0,100,10,170)
         	board.digital[9].write(servohum)
