@@ -28,8 +28,8 @@ for i in range(1, len(filelist)):
     # Split our original filename into name and extension
     (name, extension) = os.path.splitext(filepath)
     
-    # Save the thumbnail as "(original_name)_thumb.png"
-    image.save('/home/ferran/mosaic/'+name+'.png')
+    # Save the thumbnail as "(original_name)_thumb.jpg"
+    image.save('/home/ferran/mosaic/'+name+'.jpg')
 
 build_mosaic(
 	input_path="orignal_image.jpg",
