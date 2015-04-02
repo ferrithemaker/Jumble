@@ -1,3 +1,5 @@
+// Arduino robot camera code by Jordi Binefa & Ferran Fabregas
+
 #include <ecat.h>
 #include <Servo.h>
 
@@ -5,6 +7,11 @@ Servo servoP1B2; Servo servoP1B3;
 
 #define MAX_GRAUS 170
 #define MIN_GRAUS 20
+#define ROBOT_ATURAT      0
+#define ROBOT_ENDAVANT    1
+#define ROBOT_ENDARRERA   2
+#define ROBOT_DRETA       3
+#define ROBOT_ESQUERRA    4
 
 String szMissatge;
 Ecat ecat;
@@ -17,6 +24,7 @@ void setup(){
   
   valorServoV=90;
   valorServoH=90;
+  nEstatActual = ROBOT_ATURAT;
   pinMode(ecat.nPinP1B2,OUTPUT);
   pinMode(ecat.nPinP1B3,OUTPUT); 
   servoP1B2.attach(ecat.nPinP1B2);
@@ -33,22 +41,27 @@ void setup(){
 
 void vRobotAturat(){
   ecat.vWriteHighNibbleP1(0x00);
+  nEstatActual = ROBOT_ATURAT;
 }
 
 void vRobotEndarrera(){
   ecat.vWriteHighNibbleP1(B00000110);
+  nEstatActual = ROBOT_ENDARRERA;
 }
 
 void vRobotEndavant(){
   ecat.vWriteHighNibbleP1(B00001001);
+  nEstatActual = ROBOT_ENDAVANT;
 }
 
 void vRobotEsquerra(){
   ecat.vWriteHighNibbleP1(B00000101);
+  nEstatActual = ROBOT_ESQUERRA;
 }
 
 void vRobotDreta(){
   ecat.vWriteHighNibbleP1(B00001010);
+  nEstatActual = ROBOT_DRETA;
 }
 
 
@@ -59,7 +72,7 @@ void vManageMsg(){
     vRobotEndarrera();
   }
   if(szMissatge == "f"){
-    if (ecat.nUsDistanceCmP1b0b1()>7) {
+    if (ecat.nUsDistanceCmP1b0b1()>=7) {
         vRobotEndavant();
     }
   }
@@ -103,8 +116,9 @@ void loop(){
   }
   vManageMsg();
   szMissatge = "";
-  if (ecat.nUsDistanceCmP1b0b1()<7) {
+  if (ecat.nUsDistanceCmP1b0b1()<7 && nEstatActual == ROBOT_ENDAVANT) {
     vRobotAturat();
+    nEstatActual = ROBOT_ATURAT;
   }
   servoP1B2.write(valorServoV);
   servoP1B3.write(valorServoH);
