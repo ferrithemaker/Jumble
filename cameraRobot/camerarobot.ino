@@ -17,6 +17,7 @@ String szMissatge;
 Ecat ecat;
 int valorServoV;
 int valorServoH;
+int nEstatActual;
 
 void setup(){
   ecat.setupNibbleMode(NIBBLE_H_P1,OUTPUT);
