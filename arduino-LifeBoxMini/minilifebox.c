@@ -34,9 +34,9 @@ typedef struct plants
    		int energy;
 	} SPECIE;
 
-PLANT plantes[32][32];
-SPECIE specie1[32][32];
-SPECIE specie2[32][32];
+PLANT plantes[8][8];
+SPECIE specie1[8][8];
+SPECIE specie2[8][8];
 
 
 	
