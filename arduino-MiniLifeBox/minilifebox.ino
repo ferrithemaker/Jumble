@@ -372,7 +372,7 @@ void setup()
 
 void loop()
 {
-  unsigned int dly = 20;
+  unsigned int dly = 150;
   int x,y,xp,xm,yp,ym;
   int plants_neighbours,specie1_neighbours,specie2_neighbours;
   int i;
@@ -562,10 +562,10 @@ void loop()
 				}
 				
 				// draw
-				if (specie1[x][y].age>0 && specie2[x][y].age>0) { DispShowDot(255,0,255,x,y); } // yellow if species comp
-				if (specie1[x][y].age>0 && specie2[x][y].age==0) { DispShowDot(255,0,0,x,y); } // red only specie1
+				if (specie1[x][y].age>0 && specie2[x][y].age>0) { DispShowDot(255,0,255,x,y); } // magenta if species comp
+				if (specie1[x][y].age>0 && specie2[x][y].age==0) { DispShowDot(20,100,50,x,y); } // yellow-like only specie1
 				if (specie1[x][y].age==0 && specie2[x][y].age>0) { DispShowDot(0,0,255,x,y); } // blue only specie2
-				if (specie1[x][y].age==0 && specie2[x][y].age==0 && plantes[x][y].age>0) { DispShowDot(0,255,0,x,y); } // green only plants
+				if (specie1[x][y].age==0 && specie2[x][y].age==0 && plantes[x][y].age>0) { DispShowDot(100,255,100,x,y); } // green-like only plants
 				if (specie1[x][y].age==0 && specie2[x][y].age==0 && plantes[x][y].age==0) { DispShowDot(0,0,0,x,y); } // black nothing
 			}
 		}
