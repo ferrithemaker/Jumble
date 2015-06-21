@@ -93,7 +93,7 @@ float controldata[5];
 #define SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE 20
 #define SPECIE2_ENERGY_TO_REPLICATE 6
 
-#define CYCLES_TO_CONTROL 500
+#define CYCLES_TO_CONTROL 100000000
 /*
  float controldata[5];
         controldata[0]=0.5;
@@ -322,13 +322,14 @@ void swapBuffers(void)
 
 void *controlThread(void *args)
 {
-int cycles=0;
+
+long int cycles=0;
 int id;
-controldata[0]=0.5;
-        controldata[1]=0.5;
-        controldata[2]=0.5;
-        controldata[3]=0.5;
-        controldata[4]=0.5;
+//controldata[0]=0.5;
+//controldata[1]=0.5;
+//controldata[2]=0.5;
+//controldata[3]=0.5;
+//controldata[4]=0.5;
 
 while (1) { // bucle principal
 	if (cycles==CYCLES_TO_CONTROL) {
@@ -345,6 +346,7 @@ while (1) { // bucle principal
                                         //printf("%s\n",line);
                                         //printf("Float value : %4.8f\n",strtod(line,NULL));
                                         controldata[idata]=strtod(line,NULL);
+					controldata[idata]=controldata[idata]+0.1;
                                         idata=idata+1;
                                 }
                                 //printf("BEGIN\n");
@@ -357,7 +359,9 @@ while (1) { // bucle principal
                 cycles=cycles+1;
 
 }
+
 }
+
 void *startLifeSimulatorThread(void *args)
 {
 	typedef struct plants
@@ -535,12 +539,12 @@ void *startLifeSimulatorThread(void *args)
 						}
 					}
 					// die if too old
-					if (specie1[x][y].age>SPECIE1_LIFE_EXPECTANCY) { specie1[x][y].energy=0; specie1[x][y].age=0;}
+					if (specie1[x][y].age>(int)(SPECIE1_LIFE_EXPECTANCY*controldata[1]*2)) { specie1[x][y].energy=0; specie1[x][y].age=0;}
 				}
 				if (specie1[x][y].age==0) { // if theres no individual, new individual will born? (to avoid extintion)
 					if (specie1_neighbours==0) {
 						//srand(time(NULL));
-						random_number = random() % SPECIE1_RANDOM_BORN_CHANCES;
+						random_number = random() % (int)(SPECIE1_RANDOM_BORN_CHANCES*controldata[1]*2);
 						if (random_number==1) { specie1[x][y].age=1; specie1[x][y].energy=SPECIE1_ENERGY_BASE; }
 					}
 				}
@@ -590,12 +594,12 @@ void *startLifeSimulatorThread(void *args)
 						}
 					}
 				// die if too old
-				if (specie2[x][y].age>SPECIE2_LIFE_EXPECTANCY) { specie2[x][y].energy=0; specie2[x][y].age=0;}
+				if (specie2[x][y].age>(int)(SPECIE2_LIFE_EXPECTANCY*controldata[3]*2)) { specie2[x][y].energy=0; specie2[x][y].age=0;}
 				}
 				if (specie2[x][y].age==0) { // if theres no individual, new individual will born? (to avoid extintion)
 					if (specie2_neighbours==0) {
 						//srand(time(NULL));
-						random_number = random() % SPECIE2_RANDOM_BORN_CHANCES;
+						random_number = random() % (int)(SPECIE2_RANDOM_BORN_CHANCES*controldata[3]*2);
 						if (random_number==1) { specie2[x][y].age=1; specie2[x][y].energy=SPECIE2_ENERGY_BASE; }
 					}
 				}
@@ -644,7 +648,11 @@ int main(int argc, char **argv)
     new_sa.sa_handler = SIG_IGN;
     new_sa.sa_flags = 0;
 
-
+    controldata[0]=0.5;
+controldata[1]=0.5;
+controldata[2]=0.5;
+controldata[3]=0.5;
+controldata[4]=0.5;
     // Set up handler for ctrl-c to shut down properly
     if (sigaction(SIGINT, &new_sa, &old_sa) == 0 && old_sa.sa_handler != SIG_IGN)
     {
