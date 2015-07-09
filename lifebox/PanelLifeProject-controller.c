@@ -1,4 +1,4 @@
-// Code to drive the 32x32 LED arrays available from SKPANG 
+// Code to drive the 32x32 LED arrays available from SKPANG
 // http://skpang.co.uk/catalog/rgb-led-panel-32x32-p-1329.html
 // Based on code from https://github.com/hzeller/rpi-rgb-led-matrix
 // Which contains the following copyright notice:
@@ -103,7 +103,7 @@ float controldata[5];
         controldata[4]=0.5;
 */
 
-// In an attempt to reduce ghosting between lines I use a grey code 
+// In an attempt to reduce ghosting between lines I use a grey code
 // order for the scanning.
 
 void buildGreyCode(void)
@@ -123,13 +123,13 @@ void buildGreyCode(void)
 
 
 // Set the bits that are '1' in the output. Leave the rest untouched.
-inline void SetBits(uint32_t value) 
+inline void SetBits(uint32_t value)
 {
     gpio_port[0x1C / sizeof(uint32_t)] = value & portMask;
 }
 
 // Clear the bits that are '1' in the output. Leave the rest untouched.
-inline void ClearBits(uint32_t value) 
+inline void ClearBits(uint32_t value)
 {
     gpio_port[0x28 / sizeof(uint32_t)] = value & portMask;
 }
@@ -138,9 +138,9 @@ inline void ClearBits(uint32_t value)
 // Set up the mempry mapped access to the GPIO registers
 bool initGPIO(void)
 {
-    
+
     int mem_fd,n,bitNumber;
-    if ((mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0) 
+    if ((mem_fd = open("/dev/mem", O_RDWR|O_SYNC) ) < 0)
     {
 	perror("can't open /dev/mem: ");
 	return false;
@@ -152,11 +152,11 @@ bool initGPIO(void)
 				  MAP_SHARED,       //Shared with other processes
 				  mem_fd,           //File to map
 				  GPIO_BASE);         //Offset to GPIO peripheral
-	
+
 
     close(mem_fd); //No need to keep mem_fd open after mmap
 
-    if (gpio_map == MAP_FAILED) 
+    if (gpio_map == MAP_FAILED)
     {
 	fprintf(stderr, "mmap error %ld\n", (long)gpio_map);
 	return false;
@@ -174,7 +174,7 @@ bool initGPIO(void)
 	OUT_GPIO(bitNumber);
 	portMask |= 1 << bitNumber;
     }
-    
+
     ClearBits(portMask);
 
     return true;
@@ -200,7 +200,7 @@ uint32_t Pixels2[32*16];
 // Pointers to Front and Back buffer
 uint32_t *PixelsF,*PixelsB;
 
-// This thread continuously cycles through the Pixels array sending the 
+// This thread continuously cycles through the Pixels array sending the
 // pixel data to the display row by row.
 
 void *startDisplayThread(void *args)
@@ -208,7 +208,7 @@ void *startDisplayThread(void *args)
     int n,col,row;
     struct timespec sleepTime = { 0, 5000000 };
     struct timespec onTime =    { 0,  200000 };
-    uint32_t *pixelData; 
+    uint32_t *pixelData;
 
     initGPIO();
 
@@ -229,11 +229,11 @@ void *startDisplayThread(void *args)
 	// Changing the address lines seems to a part of the cause of the ghosting problems.
 	if(greyCodeSet[row])
 	{
-	    SetBits(greyCodeChange[row] << ROWA);   // Set a bit for the current row 
+	    SetBits(greyCodeChange[row] << ROWA);   // Set a bit for the current row
 	}
 	else
 	{
-	    ClearBits(greyCodeChange[row] << ROWA);   // Clear a bit for the current row 
+	    ClearBits(greyCodeChange[row] << ROWA);   // Clear a bit for the current row
 	}
 
 	settleTime(5);
@@ -253,8 +253,8 @@ void *startDisplayThread(void *args)
 	//settleTime(5);
 	ClearBits(1<<STB);
 	settleTime(50);
-	ClearBits(1<<OE);  // turn display on	
-	nanosleep(&onTime, NULL);   // Fixed on time 
+	ClearBits(1<<OE);  // turn display on
+	nanosleep(&onTime, NULL);   // Fixed on time
 	SetBits(1<<OE);     // turn off the display
 	settleTime(5);
 
@@ -288,7 +288,7 @@ void setPixelColour(int x,int y, int r,int g,int b)
     b &= 1;
 
     address = x;
-    // Set bits & mask depending on which half of the display the pixel is in. 
+    // Set bits & mask depending on which half of the display the pixel is in.
     if(y < 16)
     {
 	bits = (r<<R1|g<<G1|b<<B1);
@@ -301,10 +301,10 @@ void setPixelColour(int x,int y, int r,int g,int b)
     }
     address += (y & 15) * 32;
     // Clear and set the appropriate bits in the Pixel data
-    PixelsB[address] &= ~bitmask;  
+    PixelsB[address] &= ~bitmask;
     PixelsB[address] |= bits;
-    
-    
+
+
 }
 
 
@@ -379,7 +379,7 @@ void *startLifeSimulatorThread(void *args)
 	PLANT plantes[32][32];
 	SPECIE specie1[32][32];
 	SPECIE specie2[32][32];
-	
+
 	int x,y,xp,xm,yp,ym;
 	int plants_neighbours,specie1_neighbours,specie2_neighbours;
 	int i;
@@ -393,20 +393,13 @@ void *startLifeSimulatorThread(void *args)
 	int cycles=0;
 
 	char strcontrol[50];
-        //float controldata[5];
-        int id;
-	//controldata[0]=0.5;
-	//controldata[1]=0.5;
-	//controldata[2]=0.5;
-	//controldata[3]=0.5;
-	//controldata[4]=0.5;
-
+  int id;
 
 	// Clear the board
 	memset(plantes,0,sizeof(plantes));
 	memset(specie1,0,sizeof(specie1));
 	memset(specie2,0,sizeof(specie2));
-	
+
 	srandom(time(NULL));
 	while (1) { // bucle principal
 		/*if (cycles==CYCLES_TO_CONTROL) {
@@ -446,7 +439,7 @@ void *startLifeSimulatorThread(void *args)
 				yp = (y + 1) & 31;
 				ym = (y - 1) & 31;
 				//printf("%i\n",loopcount);
-				loopcount++;	
+				loopcount++;
 				// Count the number of currently live neighbouring cells
 				plants_neighbours=0;
 				specie1_neighbours=0;
@@ -477,8 +470,8 @@ void *startLifeSimulatorThread(void *args)
 				if (specie2[x][y].age==0 && specie2[xp][ym].age>0) { specie2_neighbours++; }
 				if (specie2[x][y].age==0 && specie2[xm][yp].age>0) { specie2_neighbours++; }
 				if (specie2[x][y].age==0 && specie2[x][yp].age>0) { specie2_neighbours++; }
-				if (specie2[x][y].age==0 && specie2[xp][yp].age>0) { specie2_neighbours++; }	
-				
+				if (specie2[x][y].age==0 && specie2[xp][yp].age>0) { specie2_neighbours++; }
+
 				// Plants logic
 				if (plantes[x][y].age>=(int)(PLANTS_LIFE_EXPECTANCY*controldata[4]*2)) { plantes[x][y].age=0; plantes[x][y].energy=0;  } // plant dies
 				if (plantes[x][y].age>0 && plantes[x][y].age<(int)(PLANTS_LIFE_EXPECTANCY*controldata[4]*2) && plantes[x][y].energy<=0) { plantes[x][y].age=0; plantes[x][y].energy=0; } // plant dies
@@ -488,17 +481,17 @@ void *startLifeSimulatorThread(void *args)
 					random_number = random() % (int)(PLANTS_RANDOM_BORN_CHANCES*controldata[4]*2);
 					//printf("%i\n",random_number);
 					if (random_number==1) { plantes[x][y].age=1; plantes[x][y].energy=1;}
-				} 
+				}
 				if (plantes[x][y].age==0 && plants_neighbours>0) {  // neighbours plant born
 					//srand(time(NULL));
 					random_number = random() % (int)(PLANTS_RANDOM_NEARBORN_CHANCES*controldata[4]*2);
 					if (random_number==1) { plantes[x][y].age=1; plantes[x][y].energy=1; }
 				}
-				
+
 				// Specie1 logic
 				if (specie1[x][y].age>0) { // if there are an individual alive
 					// try to eat
-					if (plantes[x][y].energy>0) { 
+					if (plantes[x][y].energy>0) {
 						total_energy=0;
 						if (plantes[x][y].energy>SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE) { total_energy=SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE; plantes[x][y].energy=plantes[x][y].energy-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE; }
 					else { total_energy=plantes[x][y].energy; plantes[x][y].energy=0;}
@@ -548,12 +541,12 @@ void *startLifeSimulatorThread(void *args)
 						if (random_number==1) { specie1[x][y].age=1; specie1[x][y].energy=SPECIE1_ENERGY_BASE; }
 					}
 				}
-				
+
 				// Specie2 logic
-				
+
 				if (specie2[x][y].age>0) { // if there are an individual alive
 					// try to eat
-					if (plantes[x][y].energy>0) { 
+					if (plantes[x][y].energy>0) {
 						total_energy=0;
 						if (plantes[x][y].energy>SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE) { total_energy=SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE; plantes[x][y].energy=plantes[x][y].energy-SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE; }
 						else { total_energy=plantes[x][y].energy; plantes[x][y].energy=0;}
@@ -603,7 +596,7 @@ void *startLifeSimulatorThread(void *args)
 						if (random_number==1) { specie2[x][y].age=1; specie2[x][y].energy=SPECIE2_ENERGY_BASE; }
 					}
 				}
-				
+
 				// draw
 				if (specie1[x][y].age>0 && specie2[x][y].age>0) { setPixelColour(x,y,1,0,1); } // species comp
 				if (specie1[x][y].age>0 && specie2[x][y].age==0) { setPixelColour(x,y,1,1,0); } // only specie1
@@ -612,7 +605,7 @@ void *startLifeSimulatorThread(void *args)
 				if (specie1[x][y].age==0 && specie2[x][y].age==0 && plantes[x][y].age==0) { setPixelColour(x,y,0,0,0); } // black nothing
 			}
 		}
-				
+
 		swapBuffers();
 		//memset(PixelsB,0,sizeof(Pixels1));
 		// Sleep to set game rate
@@ -662,10 +655,10 @@ controldata[4]=0.5;
 
     displayRunning = true;
     gameRunning = false;
-    
+
     // Start the display
     pthread_create(&displayThread, NULL, &startDisplayThread,NULL);
-  
+
     // Up the priority of the display thread
     p.sched_priority = 10;
     pthread_setschedparam(displayThread, SCHED_FIFO, &p);
@@ -676,7 +669,7 @@ controldata[4]=0.5;
     gameStop = false;
     pthread_create(&gameThread, NULL, &startLifeSimulatorThread,NULL);
     pthread_create(&gameThread,NULL,&controlThread,NULL);
-	    
+
 
 
     // Tidy up threads
@@ -689,4 +682,3 @@ controldata[4]=0.5;
     tcsetattr(STDIN_FILENO,TCSANOW,&oldt);
 
 }
-
