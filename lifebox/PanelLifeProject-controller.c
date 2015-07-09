@@ -94,14 +94,7 @@ float controldata[5];
 #define SPECIE2_ENERGY_TO_REPLICATE 6
 
 #define CYCLES_TO_CONTROL 100000000
-/*
- float controldata[5];
-        controldata[0]=0.5;
-        controldata[1]=0.5;
-        controldata[2]=0.5;
-        controldata[3]=0.5;
-        controldata[4]=0.5;
-*/
+
 
 // In an attempt to reduce ghosting between lines I use a grey code
 // order for the scanning.
