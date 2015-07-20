@@ -44,6 +44,8 @@ void resetBall()
   ballY = 360;
   vertSpeed = random(-12,12);
   horiSpeed = random(-6,6);
+  if (vertSpeed<0) { vertSpeed=vertSpeed-3; }
+  if (vertSpeed>=0) { vertSpeed=vertSpeed+3; }
 }
 
 void draw()
