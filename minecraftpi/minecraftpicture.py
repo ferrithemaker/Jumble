@@ -1,7 +1,7 @@
 # Script By Ferran Fabregas (ferri.fc@gmail.com)
 import Image, sys, math
 sys.path.append("./mcpi/api/python/mcpi")
-import minecraft
+import mcpi.minecraft as minecraft
 
 # COLOR MAPPING
 def colormap(pixel):
