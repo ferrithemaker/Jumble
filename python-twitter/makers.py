@@ -34,7 +34,7 @@ access_token_secret=""
 # This is the string to search in the twitter feed
 # May be  a word, an #hashtag or a @username
 
-search_strings = ['makerspace','arduino','raspberry pi','#raspberrypi','esp8266','robotics','robotica','microcontroller','microcontrolador','iot','IoT','tinkering']
+search_strings = ['makerspace','arduino','raspberry pi','#raspberrypi','esp8266','ESP8266','robotics','robotica','microcontroller','microcontrolador','iot','IoT','tinkering','Raspberry Pi','Raspberry pi','Raspberry PI','Arduino','raspberry PI']
 
 class StdOutListener(StreamListener):
     """
@@ -54,27 +54,28 @@ class StdOutListener(StreamListener):
         #print ("LANG:",data['user']['lang'])
         #print ("FOLLOWERS:",data['user']['followers_count'])
         #print ("FRIENDS",data['user']['friends_count'])
-	try:
-		conn.execute("SELECT idCapture,points FROM capture where user='"+data['user']['screen_name']+"'")
-		row = conn.fetchone()
-		userfound=0
-		while row is not None:
-			userfound=1
-			points=row[1]
-			id=row[0]
-    			#print row[0], row[1]
-    			row = conn.fetchone()
-		if userfound==0:
-			#print ("INSERT")
-			conn.execute("""INSERT INTO capture (nickname,user,geoLocation,lang,followers,friends,description,photo) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)""",(data['user']['name'].encode('utf-8'),data['user']['screen_name'].encode('utf-8'),data['user']['location'].encode('utf-8'),data['user']['lang'],data['user']['followers_count'],data['user']['friends_count'],data['user']['description'].encode('utf-8'),data['user']['profile_image_url']))
-   			db.commit()
-		if userfound==1:
-			#print ("UPDATE")
-			conn.execute("""UPDATE capture set followers=%s, friends=%s, points=%s, description=%s, photo=%s where idCapture=%s""", (data['user']['followers_count'],data['user']['friends_count'],points+1,data['user']['description'].encode('utf-8'),data['user']['profile_image_url'],id))
-			db.commit()
-	except:
-		#print("Db error")
-   		db.rollback()
+	if any(element in data['text'].encode('utf-8') for element in search_strings):
+		try:
+			conn.execute("SELECT idCapture,points FROM capture where user='"+data['user']['screen_name']+"'")
+			row = conn.fetchone()
+			userfound=0
+			while row is not None:
+				userfound=1
+				points=row[1]
+				id=row[0]
+    				#print row[0], row[1]
+    				row = conn.fetchone()
+			if userfound==0:
+				#print ("INSERT")
+				conn.execute("""INSERT INTO capture (nickname,user,geoLocation,lang,followers,friends,description,photo) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)""",(data['user']['name'].encode('utf-8'),data['user']['screen_name'].encode('utf-8'),data['user']['location'].encode('utf-8'),data['user']['lang'],data['user']['followers_count'],data['user']['friends_count'],data['user']['description'].encode('utf-8'),data['user']['profile_image_url']))
+   				db.commit()
+			if userfound==1:
+				#print ("UPDATE")
+				conn.execute("""UPDATE capture set followers=%s, friends=%s, points=%s, description=%s, photo=%s where idCapture=%s""", (data['user']['followers_count'],data['user']['friends_count'],points+1,data['user']['description'].encode('utf-8'),data['user']['profile_image_url'],id))
+				db.commit()
+		except:
+			#print("Db error")
+   			db.rollback()
         return True
 
     def on_error(self, status):
