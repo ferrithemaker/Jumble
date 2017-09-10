@@ -1,0 +1,8 @@
+setup.py
+Adafruit_BMP/BMP085.py
+Adafruit_BMP/__init__.py
+Adafruit_BMP.egg-info/PKG-INFO
+Adafruit_BMP.egg-info/SOURCES.txt
+Adafruit_BMP.egg-info/dependency_links.txt
+Adafruit_BMP.egg-info/requires.txt
+Adafruit_BMP.egg-info/top_level.txt

@@ -1,0 +1,8 @@
+setup.py
+Adafruit_MCP3008/MCP3008.py
+Adafruit_MCP3008/__init__.py
+Adafruit_MCP3008.egg-info/PKG-INFO
+Adafruit_MCP3008.egg-info/SOURCES.txt
+Adafruit_MCP3008.egg-info/dependency_links.txt
+Adafruit_MCP3008.egg-info/requires.txt
+Adafruit_MCP3008.egg-info/top_level.txt

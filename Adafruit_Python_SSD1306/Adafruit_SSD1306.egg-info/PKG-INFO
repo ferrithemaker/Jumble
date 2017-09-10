@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: Adafruit-SSD1306
+Version: 1.6.1
+Summary: Python library to use SSD1306-based 128x64 or 128x32 pixel OLED displays with a Raspberry Pi or Beaglebone Black.
+Home-page: https://github.com/adafruit/Adafruit_Python_SSD1306/
+Author: Tony DiCola
+Author-email: tdicola@adafruit.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Operating System :: POSIX :: Linux
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Software Development
+Classifier: Topic :: System :: Hardware
