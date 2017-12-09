@@ -3,8 +3,13 @@ import sys
 import random
 
 pygame.init()
+pygame.font.init()
 
-screen = pygame.display.set_mode((640,480))
+pygame.display.set_caption('LifeBox')
+
+
+screen = pygame.display.set_mode((1000,600))
+textfont = pygame.font.SysFont('arial',30)
 
 # colors
 red = (255,0,0)
@@ -14,6 +19,8 @@ yellow = (255,255,0)
 magenta = (255,0,255)
 white = (255,255,255)
 black = (0,0,0)
+darkgrey = (30,30,30)
+lightgrey = (200,200,200)
 
 # fps management
 clock = pygame.time.Clock()
@@ -25,6 +32,15 @@ t, w, h= 2,32, 32
 specie1 = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
 specie2 = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
 plants = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
+
+# graph arrays
+
+specie1_Iarray = [0 for x in range(200)]
+specie2_Iarray = [0 for x in range(200)]
+plants_Iarray = [0 for x in range(200)]
+specie1_Earray = [0 for x in range(200)]
+specie2_Earray = [0 for x in range(200)]
+plants_Earray = [0 for x in range(200)]
 
 # species variables
 
@@ -60,6 +76,16 @@ while (True):
 		if event.type == pygame.QUIT:
         		pygame.quit()
 	 		sys.exit()
+
+	# init totals
+	specie2_individuals = 0
+	specie1_individuals = 0
+	plants_individuals = 0
+	specie2_energy = 0
+	specie1_energy = 0
+	plants_energy = 0
+
+	screen.fill(black)
 
 	for x in range(0,32):
 		# adjacent coordinates
@@ -140,18 +166,24 @@ while (True):
 			if plants[x][y][0]>0 and plants[x][y][0] < PLANTS_LIFE_EXPECTANCY:
  				plants[x][y][0] += 1
 				plants[x][y][1] = plants[x][y][1]+PLANTS_ENERGY_BASE_PER_CYCLE
+				plants_individuals += 1
+				plants_energy += plants[x][y][1]
 			# spontaneous generation
 			if plants[x][y][0] == 0 and plants_neighbours == 0:
 				random_number = random.randint(1,PLANTS_RANDOM_BORN_CHANCES)
 				if random_number == 1:
 					plants[x][y][0] = 1
 					plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE
+					plants_individuals += 1
+					plants_energy += plants[x][y][1]
 			# plant reproduction
 			if plants[x][y][0] == 0 and plants_neighbours > 0:
 				random_number = random.randint(1,PLANTS_NEARBORN_CHANCES)
 				if random_number == 1:
 					plants[x][y][0] = 1
 					plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE
+					plants_individuals += 1
+					plants_energy += plants[x][y][1]
 
 			# [specie1 logic]
 
@@ -249,6 +281,8 @@ while (True):
 					specie1[x][y][1] = 0
 					specie1[x][y][0] = 0
 					#print "("+str(x)+","+str(y)+") dies"
+				specie1_individuals += 1
+				specie1_energy += specie1[x][y][1]
 			# if no individual is alive, random born to avoid extintion
   			if specie1[x][y][0] == 0 and specie1_neighbours==0:
   				random_number = random.randint(1,SPECIE1_RANDOM_BORN_CHANCES)
@@ -256,6 +290,8 @@ while (True):
 					specie1[x][y][0] = 1
 					specie1[x][y][1] = SPECIE1_ENERGY_BASE
 					#print "("+str(x)+","+str(y)+") random born"
+					specie1_individuals += 1
+					specie1_energy += specie1[x][y][1]
 
 			# [species 2 logic]
 
@@ -338,25 +374,62 @@ while (True):
                                 if specie2[x][y][0] > SPECIE2_LIFE_EXPECTANCY:
                                         specie2[x][y][1] = 0
                                         specie2[x][y][0] = 0
-                        # if no individual is alive, random born to avoid extintion
+                        	specie2_individuals += 1
+				specie2_energy += specie2[x][y][1]
+			# if no individual is alive, random born to avoid extintion
                         if specie2[x][y][0] == 0 and specie2_neighbours == 0:
                                 random_number = random.randint(1,SPECIE2_RANDOM_BORN_CHANCES)
                                 if random_number==1:
                                         specie2[x][y][0] = 1
                                         specie2[x][y][1] = SPECIE2_ENERGY_BASE
+					specie2_individuals +=1
+					specie2_energy += specie2[x][y][1]
 
 
 			# draw
 			if specie1[x][y][0] > 0 and specie2[x][y][0] > 0:
-				pygame.draw.rect(screen,magenta,(x*10+10,y*10+10,10,10),0)
+				pygame.draw.circle(screen,magenta,(((x*10)+5)+40,((y*10)+5)+40),5,0)
 			if specie1[x][y][0] > 0 and specie2[x][y][0] == 0:
-                                pygame.draw.rect(screen,yellow,(x*10+10,y*10+10,10,10),0)
+                                pygame.draw.circle(screen,yellow,(((x*10)+5)+40,((y*10)+5)+40),5,0)
 			if specie1[x][y][0] == 0 and specie2[x][y][0] > 0:
-                                pygame.draw.rect(screen,blue,(x*10+10,y*10+10,10,10),0)
+                                pygame.draw.circle(screen,blue,(((x*10)+5)+40,((y*10)+5)+40),5,0)
 			if specie1[x][y][0] == 0 and specie2[x][y][0] == 0 and plants[x][y][0] > 0:
-                                pygame.draw.rect(screen,white,(x*10+10,y*10+10,10,10),0)
+                                pygame.draw.circle(screen,white,(((x*10)+5)+40,((y*10)+5)+40),5,0)
 			if specie1[x][y][0] == 0 and specie2[x][y][0] == 0 and plants[x][y][0] == 0:
-                                pygame.draw.rect(screen,black,(x*10+10,y*10+10,10,10),0)
+                                pygame.draw.circle(screen,darkgrey,(((x*10)+5)+40,((y*10)+5)+40),5,0)
 
-	pygame.draw.rect(screen,white,(10,10,320,320),1)
+	# generate graphs
+	for x in range(1,200):
+		specie1_Iarray[x-1] = specie1_Iarray[x]
+		specie2_Iarray[x-1] = specie2_Iarray[x]
+		plants_Iarray[x-1] = plants_Iarray[x]
+		specie1_Earray[x-1] = specie1_Earray[x]
+		specie2_Earray[x-1] = specie2_Earray[x]
+		plants_Earray[x-1] = plants_Earray[x]
+	specie1_Iarray[199] = specie1_individuals
+	specie2_Iarray[199] = specie2_individuals
+	plants_Iarray[199] = plants_individuals
+	specie1_Earray[199] = specie1_energy
+	specie2_Earray[199] = specie2_energy
+	plants_Earray[199] = plants_energy
+
+	# draw graphs
+	pygame.draw.line(screen,white,(450,350),(650,350))
+	pygame.draw.line(screen,white,(650,350),(650,20))
+	pygame.draw.line(screen,white,(700,350),(900,350))
+	pygame.draw.line(screen,white,(900,350),(900,20))
+	text_individuals = textfont.render("Individuals",False, lightgrey, black)
+	text_energy = textfont.render("Energy",False, lightgrey, black)
+	screen.blit(text_individuals,(480,400))
+	screen.blit(text_energy,(740,400))
+
+	for x in range(0,200):
+		pygame.draw.line(screen,yellow,(450+x,350-int(specie1_Iarray[x]/3)),(450+x,350-int(specie1_Iarray[x]/3)))
+		pygame.draw.line(screen,blue,(450+x,350-int(specie2_Iarray[x]/3)),(450+x,350-int(specie2_Iarray[x]/3)))
+		pygame.draw.line(screen,white,(450+x,350-int(plants_Iarray[x]/3)),(450+x,350-int(plants_Iarray[x]/3)))
+		pygame.draw.line(screen,yellow,(700+x,350-int(specie1_Earray[x]/500)),(700+x,350-int(specie1_Earray[x]/500)))
+                pygame.draw.line(screen,blue,(700+x,350-int(specie2_Earray[x]/500)),(700+x,350-int(specie2_Earray[x]/500)))
+                pygame.draw.line(screen,white,(700+x,350-int(plants_Earray[x]/500)),(700+x,350-int(plants_Earray[x]/500)))
+
+	pygame.draw.rect(screen,lightgrey,(40,40,320,320),1)
 	pygame.display.update()
