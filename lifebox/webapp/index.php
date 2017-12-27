@@ -114,9 +114,9 @@
 <form id="lifeboxform" action="postdata.php" method="POST">
 <div id="tabs">
   <ul>
-    <li><a href="#tabs-1">Specie 1 (yellow)</a></li>
-    <li><a href="#tabs-2">Specie 2 (blue)</a></li>
-    <li><a href="#tabs-3">Mana (white)</a></li>
+    <li style="background: lightblue;"><a href="#tabs-1">Specie 1 (yellow)</a></li>
+    <li style="background: lightblue;"><a href="#tabs-2">Specie 2 (blue)</a></li>
+    <li style="background: lightblue;"><a href="#tabs-3">Mana (white)</a></li>
   </ul>
   <div id="tabs-1">
     <p>
@@ -261,7 +261,7 @@
   </div>
 </div>
 <div style="margin-top:50px">
-<input type="submit" style="width: 20em;  height: 2em;" value="Update LifeBox values">
+<input type="submit" style="width: 30em;  height: 3em; background: lightblue;" value="Update LifeBox values">
 
 </form>
 </div>
