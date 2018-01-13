@@ -663,27 +663,27 @@ Namur,Belgium,Namur,Europe
 Charleroi,Belgium,Charleroi,Europe
 Antwerpen,Belgium,Antwerp,Europe
 Brussels,Belgium,Brussels,Europe
-El Cayo,Belize,Cayo,
-Corozal,Belize,Corozal,
-Dangriga,Belize,Stann Creek,
-Belize City,Belize,Belize,
-Orange Walk,Belize,Orange Walk,
-Punta Gorda,Belize,Toledo,
-Belmopan,Belize,Cayo,
-Lokossa,Benin,Mono,
-Kandi,Benin,Alibori,
-Ouidah,Benin,Atlantique,
-Abomey,Benin,Zou,
-Natitingou,Benin,Atakora,
-Djougou,Benin,Donga,
-Parakou,Benin,Borgou,
-Porto-Novo,Benin,Ouémé,
-Cotonou,Benin,Ouémé,
+El Cayo,Belize,Cayo,North America
+Corozal,Belize,Corozal,North America
+Dangriga,Belize,Stann Creek,North America
+Belize City,Belize,Belize,North America
+Orange Walk,Belize,Orange Walk,North America
+Punta Gorda,Belize,Toledo,North America
+Belmopan,Belize,Cayo,North America
+Lokossa,Benin,Mono,Africa
+Kandi,Benin,Alibori,Africa
+Ouidah,Benin,Atlantique,Africa
+Abomey,Benin,Zou,Africa
+Natitingou,Benin,Atakora,Africa
+Djougou,Benin,Donga,Africa
+Parakou,Benin,Borgou,Africa
+Porto-Novo,Benin,Ouémé,Africa
+Cotonou,Benin,Ouémé,Africa
 Hamilton,Bermuda,,
-Paro,Bhutan,Thimphu,
-Punakha,Bhutan,Punakha,
-Wangdue Prodrang,Bhutan,Wangdi Phodrang,
-Thimphu,Bhutan,Thimphu,
+Paro,Bhutan,Thimphu,Asia
+Punakha,Bhutan,Punakha,Asia
+Wangdue Prodrang,Bhutan,Wangdi Phodrang,Asia
+Thimphu,Bhutan,Thimphu,Asia
 Punata,Bolivia,Cochabamba,South America
 Cliza,Bolivia,Cochabamba,South America
 Quillacollo,Bolivia,Cochabamba,South America
@@ -1541,9 +1541,9 @@ Edmonton,Canada,Alberta,North America
 Montréal,Canada,Québec,North America
 Vancouver,Canada,British Columbia,North America
 Toronto,Canada,Ontario,North America
-Mindelo,Cape Verde,,
-Praia,Cape Verde,,
-George Town,Cayman Islands,,
+Mindelo,Cape Verde,,Africa
+Praia,Cape Verde,,Africa
+George Town,Cayman Islands,,Africa
 Mobaye,Central African Republic,Basse-Kotto,Africa
 Mbaiki,Central African Republic,Lobaye,Africa
 Carnot,Central African Republic,Mambéré-Kadéï,Africa
@@ -2325,12 +2325,12 @@ Frederikshavn,Denmark,Nordjylland,Europe
 Aalborg,Denmark,Nordjylland,Europe
 Århus,Denmark,Midtjylland,Europe
 København,Denmark,Hovedstaden,Europe
-Dikhil,Djibouti,Dikhil,
-Tadjoura,Djibouti,Tadjourah,
-Ali Sabih,Djibouti,Ali Sabieh,
-Obock,Djibouti,Obock,
-Djibouti,Djibouti,Djibouti,
-Roseau,Dominica,Saint George,
+Dikhil,Djibouti,Dikhil,Africa
+Tadjoura,Djibouti,Tadjourah,Africa
+Ali Sabih,Djibouti,Ali Sabieh,Africa
+Obock,Djibouti,Obock,Africa
+Djibouti,Djibouti,Djibouti,Africa
+Roseau,Dominica,Saint George,Africa
 Sabaneta,Dominican Republic,Santiago Rodríguez,South America
 Mao,Dominican Republic,Valverde,South America
 Cotui,Dominican Republic,Sánchez Ramírez,South America
@@ -2514,11 +2514,11 @@ Fox Bay,Falkland Islands,,South America
 Stanley,Falkland Islands,,South America
 Klaksvik,Faroe Islands,Eysturoyar,Europe
 Tórshavn,Faroe Islands,Eysturoyar,Europe
-Palikir,Federated States of Micronesia,,
-Nandi,Fiji,Western,
-Lautoka,Fiji,Western,
-Labasa,Fiji,Western,
-Suva,Fiji,Central,
+Palikir,Federated States of Micronesia,,Australia
+Nandi,Fiji,Western,Australia
+Lautoka,Fiji,Western,Australia
+Labasa,Fiji,Western,Australia
+Suva,Fiji,Central,Australia
 Hameenlinna,Finland,Tavastia Proper,Europe
 Kouvola,Finland,Southern Finland,Europe
 Mikkeli,Finland,Southern Savonia,Europe
@@ -2611,7 +2611,7 @@ St.-Denis,France,La Réunion,Europe
 Lyon,France,Rhône-Alpes,Europe
 Cayenne,France,Guinaa,Europe
 Paris,France,Île-de-France,Europe
-Papeete,French Polynesia,,
+Papeete,French Polynesia,,Australia
 Ebebiyin,Gabon,Wouleu-Ntem,Africa
 Tchibanga,Gabon,Nyanga,Africa
 Mekambo,Gabon,Ogooué-Ivindo,Africa
@@ -2632,13 +2632,13 @@ Gamba,Gabon,Ogooué-Maritime,Africa
 Franceville,Gabon,Haut-Ogooué,Africa
 Libreville,Gabon,Estuaire,Africa
 Port-Gentil,Gabon,Ogooué-Maritime,Africa
-Kutaisi,Georgia,Imereti,
-Tskhinvali,Georgia,Shida Kartli,
-Poti,Georgia,Samegrelo-Zemo Svaneti,
-Rustavi,Georgia,Kvemo Kartli,
-Batumi,Georgia,Ajaria,
-Sukhumi,Georgia,Abkhazia,
-Tbilisi,Georgia,Tbilisi,
+Kutaisi,Georgia,Imereti,Asia
+Tskhinvali,Georgia,Shida Kartli,Asia
+Poti,Georgia,Samegrelo-Zemo Svaneti,Asia
+Rustavi,Georgia,Kvemo Kartli,Asia
+Batumi,Georgia,Ajaria,Asia
+Sukhumi,Georgia,Abkhazia,Asia
+Tbilisi,Georgia,Tbilisi,Asia
 Mainz,Germany,Rheinland-Pfalz,Europe
 Schwerin,Germany,Mecklenburg-Vorpommern,Europe
 Bielefeld,Germany,Nordrhein-Westfalen,Europe
@@ -3409,20 +3409,20 @@ Daloa,Ivory Coast,Haut-Sassandra,Africa
 Bouake,Ivory Coast,Vallée du Bandama,Africa
 Yamoussoukro,Ivory Coast,Lacs,Africa
 Abidjan,Ivory Coast,Lagunes,Africa
-Lucea,Jamaica,Hanover,
-Mandeville,Jamaica,Manchester,
-Black River,Jamaica,Saint Elizabeth,
-Falmouth,Jamaica,Trelawny,
-Savanna-la-Mar,Jamaica,Westmoreland,
-Port Antonio,Jamaica,Portland,
-St. Ann's Bay,Jamaica,Saint Ann,
-Port Maria,Jamaica,Saint Mary,
-Half Way Tree,Jamaica,Saint Andrew,
-Port Morant,Jamaica,Saint Thomas,
-May Pen,Jamaica,Clarendon,
-Spanish Town,Jamaica,Saint Catherine,
-Montego Bay,Jamaica,Saint James,
-Kingston,Jamaica,Kingston,
+Lucea,Jamaica,Hanover,North America
+Mandeville,Jamaica,Manchester,North America
+Black River,Jamaica,Saint Elizabeth,North America
+Falmouth,Jamaica,Trelawny,North America
+Savanna-la-Mar,Jamaica,Westmoreland,North America
+Port Antonio,Jamaica,Portland,North America
+St. Ann's Bay,Jamaica,Saint Ann,North America
+Port Maria,Jamaica,Saint Mary,North America
+Half Way Tree,Jamaica,Saint Andrew,North America
+Port Morant,Jamaica,Saint Thomas,North America
+May Pen,Jamaica,Clarendon,North America
+Spanish Town,Jamaica,Saint Catherine,North America
+Montego Bay,Jamaica,Saint James,North America
+Kingston,Jamaica,Kingston,North America
 Okayama,Japan,Okayama,Asia
 Shimonoseki,Japan,Yamaguchi,Asia
 Kanoya,Japan,Kagoshima,Asia
@@ -3492,14 +3492,14 @@ Hiroshima,Japan,Hiroshima,Asia
 Sapporo,Japan,Hokkaido,Asia
 Osaka,Japan,Osaka,Asia
 Tokyo,Japan,Tokyo,Asia
-Al Mafraq,Jordan,Mafraq,
-At Tafilah,Jordan,Tafilah,
-Ma'an,Jordan,Ma`an,
-Irbid,Jordan,Irbid,
-As Salt,Jordan,Balqa,
-Az Zarqa,Jordan,Zarqa,
-Al Aqabah,Jordan,Aqaba,
-Al Karak,Jordan,Karak,
+Al Mafraq,Jordan,Mafraq,Asia
+At Tafilah,Jordan,Tafilah,Asia
+Ma'an,Jordan,Ma`an,Asia
+Irbid,Jordan,Irbid,Asia
+As Salt,Jordan,Balqa,Asia
+Az Zarqa,Jordan,Zarqa,Asia
+Al Aqabah,Jordan,Aqaba,Asia
+Al Karak,Jordan,Karak,Asia
 Amman,Jordan,Amman,Asia
 Turgay,Kazakhstan,Qostanay,Asia
 Mangyshlak,Kazakhstan,Mangghystau,Asia
@@ -3633,123 +3633,123 @@ Meru,Kenya,Eastern,Africa
 Eldoret,Kenya,Rift Valley,Africa
 Mombasa,Kenya,Coast,Africa
 Nairobi,Kenya,Nairobi,Africa
-Tarawa,Kiribati,,
-Prizren,Kosovo,Prizren,
-Pec,Kosovo,Ðakovica,
-Pristina,Kosovo,Pristina,
-Hawalli,Kuwait,Hawalli,
-Al Ahmadi,Kuwait,Al Ahmadi,
-Al Jahra,Kuwait,Al Jahrah,
-Kuwait,Kuwait,Al Kuwayt,
-Tokmak,Kyrgyzstan,Bishkek,
-Kara Balta,Kyrgyzstan,Bishkek,
-Cholpon Ata,Kyrgyzstan,Ysyk-Köl,
-Naryn,Kyrgyzstan,Naryn,
-Kok Yangak,Kyrgyzstan,Jalal-Abad,
-Balykchy,Kyrgyzstan,Ysyk-Köl,
-At Bashy,Kyrgyzstan,Naryn,
-Jalal Abad,Kyrgyzstan,Jalal-Abad,
-Toktogul,Kyrgyzstan,Jalal-Abad,
-Tash Komur,Kyrgyzstan,Jalal-Abad,
-Talas,Kyrgyzstan,Talas,
-Osh,Kyrgyzstan,Osh,
-Karakol,Kyrgyzstan,Ysyk-Köl,
-Bishkek,Kyrgyzstan,Bishkek,
-Ban Houayxay,Laos,Bokeo,
-Louang Namtha,Laos,Louang Namtha,
-Champasak,Laos,Champasak,
-Saravan,Laos,Saravan,
-Xam Nua,Laos,Houaphan,
-Phongsali,Laos,Phôngsali,
-Attapu,Laos,Attapu,
-Xaignabouri,Laos,Xaignabouri,
-Pakxe,Laos,Champasak,
-Xiangkhoang,Laos,Xiangkhoang,
-Louangphrabang,Laos,Louangphrabang,
-Thakhek,Laos,Khammouan,
-Savannakhet,Laos,Savannakhét,
-Vientiane,Laos,Vientiane [prefecture],
-Rezekne,Latvia,Latgale,
-Ventspils,Latvia,Ventspils,
-Jelgava,Latvia,Jelgava,
-Liepaga,Latvia,Liepaja,
-Daugavpils,Latvia,Daugavpils,
-Riga,Latvia,Riga,
-B'abda,Lebanon,Mount Lebanon,
-Nabatiye et Tahta,Lebanon,An Nabatiyah,
-Saida,Lebanon,South Lebanon,
-Zahle,Lebanon,Mount Lebanon,
-Trablous,Lebanon,North Lebanon,
-Beirut,Lebanon,Beirut,
-Teyateyaneng,Lesotho,Berea,
-Mohales Hoek,Lesotho,Mohale's Hoek,
-Moyeni,Lesotho,Quthing,
-Hlotse,Lesotho,Leribe,
-Butha-Buthe,Lesotho,Leribe,
-Mokhotlong,Lesotho,Mokhotlong,
-Mafetang,Lesotho,Mafeteng,
-Maseru,Lesotho,Maseru,
-Barclayville,Liberia,GrandKru,
-Voinjama,Liberia,Lofa,
-Bensonville,Liberia,Montserrado,
-Kakata,Liberia,Margibi,
-Sanniquellie,Liberia,Nimba,
-Rivercess,Liberia,River Cess,
-Harper,Liberia,Maryland,
-Gbarnga,Liberia,Bong,
-Zwedru,Liberia,GrandGedeh,
-Greenville,Liberia,Sinoe,
-Buchanan,Liberia,Grand Bassa,
-Robertsport,Liberia,Grand Cape Mount,
-Monrovia,Liberia,Montserrado,
-Dirj,Libya,Ghadamis,
-Nalut,Libya,Ghadamis,
-Zillah,Libya,Al Jufrah,
-Al Khums,Libya,Al Marqab,
-Tajarhi,Libya,Murzuq,
-Umm al Abid,Libya,Sabha,
-Az Zawiyah,Libya,Az Zawiyah,
-Gharyan,Libya,Mizdah,
-Mizdah,Libya,Mizdah,
-Bani Walid,Libya,Bani Walid,
-Al Marj,Libya,Al Hizam Al Akhdar,
-Al Bayda,Libya,Al Jabal al Akhdar,
-Shahhat,Libya,Al Jabal al Akhdar,
-El Agheila,Libya,Ajdabiya,
-Maradah,Libya,Ajdabiya,
-Qaminis,Libya,Benghazi,
-As Sidr,Libya,Surt,
-Al Jaghbub,Libya,Al Butnan,
-Ghadamis,Libya,Ghadamis,
-Hun,Libya,Al Jufrah,
-Birak,Libya,Ash Shati',
-Ghat,Libya,Ghat,
-Marzuq,Libya,Murzuq,
-Ajdabiya,Libya,Ajdabiya,
-Awjilah,Libya,Ajdabiya,
-Surt,Libya,Surt,
-Darnah,Libya,Al Qubbah,
-Tubruq,Libya,Al Butnan,
-Al Jawf,Libya,Al Kufrah,
-Tmassah,Libya,Murzuq,
-Misratah,Libya,Misratah,
-Zuwarah,Libya,An Nuqat al Khams,
-Sabha,Libya,Sabha,
-Banghazi,Libya,Benghazi,
-Tripoli,Libya,Tajura' wa an Nawahi al Arba,
-Vaduz,Liechtenstein,,
-Panevežys,Lithuania,Panevezio,
-Siauliai,Lithuania,Šiauliai,
-Klaipeda,Lithuania,Klaipedos,
-Kaunas,Lithuania,Kauno,
-Vilnius,Lithuania,Vilniaus,
-Diekirch,Luxembourg,Diekirch,
-Grevenmacher,Luxembourg,Grevenmacher,
-Luxembourg,Luxembourg,Luxembourg,
-Macau,Macau S.A.R,,
-Tetovo,Macedonia,Tetovo,
-Bitola,Macedonia,Bitola,
-Skopje,Macedonia,Centar,
+Tarawa,Kiribati,,Australia
+Prizren,Kosovo,Prizren,Europe
+Pec,Kosovo,Ðakovica,Europe
+Pristina,Kosovo,Pristina,Europe
+Hawalli,Kuwait,Hawalli,Asia
+Al Ahmadi,Kuwait,Al Ahmadi,Asia
+Al Jahra,Kuwait,Al Jahrah,Asia
+Kuwait,Kuwait,Al Kuwayt,Asia
+Tokmak,Kyrgyzstan,Bishkek,Asia
+Kara Balta,Kyrgyzstan,Bishkek,Asia
+Cholpon Ata,Kyrgyzstan,Ysyk-Köl,Asia
+Naryn,Kyrgyzstan,Naryn,Asia
+Kok Yangak,Kyrgyzstan,Jalal-Abad,Asia
+Balykchy,Kyrgyzstan,Ysyk-Köl,Asia
+At Bashy,Kyrgyzstan,Naryn,Asia
+Jalal Abad,Kyrgyzstan,Jalal-Abad,Asia
+Toktogul,Kyrgyzstan,Jalal-Abad,Asia
+Tash Komur,Kyrgyzstan,Jalal-Abad,Asia
+Talas,Kyrgyzstan,Talas,Asia
+Osh,Kyrgyzstan,Osh,Asia
+Karakol,Kyrgyzstan,Ysyk-Köl,Asia
+Bishkek,Kyrgyzstan,Bishkek,Asia
+Ban Houayxay,Laos,Bokeo,Africa
+Louang Namtha,Laos,Louang Namtha,Africa
+Champasak,Laos,Champasak,Africa
+Saravan,Laos,Saravan,Africa
+Xam Nua,Laos,Houaphan,Africa
+Phongsali,Laos,Phôngsali,Africa
+Attapu,Laos,Attapu,Africa
+Xaignabouri,Laos,Xaignabouri,Africa
+Pakxe,Laos,Champasak,Africa
+Xiangkhoang,Laos,Xiangkhoang,Africa
+Louangphrabang,Laos,Louangphrabang,Africa
+Thakhek,Laos,Khammouan,Africa
+Savannakhet,Laos,Savannakhét,Africa
+Vientiane,Laos,Vientiane [prefecture],Africa
+Rezekne,Latvia,Latgale,Europe
+Ventspils,Latvia,Ventspils,Europe
+Jelgava,Latvia,Jelgava,Europe
+Liepaga,Latvia,Liepaja,Europe
+Daugavpils,Latvia,Daugavpils,Europe
+Riga,Latvia,Riga,Europe
+B'abda,Lebanon,Mount Lebanon,Asia
+Nabatiye et Tahta,Lebanon,An Nabatiyah,Asia
+Saida,Lebanon,South Lebanon,Asia
+Zahle,Lebanon,Mount Lebanon,Asia
+Trablous,Lebanon,North Lebanon,Asia
+Beirut,Lebanon,Beirut,Asia
+Teyateyaneng,Lesotho,Berea,Africa
+Mohales Hoek,Lesotho,Mohale's Hoek,Africa
+Moyeni,Lesotho,Quthing,Africa
+Hlotse,Lesotho,Leribe,Africa
+Butha-Buthe,Lesotho,Leribe,Africa
+Mokhotlong,Lesotho,Mokhotlong,Africa
+Mafetang,Lesotho,Mafeteng,Africa
+Maseru,Lesotho,Maseru,Africa
+Barclayville,Liberia,GrandKru,Africa
+Voinjama,Liberia,Lofa,Africa
+Bensonville,Liberia,Montserrado,Africa
+Kakata,Liberia,Margibi,Africa
+Sanniquellie,Liberia,Nimba,Africa
+Rivercess,Liberia,River Cess,Africa
+Harper,Liberia,Maryland,Africa
+Gbarnga,Liberia,Bong,Africa
+Zwedru,Liberia,GrandGedeh,Africa
+Greenville,Liberia,Sinoe,Africa
+Buchanan,Liberia,Grand Bassa,Africa
+Robertsport,Liberia,Grand Cape Mount,Africa
+Monrovia,Liberia,Montserrado,Africa
+Dirj,Libya,Ghadamis,Africa
+Nalut,Libya,Ghadamis,Africa
+Zillah,Libya,Al Jufrah,Africa
+Al Khums,Libya,Al Marqab,Africa
+Tajarhi,Libya,Murzuq,Africa
+Umm al Abid,Libya,Sabha,Africa
+Az Zawiyah,Libya,Az Zawiyah,Africa
+Gharyan,Libya,Mizdah,Africa
+Mizdah,Libya,Mizdah,Africa
+Bani Walid,Libya,Bani Walid,Africa
+Al Marj,Libya,Al Hizam Al Akhdar,Africa
+Al Bayda,Libya,Al Jabal al Akhdar,Africa
+Shahhat,Libya,Al Jabal al Akhdar,Africa
+El Agheila,Libya,Ajdabiya,Africa
+Maradah,Libya,Ajdabiya,Africa
+Qaminis,Libya,Benghazi,Africa
+As Sidr,Libya,Surt,Africa
+Al Jaghbub,Libya,Al Butnan,Africa
+Ghadamis,Libya,Ghadamis,Africa
+Hun,Libya,Al Jufrah,Africa
+Birak,Libya,Ash Shati',Africa
+Ghat,Libya,Ghat,Africa
+Marzuq,Libya,Murzuq,Africa
+Ajdabiya,Libya,Ajdabiya,Africa
+Awjilah,Libya,Ajdabiya,Africa
+Surt,Libya,Surt,Africa
+Darnah,Libya,Al Qubbah,Africa
+Tubruq,Libya,Al Butnan,Africa
+Al Jawf,Libya,Al Kufrah,Africa
+Tmassah,Libya,Murzuq,Africa
+Misratah,Libya,Misratah,Africa
+Zuwarah,Libya,An Nuqat al Khams,Africa
+Sabha,Libya,Sabha,Africa
+Banghazi,Libya,Benghazi,Africa
+Tripoli,Libya,Tajura' wa an Nawahi al Arba,Africa
+Vaduz,Liechtenstein,,Europe
+Panevežys,Lithuania,Panevezio,Europe
+Siauliai,Lithuania,Šiauliai,Europe
+Klaipeda,Lithuania,Klaipedos,Europe
+Kaunas,Lithuania,Kauno,Europe
+Vilnius,Lithuania,Vilniaus,Europe
+Diekirch,Luxembourg,Diekirch,Europe
+Grevenmacher,Luxembourg,Grevenmacher,Europe
+Luxembourg,Luxembourg,Luxembourg,Europe
+Macau,Macau S.A.R,,Asia
+Tetovo,Macedonia,Tetovo,Europe
+Bitola,Macedonia,Bitola,Europe
+Skopje,Macedonia,Centar,Europe
 Sambava,Madagascar,Antsiranana,Africa
 Ambanja,Madagascar,Antsiranana,Africa
 Ihosy,Madagascar,Fianarantsoa,Africa
@@ -3778,26 +3778,26 @@ Fianarantsoa,Madagascar,Fianarantsoa,Africa
 Mahajanga,Madagascar,Mahajanga,Africa
 Toliara,Madagascar,Toliary,Africa
 Antananarivo,Madagascar,Antananarivo,Africa
-Mzimba,Malawi,Mzimba,
-Machinga,Malawi,Machinga,
-Dedza,Malawi,Dedza,
-Mchinji,Malawi,Mchinji,
-Ntcheu,Malawi,Ntcheu,
-Chiradzulu,Malawi,Chiradzulu,
-Nsanje,Malawi,Nsanje,
-Mwanza,Malawi,Mwanza,
-Mulanje,Malawi,Mulanje,
-Karonga,Malawi,Chitipa,
-Chitipa,Malawi,Chitipa,
-Nkhata Bay,Malawi,Nkhata Bay,
-Nkhotakota,Malawi,Nkhotakota,
-Mangochi,Malawi,Mangochi,
-Salima,Malawi,Salima,
-Chiromo,Malawi,Nsanje,
-Zomba,Malawi,Zomba,
-Mzuzu,Malawi,Mzimba,
-Blantyre,Malawi,Blantyre,
-Lilongwe,Malawi,Lilongwe,
+Mzimba,Malawi,Mzimba,Africa
+Machinga,Malawi,Machinga,Africa
+Dedza,Malawi,Dedza,Africa
+Mchinji,Malawi,Mchinji,Africa
+Ntcheu,Malawi,Ntcheu,Africa
+Chiradzulu,Malawi,Chiradzulu,Africa
+Nsanje,Malawi,Nsanje,Africa
+Mwanza,Malawi,Mwanza,Africa
+Mulanje,Malawi,Mulanje,Africa
+Karonga,Malawi,Chitipa,Africa
+Chitipa,Malawi,Chitipa,Africa
+Nkhata Bay,Malawi,Nkhata Bay,Africa
+Nkhotakota,Malawi,Nkhotakota,Africa
+Mangochi,Malawi,Mangochi,Africa
+Salima,Malawi,Salima,Africa
+Chiromo,Malawi,Nsanje,Africa
+Zomba,Malawi,Zomba,Africa
+Mzuzu,Malawi,Mzimba,Africa
+Blantyre,Malawi,Blantyre,Africa
+Lilongwe,Malawi,Lilongwe,Africa
 Kangar,Malaysia,Perlis,Asia
 Kuala Lipis,Malaysia,Pahang,Asia
 Shah Alam,Malaysia,Selangor,Asia
@@ -3830,59 +3830,59 @@ George Town,Malaysia,Pulau Pinang,Asia
 Kuching,Malaysia,Sarawak,Asia
 Putrajaya,Malaysia,Selangor,Asia
 Kuala Lumpur,Malaysia,Selangor,Asia
-Male,Maldives,,
-Goundam,Mali,Timbuktu,
-Aguelhok,Mali,Kidal,
-Bourem,Mali,Gao,
-Kati,Mali,Bamako,
-Banamba,Mali,Bamako,
-Kangaba,Mali,Bamako,
-Nioro du Sahel,Mali,Kayes,
-Bafoulabe,Mali,Kayes,
-Satadougou,Mali,Kayes,
-Yelimane,Mali,Kayes,
-Kita,Mali,Kayes,
-Koutiala,Mali,Sikasso,
-Sikasso,Mali,Sikasso,
-Bougouni,Mali,Sikasso,
-Markala,Mali,Ségou,
-Sokolo,Mali,Ségou,
-San,Mali,Ségou,
-Taoudenni,Mali,Timbuktu,
-Araouane,Mali,Timbuktu,
-Tessalit,Mali,Kidal,
-Menaka,Mali,Gao,
-Nara,Mali,Bamako,
-Koulikoro,Mali,Bamako,
-Mopti,Mali,Mopti,
-Gao,Mali,Gao,
-Kayes,Mali,Kayes,
-Segou,Mali,Ségou,
-Timbuktu,Mali,Timbuktu,
-Bamako,Mali,Bamako,
-Djenne,Mali,Mopti,
-Valletta,Malta,,
+Male,Maldives,,Africa
+Goundam,Mali,Timbuktu,Africa
+Aguelhok,Mali,Kidal,Africa
+Bourem,Mali,Gao,Africa
+Kati,Mali,Bamako,Africa
+Banamba,Mali,Bamako,Africa
+Kangaba,Mali,Bamako,Africa
+Nioro du Sahel,Mali,Kayes,Africa
+Bafoulabe,Mali,Kayes,Africa
+Satadougou,Mali,Kayes,Africa
+Yelimane,Mali,Kayes,Africa
+Kita,Mali,Kayes,Africa
+Koutiala,Mali,Sikasso,Africa
+Sikasso,Mali,Sikasso,Africa
+Bougouni,Mali,Sikasso,Africa
+Markala,Mali,Ségou,Africa
+Sokolo,Mali,Ségou,Africa
+San,Mali,Ségou,Africa
+Taoudenni,Mali,Timbuktu,Africa
+Araouane,Mali,Timbuktu,Africa
+Tessalit,Mali,Kidal,Africa
+Menaka,Mali,Gao,Africa
+Nara,Mali,Bamako,Africa
+Koulikoro,Mali,Bamako,Africa
+Mopti,Mali,Mopti,Africa
+Gao,Mali,Gao,Africa
+Kayes,Mali,Kayes,Africa
+Segou,Mali,Ségou,Africa
+Timbuktu,Mali,Timbuktu,Africa
+Bamako,Mali,Bamako,Africa
+Djenne,Mali,Mopti,Africa
+Valletta,Malta,,Europe
 Majuro,Marshall Islands,,
-Fderik,Mauritania,Tiris Zemmour,
-Aleg,Mauritania,Brakna,
-Akjoujt,Mauritania,Inchiri,
-Zouirat,Mauritania,Tiris Zemmour,
-Chegga,Mauritania,Tiris Zemmour,
-Magta Lajar,Mauritania,Brakna,
-Bogue,Mauritania,Brakna,
-Boutilimit,Mauritania,Trarza,
-Selibaby,Mauritania,Guidimaka,
-Timbedra,Mauritania,Hodh ech Chargui,
-Nema,Mauritania,Hodh ech Chargui,
-Saint-Louis,Mauritania,Trarza,
-Tidjikdja,Mauritania,Tagant,
-Bir Mogrein,Mauritania,Tiris Zemmour,
-Rosso,Mauritania,Trarza,
-Kiffa,Mauritania,Assaba,
-Nouadhibou,Mauritania,Dakhlet Nouadhibou,
-Ayoun el Atrous,Mauritania,Hodh el Gharbi,
-Nouakchott,Mauritania,Nouakchott,
-Atar,Mauritania,Adrar,
+Fderik,Mauritania,Tiris Zemmour,Africa
+Aleg,Mauritania,Brakna,Africa
+Akjoujt,Mauritania,Inchiri,Africa
+Zouirat,Mauritania,Tiris Zemmour,Africa
+Chegga,Mauritania,Tiris Zemmour,Africa
+Magta Lajar,Mauritania,Brakna,Africa
+Bogue,Mauritania,Brakna,Africa
+Boutilimit,Mauritania,Trarza,Africa
+Selibaby,Mauritania,Guidimaka,Africa
+Timbedra,Mauritania,Hodh ech Chargui,Africa
+Nema,Mauritania,Hodh ech Chargui,Africa
+Saint-Louis,Mauritania,Trarza,Africa
+Tidjikdja,Mauritania,Tagant,Africa
+Bir Mogrein,Mauritania,Tiris Zemmour,Africa
+Rosso,Mauritania,Trarza,Africa
+Kiffa,Mauritania,Assaba,Africa
+Nouadhibou,Mauritania,Dakhlet Nouadhibou,Africa
+Ayoun el Atrous,Mauritania,Hodh el Gharbi,Africa
+Nouakchott,Mauritania,Nouakchott,Africa
+Atar,Mauritania,Adrar,Africa
 Curepipe,Mauritius,,
 Port Louis,Mauritius,,
 Vicente Guerrero,Mexico,Baja California,North America
@@ -4165,43 +4165,43 @@ Quelimane,Mozambique,Zambezia,Africa
 Nacala,Mozambique,Nampula,Africa
 Beira,Mozambique,Sofala,Africa
 Maputo,Mozambique,Maputo,Africa
-Loikaw,Myanmar,Kayah,
-Pa-an,Myanmar,Kayin,
-Hakha,Myanmar,Chin,
-Taunggyi,Myanmar,Shan,
-Sagaing,Myanmar,Sagaing,
-Myingyan,Myanmar,Mandalay,
-Letpadan,Myanmar,Bago,
-Taungoo,Myanmar,Bago,
-Thongwa,Myanmar,Yangon,
-Mudon,Myanmar,Mon,
-Ye,Myanmar,Mon,
-Mawlamyine,Myanmar,Mon,
-Kyaukphyu,Myanmar,Rakhine,
-Wakema,Myanmar,Ayeyarwady,
-Labutta,Myanmar,Ayeyarwady,
-Phyarpon,Myanmar,Ayeyarwady,
-Yandoon,Myanmar,Ayeyarwady,
-Hinthada,Myanmar,Ayeyarwady,
-Pathein,Myanmar,Ayeyarwady,
-Allanmyo,Myanmar,Magway,
-Yaynangyoung,Myanmar,Magway,
-Chauk,Myanmar,Magway,
-Pakokku,Myanmar,Magway,
-Namtu,Myanmar,Shan,
-Dawei,Myanmar,Tanintharyi,
-Shwebo,Myanmar,Sagaing,
-Bago,Myanmar,Bago,
-Pyu,Myanmar,Bago,
-Pyay,Myanmar,Bago,
-Magway,Myanmar,Magway,
-Myitkyina,Myanmar,Kachin,
-Monywa,Myanmar,Sagaing,
-Myeik,Myanmar,Tanintharyi,
-Mandalay,Myanmar,Mandalay,
-Sittwe,Myanmar,Rakhine,
-Naypyidaw,Myanmar,Mandalay,
-Rangoon,Myanmar,Yangon,
+Loikaw,Myanmar,Kayah,Asia
+Pa-an,Myanmar,Kayin,Asia
+Hakha,Myanmar,Chin,Asia
+Taunggyi,Myanmar,Shan,Asia
+Sagaing,Myanmar,Sagaing,Asia
+Myingyan,Myanmar,Mandalay,Asia
+Letpadan,Myanmar,Bago,Asia
+Taungoo,Myanmar,Bago,Asia
+Thongwa,Myanmar,Yangon,Asia
+Mudon,Myanmar,Mon,Asia
+Ye,Myanmar,Mon,Asia
+Mawlamyine,Myanmar,Mon,Asia
+Kyaukphyu,Myanmar,Rakhine,Asia
+Wakema,Myanmar,Ayeyarwady,Asia
+Labutta,Myanmar,Ayeyarwady,Asia
+Phyarpon,Myanmar,Ayeyarwady,Asia
+Yandoon,Myanmar,Ayeyarwady,Asia
+Hinthada,Myanmar,Ayeyarwady,Asia
+Pathein,Myanmar,Ayeyarwady,Asia
+Allanmyo,Myanmar,Magway,Asia
+Yaynangyoung,Myanmar,Magway,Asia
+Chauk,Myanmar,Magway,Asia
+Pakokku,Myanmar,Magway,Asia
+Namtu,Myanmar,Shan,Asia
+Dawei,Myanmar,Tanintharyi,Asia
+Shwebo,Myanmar,Sagaing,Asia
+Bago,Myanmar,Bago,Asia
+Pyu,Myanmar,Bago,Asia
+Pyay,Myanmar,Bago,Asia
+Magway,Myanmar,Magway,Asia
+Myitkyina,Myanmar,Kachin,Asia
+Monywa,Myanmar,Sagaing,Asia
+Myeik,Myanmar,Tanintharyi,Asia
+Mandalay,Myanmar,Mandalay,Asia
+Sittwe,Myanmar,Rakhine,Asia
+Naypyidaw,Myanmar,Mandalay,Asia
+Rangoon,Myanmar,Yangon,Asia
 Omaruru,Namibia,Erongo,Africa
 Karibib,Namibia,Erongo,Africa
 Otavi,Namibia,Otjozondjupa,Africa
@@ -4515,47 +4515,47 @@ Lahore,Pakistan,Punjab,Asia
 Karachi,Pakistan,Sind,Asia
 Koror,Palau,,
 Melekeok,Palau,,
-Ramallah,Palestine,,
-Al Khalil,Palestine,,
-Nablus,Palestine,,
-Gaza,Palestine,,
-El Porvenir,Panama,Kuna Yala,
-Penonome,Panama,Coclé,
-Chitre,Panama,Herrera,
-Jaque,Panama,Darién,
-Bocas del Toro,Panama,Bocas del Toro,
-Almirante,Panama,Bocas del Toro,
-Las Tablas,Panama,Los Santos,
-Santiago,Panama,Veraguas,
-La Palma,Panama,Darién,
-Colon,Panama,Colón,
-Balboa,Panama,Panama,
-Puerto Armuelles,Panama,Chiriquí,
-David,Panama,Chiriquí,
-Panama City,Panama,Panama,
-Wabag,Papua New Guinea,Enga,
-Vanimo,Papua New Guinea,Sandaun,
-Kundiawa,Papua New Guinea,Chimbu,
-Kerema,Papua New Guinea,Gulf,
-Arawa,Papua New Guinea,North Solomons,
-Lorengau,Papua New Guinea,Manus,
-Kimbe,Papua New Guinea,West New Britain,
-Daru,Papua New Guinea,,
-Sohano,Papua New Guinea,North Solomons,
-Kieta,Papua New Guinea,North Solomons,
-Mendi,Papua New Guinea,Southern Highlands,
-Abau,Papua New Guinea,Central,
-Alotau,Papua New Guinea,Milne Bay,
-Popondetta,Papua New Guinea,Northern,
-Hoskins,Papua New Guinea,West New Britain,
-Wewak,Papua New Guinea,East Sepik,
-Madang,Papua New Guinea,Madang,
-Kavieng,Papua New Guinea,New Ireland,
-Goroka,Papua New Guinea,Eastern Highlands,
-Mt. Hagen,Papua New Guinea,Western Highlands,
-Rabaul,Papua New Guinea,East New Britain,
-Lae,Papua New Guinea,Morobe,
-Port Moresby,Papua New Guinea,Central,
+Ramallah,Palestine,,Asia
+Al Khalil,Palestine,,Asia
+Nablus,Palestine,,Asia
+Gaza,Palestine,,Asia
+El Porvenir,Panama,Kuna Yala,North America
+Penonome,Panama,Coclé,North America
+Chitre,Panama,Herrera,North America
+Jaque,Panama,Darién,North America
+Bocas del Toro,Panama,Bocas del Toro,North America
+Almirante,Panama,Bocas del Toro,North America
+Las Tablas,Panama,Los Santos,North America
+Santiago,Panama,Veraguas,North America
+La Palma,Panama,Darién,North America
+Colon,Panama,Colón,North America
+Balboa,Panama,Panama,North America
+Puerto Armuelles,Panama,Chiriquí,North America
+David,Panama,Chiriquí,North America
+Panama City,Panama,Panama,North America
+Wabag,Papua New Guinea,Enga,Africa
+Vanimo,Papua New Guinea,Sandaun,Africa
+Kundiawa,Papua New Guinea,Chimbu,Africa
+Kerema,Papua New Guinea,Gulf,Africa
+Arawa,Papua New Guinea,North Solomons,Africa
+Lorengau,Papua New Guinea,Manus,Africa
+Kimbe,Papua New Guinea,West New Britain,Africa
+Daru,Papua New Guinea,,Africa
+Sohano,Papua New Guinea,North Solomons,Africa
+Kieta,Papua New Guinea,North Solomons,Africa
+Mendi,Papua New Guinea,Southern Highlands,Africa
+Abau,Papua New Guinea,Central,Africa
+Alotau,Papua New Guinea,Milne Bay,Africa
+Popondetta,Papua New Guinea,Northern,Africa
+Hoskins,Papua New Guinea,West New Britain,Africa
+Wewak,Papua New Guinea,East Sepik,Africa
+Madang,Papua New Guinea,Madang,Africa
+Kavieng,Papua New Guinea,New Ireland,Africa
+Goroka,Papua New Guinea,Eastern Highlands,Africa
+Mt. Hagen,Papua New Guinea,Western Highlands,Africa
+Rabaul,Papua New Guinea,East New Britain,Africa
+Lae,Papua New Guinea,Morobe,Africa
+Port Moresby,Papua New Guinea,Central,Africa
 Mariscal Estigarribia,Paraguay,Boquerón,South America
 Caacupe,Paraguay,Cordillera,South America
 General Eugenio Alejandrino Garay,Paraguay,Boquerón,South America
@@ -4683,97 +4683,97 @@ Tacna,Peru,Tacna,South America
 Trujillo,Peru,La Libertad,South America
 Ica,Peru,Ica,South America
 Lima,Peru,Lima,South America
-San Carlos,Philippines,Negros Occidental,
-Cadiz,Philippines,Negros Occidental,
-Pagadian,Philippines,Zamboanga Del Sur,
-Ozamis,Philippines,Misamis Occidental,
-Tarlac,Philippines,Tarlac,
-Cabanatuan,Philippines,Nueva Ecija,
-Olongapo,Philippines,Zambales,
-Dagupan,Philippines,Pangasinan,
-San Pablo,Philippines,Laguna,
-Quezon City,Philippines,Metropolitan Manila,
-Pasay City,Philippines,Metropolitan Manila,
-Iligan,Philippines,Lanao del Norte,
-Ormac,Philippines,Leyte,
-Tacloban,Philippines,Leyte,
-Butuan,Philippines,Agusan del Norte,
-Tagum,Philippines,Davao del Norte,
-Surigao,Philippines,Dinagat Islands,
-Gingoog,Philippines,Misamis Oriental,
-Legazpi,Philippines,Albay,
-Tuguegarao,Philippines,Cagayan,
-Vigan,Philippines,Ilocos Sur,
-Bacolod,Philippines,Negros Occidental,
-Roxas,Philippines,Capiz,
-Puerto Princesa,Philippines,Palawan,
-Naga,Philippines,Camarines Sur,
-Angeles,Philippines,Pampanga,
-Batangas,Philippines,Batangas,
-Cotabato,Philippines,Shariff Kabunsuan,
-Calbayog,Philippines,Samar,
-Cagayan de Oro,Philippines,Misamis Oriental,
-Zamboanga,Philippines,Zamboanga del Sur,
-Laoag,Philippines,Ilocos Norte,
-Baguio City,Philippines,Benguet,
-General Santos,Philippines,South Cotabato,
-Cebu,Philippines,Cebu,
-Iloilo,Philippines,Iloilo,
-Davao,Philippines,Davao Del Sur,
-Manila,Philippines,Metropolitan Manila,
-Olsztyn,Poland,Warmian-Masurian,
-Elblag,Poland,Warmian-Masurian,
-Inowroclaw,Poland,Kuyavian-Pomeranian,
-Bytom,Poland,Silesian,
-Opole,Poland,Opole,
-Koszalin,Poland,West Pomeranian,
-Elk,Poland,Warmian-Masurian,
-Gdynia,Poland,Pomeranian,
-Wroclaw,Poland,Lower Silesian,
-Szczecin,Poland,West Pomeranian,
-Zielona Gora,Poland,Lubusz,
-Poznan,Poland,Greater Poland,
-Grudziadz,Poland,Kuyavian-Pomeranian,
-Bydgoszcz,Poland,Kuyavian-Pomeranian,
-Katowice,Poland,Silesian,
-Gliwice,Poland,Silesian,
-Kielce,Poland,Swietokrzyskie,
-Bialystok,Poland,Podlachian,
-Lublin,Poland,Lublin,
-Rzeszow,Poland,Subcarpathian,
-Lódz,Poland,Lódz,
-Gdansk,Poland,Pomeranian,
-Kraków,Poland,Lesser Poland,
-Warsaw,Poland,Masovian,
-Aveiro,Portugal,Aveiro,
-Leiria,Portugal,Leiria,
-Viana Do Castelo,Portugal,Viana do Castelo,
-Beja,Portugal,Beja,
-Evora,Portugal,Évora,
-Portalegre,Portugal,Portalegre,
-Santarem,Portugal,Santarém,
-Braganca,Portugal,Bragança,
-Castelo Branco,Portugal,Castelo Branco,
-Guarda,Portugal,Guarda,
-Viseu,Portugal,Viseu,
-Vila Real,Portugal,Vila Real,
-Braga,Portugal,Braga,
-Covilha,Portugal,Castelo Branco,
-Horta,Portugal,Azores,
-Angra do Heroismo,Portugal,Azores,
-Portimao,Portugal,Faro,
-Faro,Portugal,Faro,
-Coimbra,Portugal,Coimbra,
-Setubal,Portugal,Lisboa,
-Porto,Portugal,Porto,
-Funchal,Portugal,Madeira,
-Ponta Delgada,Portugal,Azores,
-Lisbon,Portugal,Lisboa,
-Ponce,Puerto Rico,,
-Mayaguez,Puerto Rico,,
-Arecibo,Puerto Rico,,
-San Juan,Puerto Rico,,
-Doha,Qatar,Ad Dawhah,
+San Carlos,Philippines,Negros Occidental,Asia
+Cadiz,Philippines,Negros Occidental,Asia
+Pagadian,Philippines,Zamboanga Del Sur,Asia
+Ozamis,Philippines,Misamis Occidental,Asia
+Tarlac,Philippines,Tarlac,Asia
+Cabanatuan,Philippines,Nueva Ecija,Asia
+Olongapo,Philippines,Zambales,Asia
+Dagupan,Philippines,Pangasinan,Asia
+San Pablo,Philippines,Laguna,Asia
+Quezon City,Philippines,Metropolitan Manila,Asia
+Pasay City,Philippines,Metropolitan Manila,Asia
+Iligan,Philippines,Lanao del Norte,Asia
+Ormac,Philippines,Leyte,Asia
+Tacloban,Philippines,Leyte,Asia
+Butuan,Philippines,Agusan del Norte,Asia
+Tagum,Philippines,Davao del Norte,Asia
+Surigao,Philippines,Dinagat Islands,Asia
+Gingoog,Philippines,Misamis Oriental,Asia
+Legazpi,Philippines,Albay,Asia
+Tuguegarao,Philippines,Cagayan,Asia
+Vigan,Philippines,Ilocos Sur,Asia
+Bacolod,Philippines,Negros Occidental,Asia
+Roxas,Philippines,Capiz,Asia
+Puerto Princesa,Philippines,Palawan,Asia
+Naga,Philippines,Camarines Sur,Asia
+Angeles,Philippines,Pampanga,Asia
+Batangas,Philippines,Batangas,Asia
+Cotabato,Philippines,Shariff Kabunsuan,Asia
+Calbayog,Philippines,Samar,Asia
+Cagayan de Oro,Philippines,Misamis Oriental,Asia
+Zamboanga,Philippines,Zamboanga del Sur,Asia
+Laoag,Philippines,Ilocos Norte,Asia
+Baguio City,Philippines,Benguet,Asia
+General Santos,Philippines,South Cotabato,Asia
+Cebu,Philippines,Cebu,Asia
+Iloilo,Philippines,Iloilo,Asia
+Davao,Philippines,Davao Del Sur,Asia
+Manila,Philippines,Metropolitan Manila,Asia
+Olsztyn,Poland,Warmian-Masurian,Europe
+Elblag,Poland,Warmian-Masurian,Europe
+Inowroclaw,Poland,Kuyavian-Pomeranian,Europe
+Bytom,Poland,Silesian,Europe
+Opole,Poland,Opole,Europe
+Koszalin,Poland,West Pomeranian,Europe
+Elk,Poland,Warmian-Masurian,Europe
+Gdynia,Poland,Pomeranian,Europe
+Wroclaw,Poland,Lower Silesian,Europe
+Szczecin,Poland,West Pomeranian,Europe
+Zielona Gora,Poland,Lubusz,Europe
+Poznan,Poland,Greater Poland,Europe
+Grudziadz,Poland,Kuyavian-Pomeranian,Europe
+Bydgoszcz,Poland,Kuyavian-Pomeranian,Europe
+Katowice,Poland,Silesian,Europe
+Gliwice,Poland,Silesian,Europe
+Kielce,Poland,Swietokrzyskie,Europe
+Bialystok,Poland,Podlachian,Europe
+Lublin,Poland,Lublin,Europe
+Rzeszow,Poland,Subcarpathian,Europe
+Lódz,Poland,Lódz,Europe
+Gdansk,Poland,Pomeranian,Europe
+Kraków,Poland,Lesser Poland,Europe
+Warsaw,Poland,Masovian,Europe
+Aveiro,Portugal,Aveiro,Europe
+Leiria,Portugal,Leiria,Europe
+Viana Do Castelo,Portugal,Viana do Castelo,Europe
+Beja,Portugal,Beja,Europe
+Evora,Portugal,Évora,Europe
+Portalegre,Portugal,Portalegre,Europe
+Santarem,Portugal,Santarém,Europe
+Braganca,Portugal,Bragança,Europe
+Castelo Branco,Portugal,Castelo Branco,Europe
+Guarda,Portugal,Guarda,Europe
+Viseu,Portugal,Viseu,Europe
+Vila Real,Portugal,Vila Real,Europe
+Braga,Portugal,Braga,Europe
+Covilha,Portugal,Castelo Branco,Europe
+Horta,Portugal,Azores,Europe
+Angra do Heroismo,Portugal,Azores,Europe
+Portimao,Portugal,Faro,Europe
+Faro,Portugal,Faro,Europe
+Coimbra,Portugal,Coimbra,Europe
+Setubal,Portugal,Lisboa,Europe
+Porto,Portugal,Porto,Europe
+Funchal,Portugal,Madeira,Europe
+Ponta Delgada,Portugal,Azores,Europe
+Lisbon,Portugal,Lisboa,Europe
+Ponce,Puerto Rico,,North America
+Mayaguez,Puerto Rico,,North America
+Arecibo,Puerto Rico,,North America
+San Juan,Puerto Rico,,North America
+Doha,Qatar,Ad Dawhah,Asia
 Targu Jiu,Romania,Gorj,Europe
 Slatina,Romania,Olt,Europe
 Alexandria,Romania,Teleorman,Europe
@@ -5409,7 +5409,7 @@ Basseterre,Saint Kitts and Nevis,,
 Castries,Saint Lucia,,
 Kingstown,Saint Vincent and the Grenadines,,
 Apia,Samoa,,
-San Marino,San Marino,,
+San Marino,San Marino,,Europe
 Santo Antonio,Sao Tome and Principe,,
 Sao Tome,Sao Tome and Principe,,
 An Nabk,Saudi Arabia,Al Jawf,Asia
@@ -5462,56 +5462,56 @@ Nis,Serbia,Nišavski,Europe
 Novi Sad,Serbia,Južno-Backi,Europe
 Belgrade,Serbia,Grad Beograd,Europe
 Victoria,Seychelles,,
-Makeni,Sierra Leone,Northern,
-Koidu,Sierra Leone,Eastern,
-Kenema,Sierra Leone,Eastern,
-Bo,Sierra Leone,Southern,
-Freetown,Sierra Leone,Western,
-Singapore,Singapore,,
-Banska Bystrica,Slovakia,Banskobystrický,
-Trnava,Slovakia,Trnavský,
-Zvolen,Slovakia,Banskobystrický,
-Zilina,Slovakia,Žilinský,
-Kosice,Slovakia,Košický,
-Presov,Slovakia,Prešov,
-Bratislava,Slovakia,Bratislavský,
-Maribor,Slovenia,Maribor,
-Ljubljana,Slovenia,Osrednjeslovenska,
+Makeni,Sierra Leone,Northern,Africa
+Koidu,Sierra Leone,Eastern,Africa
+Kenema,Sierra Leone,Eastern,Africa
+Bo,Sierra Leone,Southern,Africa
+Freetown,Sierra Leone,Western,Africa
+Singapore,Singapore,,Asia
+Banska Bystrica,Slovakia,Banskobystrický,Europe
+Trnava,Slovakia,Trnavský,Europe
+Zvolen,Slovakia,Banskobystrický,Europe
+Zilina,Slovakia,Žilinský,Europe
+Kosice,Slovakia,Košický,Europe
+Presov,Slovakia,Prešov,Europe
+Bratislava,Slovakia,Bratislavský,Europe
+Maribor,Slovenia,Maribor,Europe
+Ljubljana,Slovenia,Osrednjeslovenska,Europe
 Gizo,Solomon Islands,Choiseul,
 Lata,Solomon Islands,Temotu,
 Honiara,Solomon Islands,Guadalcanal,
-Hudur,Somalia,Bakool,
-Garbahaarey,Somalia,Gedo,
-Bu'aale,Somalia,Jubbada Dhexe,
-Dhuusa Mareeb,Somalia,Galguduud,
-Buurhakaba,Somalia,Bay,
-Luuq,Somalia,Gedo,
-Mandera,Somalia,Gedo,
-Ferfer,Somalia,Hiiraan,
-Jawhar,Somalia,Shabeellaha Dhexe,
-Hurdiyo,Somalia,Bari,
-Qardho,Somalia,Bari,
-Caluula,Somalia,Bari,
-Buur Gaabo,Somalia,Jubbada Hoose,
-Baydhabo,Somalia,Bay,
-Marka,Somalia,Shabeellaha Hoose,
-Mereeg,Somalia,Galguduud,
-Beledweyne,Somalia,Hiiraan,
-Boosaaso,Somalia,Bari,
-Bandarbeyla,Somalia,Bari,
-Gaalkacyo,Somalia,Mudug,
-Eyl,Somalia,Nugaal,
-Garoowe,Somalia,Nugaal,
-Jamaame,Somalia,Jubbada Hoose,
-Kismaayo,Somalia,Jubbada Hoose,
-Mogadishu,Somalia,Banaadir,
-Laascaanood,Somaliland,,
-Ceerigaabo,Somaliland,,
-Boorama,Somaliland,,
-Burco,Somaliland,,
-Maydh,Somaliland,,
-Berbera,Somaliland,,
-Hargeysa,Somaliland,,
+Hudur,Somalia,Bakool,Africa
+Garbahaarey,Somalia,Gedo,Africa
+Bu'aale,Somalia,Jubbada Dhexe,Africa
+Dhuusa Mareeb,Somalia,Galguduud,Africa
+Buurhakaba,Somalia,Bay,Africa
+Luuq,Somalia,Gedo,Africa
+Mandera,Somalia,Gedo,Africa
+Ferfer,Somalia,Hiiraan,Africa
+Jawhar,Somalia,Shabeellaha Dhexe,Africa
+Hurdiyo,Somalia,Bari,Africa
+Qardho,Somalia,Bari,Africa
+Caluula,Somalia,Bari,Africa
+Buur Gaabo,Somalia,Jubbada Hoose,Africa
+Baydhabo,Somalia,Bay,Africa
+Marka,Somalia,Shabeellaha Hoose,Africa
+Mereeg,Somalia,Galguduud,Africa
+Beledweyne,Somalia,Hiiraan,Africa
+Boosaaso,Somalia,Bari,Africa
+Bandarbeyla,Somalia,Bari,Africa
+Gaalkacyo,Somalia,Mudug,Africa
+Eyl,Somalia,Nugaal,Africa
+Garoowe,Somalia,Nugaal,Africa
+Jamaame,Somalia,Jubbada Hoose,Africa
+Kismaayo,Somalia,Jubbada Hoose,Africa
+Mogadishu,Somalia,Banaadir,Africa
+Laascaanood,Somaliland,,Africa
+Ceerigaabo,Somaliland,,Africa
+Boorama,Somaliland,,Africa
+Burco,Somaliland,,Africa
+Maydh,Somaliland,,Africa
+Berbera,Somaliland,,Africa
+Hargeysa,Somaliland,,Africa
 Qacha's Nek,South Africa,Eastern Cape,Africa
 Colesberg,South Africa,Northern Cape,Africa
 Poffader,South Africa,Northern Cape,Africa
@@ -5613,21 +5613,21 @@ Daejeon,South Korea,Daejeon,Asia
 Gwangju,South Korea,Kwangju-gwangyoksi,Asia
 Busan,South Korea,Busan,Asia
 Seoul,South Korea,Seoul,Asia
-Bentiu,South Sudan,Unity,
-Maridi,South Sudan,West Equatoria,
-Yei,South Sudan,Central Equatoria,
-Melut,South Sudan,Upper Nile,
-Nasir,South Sudan,Upper Nile,
-Gogrial,South Sudan,Warap,
-Kapoeta,South Sudan,East Equatoria,
-Aweil,South Sudan,North Bahr-al-Ghazal,
-Rumbek,South Sudan,Lakes,
-Yambio,South Sudan,West Equatoria,
-Bor,South Sudan,Jungoli,
-Nimule,South Sudan,East Equatoria,
-Juba,South Sudan,Central Equatoria,
-Malakal,South Sudan,Upper Nile,
-Wau,South Sudan,West Bahr-al-Ghazal,
+Bentiu,South Sudan,Unity,Africa
+Maridi,South Sudan,West Equatoria,Africa
+Yei,South Sudan,Central Equatoria,Africa
+Melut,South Sudan,Upper Nile,Africa
+Nasir,South Sudan,Upper Nile,Africa
+Gogrial,South Sudan,Warap,Africa
+Kapoeta,South Sudan,East Equatoria,Africa
+Aweil,South Sudan,North Bahr-al-Ghazal,Africa
+Rumbek,South Sudan,Lakes,Africa
+Yambio,South Sudan,West Equatoria,Africa
+Bor,South Sudan,Jungoli,Africa
+Nimule,South Sudan,East Equatoria,Africa
+Juba,South Sudan,Central Equatoria,Africa
+Malakal,South Sudan,Upper Nile,Africa
+Wau,South Sudan,West Bahr-al-Ghazal,Africa
 Merida,Spain,Extremadura,Europe
 Marbella,Spain,Andalucía,Europe
 Linares,Spain,Andalucía,Europe
@@ -5677,68 +5677,68 @@ Seville,Spain,Andalucía,Europe
 Valencia,Spain,Comunidad Valenciana,Europe
 Barcelona,Spain,Cataluña,Europe
 Madrid,Spain,Comunidad de Madrid,Europe
-Trincomalee,Sri Lanka,Trincomalee,
-Puttalan,Sri Lanka,Puttalam,
-Ratnapura,Sri Lanka,Ratnapura,
-Batticaloa,Sri Lanka,Batticaloa,
-Kilinochchi,Sri Lanka,Kilinochchi,
-Matara,Sri Lanka,Matara,
-Badulla,Sri Lanka,Badulla,
-Moratuwa,Sri Lanka,Colombo,
-Galle,Sri Lanka,Galle,
-Anuradhapura,Sri Lanka,Anuradhapura,
-Jaffna,Sri Lanka,Jaffna,
-Kandy,Sri Lanka,Kandy,
-Sri Jawewardenepura Kotte,Sri Lanka,Colombo,
-Colombo,Sri Lanka,Colombo,
-Ad Damazin,Sudan,Blue Nile,
-Haiya,Sudan,Red Sea,
-El Manaqil,Sudan,Gezira,
-Shendi,Sudan,River Nile,
-Berber,Sudan,River Nile,
-Kerma,Sudan,Northern,
-Ed Dueim,Sudan,White Nile,
-Umm Ruwaba,Sudan,North Kurdufan,
-En Nuhud,Sudan,South Kordofan,
-Muglad,Sudan,South Kordofan,
-Tokar,Sudan,Red Sea,
-Medani,Sudan,Gezira,
-Gedaref,Sudan,Gedarif,
-EdDamer,Sudan,River Nile,
-Atbara,Sudan,River Nile,
-Wadi Halfa,Sudan,Northern,
-Merowe,Sudan,Northern,
-Kosti,Sudan,White Nile,
-Sennar,Sudan,Sennar,
-El Fasher,Sudan,Northern Darfur,
-Kadugli,Sudan,South Kordufan,
-Babanusa,Sudan,South Kordofan,
-Geneina,Sudan,West Darfur,
-Omdurman,Sudan,Khartoum,
-El Obeid,Sudan,North Kurdufan,
-Port Sudan,Sudan,Red Sea,
-Niyala,Sudan,South Darfur,
-Dongola,Sudan,Northern,
-Kassala,Sudan,Kassala,
-Khartoum,Sudan,Khartoum,
-Onverwacht,Suriname,Para,
-Groningen,Suriname,Saramacca,
-Brownsweg,Suriname,Brokopondo,
-Moengo,Suriname,Marowijne,
-Nieuw Amsterdam,Suriname,Commewijne,
-Nieuw Nickerie,Suriname,Nickerie,
-Brokopondo,Suriname,Brokopondo,
-Totness,Suriname,Coronie,
-Cottica,Suriname,Sipaliwini,
-Paramaribo,Suriname,Paramaribo,
+Trincomalee,Sri Lanka,Trincomalee,Asia
+Puttalan,Sri Lanka,Puttalam,Asia
+Ratnapura,Sri Lanka,Ratnapura,Asia
+Batticaloa,Sri Lanka,Batticaloa,Asia
+Kilinochchi,Sri Lanka,Kilinochchi,Asia
+Matara,Sri Lanka,Matara,Asia
+Badulla,Sri Lanka,Badulla,Asia
+Moratuwa,Sri Lanka,Colombo,Asia
+Galle,Sri Lanka,Galle,Asia
+Anuradhapura,Sri Lanka,Anuradhapura,Asia
+Jaffna,Sri Lanka,Jaffna,Asia
+Kandy,Sri Lanka,Kandy,Asia
+Sri Jawewardenepura Kotte,Sri Lanka,Colombo,Asia
+Colombo,Sri Lanka,Colombo,Asia
+Ad Damazin,Sudan,Blue Nile,Africa
+Haiya,Sudan,Red Sea,Africa
+El Manaqil,Sudan,Gezira,Africa
+Shendi,Sudan,River Nile,Africa
+Berber,Sudan,River Nile,Africa
+Kerma,Sudan,Northern,Africa
+Ed Dueim,Sudan,White Nile,Africa
+Umm Ruwaba,Sudan,North Kurdufan,Africa
+En Nuhud,Sudan,South Kordofan,Africa
+Muglad,Sudan,South Kordofan,Africa
+Tokar,Sudan,Red Sea,Africa
+Medani,Sudan,Gezira,Africa
+Gedaref,Sudan,Gedarif,Africa
+EdDamer,Sudan,River Nile,Africa
+Atbara,Sudan,River Nile,Africa
+Wadi Halfa,Sudan,Northern,Africa
+Merowe,Sudan,Northern,Africa
+Kosti,Sudan,White Nile,Africa
+Sennar,Sudan,Sennar,Africa
+El Fasher,Sudan,Northern Darfur,Africa
+Kadugli,Sudan,South Kordufan,Africa
+Babanusa,Sudan,South Kordofan,Africa
+Geneina,Sudan,West Darfur,Africa
+Omdurman,Sudan,Khartoum,Africa
+El Obeid,Sudan,North Kurdufan,Africa
+Port Sudan,Sudan,Red Sea,Africa
+Niyala,Sudan,South Darfur,Africa
+Dongola,Sudan,Northern,Africa
+Kassala,Sudan,Kassala,Africa
+Khartoum,Sudan,Khartoum,Africa
+Onverwacht,Suriname,Para,Africa
+Groningen,Suriname,Saramacca,Africa
+Brownsweg,Suriname,Brokopondo,Africa
+Moengo,Suriname,Marowijne,Africa
+Nieuw Amsterdam,Suriname,Commewijne,Africa
+Nieuw Nickerie,Suriname,Nickerie,Africa
+Brokopondo,Suriname,Brokopondo,Africa
+Totness,Suriname,Coronie,Africa
+Cottica,Suriname,Sipaliwini,Africa
+Paramaribo,Suriname,Paramaribo,Africa
 Longyearbyen,Svalbard and Jan Mayen Islands,Svalbard,
-Piggs Peak,Swaziland,Hhohho,
-Siteki,Swaziland,Lubombo,
-Manzini,Swaziland,Manzini,
-Hlatikulu,Swaziland,Shiselweni,
-Golela,Swaziland,Shiselweni,
-Lobamba,Swaziland,Manzini,
-Mbabane,Swaziland,Hhohho,
+Piggs Peak,Swaziland,Hhohho,Africa
+Siteki,Swaziland,Lubombo,Africa
+Manzini,Swaziland,Manzini,Africa
+Hlatikulu,Swaziland,Shiselweni,Africa
+Golela,Swaziland,Shiselweni,Africa
+Lobamba,Swaziland,Manzini,Africa
+Mbabane,Swaziland,Hhohho,Africa
 Falun,Sweden,Dalarna,Europe
 Nykoping,Sweden,Södermanland,Europe
 Harnosand,Sweden,Västernorrland,Europe
@@ -5994,26 +5994,26 @@ Surat Thani,Thailand,Surat Thani,Asia
 Chiang Mai,Thailand,Chiang Mai,Asia
 Nakhon Ratchasima,Thailand,Nakhon Ratchasima,Asia
 Bangkok,Thailand,Bangkok Metropolis,Asia
-Freeport,The Bahamas,,
-Nassau,The Bahamas,,
-Georgetown,The Gambia,Maccarthy Island,
-Basse Santa Su,The Gambia,Upper River,
-Kerewan,The Gambia,Lower River,
-Mansa Konko,The Gambia,Lower River,
-Bansang,The Gambia,Maccarthy Island,
-Brikama,The Gambia,Banjul,
-Banjul,The Gambia,Banjul,
-Bassar,Togo,Kara,
-Sotouboua,Togo,Centre,
-Kpalime,Togo,Plateaux,
-Sokode,Togo,Centre,
-Mango,Togo,Savanes,
-Atakpame,Togo,Plateaux,
-Lome,Togo,Maritime,
+Freeport,The Bahamas,,North America
+Nassau,The Bahamas,,North America
+Georgetown,The Gambia,Maccarthy Island,Africa
+Basse Santa Su,The Gambia,Upper River,Africa
+Kerewan,The Gambia,Lower River,Africa
+Mansa Konko,The Gambia,Lower River,Africa
+Bansang,The Gambia,Maccarthy Island,Africa
+Brikama,The Gambia,Banjul,Africa
+Banjul,The Gambia,Banjul,Africa
+Bassar,Togo,Kara,Africa
+Sotouboua,Togo,Centre,Africa
+Kpalime,Togo,Plateaux,Africa
+Sokode,Togo,Centre,Africa
+Mango,Togo,Savanes,Africa
+Atakpame,Togo,Plateaux,Africa
+Lome,Togo,Maritime,Africa
 Neiafu,Tonga,,
 Nukualofa,Tonga,,
-San Fernando,Trinidad and Tobago,San Fernando,
-Port-of-Spain,Trinidad and Tobago,Port of Spain,
+San Fernando,Trinidad and Tobago,San Fernando,South America
+Port-of-Spain,Trinidad and Tobago,Port of Spain,South America
 Medenine,Tunisia,Médenine,Africa
 Kebili,Tunisia,Kebili,Africa
 Tataouine,Tunisia,Tataouine,Africa
@@ -7071,7 +7071,7 @@ Chicago,United States of America,Illinois,North America
 Los Angeles,United States of America,California,North America
 "Washington, D.C.",United States of America,District of Columbia,North America
 New York,United States of America,New York,North America
-Christiansted,United States Virgin Islands,,
+Christiansted,United States Virgin Islands,,North America
 Colonia del Sacramento,Uruguay,Colonia,South America
 Trinidad,Uruguay,Flores,South America
 Fray Bentos,Uruguay,Río Negro,South America
@@ -7104,35 +7104,35 @@ Paysandu,Uruguay,Paysandú,South America
 Salto,Uruguay,Salto,South America
 Durazno,Uruguay,Durazno,South America
 Montevideo,Uruguay,Montevideo,South America
-Khujayli,Uzbekistan,Karakalpakstan,
-Urgut,Uzbekistan,Samarkand,
-Kattaqorgon,Uzbekistan,Samarkand,
-Denow,Uzbekistan,Surkhandarya,
-Guliston,Uzbekistan,Sirdaryo,
-Iskandar,Uzbekistan,Tashkent,
-Chirchiq,Uzbekistan,Tashkent,
-Kogon,Uzbekistan,Bukhoro,
-Khiwa,Uzbekistan,Khorezm,
-Chimboy,Uzbekistan,Karakalpakstan,
-Qunghirot,Uzbekistan,Karakalpakstan,
-Zarafshon,Uzbekistan,Navoi,
-Navoi,Uzbekistan,Navoi,
-Shahrisabz,Uzbekistan,Kashkadarya,
-Qarshi,Uzbekistan,Kashkadarya,
-Qoqon,Uzbekistan,Ferghana,
-Jizzax,Uzbekistan,Jizzakh,
-Angren,Uzbekistan,Tashkent,
-Olmaliq,Uzbekistan,Tashkent,
-Muynoq,Uzbekistan,Karakalpakstan,
-Termiz,Uzbekistan,Surkhandarya,
-Fargona,Uzbekistan,Ferghana,
-Namangan,Uzbekistan,Namangan,
-Urgentch,Uzbekistan,Khorezm,
-Bukhara,Uzbekistan,Bukhoro,
-Nukus,Uzbekistan,Karakalpakstan,
-Andijon,Uzbekistan,Andijon,
-Samarqand,Uzbekistan,Samarkand,
-Tashkent,Uzbekistan,Tashkent,
+Khujayli,Uzbekistan,Karakalpakstan,Asia
+Urgut,Uzbekistan,Samarkand,Asia
+Kattaqorgon,Uzbekistan,Samarkand,Asia
+Denow,Uzbekistan,Surkhandarya,Asia
+Guliston,Uzbekistan,Sirdaryo,Asia
+Iskandar,Uzbekistan,Tashkent,Asia
+Chirchiq,Uzbekistan,Tashkent,Asia
+Kogon,Uzbekistan,Bukhoro,Asia
+Khiwa,Uzbekistan,Khorezm,Asia
+Chimboy,Uzbekistan,Karakalpakstan,Asia
+Qunghirot,Uzbekistan,Karakalpakstan,Asia
+Zarafshon,Uzbekistan,Navoi,Asia
+Navoi,Uzbekistan,Navoi,Asia
+Shahrisabz,Uzbekistan,Kashkadarya,Asia
+Qarshi,Uzbekistan,Kashkadarya,Asia
+Qoqon,Uzbekistan,Ferghana,Asia
+Jizzax,Uzbekistan,Jizzakh,Asia
+Angren,Uzbekistan,Tashkent,Asia
+Olmaliq,Uzbekistan,Tashkent,Asia
+Muynoq,Uzbekistan,Karakalpakstan,Asia
+Termiz,Uzbekistan,Surkhandarya,Asia
+Fargona,Uzbekistan,Ferghana,Asia
+Namangan,Uzbekistan,Namangan,Asia
+Urgentch,Uzbekistan,Khorezm,Asia
+Bukhara,Uzbekistan,Bukhoro,Asia
+Nukus,Uzbekistan,Karakalpakstan,Asia
+Andijon,Uzbekistan,Andijon,Asia
+Samarqand,Uzbekistan,Samarkand,Asia
+Tashkent,Uzbekistan,Tashkent,Asia
 Luganville,Vanuatu,Sanma,
 Port Vila,Vanuatu,Shefa,
 Vatican City,Vatican (Holy Sea),Lazio,
@@ -7247,26 +7247,26 @@ Da Nang,Vietnam,Da Nang,Asia
 Hanoi,Vietnam,Thái Nguyên,Asia
 Ho Chi Minh City,Vietnam,Ho Chi Minh City,Asia
 Bir Lehlou,Western Sahara,,Africa
-Al Bayda,Yemen,Al Bayda',
-'Ataq,Yemen,Shabwah,
-Marib,Yemen,Ma'rib,
-Dhamar,Yemen,Dhamar,
-Ibb,Yemen,Ibb,
-Ash Shihr,Yemen,Hadramawt,
-Zabid,Yemen,Al Hudaydah,
-Hajjah,Yemen,Hajjah,
-Lahij,Yemen,Lahij,
-Al Ghaydah,Yemen,Al Mahrah,
-Rida,Yemen,Al Bayda',
-Hadiboh,Yemen,Hadramawt,
-Saywun,Yemen,Hadramawt,
-Sadah,Yemen,Sa`dah,
-Al Hudaydah,Yemen,Al Hudaydah,
-Sayhut,Yemen,Al Mahrah,
-Al Mukalla,Yemen,Hadramawt,
-Taizz,Yemen,Ta`izz,
-Aden,Yemen,`Adan,
-Sanaa,Yemen,Amanat Al Asimah,
+Al Bayda,Yemen,Al Bayda',Africa
+'Ataq,Yemen,Shabwah,Africa
+Marib,Yemen,Ma'rib,Africa
+Dhamar,Yemen,Dhamar,Africa
+Ibb,Yemen,Ibb,Africa
+Ash Shihr,Yemen,Hadramawt,Africa
+Zabid,Yemen,Al Hudaydah,Africa
+Hajjah,Yemen,Hajjah,Africa
+Lahij,Yemen,Lahij,Africa
+Al Ghaydah,Yemen,Al Mahrah,Africa
+Rida,Yemen,Al Bayda',Africa
+Hadiboh,Yemen,Hadramawt,Africa
+Saywun,Yemen,Hadramawt,Africa
+Sadah,Yemen,Sa`dah,Africa
+Al Hudaydah,Yemen,Al Hudaydah,Africa
+Sayhut,Yemen,Al Mahrah,Africa
+Al Mukalla,Yemen,Hadramawt,Africa
+Taizz,Yemen,Ta`izz,Africa
+Aden,Yemen,`Adan,Africa
+Sanaa,Yemen,Amanat Al Asimah,Africa
 Kawambwa,Zambia,Luapula,Africa
 Nchelenge,Zambia,Luapula,Africa
 Chinsali,Zambia,Northern,Africa
