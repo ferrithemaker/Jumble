@@ -2476,15 +2476,15 @@ Narva,Estonia,Ida-Viru,Europe
 Tartu,Estonia,Tartu,Europe
 Parnu,Estonia,Pärnu,Europe
 Tallinn,Estonia,Harju,Europe
-Awasa,Ethiopia,"Southern Nations, Nationalities and Peoples",Africa
+Awasa,Ethiopia,Southern Nations Nationalities and Peoples,Africa
 Gore,Ethiopia,Addis Ababa,Africa
 Debre Birhan,Ethiopia,Amhara,Africa
 Bati,Ethiopia,Amhara,Africa
 Adigrat,Ethiopia,Tigray,Africa
 Aksum,Ethiopia,Tigray,Africa
-Yirga Alem,Ethiopia,"Southern Nations, Nationalities and Peoples",Africa
-Hosaina,Ethiopia,"Southern Nations, Nationalities and Peoples",Africa
-Dila,Ethiopia,"Southern Nations, Nationalities and Peoples",Africa
+Yirga Alem,Ethiopia,Southern Nations Nationalities and Peoples,Africa
+Hosaina,Ethiopia,Southern Nations Nationalities and Peoples,Africa
+Dila,Ethiopia,Southern Nations Nationalities and Peoples,Africa
 Giyon,Ethiopia,Addis Ababa,Africa
 Hagere Hiywet,Ethiopia,Addis Ababa,Africa
 Nekemte,Ethiopia,Addis Ababa,Africa
@@ -2496,8 +2496,8 @@ Asosa,Ethiopia,Benshangul-Gumaz,Africa
 Jijiga,Ethiopia,Somali,Africa
 Debre Markos,Ethiopia,Amhara,Africa
 Dese,Ethiopia,Amhara,Africa
-Sodo,Ethiopia,"Southern Nations, Nationalities and Peoples",Africa
-Arba Minch,Ethiopia,"Southern Nations, Nationalities and Peoples",Africa
+Sodo,Ethiopia,Southern Nations Nationalities and Peoples,Africa
+Arba Minch,Ethiopia,Southern Nations Nationalities and Peoples,Africa
 Harar,Ethiopia,Harari,Africa
 Goba,Ethiopia,Addis Ababa,Africa
 Jima,Ethiopia,Addis Ababa,Africa
@@ -7069,7 +7069,7 @@ Miami,United States of America,Florida,North America
 Atlanta,United States of America,Georgia,North America
 Chicago,United States of America,Illinois,North America
 Los Angeles,United States of America,California,North America
-"Washington, D.C.",United States of America,District of Columbia,North America
+Washington D.C.,United States of America,District of Columbia,North America
 New York,United States of America,New York,North America
 Christiansted,United States Virgin Islands,,North America
 Colonia del Sacramento,Uruguay,Colonia,South America
