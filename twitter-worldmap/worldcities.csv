@@ -32,45 +32,45 @@ Herat,Afghanistan,Hirat,Asia
 Mazar-e Sharif,Afghanistan,Balkh,Asia
 Kandahar,Afghanistan,Kandahar,Asia
 Kabul,Afghanistan,Kabul,Asia
-Mariehamn,Aland,Finstr√∂m,Europe
-Kruje,Albania,Durr√´s,Europe
+Mariehamn,Aland,Finstrom,Europe
+Kruje,Albania,Durres,Europe
 Fier,Albania,Fier,Europe
 Lushnje,Albania,Fier,Europe
-Puke,Albania,Shkod√´r,Europe
-Bajram Curri,Albania,Kuk√´s,Europe
-Kukes,Albania,Kuk√´s,Europe
-Sarande,Albania,Vlor√´,Europe
-Erseke,Albania,Kor√ß√´,Europe
-Pogradec,Albania,Kor√ß√´,Europe
-Korce,Albania,Kor√ß√´,Europe
+Puke,Albania,Shkoder,Europe
+Bajram Curri,Albania,Kukes,Europe
+Kukes,Albania,Kukes,Europe
+Sarande,Albania,Vlore,Europe
+Erseke,Albania,Korce,Europe
+Pogradec,Albania,Korce,Europe
+Korce,Albania,Korce,Europe
 Berat,Albania,Berat,Europe
 Corovode,Albania,Berat,Europe
 Gramsh,Albania,Elbasan,Europe
 Librazhd,Albania,Elbasan,Europe
-Tepelene,Albania,Gjirokast√´r,Europe
-Permet,Albania,Gjirokast√´r,Europe
-Gjirokaster,Albania,Gjirokast√´r,Europe
-Peshkopi,Albania,Dib√´r,Europe
-Burrel,Albania,Dib√´r,Europe
-Lezhe,Albania,Lezh√´,Europe
-Rreshen,Albania,Lezh√´,Europe
-Vlore,Albania,Vlor√´,Europe
+Tepelene,Albania,Gjirokaster,Europe
+Permet,Albania,Gjirokaster,Europe
+Gjirokaster,Albania,Gjirokaster,Europe
+Peshkopi,Albania,Diber,Europe
+Burrel,Albania,Diber,Europe
+Lezhe,Albania,Lezhe,Europe
+Rreshen,Albania,Lezhe,Europe
+Vlore,Albania,Vlore,Europe
 Elbasan,Albania,Elbasan,Europe
-Durres,Albania,Durr√´s,Europe
-Shkoder,Albania,Shkod√´r,Europe
-Tirana,Albania,Durr√´s,Europe
+Durres,Albania,Durres,Europe
+Shkoder,Albania,Shkoder,Europe
+Tirana,Albania,Durres,Europe
 Jijel,Algeria,Jijel,Africa
 Tizi-Ouzou,Algeria,Tizi Ouzou,Africa
-Bordj Bou Arreridj,Algeria,Bordj Bou Arr√©ridj,Africa
+Bordj Bou Arreridj,Algeria,Bordj Bou ArrÈridj,Africa
 M'sila,Algeria,M'Sila,Africa
 Guelma,Algeria,Guelma,Africa
 Oum el Bouaghi,Algeria,Oum el Bouaghi,Africa
 Timimoun,Algeria,Adrar,Africa
-Sidi bel Abbes,Algeria,Sidi Bel Abb√®s,Africa
+Sidi bel Abbes,Algeria,Sidi Bel AbbËs,Africa
 Tlimcen,Algeria,Tlemcen,Africa
-Beni Ounif,Algeria,B√©char,Africa
-Abadla,Algeria,B√©char,Africa
-Sefra,Algeria,Na√¢ma,Africa
+Beni Ounif,Algeria,BÈchar,Africa
+Abadla,Algeria,BÈchar,Africa
+Sefra,Algeria,Na‚ma,Africa
 Skikda,Algeria,Skikda,Africa
 Djanet,Algeria,Illizi,Africa
 I-n-Amenas,Algeria,Illizi,Africa
@@ -81,34 +81,34 @@ Hassi Messaoud,Algeria,Ouargla,Africa
 Chlef,Algeria,Chlef,Africa
 Mascara,Algeria,Mascara,Africa
 Mostaganem,Algeria,Mostaganem,Africa
-Saida,Algeria,Sa√Øda,Africa
+Saida,Algeria,SaÔda,Africa
 Tiarat,Algeria,Tiaret,Africa
-Bejaia,Algeria,B√©ja√Øa,Africa
+Bejaia,Algeria,BÈjaÔa,Africa
 Blida,Algeria,Blida,Africa
 Bouira,Algeria,Bouira,Africa
-Medea,Algeria,M√©d√©a,Africa
+Medea,Algeria,MÈdÈa,Africa
 Souk Ahras,Algeria,Souk Ahras,Africa
-Tebessa,Algeria,T√©bessa,Africa
+Tebessa,Algeria,TÈbessa,Africa
 Adrar,Algeria,Adrar,Africa
 Reggane,Algeria,Adrar,Africa
-Bechar,Algeria,B√©char,Africa
+Bechar,Algeria,BÈchar,Africa
 Tindouf,Algeria,Tindouf,Africa
 Illizi,Algeria,Illizi,Africa
 Arak,Algeria,Tamanghasset,Africa
 I-n-Salah,Algeria,Tamanghasset,Africa
-El Golea,Algeria,Gharda√Øa,Africa
+El Golea,Algeria,GhardaÔa,Africa
 Laghouat,Algeria,Laghouat,Africa
 Touggourt,Algeria,Ouargla,Africa
 Ouargla,Algeria,Ouargla,Africa
 Biskra,Algeria,Biskra,Africa
 Djelfa,Algeria,Djelfa,Africa
-Setif,Algeria,S√©tif,Africa
+Setif,Algeria,SÈtif,Africa
 Batna,Algeria,Batna,Africa
 Annaba,Algeria,Annaba,Africa
 Constantine,Algeria,Constantine,Africa
 Oran,Algeria,Oran,Africa
 Tamanrasset,Algeria,Tamanghasset,Africa
-Ghardaia,Algeria,Gharda√Øa,Africa
+Ghardaia,Algeria,GhardaÔa,Africa
 Algiers,Algeria,Alger,Africa
 Pago Pago,American Samoa,,Australia
 Andorra,Andorra,,Europe
@@ -124,22 +124,22 @@ Ndalatando,Angola,Cuanza Norte,Africa
 Quibala,Angola,Cuanza Sul,Africa
 Calulo,Angola,Cuanza Sul,Africa
 Waku Kungo,Angola,Cuanza Sul,Africa
-Songo,Angola,U√≠ge,Africa
+Songo,Angola,UÌge,Africa
 Mbanza-Congo,Angola,Zaire,Africa
 Nzeto,Angola,Zaire,Africa
 Soyo,Angola,Zaire,Africa
 Cabinda,Angola,Cabinda,Africa
-Calucinga,Angola,Bi√©,Africa
-Camacupa,Angola,Bi√©,Africa
+Calucinga,Angola,BiÈ,Africa
+Camacupa,Angola,BiÈ,Africa
 Cubal,Angola,Benguela,Africa
 Mavinga,Angola,Cuando Cubango,Africa
 Cuito Caunavale,Angola,Cuando Cubango,Africa
 Luiana,Angola,Cuando Cubango,Africa
 Ondjiva,Angola,Cunene,Africa
 Chitado,Angola,Cunene,Africa
-Chibemba,Angola,Hu√≠la,Africa
-Chibia,Angola,Hu√≠la,Africa
-Quipungo,Angola,Hu√≠la,Africa
+Chibemba,Angola,HuÌla,Africa
+Chibia,Angola,HuÌla,Africa
+Quipungo,Angola,HuÌla,Africa
 Luau,Angola,Moxico,Africa
 Cangamba,Angola,Moxico,Africa
 Lumbala Nguimbo,Angola,Moxico,Africa
@@ -148,60 +148,20 @@ Dundo,Angola,Lunda Norte,Africa
 Ambriz,Angola,Bengo,Africa
 Dondo,Angola,Cuanza Norte,Africa
 Sumbe,Angola,Cuanza Sul,Africa
-Uige,Angola,U√≠ge,Africa
-Kuito,Angola,Bi√©,Africa
+Uige,Angola,UÌge,Africa
+Kuito,Angola,BiÈ,Africa
 Lobito,Angola,Benguela,Africa
 Xangongo,Angola,Cunene,Africa
 Luena,Angola,Moxico,Africa
 Tombua,Angola,Namibe,Africa
 Malanje,Angola,Malanje,Africa
 Benguela,Angola,Benguela,Africa
-Lubango,Angola,Hu√≠la,Africa
+Lubango,Angola,HuÌla,Africa
 Namibe,Angola,Namibe,Africa
 Menongue,Angola,Cuando Cubango,Africa
 Huambo,Angola,Huambo,Africa
 Luanda,Angola,Luanda,Africa
-Artigas Base,Antarctica,,Antarctica
-Capitan Arturo Prat Station,Antarctica,,Antarctica
-Vicecomodoro Marambio Station,Antarctica,,Antarctica
-Terra Nova Bay,Antarctica,,Antarctica
-Rothera Station,Antarctica,,Antarctica
-Palmer Station,Antarctica,,Antarctica
-Teniente Rodolfo Marsh Station,Antarctica,,Antarctica
-Teniente Jubany Station,Antarctica,,Antarctica
-King Sejong Station,Antarctica,,Antarctica
-Great Wall Station,Antarctica,,Antarctica
-Escudero Station,Antarctica,,Antarctica
-"Elephant Island, South Shetland Islands",Antarctica,,Antarctica
-Scott Base,Antarctica,,Antarctica
-McMurdo Station,Antarctica,,Antarctica
-Zhongshan Station,Antarctica,,Antarctica
-Vostok,Antarctica,,Antarctica
-Peter I Island,Antarctica,,Antarctica
-Mirny Station,Antarctica,,Antarctica
-Mawson Station,Antarctica,,Antarctica
-Davis Station,Antarctica,,Antarctica
-Concordia Research Station,Antarctica,,Antarctica
-Casey Station,Antarctica,,Antarctica
-Amundsen‚ÄìScott South Pole Station,Antarctica,,Antarctica
-Wasa Station,Antarctica,,Antarctica
-Troll Station,Antarctica,,Antarctica
-Svea Station,Antarctica,,Antarctica
-Novolazarevskaya Station,Antarctica,,Antarctica
-Neumayer,Antarctica,,Antarctica
-Maitri Station,Antarctica,,Antarctica
-Halley Station,Antarctica,,Antarctica
-General Belgrano Station,Antarctica,,Antarctica
-Doctor Sobral,Antarctica,,Antarctica
-Aboa Station,Antarctica,,Antarctica
-San Mart√≠n Station,Antarctica,,Antarctica
-General Bernado O'Higgins Station,Antarctica,,Antarctica
-Esperanza Station,Antarctica,,Antarctica
-Orcadas Station,Antarctica,,Antarctica
-Signy Island,Antarctica,,Antarctica
-Dumont d'Urville Station,Antarctica,,Antarctica
-Showa Station,Antarctica,,Antarctica
-Saint John's,Antigua and Barbuda,,South America
+Saint Johns,Antigua and Barbuda,,South America
 28 de Noviembre,Argentina,Santa Cruz,South America
 Gobernador Gregores,Argentina,Santa Cruz,South America
 Comondante Luis Piedrabuena,Argentina,Santa Cruz,South America
@@ -213,7 +173,7 @@ Trelew,Argentina,Chubut,South America
 Las Heras,Argentina,Mendoza,South America
 San Martin,Argentina,Mendoza,South America
 Uspallata,Argentina,Mendoza,South America
-Cutral Co,Argentina,Neuqu√©n,South America
+Cutral Co,Argentina,NeuquÈn,South America
 Punta Alta,Argentina,Ciudad de Buenos Aires,South America
 San Nicolas,Argentina,Ciudad de Buenos Aires,South America
 Campana,Argentina,Ciudad de Buenos Aires,South America
@@ -228,18 +188,18 @@ Pedro Luro,Argentina,Ciudad de Buenos Aires,South America
 Tres Arroyos,Argentina,Ciudad de Buenos Aires,South America
 Coronel Suarez,Argentina,Ciudad de Buenos Aires,South America
 Balcarce,Argentina,Ciudad de Buenos Aires,South America
-25 de Mayo,Argentina,R√≠o Negro,South America
-General Roca,Argentina,R√≠o Negro,South America
-Comallo,Argentina,R√≠o Negro,South America
-Ingeniero Jacobacci,Argentina,R√≠o Negro,South America
-General Conesa,Argentina,R√≠o Negro,South America
-Choele Choel,Argentina,R√≠o Negro,South America
-San Francisco,Argentina,C√≥rdoba,South America
-Alta Gracia,Argentina,C√≥rdoba,South America
-Villa Maria,Argentina,C√≥rdoba,South America
-Bell Ville,Argentina,C√≥rdoba,South America
-Villa Rumipal,Argentina,C√≥rdoba,South America
-Villa Carlos Paz,Argentina,C√≥rdoba,South America
+25 de Mayo,Argentina,RÌo Negro,South America
+General Roca,Argentina,RÌo Negro,South America
+Comallo,Argentina,RÌo Negro,South America
+Ingeniero Jacobacci,Argentina,RÌo Negro,South America
+General Conesa,Argentina,RÌo Negro,South America
+Choele Choel,Argentina,RÌo Negro,South America
+San Francisco,Argentina,CÛrdoba,South America
+Alta Gracia,Argentina,CÛrdoba,South America
+Villa Maria,Argentina,CÛrdoba,South America
+Bell Ville,Argentina,CÛrdoba,South America
+Villa Rumipal,Argentina,CÛrdoba,South America
+Villa Carlos Paz,Argentina,CÛrdoba,South America
 Chumbicha,Argentina,Catamarca,South America
 Tinogasta,Argentina,Catamarca,South America
 Abra Pampa,Argentina,Jujuy,South America
@@ -250,7 +210,7 @@ Yacuiba,Argentina,Salta,South America
 Tartagal,Argentina,Salta,South America
 Joaquin V. Gonzalez,Argentina,Salta,South America
 General Guemes,Argentina,Salta,South America
-Trancas,Argentina,Tucum√°n,South America
+Trancas,Argentina,Tucum·n,South America
 Presidencia Roque Saenz Pena,Argentina,Chaco,South America
 Pampa del Infierno,Argentina,Chaco,South America
 Villa Angela,Argentina,Chaco,South America
@@ -259,10 +219,10 @@ Comandante Fontana,Argentina,Formosa,South America
 Doctor Pedro P. Pena,Argentina,Formosa,South America
 San Lorenzo,Argentina,Corrientes,South America
 Corrientes,Argentina,Corrientes,South America
-Concepcion del Uruguay,Argentina,Entre R√≠os,South America
-Victoria,Argentina,Entre R√≠os,South America
-Gualeguay,Argentina,Entre R√≠os,South America
-Parana,Argentina,Entre R√≠os,South America
+Concepcion del Uruguay,Argentina,Entre RÌos,South America
+Victoria,Argentina,Entre RÌos,South America
+Gualeguay,Argentina,Entre RÌos,South America
+Parana,Argentina,Entre RÌos,South America
 Villa Constitucion,Argentina,Santa Fe,South America
 Rafaela,Argentina,Santa Fe,South America
 Eldorado,Argentina,Misiones,South America
@@ -273,8 +233,8 @@ Telsen,Argentina,Chubut,South America
 Malargue,Argentina,Mendoza,South America
 Tunuyan,Argentina,Mendoza,South America
 La Paz,Argentina,Mendoza,South America
-Chos Malal,Argentina,Neuqu√©n,South America
-Las Lajas,Argentina,Neuqu√©n,South America
+Chos Malal,Argentina,NeuquÈn,South America
+Las Lajas,Argentina,NeuquÈn,South America
 Zarate,Argentina,Ciudad de Buenos Aires,South America
 Carhue,Argentina,Ciudad de Buenos Aires,South America
 Darregueira,Argentina,Ciudad de Buenos Aires,South America
@@ -290,10 +250,10 @@ Azul,Argentina,Ciudad de Buenos Aires,South America
 Villalonga,Argentina,Ciudad de Buenos Aires,South America
 Victorica,Argentina,La Pampa,South America
 General Pico,Argentina,La Pampa,South America
-San Antonio Oeste,Argentina,R√≠o Negro,South America
-Sierra Colorado,Argentina,R√≠o Negro,South America
+San Antonio Oeste,Argentina,RÌo Negro,South America
+Sierra Colorado,Argentina,RÌo Negro,South America
 Mercedes,Argentina,San Luis,South America
-Rio Tercero,Argentina,C√≥rdoba,South America
+Rio Tercero,Argentina,CÛrdoba,South America
 Belen,Argentina,Catamarca,South America
 Rinconada,Argentina,Jujuy,South America
 San Pedro,Argentina,Jujuy,South America
@@ -311,19 +271,19 @@ Juan Jose Castelli,Argentina,Chaco,South America
 Charata,Argentina,Chaco,South America
 Las Lomitas,Argentina,Formosa,South America
 Mercedes,Argentina,Corrientes,South America
-Concordia,Argentina,Entre R√≠os,South America
+Concordia,Argentina,Entre RÌos,South America
 Sunchales,Argentina,Santa Fe,South America
 San Justo,Argentina,Santa Fe,South America
 Vera,Argentina,Santa Fe,South America
 Reconquista,Argentina,Santa Fe,South America
 Venado Tuerto,Argentina,Santa Fe,South America
 Esquel,Argentina,Chubut,South America
-Zapala,Argentina,Neuqu√©n,South America
+Zapala,Argentina,NeuquÈn,South America
 Olavarria,Argentina,Ciudad de Buenos Aires,South America
 Tandil,Argentina,Ciudad de Buenos Aires,South America
 Viedma,Argentina,Ciudad de Buenos Aires,South America
 San Luis,Argentina,San Luis,South America
-Rio Cuarto,Argentina,C√≥rdoba,South America
+Rio Cuarto,Argentina,CÛrdoba,South America
 San Salvador de Jujuy,Argentina,Jujuy,South America
 San Ramon de la Nueva Oran,Argentina,Salta,South America
 Goya,Argentina,Corrientes,South America
@@ -339,15 +299,15 @@ Catamarca,Argentina,Catamarca,South America
 La Rioja,Argentina,La Rioja,South America
 Santiago del Estero,Argentina,Santiago del Estero,South America
 Resistencia,Argentina,Chaco,South America
-Gualeguaychu,Argentina,Entre R√≠os,South America
+Gualeguaychu,Argentina,Entre RÌos,South America
 El Calafate,Argentina,Santa Cruz,South America
 San Juan,Argentina,San Juan,South America
 Rawson,Argentina,Chubut,South America
-Neuquen,Argentina,Neuqu√©n,South America
+Neuquen,Argentina,NeuquÈn,South America
 Santa Rosa,Argentina,La Pampa,South America
-San Carlos de Bariloche,Argentina,R√≠o Negro,South America
+San Carlos de Bariloche,Argentina,RÌo Negro,South America
 Salta,Argentina,Salta,South America
-San Miguel de Tucuman,Argentina,Tucum√°n,South America
+San Miguel de Tucuman,Argentina,Tucum·n,South America
 Formosa,Argentina,Formosa,South America
 Santa Fe,Argentina,Santa Fe,South America
 Rosario,Argentina,Santa Fe,South America
@@ -357,7 +317,7 @@ Comodoro Rivadavia,Argentina,Chubut,South America
 Mendoza,Argentina,Mendoza,South America
 Bahia Blanca,Argentina,Ciudad de Buenos Aires,South America
 Mar del Plata,Argentina,Ciudad de Buenos Aires,South America
-Cordoba,Argentina,C√≥rdoba,South America
+Cordoba,Argentina,CÛrdoba,South America
 Posadas,Argentina,Misiones,South America
 Buenos Aires,Argentina,Ciudad de Buenos Aires,South America
 Ashtarak,Armenia,Aragatsotn,Asia
@@ -595,11 +555,11 @@ Melbourne,Australia,Victoria,Australia
 Sydney,Australia,New South Wales,Australia
 Bregenz,Austria,Vorarlberg,Europe
 Eisenstadt,Austria,Burgenland,Europe
-Wiener Neustadt,Austria,Nieder√∂sterreich,Europe
+Wiener Neustadt,Austria,Niederˆsterreich,Europe
 Graz,Austria,Steiermark,Europe
-Klagenfurt,Austria,K√§rnten,Europe
-Linz,Austria,Ober√∂sterreich,Europe
-Passau,Austria,Ober√∂sterreich,Europe
+Klagenfurt,Austria,K‰rnten,Europe
+Linz,Austria,Oberˆsterreich,Europe
+Passau,Austria,Oberˆsterreich,Europe
 Salzburg,Austria,Salzburg,Europe
 Innsbruck,Austria,Tirol,Europe
 Vienna,Austria,Wien,Europe
@@ -613,12 +573,12 @@ Ganca,Azerbaijan,Ganca,Asia
 Yevlax,Azerbaijan,Yevlax,Asia
 Sumqayt,Azerbaijan,Sumqayit,Asia
 Ali Bayramli,Azerbaijan,?li Bayramli,Asia
-Goycay,Azerbaijan,G√∂y√ßay,Asia
+Goycay,Azerbaijan,GˆyÁay,Asia
 Lankaran,Azerbaijan,Astara,Asia
 Saki,Azerbaijan,S?ki,Asia
 Stepanakert,Azerbaijan,Xocali,Asia
 Kapan,Azerbaijan,Z?ngilan,Asia
-Naxcivan,Azerbaijan,Nax√ßivan,Asia
+Naxcivan,Azerbaijan,NaxÁivan,Asia
 Baku,Azerbaijan,Baki,Asia
 Manama,Bahrain,,Asia
 Tangail,Bangladesh,Dhaka,Asia
@@ -677,8 +637,8 @@ Abomey,Benin,Zou,Africa
 Natitingou,Benin,Atakora,Africa
 Djougou,Benin,Donga,Africa
 Parakou,Benin,Borgou,Africa
-Porto-Novo,Benin,Ou√©m√©,Africa
-Cotonou,Benin,Ou√©m√©,Africa
+Porto-Novo,Benin,OuÈmÈ,Africa
+Cotonou,Benin,OuÈmÈ,Africa
 Hamilton,Bermuda,,
 Paro,Bhutan,Thimphu,Asia
 Punakha,Bhutan,Punakha,Asia
@@ -698,11 +658,11 @@ Sorata,Bolivia,La Paz,South America
 Achacachi,Bolivia,La Paz,South America
 Viacha,Bolivia,La Paz,South America
 Quime,Bolivia,La Paz,South America
-Llallagua,Bolivia,Potos√≠,South America
-Uncia,Bolivia,Potos√≠,South America
-Uyuni,Bolivia,Potos√≠,South America
-Villa Martin,Bolivia,Potos√≠,South America
-Betanzos,Bolivia,Potos√≠,South America
+Llallagua,Bolivia,PotosÌ,South America
+Uncia,Bolivia,PotosÌ,South America
+Uyuni,Bolivia,PotosÌ,South America
+Villa Martin,Bolivia,PotosÌ,South America
+Betanzos,Bolivia,PotosÌ,South America
 Portachuelo,Bolivia,Santa Cruz,South America
 Samaipata,Bolivia,Santa Cruz,South America
 Cuevo,Bolivia,Santa Cruz,South America
@@ -724,10 +684,10 @@ Coroico,Bolivia,La Paz,South America
 Coro Coro,Bolivia,La Paz,South America
 Sabaya,Bolivia,Oruro,South America
 Challapata,Bolivia,Oruro,South America
-Llica,Bolivia,Potos√≠,South America
-Potosi,Bolivia,Potos√≠,South America
-Villazon,Bolivia,Potos√≠,South America
-Tupiza,Bolivia,Potos√≠,South America
+Llica,Bolivia,PotosÌ,South America
+Potosi,Bolivia,PotosÌ,South America
+Villazon,Bolivia,PotosÌ,South America
+Tupiza,Bolivia,PotosÌ,South America
 Montero,Bolivia,Santa Cruz,South America
 Piso Firme,Bolivia,Santa Cruz,South America
 Robore,Bolivia,Santa Cruz,South America
@@ -779,17 +739,17 @@ Francistown,Botswana,Central,Africa
 Mahalapye,Botswana,Central,Africa
 Serowe,Botswana,Central,Africa
 Gaborone,Botswana,South-East,Africa
-Grajau,Brazil,Maranh√£o,South America
-Presidente Dutra,Brazil,Maranh√£o,South America
-Itapecuru Mirim,Brazil,Maranh√£o,South America
-Sao Jose de Ribamar,Brazil,Maranh√£o,South America
-Santa Ines,Brazil,Maranh√£o,South America
-Rosario,Brazil,Maranh√£o,South America
-Timon,Brazil,Maranh√£o,South America
-Capanema,Brazil,Par√°,South America
-Portel,Brazil,Par√°,South America
-Itupiranga,Brazil,Par√°,South America
-Pimenta Bueno,Brazil,Rond√¥nia,South America
+Grajau,Brazil,Maranh„o,South America
+Presidente Dutra,Brazil,Maranh„o,South America
+Itapecuru Mirim,Brazil,Maranh„o,South America
+Sao Jose de Ribamar,Brazil,Maranh„o,South America
+Santa Ines,Brazil,Maranh„o,South America
+Rosario,Brazil,Maranh„o,South America
+Timon,Brazil,Maranh„o,South America
+Capanema,Brazil,Par·,South America
+Portel,Brazil,Par·,South America
+Itupiranga,Brazil,Par·,South America
+Pimenta Bueno,Brazil,RondÙnia,South America
 Ponta Pora,Brazil,Mato Grosso do Sul,South America
 Maracaju,Brazil,Mato Grosso do Sul,South America
 Jardim,Brazil,Mato Grosso do Sul,South America
@@ -832,19 +792,19 @@ Sao Luiz Gonzaga,Brazil,Rio Grande do Sul,South America
 Santo Angelo,Brazil,Rio Grande do Sul,South America
 Carazinho,Brazil,Rio Grande do Sul,South America
 Erechim,Brazil,Rio Grande do Sul,South America
-Guaira,Brazil,Paran√°,South America
-Palmas,Brazil,Paran√°,South America
-Arapongas,Brazil,Paran√°,South America
-Paranagua,Brazil,Paran√°,South America
-Sao Jose dos Pinhais,Brazil,Paran√°,South America
-Guarapuava,Brazil,Paran√°,South America
-Rio Negro,Brazil,Paran√°,South America
-Apucarana,Brazil,Paran√°,South America
-Lapa,Brazil,Paran√°,South America
-Irati,Brazil,Paran√°,South America
-Castro,Brazil,Paran√°,South America
-Telemaco Borba,Brazil,Paran√°,South America
-Jacarezinho,Brazil,Paran√°,South America
+Guaira,Brazil,Paran·,South America
+Palmas,Brazil,Paran·,South America
+Arapongas,Brazil,Paran·,South America
+Paranagua,Brazil,Paran·,South America
+Sao Jose dos Pinhais,Brazil,Paran·,South America
+Guarapuava,Brazil,Paran·,South America
+Rio Negro,Brazil,Paran·,South America
+Apucarana,Brazil,Paran·,South America
+Lapa,Brazil,Paran·,South America
+Irati,Brazil,Paran·,South America
+Castro,Brazil,Paran·,South America
+Telemaco Borba,Brazil,Paran·,South America
+Jacarezinho,Brazil,Paran·,South America
 Concordia,Brazil,Santa Catarina,South America
 Blumenau,Brazil,Santa Catarina,South America
 Brusque,Brazil,Santa Catarina,South America
@@ -855,14 +815,14 @@ Laguna,Brazil,Santa Catarina,South America
 Joacaba,Brazil,Santa Catarina,South America
 Cacador,Brazil,Santa Catarina,South America
 Canoinhas,Brazil,Santa Catarina,South America
-Camocim,Brazil,Cear√°,South America
-Russas,Brazil,Cear√°,South America
-Sobral,Brazil,Cear√°,South America
-Iguatu,Brazil,Cear√°,South America
-Quixada,Brazil,Cear√°,South America
-Caninde,Brazil,Cear√°,South America
-Campo Maior,Brazil,Piau√≠,South America
-Barras,Brazil,Piau√≠,South America
+Camocim,Brazil,Cear·,South America
+Russas,Brazil,Cear·,South America
+Sobral,Brazil,Cear·,South America
+Iguatu,Brazil,Cear·,South America
+Quixada,Brazil,Cear·,South America
+Caninde,Brazil,Cear·,South America
+Campo Maior,Brazil,PiauÌ,South America
+Barras,Brazil,PiauÌ,South America
 Rio Largo,Brazil,Alagoas,South America
 Palmeira dos Indios,Brazil,Alagoas,South America
 Santa Cruz Cabralia,Brazil,Bahia,South America
@@ -871,7 +831,7 @@ Brumado,Brazil,Bahia,South America
 Jaguaquara,Brazil,Bahia,South America
 Itapetinga,Brazil,Bahia,South America
 Ubaitaba,Brazil,Bahia,South America
-Cachoeiro de Itapemirim,Brazil,Esp√≠rito Santo,South America
+Cachoeiro de Itapemirim,Brazil,EspÌrito Santo,South America
 Barra Mansa,Brazil,Rio de Janeiro,South America
 Nova Iguacu,Brazil,Rio de Janeiro,South America
 Duque de Caxias,Brazil,Rio de Janeiro,South America
@@ -881,42 +841,42 @@ Macae,Brazil,Rio de Janeiro,South America
 Miracema,Brazil,Rio de Janeiro,South America
 Apodi,Brazil,Rio Grande do Norte,South America
 Santa Cruz,Brazil,Rio Grande do Norte,South America
-Morrinhos,Brazil,Goi√°s,South America
-Ceres,Brazil,Goi√°s,South America
-Catalao,Brazil,Goi√°s,South America
-Cristalina,Brazil,Goi√°s,South America
-Trindade,Brazil,Goi√°s,South America
-Ipora,Brazil,Goi√°s,South America
-Inhumas,Brazil,Goi√°s,South America
-Itaberai,Brazil,Goi√°s,South America
-Santo Andre,Brazil,S√£o Paulo,South America
-Pindamonhangaba,Brazil,S√£o Paulo,South America
-Rio Claro,Brazil,S√£o Paulo,South America
-Ourinhos,Brazil,S√£o Paulo,South America
-Itanhaem,Brazil,S√£o Paulo,South America
-Jaboticabal,Brazil,S√£o Paulo,South America
-Braganca Paulista,Brazil,S√£o Paulo,South America
-Jundiai,Brazil,S√£o Paulo,South America
-Sao Jose dos Campos,Brazil,S√£o Paulo,South America
-Guaratingueta,Brazil,S√£o Paulo,South America
-Pirassununga,Brazil,S√£o Paulo,South America
-Americana,Brazil,S√£o Paulo,South America
-Piracicaba,Brazil,S√£o Paulo,South America
-Sao Joao da Boa Vista,Brazil,S√£o Paulo,South America
-Sao Carlos,Brazil,S√£o Paulo,South America
-Tupa,Brazil,S√£o Paulo,South America
-Penapolis,Brazil,S√£o Paulo,South America
-Presidente Prudente,Brazil,S√£o Paulo,South America
-Registro,Brazil,S√£o Paulo,South America
-Tatui,Brazil,S√£o Paulo,South America
-Avare,Brazil,S√£o Paulo,South America
-Garca,Brazil,S√£o Paulo,South America
-Catanduva,Brazil,S√£o Paulo,South America
-Batatais,Brazil,S√£o Paulo,South America
-Barretos,Brazil,S√£o Paulo,South America
-Marilia,Brazil,S√£o Paulo,South America
-Itu,Brazil,S√£o Paulo,South America
-Itapetininga,Brazil,S√£o Paulo,South America
+Morrinhos,Brazil,Goi·s,South America
+Ceres,Brazil,Goi·s,South America
+Catalao,Brazil,Goi·s,South America
+Cristalina,Brazil,Goi·s,South America
+Trindade,Brazil,Goi·s,South America
+Ipora,Brazil,Goi·s,South America
+Inhumas,Brazil,Goi·s,South America
+Itaberai,Brazil,Goi·s,South America
+Santo Andre,Brazil,S„o Paulo,South America
+Pindamonhangaba,Brazil,S„o Paulo,South America
+Rio Claro,Brazil,S„o Paulo,South America
+Ourinhos,Brazil,S„o Paulo,South America
+Itanhaem,Brazil,S„o Paulo,South America
+Jaboticabal,Brazil,S„o Paulo,South America
+Braganca Paulista,Brazil,S„o Paulo,South America
+Jundiai,Brazil,S„o Paulo,South America
+Sao Jose dos Campos,Brazil,S„o Paulo,South America
+Guaratingueta,Brazil,S„o Paulo,South America
+Pirassununga,Brazil,S„o Paulo,South America
+Americana,Brazil,S„o Paulo,South America
+Piracicaba,Brazil,S„o Paulo,South America
+Sao Joao da Boa Vista,Brazil,S„o Paulo,South America
+Sao Carlos,Brazil,S„o Paulo,South America
+Tupa,Brazil,S„o Paulo,South America
+Penapolis,Brazil,S„o Paulo,South America
+Presidente Prudente,Brazil,S„o Paulo,South America
+Registro,Brazil,S„o Paulo,South America
+Tatui,Brazil,S„o Paulo,South America
+Avare,Brazil,S„o Paulo,South America
+Garca,Brazil,S„o Paulo,South America
+Catanduva,Brazil,S„o Paulo,South America
+Batatais,Brazil,S„o Paulo,South America
+Barretos,Brazil,S„o Paulo,South America
+Marilia,Brazil,S„o Paulo,South America
+Itu,Brazil,S„o Paulo,South America
+Itapetininga,Brazil,S„o Paulo,South America
 Jaboatao,Brazil,Pernambuco,South America
 Olinda,Brazil,Pernambuco,South America
 Cabo de Santo Agostinho,Brazil,Pernambuco,South America
@@ -924,29 +884,29 @@ Carpina,Brazil,Pernambuco,South America
 Arcoverde,Brazil,Pernambuco,South America
 Manacapuru,Brazil,Amazonas,South America
 Maues,Brazil,Amazonas,South America
-Pedreiras,Brazil,Maranh√£o,South America
-Codo,Brazil,Maranh√£o,South America
-Coroata,Brazil,Maranh√£o,South America
-Chapadinha,Brazil,Maranh√£o,South America
-Pinheiro,Brazil,Maranh√£o,South America
-Barra do Corda,Brazil,Maranh√£o,South America
-Viana,Brazil,Maranh√£o,South America
-Colinas,Brazil,Maranh√£o,South America
-Viseu,Brazil,Par√°,South America
-Capitao Poco,Brazil,Par√°,South America
-Castanhal,Brazil,Par√°,South America
-Salinopolis,Brazil,Par√°,South America
-Alenquer,Brazil,Par√°,South America
-Oriximina,Brazil,Par√°,South America
-Xinguara,Brazil,Par√°,South America
-Jacunda,Brazil,Par√°,South America
-Uruara,Brazil,Par√°,South America
-Altamira,Brazil,Par√°,South America
-Paragominas,Brazil,Par√°,South America
-Cameta,Brazil,Par√°,South America
-Rolim de Moura,Brazil,Rond√¥nia,South America
-Ariquemes,Brazil,Rond√¥nia,South America
-Abuna,Brazil,Rond√¥nia,South America
+Pedreiras,Brazil,Maranh„o,South America
+Codo,Brazil,Maranh„o,South America
+Coroata,Brazil,Maranh„o,South America
+Chapadinha,Brazil,Maranh„o,South America
+Pinheiro,Brazil,Maranh„o,South America
+Barra do Corda,Brazil,Maranh„o,South America
+Viana,Brazil,Maranh„o,South America
+Colinas,Brazil,Maranh„o,South America
+Viseu,Brazil,Par·,South America
+Capitao Poco,Brazil,Par·,South America
+Castanhal,Brazil,Par·,South America
+Salinopolis,Brazil,Par·,South America
+Alenquer,Brazil,Par·,South America
+Oriximina,Brazil,Par·,South America
+Xinguara,Brazil,Par·,South America
+Jacunda,Brazil,Par·,South America
+Uruara,Brazil,Par·,South America
+Altamira,Brazil,Par·,South America
+Paragominas,Brazil,Par·,South America
+Cameta,Brazil,Par·,South America
+Rolim de Moura,Brazil,RondÙnia,South America
+Ariquemes,Brazil,RondÙnia,South America
+Abuna,Brazil,RondÙnia,South America
 Tocantinopolis,Brazil,Tocantins,South America
 Gurupi,Brazil,Tocantins,South America
 Aquidauana,Brazil,Mato Grosso do Sul,South America
@@ -978,26 +938,26 @@ Bento Goncalves,Brazil,Rio Grande do Sul,South America
 Vacaria,Brazil,Rio Grande do Sul,South America
 Ijui,Brazil,Rio Grande do Sul,South America
 Santa Rosa,Brazil,Rio Grande do Sul,South America
-Maringa,Brazil,Paran√°,South America
-Cascavel,Brazil,Paran√°,South America
-Campo Murao,Brazil,Paran√°,South America
-Foz do Iguacu,Brazil,Paran√°,South America
+Maringa,Brazil,Paran·,South America
+Cascavel,Brazil,Paran·,South America
+Campo Murao,Brazil,Paran·,South America
+Foz do Iguacu,Brazil,Paran·,South America
 Sao Francisco do Sul,Brazil,Santa Catarina,South America
 Porto Uniao,Brazil,Santa Catarina,South America
 Itajai,Brazil,Santa Catarina,South America
 Imbituba,Brazil,Santa Catarina,South America
 Lajes,Brazil,Santa Catarina,South America
-Granja,Brazil,Cear√°,South America
-Crato,Brazil,Cear√°,South America
-Itapipoca,Brazil,Cear√°,South America
-Paracuru,Brazil,Cear√°,South America
-Acarau,Brazil,Cear√°,South America
-Taua,Brazil,Cear√°,South America
-Crateus,Brazil,Cear√°,South America
-Baturite,Brazil,Cear√°,South America
-Ipu,Brazil,Cear√°,South America
-Floriano,Brazil,Piau√≠,South America
-Piripiri,Brazil,Piau√≠,South America
+Granja,Brazil,Cear·,South America
+Crato,Brazil,Cear·,South America
+Itapipoca,Brazil,Cear·,South America
+Paracuru,Brazil,Cear·,South America
+Acarau,Brazil,Cear·,South America
+Taua,Brazil,Cear·,South America
+Crateus,Brazil,Cear·,South America
+Baturite,Brazil,Cear·,South America
+Ipu,Brazil,Cear·,South America
+Floriano,Brazil,PiauÌ,South America
+Piripiri,Brazil,PiauÌ,South America
 Penedo,Brazil,Alagoas,South America
 Itabuna,Brazil,Bahia,South America
 Itamaraju,Brazil,Bahia,South America
@@ -1011,8 +971,8 @@ Remanso,Brazil,Bahia,South America
 Itambe,Brazil,Bahia,South America
 Bom Jesus da Lapa,Brazil,Bahia,South America
 Itaberaba,Brazil,Bahia,South America
-Sao Mateus,Brazil,Esp√≠rito Santo,South America
-Patos,Brazil,Para√≠ba,South America
+Sao Mateus,Brazil,EspÌrito Santo,South America
+Patos,Brazil,ParaÌba,South America
 Volta Redonda,Brazil,Rio de Janeiro,South America
 Petropolis,Brazil,Rio de Janeiro,South America
 Nova Cruz,Brazil,Rio Grande do Norte,South America
@@ -1020,34 +980,34 @@ Caico,Brazil,Rio Grande do Norte,South America
 Acu,Brazil,Rio Grande do Norte,South America
 Estancia,Brazil,Sergipe,South America
 Caracarai,Brazil,Roraima,South America
-Porto Santana,Brazil,Amap√°,South America
-Rio Verde,Brazil,Goi√°s,South America
-Pires do Rio,Brazil,Goi√°s,South America
-Anapolis,Brazil,Goi√°s,South America
-Goianesia,Brazil,Goi√°s,South America
-Niquelandia,Brazil,Goi√°s,South America
-Itumbiara,Brazil,Goi√°s,South America
-Jatai,Brazil,Goi√°s,South America
-Mineiros,Brazil,Goi√°s,South America
-Formosa,Brazil,Goi√°s,South America
-Sao Jose do Rio Preto,Brazil,S√£o Paulo,South America
-Limeira,Brazil,S√£o Paulo,South America
-Taubate,Brazil,S√£o Paulo,South America
-Jau,Brazil,S√£o Paulo,South America
-Assis,Brazil,S√£o Paulo,South America
-Itapeva,Brazil,S√£o Paulo,South America
-Botucatu,Brazil,S√£o Paulo,South America
-Novo Horizonte,Brazil,S√£o Paulo,South America
-Andradina,Brazil,S√£o Paulo,South America
-Fernandopolis,Brazil,S√£o Paulo,South America
+Porto Santana,Brazil,Amap·,South America
+Rio Verde,Brazil,Goi·s,South America
+Pires do Rio,Brazil,Goi·s,South America
+Anapolis,Brazil,Goi·s,South America
+Goianesia,Brazil,Goi·s,South America
+Niquelandia,Brazil,Goi·s,South America
+Itumbiara,Brazil,Goi·s,South America
+Jatai,Brazil,Goi·s,South America
+Mineiros,Brazil,Goi·s,South America
+Formosa,Brazil,Goi·s,South America
+Sao Jose do Rio Preto,Brazil,S„o Paulo,South America
+Limeira,Brazil,S„o Paulo,South America
+Taubate,Brazil,S„o Paulo,South America
+Jau,Brazil,S„o Paulo,South America
+Assis,Brazil,S„o Paulo,South America
+Itapeva,Brazil,S„o Paulo,South America
+Botucatu,Brazil,S„o Paulo,South America
+Novo Horizonte,Brazil,S„o Paulo,South America
+Andradina,Brazil,S„o Paulo,South America
+Fernandopolis,Brazil,S„o Paulo,South America
 Barreiros,Brazil,Pernambuco,South America
 Salgueiro,Brazil,Pernambuco,South America
 Goiana,Brazil,Pernambuco,South America
 Timbauba,Brazil,Pernambuco,South America
-Bacabal,Brazil,Maranh√£o,South America
-Braganca,Brazil,Par√°,South America
-Obidos,Brazil,Par√°,South America
-Guajara-Miram,Brazil,Rond√¥nia,South America
+Bacabal,Brazil,Maranh„o,South America
+Braganca,Brazil,Par·,South America
+Obidos,Brazil,Par·,South America
+Guajara-Miram,Brazil,RondÙnia,South America
 Porto Nacional,Brazil,Tocantins,South America
 Dourados,Brazil,Mato Grosso do Sul,South America
 Governador Valadares,Brazil,Minas Gerais,South America
@@ -1057,15 +1017,15 @@ Santa Maria,Brazil,Rio Grande do Sul,South America
 Passo Fundo,Brazil,Rio Grande do Sul,South America
 Xapeco,Brazil,Santa Catarina,South America
 Joinville,Brazil,Santa Catarina,South America
-Juazeiro do Norte,Brazil,Cear√°,South America
+Juazeiro do Norte,Brazil,Cear·,South America
 Nova Vicosa,Brazil,Bahia,South America
 Alagoinhas,Brazil,Bahia,South America
 Juazeiro,Brazil,Bahia,South America
-Vitoria,Brazil,Esp√≠rito Santo,South America
-Joao Pessoa,Brazil,Para√≠ba,South America
-Campina Grande,Brazil,Para√≠ba,South America
+Vitoria,Brazil,EspÌrito Santo,South America
+Joao Pessoa,Brazil,ParaÌba,South America
+Campina Grande,Brazil,ParaÌba,South America
 Nova Friburgo,Brazil,Rio de Janeiro,South America
-Aracatuba,Brazil,S√£o Paulo,South America
+Aracatuba,Brazil,S„o Paulo,South America
 Sena Madureira,Brazil,Acre,South America
 Fonte Boa,Brazil,Amazonas,South America
 Eirunepe,Brazil,Amazonas,South America
@@ -1080,15 +1040,15 @@ Itacoatiara,Brazil,Amazonas,South America
 Parintins,Brazil,Amazonas,South America
 Natal,Brazil,Amazonas,South America
 Crato,Brazil,Amazonas,South America
-Imperatriz,Brazil,Maranh√£o,South America
-Balsas,Brazil,Maranh√£o,South America
-Breves,Brazil,Par√°,South America
-Jacareacanga,Brazil,Par√°,South America
-Tucurui,Brazil,Par√°,South America
-Itaituba,Brazil,Par√°,South America
-Conceicao do Araguaia,Brazil,Par√°,South America
-Abaetetuba,Brazil,Par√°,South America
-Principe da Beira,Brazil,Rond√¥nia,South America
+Imperatriz,Brazil,Maranh„o,South America
+Balsas,Brazil,Maranh„o,South America
+Breves,Brazil,Par·,South America
+Jacareacanga,Brazil,Par·,South America
+Tucurui,Brazil,Par·,South America
+Itaituba,Brazil,Par·,South America
+Conceicao do Araguaia,Brazil,Par·,South America
+Abaetetuba,Brazil,Par·,South America
+Principe da Beira,Brazil,RondÙnia,South America
 Araguaina,Brazil,Tocantins,South America
 Palmas,Brazil,Tocantins,South America
 Teofilo Otoni,Brazil,Minas Gerais,South America
@@ -1099,12 +1059,12 @@ Aripuana,Brazil,Mato Grosso,South America
 Sinop,Brazil,Mato Grosso,South America
 Jaguarao,Brazil,Rio Grande do Sul,South America
 Bage,Brazil,Rio Grande do Sul,South America
-Londrina,Brazil,Paran√°,South America
+Londrina,Brazil,Paran·,South America
 Criciuma,Brazil,Santa Catarina,South America
-Aracati,Brazil,Cear√°,South America
-Ico,Brazil,Cear√°,South America
-Parnaiba,Brazil,Piau√≠,South America
-Picos,Brazil,Piau√≠,South America
+Aracati,Brazil,Cear·,South America
+Ico,Brazil,Cear·,South America
+Parnaiba,Brazil,PiauÌ,South America
+Picos,Brazil,PiauÌ,South America
 Arapiraca,Brazil,Alagoas,South America
 Jequie,Brazil,Bahia,South America
 Ilheus,Brazil,Bahia,South America
@@ -1112,22 +1072,22 @@ Canavieiras,Brazil,Bahia,South America
 Santa Maria da Vitoria,Brazil,Bahia,South America
 Irece,Brazil,Bahia,South America
 Xique-Xique,Brazil,Bahia,South America
-Linhares,Brazil,Esp√≠rito Santo,South America
+Linhares,Brazil,EspÌrito Santo,South America
 Campos,Brazil,Rio de Janeiro,South America
 Mossoro,Brazil,Rio Grande do Norte,South America
 Aracaju,Brazil,Sergipe,South America
-Laranjal do Jari,Brazil,Amap√°,South America
-Amapa,Brazil,Amap√°,South America
-Vila Velha,Brazil,Amap√°,South America
-Santos,Brazil,S√£o Paulo,South America
-Bauru,Brazil,S√£o Paulo,South America
-Iguape,Brazil,S√£o Paulo,South America
-Franca,Brazil,S√£o Paulo,South America
+Laranjal do Jari,Brazil,Amap·,South America
+Amapa,Brazil,Amap·,South America
+Vila Velha,Brazil,Amap·,South America
+Santos,Brazil,S„o Paulo,South America
+Bauru,Brazil,S„o Paulo,South America
+Iguape,Brazil,S„o Paulo,South America
+Franca,Brazil,S„o Paulo,South America
 Garanhuns,Brazil,Pernambuco,South America
 Caruaru,Brazil,Pernambuco,South America
 Rio Branco,Brazil,Acre,South America
-Sao Luis,Brazil,Maranh√£o,South America
-Porto Velho,Brazil,Rond√¥nia,South America
+Sao Luis,Brazil,Maranh„o,South America
+Porto Velho,Brazil,RondÙnia,South America
 Alvorada,Brazil,Tocantins,South America
 Corumba,Brazil,Mato Grosso do Sul,South America
 Belo Horizonte,Brazil,Minas Gerais,South America
@@ -1138,39 +1098,39 @@ Alta Floresta,Brazil,Mato Grosso,South America
 Cuiaba,Brazil,Mato Grosso,South America
 Pelotas,Brazil,Rio Grande do Sul,South America
 Caxias do Sul,Brazil,Rio Grande do Sul,South America
-Ponta Grossa,Brazil,Paran√°,South America
-Teresina,Brazil,Piau√≠,South America
+Ponta Grossa,Brazil,Paran·,South America
+Teresina,Brazil,PiauÌ,South America
 Maceio,Brazil,Alagoas,South America
 Vitoria da Conquista,Brazil,Bahia,South America
 Barreiras,Brazil,Bahia,South America
-Vila Velha,Brazil,Esp√≠rito Santo,South America
+Vila Velha,Brazil,EspÌrito Santo,South America
 Natal,Brazil,Rio Grande do Norte,South America
-Campinas,Brazil,S√£o Paulo,South America
-Sorocaba,Brazil,S√£o Paulo,South America
-Ribeirao Preto,Brazil,S√£o Paulo,South America
+Campinas,Brazil,S„o Paulo,South America
+Sorocaba,Brazil,S„o Paulo,South America
+Ribeirao Preto,Brazil,S„o Paulo,South America
 Petrolina,Brazil,Pernambuco,South America
 Cruzeiro do Sul,Brazil,Acre,South America
 Manaus,Brazil,Amazonas,South America
-Caxias,Brazil,Maranh√£o,South America
-Santarem,Brazil,Par√°,South America
-Maraba,Brazil,Par√°,South America
-Vilhena,Brazil,Rond√¥nia,South America
-Ji-Parana,Brazil,Rond√¥nia,South America
+Caxias,Brazil,Maranh„o,South America
+Santarem,Brazil,Par·,South America
+Maraba,Brazil,Par·,South America
+Vilhena,Brazil,RondÙnia,South America
+Ji-Parana,Brazil,RondÙnia,South America
 Campo Grande,Brazil,Mato Grosso do Sul,South America
 Florianopolis,Brazil,Santa Catarina,South America
 Feira de Santana,Brazil,Bahia,South America
 Boa Vista,Brazil,Roraima,South America
-Macapa,Brazil,Amap√°,South America
-Belem,Brazil,Par√°,South America
+Macapa,Brazil,Amap·,South America
+Belem,Brazil,Par·,South America
 Brasilia,Brazil,Distrito Federal,South America
 Porto Alegre,Brazil,Rio Grande do Sul,South America
-Curitiba,Brazil,Paran√°,South America
-Fortaleza,Brazil,Cear√°,South America
+Curitiba,Brazil,Paran·,South America
+Fortaleza,Brazil,Cear·,South America
 Salvador,Brazil,Bahia,South America
-Goiania,Brazil,Goi√°s,South America
+Goiania,Brazil,Goi·s,South America
 Recife,Brazil,Pernambuco,South America
 Rio de Janeiro,Brazil,Rio de Janeiro,South America
-Sao Paulo,Brazil,S√£o Paulo,South America
+Sao Paulo,Brazil,S„o Paulo,South America
 Bandar Seri Begawan,Brunei,Brunei and Muara,South America
 Lovec,Bulgaria,Lovech,Europe
 Montana,Bulgaria,Montana,Europe
@@ -1191,35 +1151,35 @@ Ruse,Bulgaria,Ruse,Europe
 Burgas,Bulgaria,Burgas,Europe
 Sofia,Bulgaria,Grad Sofiya,Europe
 Fada Ngourma,Burkina Faso,Gourma,Africa
-Orodara,Burkina Faso,K√©n√©dougou,Africa
+Orodara,Burkina Faso,KÈnÈdougou,Africa
 Solenzo,Burkina Faso,Banwa,Africa
 Nouna,Burkina Faso,Kossi,Africa
 Dedougou,Burkina Faso,Mou Houn,Africa
 Gorom Gorom,Burkina Faso,Oudalan,Africa
 Djibo,Burkina Faso,Soum,Africa
 Tougan,Burkina Faso,Sourou,Africa
-Kombissiri,Burkina Faso,Baz√©ga,Africa
+Kombissiri,Burkina Faso,BazÈga,Africa
 Ziniare,Burkina Faso,Oubritenga,Africa
-Yako,Burkina Faso,Passor√©,Africa
-Reo,Burkina Faso,Sangui√©,Africa
+Yako,Burkina Faso,PassorÈ,Africa
+Reo,Burkina Faso,SanguiÈ,Africa
 Leo,Burkina Faso,Sissili,Africa
 Sapouy,Burkina Faso,Ziro,Africa
 Boulsa,Burkina Faso,Namentenga,Africa
 Zorgo,Burkina Faso,Ganzourgou,Africa
 Koupela,Burkina Faso,Kouritenga,Africa
 Po,Burkina Faso,Nahouri,Africa
-Manga,Burkina Faso,Zoundw√©ogo,Africa
+Manga,Burkina Faso,ZoundwÈogo,Africa
 Diebougou,Burkina Faso,Bougouriba,Africa
 Gaoua,Burkina Faso,Poni,Africa
 Bogande,Burkina Faso,Gnagna,Africa
-Dori,Burkina Faso,S√©no,Africa
+Dori,Burkina Faso,SÈno,Africa
 Sebba,Burkina Faso,Yagha,Africa
 Diapaga,Burkina Faso,Tapoa,Africa
-Koudougou,Burkina Faso,Boulkiemd√©,Africa
+Koudougou,Burkina Faso,BoulkiemdÈ,Africa
 Ouahigouya,Burkina Faso,Yatenga,Africa
 Kaya,Burkina Faso,Sanmatenga,Africa
 Tenkodogo,Burkina Faso,Boulgou,Africa
-Banfora,Burkina Faso,Komo√©,Africa
+Banfora,Burkina Faso,KomoÈ,Africa
 Bobo Dioulasso,Burkina Faso,Houet,Africa
 Ouagadougou,Burkina Faso,Kadiogo,Africa
 Cankuzo,Burundi,Cankuzo,Africa
@@ -1236,24 +1196,24 @@ Bururi,Burundi,Bururi,Africa
 Muyinga,Burundi,Muyinga,Africa
 Gitega,Burundi,Muramvya,Africa
 Bujumbura,Burundi,Bujumbura Mairie,Africa
-Kampong Spoe,Cambodia,K√¢mp√≥ng Sp≈ì,Asia
-Kampong Thum,Cambodia,K√¢mp√≥ng Thum,Asia
-Prey Veng,Cambodia,Prey V√™ng,Asia
-Phnum Tbeng Meanchey,Cambodia,Preah Vih√©ar,Asia
-Stoeng Treng,Cambodia,St≈ìng Tr√™ng,Asia
-Kracheh,Cambodia,Kr√¢ch√©h,Asia
-Senmonorom,Cambodia,M√¥nd√≥l Kiri,Asia
-Lumphat,Cambodia,R√¥t√¢n√¥kiri,Asia
+Kampong Spoe,Cambodia,K‚mpÛng SpΩ,Asia
+Kampong Thum,Cambodia,K‚mpÛng Thum,Asia
+Prey Veng,Cambodia,Prey VÍng,Asia
+Phnum Tbeng Meanchey,Cambodia,Preah VihÈar,Asia
+Stoeng Treng,Cambodia,StΩng TrÍng,Asia
+Kracheh,Cambodia,Kr‚chÈh,Asia
+Senmonorom,Cambodia,MÙndÛl Kiri,Asia
+Lumphat,Cambodia,RÙt‚nÙkiri,Asia
 Svay Rieng,Cambodia,Svay Rieng,Asia
-Sisophon,Cambodia,B√¢nt√©ay M√©anchey,Asia
-Krong Koh Kong,Cambodia,Ka√¥h Kong,Asia
+Sisophon,Cambodia,B‚ntÈay MÈanchey,Asia
+Krong Koh Kong,Cambodia,KaÙh Kong,Asia
 Pursat,Cambodia,Pouthisat,Asia
-Kampong Cham,Cambodia,K√¢mp√≥ng Cham,Asia
-Kompong Chhnang,Cambodia,K√¢mp√≥ng Chhnang,Asia
-Kampot,Cambodia,K√¢mp√¥t,Asia
-Takeo,Cambodia,Tak√™v,Asia
-Battambang,Cambodia,Batd√¢mb√¢ng,Asia
-Siem Reap,Cambodia,Siemr√©ab,Asia
+Kampong Cham,Cambodia,K‚mpÛng Cham,Asia
+Kompong Chhnang,Cambodia,K‚mpÛng Chhnang,Asia
+Kampot,Cambodia,K‚mpÙt,Asia
+Takeo,Cambodia,TakÍv,Asia
+Battambang,Cambodia,Batd‚mb‚ng,Asia
+Siem Reap,Cambodia,SiemrÈab,Asia
 Phnom Penh,Cambodia,Phnom Penh,Asia
 Buea,Cameroon,Sud-Ouest,Africa
 Bafang,Cameroon,Ouest,Africa
@@ -1284,7 +1244,7 @@ Douala,Cameroon,Littoral,Africa
 Ebolowa,Cameroon,Sud,Africa
 Bamenda,Cameroon,Nord-Ouest,Africa
 Garoua,Cameroon,Nord,Africa
-Maroua,Cameroon,Extr√™me-Nord,Africa
+Maroua,Cameroon,ExtrÍme-Nord,Africa
 Yaounde,Cameroon,Centre,Africa
 Selkirk,Canada,Manitoba,North America
 Berens River,Canada,Manitoba,North America
@@ -1326,22 +1286,22 @@ Kitchener,Canada,Ontario,North America
 New Liskeard,Canada,Ontario,North America
 Brockville,Canada,Ontario,North America
 Big Beaver House,Canada,Ontario,North America
-Port-Menier,Canada,Qu√©bec,North America
-Riviere-du-Loup,Canada,Qu√©bec,North America
-Drummondville,Canada,Qu√©bec,North America
-Sherbrooke,Canada,Qu√©bec,North America
-Cap-Chat,Canada,Qu√©bec,North America
-Baie-Comeau,Canada,Qu√©bec,North America
-Natashquan,Canada,Qu√©bec,North America
-Eastmain,Canada,Qu√©bec,North America
-Schefferville,Canada,Qu√©bec,North America
-Salluit,Canada,Qu√©bec,North America
-Amos,Canada,Qu√©bec,North America
-Joliette,Canada,Qu√©bec,North America
-St.-Jerome,Canada,Qu√©bec,North America
-St-Augustin,Canada,Qu√©bec,North America
-Rouyn-Noranda,Canada,Qu√©bec,North America
-La Sarre,Canada,Qu√©bec,North America
+Port-Menier,Canada,QuÈbec,North America
+Riviere-du-Loup,Canada,QuÈbec,North America
+Drummondville,Canada,QuÈbec,North America
+Sherbrooke,Canada,QuÈbec,North America
+Cap-Chat,Canada,QuÈbec,North America
+Baie-Comeau,Canada,QuÈbec,North America
+Natashquan,Canada,QuÈbec,North America
+Eastmain,Canada,QuÈbec,North America
+Schefferville,Canada,QuÈbec,North America
+Salluit,Canada,QuÈbec,North America
+Amos,Canada,QuÈbec,North America
+Joliette,Canada,QuÈbec,North America
+St.-Jerome,Canada,QuÈbec,North America
+St-Augustin,Canada,QuÈbec,North America
+Rouyn-Noranda,Canada,QuÈbec,North America
+La Sarre,Canada,QuÈbec,North America
 New Glasgow,Canada,Nova Scotia,North America
 Liverpool,Canada,Nova Scotia,North America
 Amherst,Canada,Nova Scotia,North America
@@ -1406,17 +1366,17 @@ Cobalt,Canada,Ontario,North America
 Cochrane,Canada,Ontario,North America
 Nipigon,Canada,Ontario,North America
 Atikokan,Canada,Ontario,North America
-Rimouski,Canada,Qu√©bec,North America
-Saint-Georges,Canada,Qu√©bec,North America
-Victoriaville,Canada,Qu√©bec,North America
-Chevery,Canada,Qu√©bec,North America
-Mistassini,Canada,Qu√©bec,North America
-Kangirsuk,Canada,Qu√©bec,North America
-Shawinigan,Canada,Qu√©bec,North America
-Matagami,Canada,Qu√©bec,North America
-Mont-Laurier,Canada,Qu√©bec,North America
-Pembroke,Canada,Qu√©bec,North America
-Radisson,Canada,Qu√©bec,North America
+Rimouski,Canada,QuÈbec,North America
+Saint-Georges,Canada,QuÈbec,North America
+Victoriaville,Canada,QuÈbec,North America
+Chevery,Canada,QuÈbec,North America
+Mistassini,Canada,QuÈbec,North America
+Kangirsuk,Canada,QuÈbec,North America
+Shawinigan,Canada,QuÈbec,North America
+Matagami,Canada,QuÈbec,North America
+Mont-Laurier,Canada,QuÈbec,North America
+Pembroke,Canada,QuÈbec,North America
+Radisson,Canada,QuÈbec,North America
 Saint John,Canada,New Brunswick,North America
 Edmundston,Canada,New Brunswick,North America
 Shelburne,Canada,Nova Scotia,North America
@@ -1445,8 +1405,8 @@ Dryden,Canada,Ontario,North America
 Attawapiskat,Canada,Ontario,North America
 Hamilton,Canada,Ontario,North America
 Windsor,Canada,Ontario,North America
-Trois Rivieres,Canada,Qu√©bec,North America
-Sept-Iles,Canada,Qu√©bec,North America
+Trois Rivieres,Canada,QuÈbec,North America
+Sept-Iles,Canada,QuÈbec,North America
 Corner Brook,Canada,Newfoundland and Labrador,North America
 Norway House,Canada,Manitoba,North America
 Flin Flon,Canada,Manitoba,North America
@@ -1481,13 +1441,13 @@ Lansdowne House,Canada,Ontario,North America
 Moosonee,Canada,Ontario,North America
 Sudbury,Canada,Ontario,North America
 Kenora,Canada,Ontario,North America
-Gaspe,Canada,Qu√©bec,North America
-Mingan,Canada,Qu√©bec,North America
-Dolbeau,Canada,Qu√©bec,North America
-Val d'Or,Canada,Qu√©bec,North America
-Ivugivik,Canada,Qu√©bec,North America
-Inukjuak,Canada,Qu√©bec,North America
-Chicoutimi,Canada,Qu√©bec,North America
+Gaspe,Canada,QuÈbec,North America
+Mingan,Canada,QuÈbec,North America
+Dolbeau,Canada,QuÈbec,North America
+Val d'Or,Canada,QuÈbec,North America
+Ivugivik,Canada,QuÈbec,North America
+Inukjuak,Canada,QuÈbec,North America
+Chicoutimi,Canada,QuÈbec,North America
 Moncton,Canada,New Brunswick,North America
 Fredericton,Canada,New Brunswick,North America
 Bathurst,Canada,New Brunswick,North America
@@ -1512,8 +1472,8 @@ Igloolik,Canada,Nunavut,North America
 Dawson,Canada,Yukon,North America
 Timmins,Canada,Ontario,North America
 North Bay,Canada,Ontario,North America
-Kuujjuarapik,Canada,Qu√©bec,North America
-Kuujjuaq,Canada,Qu√©bec,North America
+Kuujjuarapik,Canada,QuÈbec,North America
+Kuujjuaq,Canada,QuÈbec,North America
 Sydney,Canada,Nova Scotia,North America
 Labrador City,Canada,Newfoundland and Labrador,North America
 Winnipeg,Canada,Manitoba,North America
@@ -1532,13 +1492,13 @@ Whitehorse,Canada,Yukon,North America
 Ottawa,Canada,Ontario,North America
 Fort Severn,Canada,Ontario,North America
 Thunder Bay,Canada,Ontario,North America
-Quebec,Canada,Qu√©bec,North America
+Quebec,Canada,QuÈbec,North America
 Halifax,Canada,Nova Scotia,North America
-St. John's,Canada,Newfoundland and Labrador,North America
+St John,Canada,Newfoundland and Labrador,North America
 Nain,Canada,Newfoundland and Labrador,North America
 Charlottetown,Canada,Prince Edward Island,North America
 Edmonton,Canada,Alberta,North America
-Montr√©al,Canada,Qu√©bec,North America
+Montreal,Canada,Quebec,North America
 Vancouver,Canada,British Columbia,North America
 Toronto,Canada,Ontario,North America
 Mindelo,Cape Verde,,Africa
@@ -1546,35 +1506,35 @@ Praia,Cape Verde,,Africa
 George Town,Cayman Islands,,Africa
 Mobaye,Central African Republic,Basse-Kotto,Africa
 Mbaiki,Central African Republic,Lobaye,Africa
-Carnot,Central African Republic,Mamb√©r√©-Kad√©√Ø,Africa
-Bozoum,Central African Republic,Ouham-Pend√©,Africa
-Kaga Bandoro,Central African Republic,Nana-Gr√©bizi,Africa
+Carnot,Central African Republic,MambÈrÈ-KadÈÔ,Africa
+Bozoum,Central African Republic,Ouham-PendÈ,Africa
+Kaga Bandoro,Central African Republic,Nana-GrÈbizi,Africa
 Zemio,Central African Republic,Haut-Mbomou,Africa
 Yakossi,Central African Republic,Mbomou,Africa
-Nola,Central African Republic,Sangha-Mba√©r√©,Africa
-Sibut,Central African Republic,K√©mo,Africa
+Nola,Central African Republic,Sangha-MbaÈrÈ,Africa
+Sibut,Central African Republic,KÈmo,Africa
 Bossangoa,Central African Republic,Ouham,Africa
 Birao,Central African Republic,Vakaga,Africa
 Ouadda,Central African Republic,Haute-Kotto,Africa
 Bangassou,Central African Republic,Mbomou,Africa
 Bossembele,Central African Republic,Bangui,Africa
-Berberati,Central African Republic,Mamb√©r√©-Kad√©√Ø,Africa
+Berberati,Central African Republic,MambÈrÈ-KadÈÔ,Africa
 Bria,Central African Republic,Haute-Kotto,Africa
-Bouar,Central African Republic,Nana-Mamb√©r√©,Africa
+Bouar,Central African Republic,Nana-MambÈrÈ,Africa
 Bambari,Central African Republic,Ouaka,Africa
 Ndele,Central African Republic,Bamingui-Bangoran,Africa
 Obo,Central African Republic,Haut-Mbomou,Africa
 Bangui,Central African Republic,Bangui,Africa
-Lai,Chad,Tandjil√©,Africa
+Lai,Chad,TandjilÈ,Africa
 Zouar,Chad,Bet,Africa
 Bol,Chad,Lac,Africa
 Ati,Chad,Batha,Africa
 Oum Hadjer,Chad,Batha,Africa
-Mongo,Chad,Gu√©ra,Africa
+Mongo,Chad,GuÈra,Africa
 Doba,Chad,Logone Oriental,Africa
 Pala,Chad,Mayo-Kebbi Est,Africa
 Bongor,Chad,Mayo-Kebbi Est,Africa
-Kelo,Chad,Tandjil√©,Africa
+Kelo,Chad,TandjilÈ,Africa
 Fada,Chad,Bet,Africa
 Faya Largeau,Chad,Bet,Africa
 Mao,Chad,Kanem,Africa
@@ -1583,32 +1543,32 @@ Sarh,Chad,Mandoul,Africa
 Am Timan,Chad,Salamat,Africa
 Moundou,Chad,Logone Oriental,Africa
 Ndjamena,Chad,Hadjer-Lamis,Africa
-Abeche,Chad,Ouadda√Ø,Africa
-Rio Verde,Chile,Magallanes y Ant√°rtica Chilena,South America
-Cuya,Chile,Tarapac√°,South America
+Abeche,Chad,OuaddaÔ,Africa
+Rio Verde,Chile,Magallanes y Ant·rtica Chilena,South America
+Cuya,Chile,Tarapac·,South America
 Chuquicamata,Chile,Antofagasta,South America
 Maria Elena,Chile,Antofagasta,South America
 Tierra Amarilla,Chile,Atacama,South America
 Combarbala,Chile,Coquimbo,South America
-San Bernardo,Chile,Regi√≥n Metropolitana de Santiago,South America
-San Felipe,Chile,Valpara√≠so,South America
-Vina del Mar,Chile,Valpara√≠so,South America
-La Ligua,Chile,Valpara√≠so,South America
-Quillota,Chile,Valpara√≠so,South America
-Nueva Imperial,Chile,La Araucan√≠a,South America
-Loncoche,Chile,La Araucan√≠a,South America
-Villarica,Chile,La Araucan√≠a,South America
-Tolten,Chile,La Araucan√≠a,South America
-Lonquimay,Chile,La Araucan√≠a,South America
-Angol,Chile,La Araucan√≠a,South America
-Collipulli,Chile,La Araucan√≠a,South America
-La Union,Chile,Los R√≠os,South America
-Rio Bueno,Chile,Los R√≠os,South America
-Coronel,Chile,B√≠o-B√≠o,South America
-Talcahuano,Chile,B√≠o-B√≠o,South America
-Quirihue,Chile,B√≠o-B√≠o,South America
-Curanilahue,Chile,B√≠o-B√≠o,South America
-Santa Barbara,Chile,B√≠o-B√≠o,South America
+San Bernardo,Chile,RegiÛn Metropolitana de Santiago,South America
+San Felipe,Chile,ValparaÌso,South America
+Vina del Mar,Chile,ValparaÌso,South America
+La Ligua,Chile,ValparaÌso,South America
+Quillota,Chile,ValparaÌso,South America
+Nueva Imperial,Chile,La AraucanÌa,South America
+Loncoche,Chile,La AraucanÌa,South America
+Villarica,Chile,La AraucanÌa,South America
+Tolten,Chile,La AraucanÌa,South America
+Lonquimay,Chile,La AraucanÌa,South America
+Angol,Chile,La AraucanÌa,South America
+Collipulli,Chile,La AraucanÌa,South America
+La Union,Chile,Los RÌos,South America
+Rio Bueno,Chile,Los RÌos,South America
+Coronel,Chile,BÌo-BÌo,South America
+Talcahuano,Chile,BÌo-BÌo,South America
+Quirihue,Chile,BÌo-BÌo,South America
+Curanilahue,Chile,BÌo-BÌo,South America
+Santa Barbara,Chile,BÌo-BÌo,South America
 Pichilemu,Chile,Libertador General Bernardo O'Higgins,South America
 San Fernando,Chile,Libertador General Bernardo O'Higgins,South America
 Puerto Varas,Chile,Los Lagos,South America
@@ -1617,9 +1577,9 @@ Castro,Chile,Los Lagos,South America
 Chonchi,Chile,Los Lagos,South America
 Linares,Chile,Maule,South America
 Cauquenes,Chile,Maule,South America
-Cochrane,Chile,Ais√©n del General Carlos Ib√°√±ez del Campo,South America
-Lagunas,Chile,Tarapac√°,South America
-Pozo Almonte,Chile,Tarapac√°,South America
+Cochrane,Chile,AisÈn del General Carlos Ib·Òez del Campo,South America
+Lagunas,Chile,Tarapac·,South America
+Pozo Almonte,Chile,Tarapac·,South America
 Toconao,Chile,Antofagasta,South America
 Huasco,Chile,Atacama,South America
 Diego de Almagro,Chile,Atacama,South America
@@ -1628,20 +1588,20 @@ Coquimbo,Chile,Coquimbo,South America
 Vicuna,Chile,Coquimbo,South America
 Illapel,Chile,Coquimbo,South America
 Salamanca,Chile,Coquimbo,South America
-Los Andes,Chile,Valpara√≠so,South America
-San Antonio,Chile,Valpara√≠so,South America
-Victoria,Chile,La Araucan√≠a,South America
-Carahue,Chile,La Araucan√≠a,South America
-Los Lagos,Chile,Los R√≠os,South America
-Lota,Chile,B√≠o-B√≠o,South America
-Lebu,Chile,B√≠o-B√≠o,South America
+Los Andes,Chile,ValparaÌso,South America
+San Antonio,Chile,ValparaÌso,South America
+Victoria,Chile,La AraucanÌa,South America
+Carahue,Chile,La AraucanÌa,South America
+Los Lagos,Chile,Los RÌos,South America
+Lota,Chile,BÌo-BÌo,South America
+Lebu,Chile,BÌo-BÌo,South America
 Quellon,Chile,Los Lagos,South America
 Constitucion,Chile,Maule,South America
 Villa O'Higgins,Chile,Santa Cruz,South America
-Puerto Aisen,Chile,Ais√©n del General Carlos Ib√°√±ez del Campo,South America
-Puerto Natales,Chile,Magallanes y Ant√°rtica Chilena,South America
-Puerto Williams,Chile,Magallanes y Ant√°rtica Chilena,South America
-Temuco,Chile,La Araucan√≠a,South America
+Puerto Aisen,Chile,AisÈn del General Carlos Ib·Òez del Campo,South America
+Puerto Natales,Chile,Magallanes y Ant·rtica Chilena,South America
+Puerto Williams,Chile,Magallanes y Ant·rtica Chilena,South America
+Temuco,Chile,La AraucanÌa,South America
 Tocopilla,Chile,Antofagasta,South America
 Calama,Chile,Antofagasta,South America
 Mejillones,Chile,Antofagasta,South America
@@ -1649,25 +1609,25 @@ Taltal,Chile,Antofagasta,South America
 Vallenar,Chile,Atacama,South America
 Chanaral,Chile,Atacama,South America
 Ovalle,Chile,Coquimbo,South America
-Chillan,Chile,B√≠o-B√≠o,South America
+Chillan,Chile,BÌo-BÌo,South America
 Rancagua,Chile,Libertador General Bernardo O'Higgins,South America
 Osorno,Chile,Los Lagos,South America
 Ancud,Chile,Los Lagos,South America
 Talca,Chile,Maule,South America
 Curico,Chile,Maule,South America
-Coihaique,Chile,Ais√©n del General Carlos Ib√°√±ez del Campo,South America
+Coihaique,Chile,AisÈn del General Carlos Ib·Òez del Campo,South America
 Arica,Chile,Arica y Parinacota,South America
 Copiapo,Chile,Atacama,South America
 La Serena,Chile,Coquimbo,South America
-Los Angeles,Chile,B√≠o-B√≠o,South America
-Punta Arenas,Chile,Magallanes y Ant√°rtica Chilena,South America
-Iquique,Chile,Tarapac√°,South America
+Los Angeles,Chile,BÌo-BÌo,South America
+Punta Arenas,Chile,Magallanes y Ant·rtica Chilena,South America
+Iquique,Chile,Tarapac·,South America
 Antofagasta,Chile,Antofagasta,South America
-Valparaiso,Chile,Valpara√≠so,South America
-Valdivia,Chile,Los R√≠os,South America
-Concepcion,Chile,B√≠o-B√≠o,South America
+Valparaiso,Chile,ValparaÌso,South America
+Valdivia,Chile,Los RÌos,South America
+Concepcion,Chile,BÌo-BÌo,South America
 Puerto Montt,Chile,Los Lagos,South America
-Santiago,Chile,Regi√≥n Metropolitana de Santiago,South America
+Santiago,Chile,RegiÛn Metropolitana de Santiago,South America
 Yumen,China,Gansu,Asia
 Linxia,China,Gansu,Asia
 Zuozhou,China,Beijing,Asia
@@ -2071,45 +2031,45 @@ Shanghai,China,Shanghai,Asia
 Yopal,Colombia,Casanare,South America
 San Andres,Colombia,,South America
 Sonson,Colombia,Antioquia,South America
-Sogamoso,Colombia,Boyac√°,South America
+Sogamoso,Colombia,Boyac·,South America
 Barrancabermeja,Colombia,Santander,South America
 Girardot,Colombia,Cundinamarca,South America
 Campoalegre,Colombia,Huila,South America
-Tuquerres,Colombia,Nari√±o,South America
+Tuquerres,Colombia,NariÒo,South America
 Mocoa,Colombia,Putumayo,South America
 Cartago,Colombia,Valle del Cauca,South America
-Soledad,Colombia,Atl√°ntico,South America
-Sabanalarga,Colombia,Atl√°ntico,South America
-Arjona,Colombia,Bol√≠var,South America
-Magangue,Colombia,Bol√≠var,South America
+Soledad,Colombia,Atl·ntico,South America
+Sabanalarga,Colombia,Atl·ntico,South America
+Arjona,Colombia,BolÌvar,South America
+Magangue,Colombia,BolÌvar,South America
 Valledupar,Colombia,Cesar,South America
 San Jose del Guaviare,Colombia,Meta,South America
 Puerto Lopez,Colombia,Meta,South America
 Yarumal,Colombia,Antioquia,South America
 Puerto Berrio,Colombia,Antioquia,South America
 Turbo,Colombia,Antioquia,South America
-Tunja,Colombia,Boyac√°,South America
-Chiquinquira,Colombia,Boyac√°,South America
-Duitama,Colombia,Boyac√°,South America
-Ayapel,Colombia,C√≥rdoba,South America
-Lorica,Colombia,C√≥rdoba,South America
+Tunja,Colombia,Boyac·,South America
+Chiquinquira,Colombia,Boyac·,South America
+Duitama,Colombia,Boyac·,South America
+Ayapel,Colombia,CÛrdoba,South America
+Lorica,Colombia,CÛrdoba,South America
 Socorro,Colombia,Santander,South America
 Riohacha,Colombia,La Guajira,South America
-Armenia,Colombia,Quind√≠o,South America
+Armenia,Colombia,QuindÌo,South America
 Pereira,Colombia,Risaralda,South America
 Honda,Colombia,Tolima,South America
-San Vicente del Caguan,Colombia,Caquet√°,South America
-Florencia,Colombia,Caquet√°,South America
+San Vicente del Caguan,Colombia,Caquet·,South America
+Florencia,Colombia,Caquet·,South America
 Guapi,Colombia,Cauca,South America
 Neiva,Colombia,Huila,South America
 Garzon,Colombia,Huila,South America
-Ipiales,Colombia,Nari√±o,South America
+Ipiales,Colombia,NariÒo,South America
 Buenaventura,Colombia,Valle del Cauca,South America
 Tulua,Colombia,Valle del Cauca,South America
-El Carmen de Bolivar,Colombia,Bol√≠var,South America
-Jurado,Colombia,Choc√≥,South America
-Nuqui,Colombia,Choc√≥,South America
-Quibdo,Colombia,Choc√≥,South America
+El Carmen de Bolivar,Colombia,BolÌvar,South America
+Jurado,Colombia,ChocÛ,South America
+Nuqui,Colombia,ChocÛ,South America
+Quibdo,Colombia,ChocÛ,South America
 El Banco,Colombia,Magdalena,South America
 Cienaga,Colombia,Magdalena,South America
 Sincelejo,Colombia,Sucre,South America
@@ -2119,23 +2079,23 @@ Tame,Colombia,Arauca,South America
 Pamplona,Colombia,Norte de Santander,South America
 Ocana,Colombia,Norte de Santander,South America
 Orocue,Colombia,Casanare,South America
-Obando,Colombia,Guain√≠a,South America
+Obando,Colombia,GuainÌa,South America
 San Martin,Colombia,Meta,South America
 Puerto Carreno,Colombia,Vichada,South America
 Bello,Colombia,Antioquia,South America
-Monteria,Colombia,C√≥rdoba,South America
+Monteria,Colombia,CÛrdoba,South America
 Bucaramanga,Colombia,Santander,South America
 Ibague,Colombia,Tolima,South America
 Popayan,Colombia,Cauca,South America
 Santa Marta,Colombia,Magdalena,South America
 Cucuta,Colombia,Norte de Santander,South America
 Villavicencio,Colombia,Meta,South America
-Tumaco,Colombia,Nari√±o,South America
+Tumaco,Colombia,NariÒo,South America
 Manizales,Colombia,Caldas,South America
-Pasto,Colombia,Nari√±o,South America
-Barranquilla,Colombia,Atl√°ntico,South America
-Cartagena,Colombia,Bol√≠var,South America
-Mitu,Colombia,Vaup√©s,South America
+Pasto,Colombia,NariÒo,South America
+Barranquilla,Colombia,Atl·ntico,South America
+Cartagena,Colombia,BolÌvar,South America
+Mitu,Colombia,VaupÈs,South America
 Leticia,Colombia,Amazonas,South America
 Medellin,Colombia,Antioquia,South America
 Cali,Colombia,Valle del Cauca,South America
@@ -2149,7 +2109,7 @@ Sembe,Congo (Brazzaville),Sangha,Africa
 Moloundou,Congo (Brazzaville),Sangha,Africa
 Owando,Congo (Brazzaville),Cuvette,Africa
 Makoua,Congo (Brazzaville),Cuvette,Africa
-Sibiti,Congo (Brazzaville),L√©koumou,Africa
+Sibiti,Congo (Brazzaville),LÈkoumou,Africa
 Mossendjo,Congo (Brazzaville),Niari,Africa
 Loubomo,Congo (Brazzaville),Niari,Africa
 Gamboma,Congo (Brazzaville),Plateaux,Africa
@@ -2159,16 +2119,16 @@ Kayes,Congo (Brazzaville),Bouenza,Africa
 Pointe-Noire,Congo (Brazzaville),Kouilou,Africa
 Brazzaville,Congo (Brazzaville),Pool,Africa
 Buluko,Congo (Kinshasa),Nord-Kivu,Africa
-Zongo,Congo (Kinshasa),√âquateur,Africa
-Libenge,Congo (Kinshasa),√âquateur,Africa
-Bongandanga,Congo (Kinshasa),√âquateur,Africa
-Ikela,Congo (Kinshasa),√âquateur,Africa
-Binga,Congo (Kinshasa),√âquateur,Africa
-Basankusu,Congo (Kinshasa),√âquateur,Africa
-Boende,Congo (Kinshasa),√âquateur,Africa
-Gbadolite,Congo (Kinshasa),√âquateur,Africa
-Businga,Congo (Kinshasa),√âquateur,Africa
-Bosobolo,Congo (Kinshasa),√âquateur,Africa
+Zongo,Congo (Kinshasa),…quateur,Africa
+Libenge,Congo (Kinshasa),…quateur,Africa
+Bongandanga,Congo (Kinshasa),…quateur,Africa
+Ikela,Congo (Kinshasa),…quateur,Africa
+Binga,Congo (Kinshasa),…quateur,Africa
+Basankusu,Congo (Kinshasa),…quateur,Africa
+Boende,Congo (Kinshasa),…quateur,Africa
+Gbadolite,Congo (Kinshasa),…quateur,Africa
+Businga,Congo (Kinshasa),…quateur,Africa
+Bosobolo,Congo (Kinshasa),…quateur,Africa
 Yangambi,Congo (Kinshasa),Orientale,Africa
 Aketi,Congo (Kinshasa),Orientale,Africa
 Mongbwalu,Congo (Kinshasa),Orientale,Africa
@@ -2184,11 +2144,11 @@ Lusanga,Congo (Kinshasa),Bandundu,Africa
 Mangai,Congo (Kinshasa),Bandundu,Africa
 Kasongo-Lunda,Congo (Kinshasa),Bandundu,Africa
 Mushie,Congo (Kinshasa),Bandundu,Africa
-Dibaya,Congo (Kinshasa),Kasa√Ø-Occidental,Africa
-Mweka,Congo (Kinshasa),Kasa√Ø-Occidental,Africa
-Luebo,Congo (Kinshasa),Kasa√Ø-Occidental,Africa
-Demba,Congo (Kinshasa),Kasa√Ø-Occidental,Africa
-Ilebo,Congo (Kinshasa),Kasa√Ø-Occidental,Africa
+Dibaya,Congo (Kinshasa),KasaÔ-Occidental,Africa
+Mweka,Congo (Kinshasa),KasaÔ-Occidental,Africa
+Luebo,Congo (Kinshasa),KasaÔ-Occidental,Africa
+Demba,Congo (Kinshasa),KasaÔ-Occidental,Africa
+Ilebo,Congo (Kinshasa),KasaÔ-Occidental,Africa
 Moanda,Congo (Kinshasa),Bas-Congo,Africa
 Kimpese,Congo (Kinshasa),Bas-Congo,Africa
 Kasangulu,Congo (Kinshasa),Bas-Congo,Africa
@@ -2198,11 +2158,11 @@ Mwenga,Congo (Kinshasa),Sud-Kivu,Africa
 Kampene,Congo (Kinshasa),Maniema,Africa
 Kalima,Congo (Kinshasa),Maniema,Africa
 Lubutu,Congo (Kinshasa),Maniema,Africa
-Kabinda,Congo (Kinshasa),Kasa√Ø-Oriental,Africa
-Lubao,Congo (Kinshasa),Kasa√Ø-Oriental,Africa
-Lusambo,Congo (Kinshasa),Kasa√Ø-Oriental,Africa
-Gandajika,Congo (Kinshasa),Kasa√Ø-Oriental,Africa
-Lodja,Congo (Kinshasa),Kasa√Ø-Oriental,Africa
+Kabinda,Congo (Kinshasa),KasaÔ-Oriental,Africa
+Lubao,Congo (Kinshasa),KasaÔ-Oriental,Africa
+Lusambo,Congo (Kinshasa),KasaÔ-Oriental,Africa
+Gandajika,Congo (Kinshasa),KasaÔ-Oriental,Africa
+Lodja,Congo (Kinshasa),KasaÔ-Oriental,Africa
 Dilolo,Congo (Kinshasa),Katanga,Africa
 Nyunzu,Congo (Kinshasa),Katanga,Africa
 Kasaji,Congo (Kinshasa),Katanga,Africa
@@ -2215,32 +2175,32 @@ Kambove,Congo (Kinshasa),Katanga,Africa
 Kongolo,Congo (Kinshasa),Katanga,Africa
 Kabalo,Congo (Kinshasa),Katanga,Africa
 Beni,Congo (Kinshasa),Nord-Kivu,Africa
-Lisala,Congo (Kinshasa),√âquateur,Africa
-Gemena,Congo (Kinshasa),√âquateur,Africa
+Lisala,Congo (Kinshasa),…quateur,Africa
+Gemena,Congo (Kinshasa),…quateur,Africa
 Buta,Congo (Kinshasa),Orientale,Africa
 Watsa,Congo (Kinshasa),Orientale,Africa
 Isiro,Congo (Kinshasa),Orientale,Africa
 Bondo,Congo (Kinshasa),Orientale,Africa
 Inongo,Congo (Kinshasa),Bandundu,Africa
-Tshikapa,Congo (Kinshasa),Kasa√Ø-Occidental,Africa
+Tshikapa,Congo (Kinshasa),KasaÔ-Occidental,Africa
 Boma,Congo (Kinshasa),Bas-Congo,Africa
 Bukavu,Congo (Kinshasa),Sud-Kivu,Africa
 Uvira,Congo (Kinshasa),Sud-Kivu,Africa
 Kindu,Congo (Kinshasa),Maniema,Africa
-Mwene-Ditu,Congo (Kinshasa),Kasa√Ø-Oriental,Africa
+Mwene-Ditu,Congo (Kinshasa),KasaÔ-Oriental,Africa
 Likasi,Congo (Kinshasa),Katanga,Africa
 Manono,Congo (Kinshasa),Katanga,Africa
 Kamina,Congo (Kinshasa),Katanga,Africa
-Mbandaka,Congo (Kinshasa),√âquateur,Africa
+Mbandaka,Congo (Kinshasa),…quateur,Africa
 Kisangani,Congo (Kinshasa),Orientale,Africa
 Bandundu,Congo (Kinshasa),Bandundu,Africa
-Kananga,Congo (Kinshasa),Kasa√Ø-Occidental,Africa
+Kananga,Congo (Kinshasa),KasaÔ-Occidental,Africa
 Kasongo,Congo (Kinshasa),Maniema,Africa
-Mbuji-Mayi,Congo (Kinshasa),Kasa√Ø-Oriental,Africa
+Mbuji-Mayi,Congo (Kinshasa),KasaÔ-Oriental,Africa
 Kalemie,Congo (Kinshasa),Katanga,Africa
 Butembo,Congo (Kinshasa),Nord-Kivu,Africa
 Goma,Congo (Kinshasa),Nord-Kivu,Africa
-Bumba,Congo (Kinshasa),√âquateur,Africa
+Bumba,Congo (Kinshasa),…quateur,Africa
 Kikwit,Congo (Kinshasa),Bandundu,Africa
 Matadi,Congo (Kinshasa),Bas-Congo,Africa
 Kolwezi,Congo (Kinshasa),Katanga,Africa
@@ -2252,15 +2212,15 @@ Cartago,Costa Rica,Cartago,South America
 Golfito,Costa Rica,Puntarenas,South America
 Alajuela,Costa Rica,Alajuela,South America
 Canas,Costa Rica,Guanacaste,South America
-Sixaola,Costa Rica,Lim√≥n,South America
+Sixaola,Costa Rica,LimÛn,South America
 Puntarenas,Costa Rica,Puntarenas,South America
 Ciudad Cortes,Costa Rica,Puntarenas,South America
 Quesada,Costa Rica,Alajuela,South America
 Liberia,Costa Rica,Guanacaste,South America
 La Cruz,Costa Rica,Guanacaste,South America
-Puerto Limon,Costa Rica,Lim√≥n,South America
-San Jose,Costa Rica,San Jos√©,South America
-Sibenik,Croatia,≈†ibensko-Kninska,Europe
+Puerto Limon,Costa Rica,LimÛn,South America
+San Jose,Costa Rica,San JosÈ,South America
+Sibenik,Croatia,¶ibensko-Kninska,Europe
 Karlovac,Croatia,Karlovacka,Europe
 Rijeka,Croatia,Primorsko-Goranska,Europe
 Slavonski Brod,Croatia,Brodsko-Posavska,Europe
@@ -2270,7 +2230,7 @@ Zadar,Croatia,Zadarska,Europe
 Pula,Croatia,Istarska,Europe
 Osijek,Croatia,Osjecko-Baranjska,Europe
 Zagreb,Croatia,Grad Zagreb,Europe
-Ciego de Avila,Cuba,Ciego de √Åvila,South America
+Ciego de Avila,Cuba,Ciego de ¡vila,South America
 Palma Soriano,Cuba,Santiago de Cuba,South America
 San Antonio de los Banos,Cuba,La Habana,South America
 Guines,Cuba,La Habana,South America
@@ -2278,21 +2238,21 @@ Caibarien,Cuba,Villa Clara,South America
 Placetas,Cuba,Villa Clara,South America
 Cienfuegos,Cuba,Cienfuegos,South America
 Nueva Gerona,Cuba,Isla de la Juventud,South America
-Sancti Spiritus,Cuba,Sancti Sp√≠ritus,South America
-Moron,Cuba,Ciego de √Åvila,South America
-Nuevitas,Cuba,Camag√ºey,South America
+Sancti Spiritus,Cuba,Sancti SpÌritus,South America
+Moron,Cuba,Ciego de ¡vila,South America
+Nuevitas,Cuba,Camag¸ey,South America
 Manzanillo,Cuba,Granma,South America
 Bayamo,Cuba,Granma,South America
-Banes,Cuba,Holgu√≠n,South America
+Banes,Cuba,HolguÌn,South America
 Las Tunas,Cuba,Las Tunas,South America
 Artemisa,Cuba,La Habana,South America
 Matanzas,Cuba,Matanzas,South America
 Colon,Cuba,Matanzas,South America
 Sagua la Grande,Cuba,Villa Clara,South America
-Pinar del Rio,Cuba,Pinar del R√≠o,South America
-Camaguey,Cuba,Camag√ºey,South America
-Guantanamo,Cuba,Guant√°namo,South America
-Holguin,Cuba,Holgu√≠n,South America
+Pinar del Rio,Cuba,Pinar del RÌo,South America
+Camaguey,Cuba,Camag¸ey,South America
+Guantanamo,Cuba,Guant·namo,South America
+Holguin,Cuba,HolguÌn,South America
 Santa Clara,Cuba,Villa Clara,South America
 Santiago de Cuba,Cuba,Santiago de Cuba,South America
 Havana,Cuba,Ciudad de la Habana,South America
@@ -2301,23 +2261,23 @@ Larnaka,Cyprus,Larnaca,Europe
 Paphos,Cyprus,Paphos,Europe
 Lemosos,Cyprus,Limassol,Europe
 Nicosia,Cyprus,,Europe
-Usti Nad Labem,Czech Republic,Libereck√Ω,Europe
-Hradec Kralove,Czech Republic,Kr√°lov√©hradeck√Ω,Europe
-Ceske Budejovice,Czech Republic,Jihocesk√Ω,Europe
-Liberec,Czech Republic,Libereck√Ω,Europe
-Olomouc,Czech Republic,Moravskoslezsk√Ω,Europe
-Pizen,Czech Republic,Karlovarsk√Ω,Europe
+Usti Nad Labem,Czech Republic,Libereck˝,Europe
+Hradec Kralove,Czech Republic,Kr·lovÈhradeck˝,Europe
+Ceske Budejovice,Czech Republic,Jihocesk˝,Europe
+Liberec,Czech Republic,Libereck˝,Europe
+Olomouc,Czech Republic,Moravskoslezsk˝,Europe
+Pizen,Czech Republic,Karlovarsk˝,Europe
 Jihlava,Czech Republic,Kraj Vysocina,Europe
 Zlin,Czech Republic,Kraj Vysocina,Europe
 Brno,Czech Republic,Kraj Vysocina,Europe
-Pardubice,Czech Republic,Kr√°lov√©hradeck√Ω,Europe
-Ostrava,Czech Republic,Moravskoslezsk√Ω,Europe
+Pardubice,Czech Republic,Kr·lovÈhradeck˝,Europe
+Ostrava,Czech Republic,Moravskoslezsk˝,Europe
 Prague,Czech Republic,Prague,Europe
 Vejle,Denmark,Syddanmark,Europe
 Hillerod,Denmark,Hovedstaden,Europe
-Soro,Denmark,Sja√¶lland,Europe
+Soro,Denmark,SjaÊlland,Europe
 Viborg,Denmark,Midtjylland,Europe
-Roskilde,Denmark,Sja√¶lland,Europe
+Roskilde,Denmark,SjaÊlland,Europe
 Svendborg,Denmark,Syddanmark,Europe
 Odense,Denmark,Syddanmark,Europe
 Esbjerg,Denmark,Syddanmark,Europe
@@ -2331,30 +2291,30 @@ Ali Sabih,Djibouti,Ali Sabieh,Africa
 Obock,Djibouti,Obock,Africa
 Djibouti,Djibouti,Djibouti,Africa
 Roseau,Dominica,Saint George,Africa
-Sabaneta,Dominican Republic,Santiago Rodr√≠guez,South America
+Sabaneta,Dominican Republic,Santiago RodrÌguez,South America
 Mao,Dominican Republic,Valverde,South America
-Cotui,Dominican Republic,S√°nchez Ram√≠rez,South America
+Cotui,Dominican Republic,S·nchez RamÌrez,South America
 Puerto Plata,Dominican Republic,Puerto Plata,South America
-Dajabon,Dominican Republic,Dajab√≥n,South America
+Dajabon,Dominican Republic,DajabÛn,South America
 Moca,Dominican Republic,Espaillat,South America
 Salcedo,Dominican Republic,Hermanas,South America
 Jimani,Dominican Republic,Independencia,South America
 Elias Pina,Dominican Republic,Elias Pina,South America
 Pedernales,Dominican Republic,Pedernales,South America
 Azua,Dominican Republic,Azua,South America
-Bonao,Dominican Republic,Monse√±or Nouel,South America
+Bonao,Dominican Republic,MonseÒor Nouel,South America
 Bani,Dominican Republic,Peravia,South America
 Hato Mayor,Dominican Republic,Hato Mayor,South America
 Monte Plata,Dominican Republic,Monte Plata,South America
-Nagua,Dominican Republic,Mar√≠a Trinidad S√°nchez,South America
-Samana,Dominican Republic,Saman√°,South America
-San Cristobal,Dominican Republic,San Crist√≥bal,South America
+Nagua,Dominican Republic,MarÌa Trinidad S·nchez,South America
+Samana,Dominican Republic,Saman·,South America
+San Cristobal,Dominican Republic,San CristÛbal,South America
 El Seibo,Dominican Republic,El Seybo,South America
 Higuey,Dominican Republic,La Altagracia,South America
 Neiba,Dominican Republic,Bahoruco,South America
 La Vega,Dominican Republic,La Vega,South America
 San Francisco de Macoris,Dominican Republic,Duarte,South America
-San Pedro de Macoris,Dominican Republic,San Pedro de Macor√≠s,South America
+San Pedro de Macoris,Dominican Republic,San Pedro de MacorÌs,South America
 Monte Cristi,Dominican Republic,Monte Cristi,South America
 Barahona,Dominican Republic,Barahona,South America
 Bavaro,Dominican Republic,La Altagracia,South America
@@ -2366,10 +2326,10 @@ Dili,East Timor,Dili,
 Puyo,Ecuador,Pastaza,South America
 Tulcan,Ecuador,Carchi,South America
 Pinas,Ecuador,El Oro,South America
-Puerto Villamil,Ecuador,Gal√°pagos,South America
-Puerto Baquerizo Moreno,Ecuador,Gal√°pagos,South America
+Puerto Villamil,Ecuador,Gal·pagos,South America
+Puerto Baquerizo Moreno,Ecuador,Gal·pagos,South America
 Guaranda,Ecuador,Bolivar,South America
-Azogues,Ecuador,Ca√±ar,South America
+Azogues,Ecuador,CaÒar,South America
 Salinas,Ecuador,Guayas,South America
 Alausi,Ecuador,Chimborazo,South America
 Sangolqui,Ecuador,Pichincha,South America
@@ -2397,7 +2357,7 @@ Loja,Ecuador,Loja,South America
 Manta,Ecuador,Manabi,South America
 Riobamba,Ecuador,Chimborazo,South America
 Cuenca,Ecuador,Azuay,South America
-Santa Cruz,Ecuador,Gal√°pagos,South America
+Santa Cruz,Ecuador,Gal·pagos,South America
 Quito,Ecuador,Pichincha,South America
 Guayaquil,Ecuador,Guayas,South America
 Shibin el Kom,Egypt,Al Minufiyah,Africa
@@ -2442,16 +2402,16 @@ Asyut,Egypt,Asyut,Africa
 Luxor,Egypt,Qina,Africa
 Alexandria,Egypt,Al Iskandariyah,Africa
 Cairo,Egypt,Al Qahirah,Africa
-Ahuachapan,El Salvador,Ahuachap√°n,South America
-Cojutepeque,El Salvador,Cuscatl√°n,South America
+Ahuachapan,El Salvador,Ahuachap·n,South America
+Cojutepeque,El Salvador,Cuscatl·n,South America
 Nueva San Salvador,El Salvador,La Libertad,South America
 Zacatecoluca,El Salvador,La Paz,South America
-La Union,El Salvador,La Uni√≥n,South America
-San Francisco Gotera,El Salvador,Moraz√°n,South America
+La Union,El Salvador,La UniÛn,South America
+San Francisco Gotera,El Salvador,Moraz·n,South America
 San Vicente,El Salvador,San Vicente,South America
-Usulutan,El Salvador,Usulut√°n,South America
+Usulutan,El Salvador,Usulut·n,South America
 Chalatenango,El Salvador,Chalatenango,South America
-Sensuntepeque,El Salvador,Caba√±as,South America
+Sensuntepeque,El Salvador,CabaÒas,South America
 Sonsonate,El Salvador,Sonsonate,South America
 San Miguel,El Salvador,San Miguel,South America
 Santa Ana,El Salvador,Santa Ana,South America
@@ -2459,7 +2419,7 @@ San Salvador,El Salvador,San Salvador,South America
 Evinayong,Equatorial Guinea,Centro Sur,Africa
 Luba,Equatorial Guinea,Bioko Sur,Africa
 Calatrava,Equatorial Guinea,Litoral,Africa
-Mongomo,Equatorial Guinea,Wele-Nz√°s,Africa
+Mongomo,Equatorial Guinea,Wele-Nz·s,Africa
 Bata,Equatorial Guinea,Litoral,Africa
 Malabo,Equatorial Guinea,Bioko Norte,Africa
 Tessenei,Eritrea,Gash Barka,Africa
@@ -2469,12 +2429,12 @@ Keren,Eritrea,Semenawi Keyih Bahri,Africa
 Adi Ugri,Eritrea,Maekel,Africa
 Assab,Eritrea,Debubawi Keyih Bahri,Africa
 Asmara,Eritrea,Anseba,Africa
-Haapsalu,Estonia,L√§√§ne,Europe
+Haapsalu,Estonia,L‰‰ne,Europe
 Viljandi,Estonia,Viljandi,Europe
 Kohtla-Jarve,Estonia,Ida-Viru,Europe
 Narva,Estonia,Ida-Viru,Europe
 Tartu,Estonia,Tartu,Europe
-Parnu,Estonia,P√§rnu,Europe
+Parnu,Estonia,P‰rnu,Europe
 Tallinn,Estonia,Harju,Europe
 Awasa,Ethiopia,"Southern Nations, Nationalities and Peoples",Africa
 Gore,Ethiopia,Addis Ababa,Africa
@@ -2531,7 +2491,7 @@ Lappeenranta,Finland,South Karelia,Europe
 Porvoo,Finland,Eastern Uusimaa,Europe
 Kemijarvi,Finland,Lapland,Europe
 Kokkola,Finland,Western Finland,Europe
-Lahti,Finland,P√§ij√§nne Tavastia,Europe
+Lahti,Finland,P‰ij‰nne Tavastia,Europe
 Joensuu,Finland,North Karelia,Europe
 Turku,Finland,Finland Proper,Europe
 Kemi,Finland,Lapland,Europe
@@ -2540,24 +2500,24 @@ Rovaniemi,Finland,Lapland,Europe
 Vaasa,Finland,Western Finland,Europe
 Tampere,Finland,Pirkanmaa,Europe
 Helsinki,Finland,Southern Finland,Europe
-Annecy,France,Rh√¥ne-Alpes,Europe
-Roanne,France,Rh√¥ne-Alpes,Europe
+Annecy,France,RhÙne-Alpes,Europe
+Roanne,France,RhÙne-Alpes,Europe
 Roura,France,Guinaa,Europe
 Sinnamary,France,Guinaa,Europe
 St.-Brieuc,France,Bretagne,Europe
 Poitier,France,Poitou-Charentes,Europe
 Angers,France,Pays de la Loire,Europe
 Biarritz,France,Aquitaine,Europe
-Aix-en-Provence,France,Provence-Alpes-C√¥te-d'Azur,Europe
+Aix-en-Provence,France,Provence-Alpes-CÙte-d'Azur,Europe
 Perpignan,France,Languedoc-Roussillon,Europe
-Tarbes,France,Midi-Pyr√©n√©es,Europe
+Tarbes,France,Midi-PyrÈnÈes,Europe
 Clermont-Ferrand,France,Auvergne,Europe
-Melun,France,√éle-de-France,Europe
+Melun,France,Œle-de-France,Europe
 Arras,France,Nord-Pas-de-Calais,Europe
-Besancon,France,Franche-Comt√©,Europe
-Saint-Georges,France,Amap√°,Europe
-Saint-Etienne,France,Rh√¥ne-Alpes,Europe
-Grenoble,France,Rh√¥ne-Alpes,Europe
+Besancon,France,Franche-ComtÈ,Europe
+Saint-Georges,France,Amap·,Europe
+Saint-Etienne,France,RhÙne-Alpes,Europe
+Grenoble,France,RhÙne-Alpes,Europe
 Fort-de-France,France,Martinique,Europe
 Saint-Laurent-du-Maroni,France,Guinaa,Europe
 Iracoubo,France,Guinaa,Europe
@@ -2570,7 +2530,7 @@ Nantes,France,Pays de la Loire,Europe
 Agen,France,Aquitaine,Europe
 Ajaccio,France,Corse,Europe
 Bastia,France,Corse,Europe
-Toulon,France,Provence-Alpes-C√¥te-d'Azur,Europe
+Toulon,France,Provence-Alpes-CÙte-d'Azur,Europe
 Beziers,France,Languedoc-Roussillon,Europe
 Montpellier,France,Languedoc-Roussillon,Europe
 Nimes,France,Languedoc-Roussillon,Europe
@@ -2583,7 +2543,7 @@ Tours,France,Centre,Europe
 Orleans,France,Centre,Europe
 Dieppe,France,Haute-Normandie,Europe
 Rouen,France,Haute-Normandie,Europe
-Versailles,France,√éle-de-France,Europe
+Versailles,France,Œle-de-France,Europe
 Brive,France,Limousin,Europe
 Troyes,France,Champagne-Ardenne,Europe
 Reims,France,Champagne-Ardenne,Europe
@@ -2594,44 +2554,44 @@ Nancy,France,Lorraine,Europe
 Metz,France,Lorraine,Europe
 Pointe-a-Pitre,France,Guadeloupe,Europe
 Basse-terre,France,Guadeloupe,Europe
-St.-Benoit,France,La R√©union,Europe
+St.-Benoit,France,La RÈunion,Europe
 Dzaoudzi,France,Moyotte,Europe
 Rennes,France,Bretagne,Europe
-Nice,France,Provence-Alpes-C√¥te-d'Azur,Europe
-Toulouse,France,Midi-Pyr√©n√©es,Europe
+Nice,France,Provence-Alpes-CÙte-d'Azur,Europe
+Toulouse,France,Midi-PyrÈnÈes,Europe
 Limoges,France,Limousin,Europe
 Lille,France,Nord-Pas-de-Calais,Europe
 Strasbourg,France,Alsace,Europe
 Kourou,France,Guinaa,Europe
 La Rochelle,France,Poitou-Charentes,Europe
 Bordeaux,France,Aquitaine,Europe
-Marseille,France,Provence-Alpes-C√¥te-d'Azur,Europe
+Marseille,France,Provence-Alpes-CÙte-d'Azur,Europe
 Le Havre,France,Haute-Normandie,Europe
-St.-Denis,France,La R√©union,Europe
-Lyon,France,Rh√¥ne-Alpes,Europe
+St.-Denis,France,La RÈunion,Europe
+Lyon,France,RhÙne-Alpes,Europe
 Cayenne,France,Guinaa,Europe
-Paris,France,√éle-de-France,Europe
+Paris,France,Œle-de-France,Europe
 Papeete,French Polynesia,,Australia
 Ebebiyin,Gabon,Wouleu-Ntem,Africa
 Tchibanga,Gabon,Nyanga,Africa
-Mekambo,Gabon,Ogoou√©-Ivindo,Africa
-Makokou,Gabon,Ogoou√©-Ivindo,Africa
+Mekambo,Gabon,OgoouÈ-Ivindo,Africa
+Makokou,Gabon,OgoouÈ-Ivindo,Africa
 Mitzik,Gabon,Wouleu-Ntem,Africa
 Bitam,Gabon,Wouleu-Ntem,Africa
-Lambarene,Gabon,Moyen-Ogoou√©,Africa
-Bifoum,Gabon,Moyen-Ogoou√©,Africa
-Ndende,Gabon,Ngouni√©,Africa
-Mouila,Gabon,Ngouni√©,Africa
-Omboue,Gabon,Ogoou√©-Maritime,Africa
-Moanda,Gabon,Haut-Ogoou√©,Africa
-Okandja,Gabon,Haut-Ogoou√©,Africa
-Koulamoutou,Gabon,Ogoou√©-Lolo,Africa
+Lambarene,Gabon,Moyen-OgoouÈ,Africa
+Bifoum,Gabon,Moyen-OgoouÈ,Africa
+Ndende,Gabon,NgouniÈ,Africa
+Mouila,Gabon,NgouniÈ,Africa
+Omboue,Gabon,OgoouÈ-Maritime,Africa
+Moanda,Gabon,Haut-OgoouÈ,Africa
+Okandja,Gabon,Haut-OgoouÈ,Africa
+Koulamoutou,Gabon,OgoouÈ-Lolo,Africa
 Oyem,Gabon,Wouleu-Ntem,Africa
 Mayumba,Gabon,Nyanga,Africa
-Gamba,Gabon,Ogoou√©-Maritime,Africa
-Franceville,Gabon,Haut-Ogoou√©,Africa
+Gamba,Gabon,OgoouÈ-Maritime,Africa
+Franceville,Gabon,Haut-OgoouÈ,Africa
 Libreville,Gabon,Estuaire,Africa
-Port-Gentil,Gabon,Ogoou√©-Maritime,Africa
+Port-Gentil,Gabon,OgoouÈ-Maritime,Africa
 Kutaisi,Georgia,Imereti,Asia
 Tskhinvali,Georgia,Shida Kartli,Asia
 Poti,Georgia,Samegrelo-Zemo Svaneti,Asia
@@ -2646,13 +2606,13 @@ Dortmund,Germany,Nordrhein-Westfalen,Europe
 Duisburg,Germany,Nordrhein-Westfalen,Europe
 Wuppertal,Germany,Nordrhein-Westfalen,Europe
 Essen,Germany,Nordrhein-Westfalen,Europe
-Karlsruhe,Germany,Baden-W√ºrttemberg,Europe
-Heidelberg,Germany,Baden-W√ºrttemberg,Europe
+Karlsruhe,Germany,Baden-W¸rttemberg,Europe
+Heidelberg,Germany,Baden-W¸rttemberg,Europe
 Kassel,Germany,Hessen,Europe
 Oldenburg,Germany,Niedersachsen,Europe
 Emden,Germany,Niedersachsen,Europe
 Braunschweig,Germany,Niedersachsen,Europe
-Erfurt,Germany,Th√ºringen,Europe
+Erfurt,Germany,Th¸ringen,Europe
 Coburg,Germany,Bayern,Europe
 Augsburg,Germany,Bayern,Europe
 Furth,Germany,Bayern,Europe
@@ -2660,17 +2620,17 @@ Chemnitz,Germany,Sachsen,Europe
 Bonn,Germany,Nordrhein-Westfalen,Europe
 Munster,Germany,Nordrhein-Westfalen,Europe
 Dusseldorf,Germany,Nordrhein-Westfalen,Europe
-Ulm,Germany,Baden-W√ºrttemberg,Europe
-Mannheim,Germany,Baden-W√ºrttemberg,Europe
-Freiburg,Germany,Baden-W√ºrttemberg,Europe
+Ulm,Germany,Baden-W¸rttemberg,Europe
+Mannheim,Germany,Baden-W¸rttemberg,Europe
+Freiburg,Germany,Baden-W¸rttemberg,Europe
 Giessen,Germany,Hessen,Europe
 Wiesbaden,Germany,Hessen,Europe
 Bremerhaven,Germany,Bremen,Europe
 Osnabruck,Germany,Niedersachsen,Europe
 Hannover,Germany,Niedersachsen,Europe
 Gottingen,Germany,Niedersachsen,Europe
-Gera,Germany,Th√ºringen,Europe
-Jena,Germany,Th√ºringen,Europe
+Gera,Germany,Th¸ringen,Europe
+Jena,Germany,Th¸ringen,Europe
 Flensburg,Germany,Schleswig-Holstein,Europe
 Lubeck,Germany,Schleswig-Holstein,Europe
 Kiel,Germany,Schleswig-Holstein,Europe
@@ -2687,7 +2647,7 @@ Magdeburg,Germany,Sachsen-Anhalt,Europe
 Leipzig,Germany,Sachsen,Europe
 Stralsund,Germany,Mecklenburg-Vorpommern,Europe
 Rostock,Germany,Mecklenburg-Vorpommern,Europe
-Stuttgart,Germany,Baden-W√ºrttemberg,Europe
+Stuttgart,Germany,Baden-W¸rttemberg,Europe
 Bremen,Germany,Bremen,Europe
 Nurnberg,Germany,Bayern,Europe
 Cologne,Germany,Nordrhein-Westfalen,Europe
@@ -2714,7 +2674,7 @@ Kumasi,Ghana,Ashanti,Africa
 Sekondi,Ghana,Western,Africa
 Accra,Ghana,Greater Accra,Africa
 Gibraltar,Gibraltar,Gibraltar,Europe
-Lamia,Greece,Stere√° Ell√°da,Europe
+Lamia,Greece,Stere· Ell·da,Europe
 Polygyros,Greece,Kentriki Makedonia,Europe
 Komatini,Greece,Anatoliki Makedonia kai Thraki,Europe
 Piraievs,Greece,Attiki,Europe
@@ -2731,7 +2691,7 @@ Larissa,Greece,Thessalia,Europe
 Ioanina,Greece,Ipeiros,Europe
 Mitilini,Greece,Voreio Aigaio,Europe
 Hios,Greece,Voreio Aigaio,Europe
-Chalkida,Greece,Stere√° Ell√°da,Europe
+Chalkida,Greece,Stere· Ell·da,Europe
 Sitia,Greece,Kriti,Europe
 Katerini,Greece,Kentriki Makedonia,Europe
 Seres,Greece,Kentriki Makedonia,Europe
@@ -2772,25 +2732,25 @@ Salama,Guatemala,Baja Verapaz,South America
 Retalhuleu,Guatemala,Retalhuleu,South America
 San Marcos,Guatemala,San Marcos,South America
 Chimaltenango,Guatemala,Chimaltenango,South America
-Antigua Guatemala,Guatemala,Sacatep√©quez,South America
-Solola,Guatemala,Solol√°,South America
-Totonicapan,Guatemala,Totonicap√°n,South America
+Antigua Guatemala,Guatemala,SacatepÈquez,South America
+Solola,Guatemala,Solol·,South America
+Totonicapan,Guatemala,Totonicap·n,South America
 El Progreso,Guatemala,El Progreso,South America
 Cuilapa,Guatemala,Santa Rosa,South America
 Chiquimula,Guatemala,Chiquimula,South America
 Jalapa,Guatemala,Jalapa,South America
 Zacapa,Guatemala,Zacapa,South America
-Santa Cruz Del Quiche,Guatemala,Quich√©,South America
-San Luis,Guatemala,Pet√©n,South America
+Santa Cruz Del Quiche,Guatemala,QuichÈ,South America
+San Luis,Guatemala,PetÈn,South America
 Coban,Guatemala,Alta Verapaz,South America
 Livingston,Guatemala,Izabal,South America
 Jutiapa,Guatemala,Jutiapa,South America
 Huehuetenango,Guatemala,Huehuetenango,South America
-Flores,Guatemala,Pet√©n,South America
-La Libertad,Guatemala,Pet√©n,South America
+Flores,Guatemala,PetÈn,South America
+La Libertad,Guatemala,PetÈn,South America
 San Jose,Guatemala,Escuintla,South America
 Escuintla,Guatemala,Escuintla,South America
-Mazatenango,Guatemala,Suchitep√©quez,South America
+Mazatenango,Guatemala,SuchitepÈquez,South America
 Puerto Barrios,Guatemala,Izabal,South America
 Quetzaltenango,Guatemala,Quezaltenango,South America
 Guatemala,Guatemala,Guatemala,South America
@@ -2826,10 +2786,10 @@ Conakry,Guinea,Conakry,Africa
 Cacheu,Guinea Bissau,Cacheu,Africa
 Farim,Guinea Bissau,Oio,Africa
 Fulacunda,Guinea Bissau,Quinara,Africa
-Gabu,Guinea Bissau,Gab√∫,Africa
+Gabu,Guinea Bissau,Gab˙,Africa
 Catio,Guinea Bissau,Tombali,Africa
 Bolama,Guinea Bissau,Bolama,Africa
-Bafata,Guinea Bissau,Bafat√°,Africa
+Bafata,Guinea Bissau,Bafat·,Africa
 Bissau,Guinea Bissau,Bissau,Africa
 Corriverton,Guyana,Mahaica-Berbice,South America
 Ituni,Guyana,Upper Takutu-Upper Essequibo,South America
@@ -2851,54 +2811,54 @@ Gonaives,Haiti,L'Artibonite,South America
 Cap-Haitien,Haiti,Nord,South America
 Port-au-Prince,Haiti,Ouest,South America
 Yoro,Honduras,Yoro,South America
-La Esperanza,Honduras,Intibuc√°,South America
+La Esperanza,Honduras,Intibuc·,South America
 La Paz,Honduras,La Paz,South America
-Santa Barbara,Honduras,Santa B√°rbara,South America
+Santa Barbara,Honduras,Santa B·rbara,South America
 Gracias,Honduras,Lempira,South America
 Nueva Ocotepeque,Honduras,Ocotepeque,South America
-Yuscaran,Honduras,El Para√≠so,South America
-Roatan,Honduras,Islas de la Bah√≠a,South America
+Yuscaran,Honduras,El ParaÌso,South America
+Roatan,Honduras,Islas de la BahÌa,South America
 Nacaome,Honduras,Valle,South America
-Santa Rosa de Copan,Honduras,Cop√°n,South America
-Trujillo,Honduras,Col√≥n,South America
+Santa Rosa de Copan,Honduras,Cop·n,South America
+Trujillo,Honduras,ColÛn,South America
 Brus Laguna,Honduras,Gracias a Dios,South America
 Puerto Lempira,Honduras,Gracias a Dios,South America
 Juticalpa,Honduras,Olancho,South America
 Comayagua,Honduras,Comayagua,South America
 Choluteca,Honduras,Choluteca,South America
-La Ceiba,Honduras,Atl√°ntida,South America
-San Pedro Sula,Honduras,Cort√©s,South America
-Tegucigalpa,Honduras,Francisco Moraz√°n,South America
+La Ceiba,Honduras,Atl·ntida,South America
+San Pedro Sula,Honduras,CortÈs,South America
+Tegucigalpa,Honduras,Francisco Moraz·n,South America
 Hong Kong,Hong Kong S.A.R.,,Asia
-Veszprem,Hungary,Veszpr√©m,Europe
+Veszprem,Hungary,VeszprÈm,Europe
 Zalaegerszeg,Hungary,Zala,Europe
-Tatabanya,Hungary,Kom√°rom-Esztergom,Europe
+Tatabanya,Hungary,Kom·rom-Esztergom,Europe
 Szekszard,Hungary,Tolna,Europe
-Salgotarjan,Hungary,N√≥gr√°d,Europe
-Bekescsaba,Hungary,B√©k√©s,Europe
+Salgotarjan,Hungary,NÛgr·d,Europe
+Bekescsaba,Hungary,BÈkÈs,Europe
 Eger,Hungary,Heves,Europe
 Szombathely,Hungary,Vas,Europe
-Kecskemet,Hungary,B√°cs-Kiskun,Europe
-Szekesfehervar,Hungary,Fej√©r,Europe
-Nyiregyhaza,Hungary,Szabolcs-Szatm√°r-Bereg,Europe
+Kecskemet,Hungary,B·cs-Kiskun,Europe
+Szekesfehervar,Hungary,FejÈr,Europe
+Nyiregyhaza,Hungary,Szabolcs-Szatm·r-Bereg,Europe
 Pecs,Hungary,Baranya,Europe
 Gyor,Hungary,Gyor-Moson-Sopron,Europe
 Kaposvar,Hungary,Somogy,Europe
 Vac,Hungary,Pest,Europe
-Miskolc,Hungary,Borsod-Aba√∫j-Zempl√©n,Europe
-Szeged,Hungary,Csongr√°d,Europe
-Debrecen,Hungary,Hajd√∫-Bihar,Europe
-Szolnok,Hungary,J√°sz-Nagykun-Szolnok,Europe
+Miskolc,Hungary,Borsod-Aba˙j-ZemplÈn,Europe
+Szeged,Hungary,Csongr·d,Europe
+Debrecen,Hungary,Hajd˙-Bihar,Europe
+Szolnok,Hungary,J·sz-Nagykun-Szolnok,Europe
 Budapest,Hungary,Budapest,Europe
 Borgarnes,Iceland,Vesturland,Europe
-Egilsstadir,Iceland,Austur-H√©ra√∞,Europe
+Egilsstadir,Iceland,Austur-HÈra,Europe
 Saudarkrokur,Iceland,Akrahreppur,Europe
 Selfoss,Iceland,Biskupstungnahreppur,Europe
-Hofn,Iceland,Sveitarf√©lagi√∞ Hornafj√∂r√∞ur,Europe
-Isafjordur,Iceland,Vestfir√∞ir,Europe
+Hofn,Iceland,SveitarfÈlagi Hornafjˆrur,Europe
+Isafjordur,Iceland,Vestfirir,Europe
 Akureyi,Iceland,Akureyri,Europe
-Keflavik,Iceland,Su√∞urnes,Europe
-Reykjavik,Iceland,Su√∞urnes,Europe
+Keflavik,Iceland,Suurnes,Europe
+Reykjavik,Iceland,Suurnes,Europe
 Panaji,India,Goa,Asia
 Simla,India,Himachal Pradesh,Asia
 Gurgaon,India,Haryana,Asia
@@ -3385,12 +3345,12 @@ Naples,Italy,Campania,Europe
 Milan,Italy,Lombardia,Europe
 Rome,Italy,Lazio,Europe
 Touba,Ivory Coast,Bafing,Africa
-Bouafle,Ivory Coast,Marahou√©,Africa
+Bouafle,Ivory Coast,MarahouÈ,Africa
 Divo,Ivory Coast,Sud-Bandama,Africa
 Toumodi,Ivory Coast,Lacs,Africa
-Aboisso,Ivory Coast,Sud-Como√©,Africa
+Aboisso,Ivory Coast,Sud-ComoÈ,Africa
 Ferkessedougou,Ivory Coast,Savanes,Africa
-Odienne,Ivory Coast,Dengu√©l√©,Africa
+Odienne,Ivory Coast,DenguÈlÈ,Africa
 Man,Ivory Coast,Dix-Huit Montagnes,Africa
 Seguela,Ivory Coast,Worodougou,Africa
 Gagnoa,Ivory Coast,Fromager,Africa
@@ -3398,15 +3358,15 @@ Soubre,Ivory Coast,Bas-Sassandra,Africa
 San-Pedro,Ivory Coast,Bas-Sassandra,Africa
 Sassandra,Ivory Coast,Bas-Sassandra,Africa
 Bondoukou,Ivory Coast,Zanzan,Africa
-Agboville,Ivory Coast,Agn√©by,Africa
-Dimbokro,Ivory Coast,N'zi-Como√©,Africa
+Agboville,Ivory Coast,AgnÈby,Africa
+Dimbokro,Ivory Coast,N'zi-ComoÈ,Africa
 Grand Bassam,Ivory Coast,Lagunes,Africa
 Dabou,Ivory Coast,Lagunes,Africa
 Guiglo,Ivory Coast,Moyen-Cavally,Africa
 Abengourou,Ivory Coast,Moyen-Comoe,Africa
 Korhogo,Ivory Coast,Savanes,Africa
 Daloa,Ivory Coast,Haut-Sassandra,Africa
-Bouake,Ivory Coast,Vall√©e du Bandama,Africa
+Bouake,Ivory Coast,VallÈe du Bandama,Africa
 Yamoussoukro,Ivory Coast,Lacs,Africa
 Abidjan,Ivory Coast,Lagunes,Africa
 Lucea,Jamaica,Hanover,North America
@@ -3516,10 +3476,10 @@ Esik,Kazakhstan,Almaty,Asia
 Lenger,Kazakhstan,South Kazakhstan,Asia
 Kentau,Kazakhstan,South Kazakhstan,Asia
 Zhosaly,Kazakhstan,Qyzylorda,Asia
-Oktyabrsk,Kazakhstan,Aqt√∂be,Asia
-Algha,Kazakhstan,Aqt√∂be,Asia
-Bayghanin,Kazakhstan,Aqt√∂be,Asia
-Embi,Kazakhstan,Aqt√∂be,Asia
+Oktyabrsk,Kazakhstan,Aqtˆbe,Asia
+Algha,Kazakhstan,Aqtˆbe,Asia
+Bayghanin,Kazakhstan,Aqtˆbe,Asia
+Embi,Kazakhstan,Aqtˆbe,Asia
 Zhetiqara,Kazakhstan,Qostanay,Asia
 Komsomolets,Kazakhstan,Qostanay,Asia
 Tobol,Kazakhstan,Qostanay,Asia
@@ -3562,7 +3522,7 @@ Shu,Kazakhstan,Zhambyl,Asia
 Qulan,Kazakhstan,Zhambyl,Asia
 Oytal,Kazakhstan,Zhambyl,Asia
 Qaratau,Kazakhstan,Zhambyl,Asia
-Khromtau,Kazakhstan,Aqt√∂be,Asia
+Khromtau,Kazakhstan,Aqtˆbe,Asia
 Arqalyq,Kazakhstan,Qostanay,Asia
 Oostanay,Kazakhstan,Qostanay,Asia
 Baykonur,Kazakhstan,Qyzylorda,Asia
@@ -3577,14 +3537,14 @@ Petropavlovsk,Kazakhstan,North Kazakhstan,Asia
 Ayakoz,Kazakhstan,East Kazakhstan,Asia
 Taldyqorghan,Kazakhstan,Almaty,Asia
 Turkistan,Kazakhstan,South Kazakhstan,Asia
-Shalqar,Kazakhstan,Aqt√∂be,Asia
+Shalqar,Kazakhstan,Aqtˆbe,Asia
 Qazaly,Kazakhstan,Qyzylorda,Asia
 Aral,Kazakhstan,Qyzylorda,Asia
 Qulsary,Kazakhstan,Atyrau,Asia
 Oral,Kazakhstan,West Kazakhstan,Asia
 Beyneu,Kazakhstan,Mangghystau,Asia
 Aqtau,Kazakhstan,Mangghystau,Asia
-Aqtobe,Kazakhstan,Aqt√∂be,Asia
+Aqtobe,Kazakhstan,Aqtˆbe,Asia
 Rudny,Kazakhstan,Qostanay,Asia
 Qyzylorda,Kazakhstan,Qyzylorda,Asia
 Atyrau,Kazakhstan,Atyrau,Asia
@@ -3635,7 +3595,7 @@ Mombasa,Kenya,Coast,Africa
 Nairobi,Kenya,Nairobi,Africa
 Tarawa,Kiribati,,Australia
 Prizren,Kosovo,Prizren,Europe
-Pec,Kosovo,√êakovica,Europe
+Pec,Kosovo,–akovica,Europe
 Pristina,Kosovo,Pristina,Europe
 Hawalli,Kuwait,Hawalli,Asia
 Al Ahmadi,Kuwait,Al Ahmadi,Asia
@@ -3643,31 +3603,31 @@ Al Jahra,Kuwait,Al Jahrah,Asia
 Kuwait,Kuwait,Al Kuwayt,Asia
 Tokmak,Kyrgyzstan,Bishkek,Asia
 Kara Balta,Kyrgyzstan,Bishkek,Asia
-Cholpon Ata,Kyrgyzstan,Ysyk-K√∂l,Asia
+Cholpon Ata,Kyrgyzstan,Ysyk-Kˆl,Asia
 Naryn,Kyrgyzstan,Naryn,Asia
 Kok Yangak,Kyrgyzstan,Jalal-Abad,Asia
-Balykchy,Kyrgyzstan,Ysyk-K√∂l,Asia
+Balykchy,Kyrgyzstan,Ysyk-Kˆl,Asia
 At Bashy,Kyrgyzstan,Naryn,Asia
 Jalal Abad,Kyrgyzstan,Jalal-Abad,Asia
 Toktogul,Kyrgyzstan,Jalal-Abad,Asia
 Tash Komur,Kyrgyzstan,Jalal-Abad,Asia
 Talas,Kyrgyzstan,Talas,Asia
 Osh,Kyrgyzstan,Osh,Asia
-Karakol,Kyrgyzstan,Ysyk-K√∂l,Asia
+Karakol,Kyrgyzstan,Ysyk-Kˆl,Asia
 Bishkek,Kyrgyzstan,Bishkek,Asia
 Ban Houayxay,Laos,Bokeo,Africa
 Louang Namtha,Laos,Louang Namtha,Africa
 Champasak,Laos,Champasak,Africa
 Saravan,Laos,Saravan,Africa
 Xam Nua,Laos,Houaphan,Africa
-Phongsali,Laos,Ph√¥ngsali,Africa
+Phongsali,Laos,PhÙngsali,Africa
 Attapu,Laos,Attapu,Africa
 Xaignabouri,Laos,Xaignabouri,Africa
 Pakxe,Laos,Champasak,Africa
 Xiangkhoang,Laos,Xiangkhoang,Africa
 Louangphrabang,Laos,Louangphrabang,Africa
 Thakhek,Laos,Khammouan,Africa
-Savannakhet,Laos,Savannakh√©t,Africa
+Savannakhet,Laos,SavannakhÈt,Africa
 Vientiane,Laos,Vientiane [prefecture],Africa
 Rezekne,Latvia,Latgale,Europe
 Ventspils,Latvia,Ventspils,Europe
@@ -3739,7 +3699,7 @@ Banghazi,Libya,Benghazi,Africa
 Tripoli,Libya,Tajura' wa an Nawahi al Arba,Africa
 Vaduz,Liechtenstein,,Europe
 Panevezys,Lithuania,Panevezio,Europe
-Siauliai,Lithuania,≈†iauliai,Europe
+Siauliai,Lithuania,¶iauliai,Europe
 Klaipeda,Lithuania,Klaipedos,Europe
 Kaunas,Lithuania,Kauno,Europe
 Vilnius,Lithuania,Vilniaus,Europe
@@ -3845,9 +3805,9 @@ Kita,Mali,Kayes,Africa
 Koutiala,Mali,Sikasso,Africa
 Sikasso,Mali,Sikasso,Africa
 Bougouni,Mali,Sikasso,Africa
-Markala,Mali,S√©gou,Africa
-Sokolo,Mali,S√©gou,Africa
-San,Mali,S√©gou,Africa
+Markala,Mali,SÈgou,Africa
+Sokolo,Mali,SÈgou,Africa
+San,Mali,SÈgou,Africa
 Taoudenni,Mali,Timbuktu,Africa
 Araouane,Mali,Timbuktu,Africa
 Tessalit,Mali,Kidal,Africa
@@ -3857,7 +3817,7 @@ Koulikoro,Mali,Bamako,Africa
 Mopti,Mali,Mopti,Africa
 Gao,Mali,Gao,Africa
 Kayes,Mali,Kayes,Africa
-Segou,Mali,S√©gou,Africa
+Segou,Mali,SÈgou,Africa
 Timbuktu,Mali,Timbuktu,Africa
 Bamako,Mali,Bamako,Africa
 Djenne,Mali,Mopti,Africa
@@ -3900,17 +3860,17 @@ Esperanza,Mexico,Sonora,North America
 Magdalena,Mexico,Sonora,North America
 Nacozari Viejo,Mexico,Sonora,North America
 Villanueva,Mexico,Zacatecas,North America
-Montemorelos,Mexico,Nuevo Le√≥n,North America
-Sabinas Hidalgo,Mexico,Nuevo Le√≥n,North America
-Cardenas,Mexico,San Luis Potos√≠,North America
-Ciudad Valles,Mexico,San Luis Potos√≠,North America
-Rio Verde,Mexico,San Luis Potos√≠,North America
+Montemorelos,Mexico,Nuevo LeÛn,North America
+Sabinas Hidalgo,Mexico,Nuevo LeÛn,North America
+Cardenas,Mexico,San Luis PotosÌ,North America
+Ciudad Valles,Mexico,San Luis PotosÌ,North America
+Rio Verde,Mexico,San Luis PotosÌ,North America
 Ciudad Mante,Mexico,Tamaulipas,North America
 Reynosa,Mexico,Tamaulipas,North America
 Ciudad Madero,Mexico,Tamaulipas,North America
 Autlan,Mexico,Jalisco,North America
-Ciudad Hidalgo,Mexico,Michoac√°n,North America
-Apatzingan,Mexico,Michoac√°n,North America
+Ciudad Hidalgo,Mexico,Michoac·n,North America
+Apatzingan,Mexico,Michoac·n,North America
 Santiago Ixcuintla,Mexico,Nayarit,North America
 Juchitan,Mexico,Oaxaca,North America
 Miahuatlan,Mexico,Oaxaca,North America
@@ -3925,18 +3885,18 @@ Chilpancingo,Mexico,Guerrero,North America
 Iguala,Mexico,Guerrero,North America
 Tecpan,Mexico,Guerrero,North America
 Atoyac,Mexico,Guerrero,North America
-Nezahualcoyotl,Mexico,M√©xico,North America
-San Juan del Rio,Mexico,Quer√©taro,North America
+Nezahualcoyotl,Mexico,MÈxico,North America
+San Juan del Rio,Mexico,QuerÈtaro,North America
 Jaltipan,Mexico,Veracruz,North America
 Orizaba,Mexico,Veracruz,North America
 Xalapa,Mexico,Veracruz,North America
 Nautla,Mexico,Veracruz,North America
 San Cristobal de Las Casas,Mexico,Chiapas,North America
 Escuintla,Mexico,Chiapas,North America
-Motul,Mexico,Yucat√°n,North America
-Tekax,Mexico,Yucat√°n,North America
-Peto,Mexico,Yucat√°n,North America
-Halacho,Mexico,Yucat√°n,North America
+Motul,Mexico,Yucat·n,North America
+Tekax,Mexico,Yucat·n,North America
+Peto,Mexico,Yucat·n,North America
+Halacho,Mexico,Yucat·n,North America
 San Quintin,Mexico,Baja California,North America
 Punta Prieta,Mexico,Baja California,North America
 San Felipe,Mexico,Baja California,North America
@@ -3971,10 +3931,10 @@ Zacatecas,Mexico,Zacatecas,North America
 Juan Aldama,Mexico,Zacatecas,North America
 Valparaiso,Mexico,Zacatecas,North America
 Fresnillo,Mexico,Zacatecas,North America
-Linares,Mexico,Nuevo Le√≥n,North America
-Matehuala,Mexico,San Luis Potos√≠,North America
-Tamuin,Mexico,San Luis Potos√≠,North America
-Tamazunchale,Mexico,San Luis Potos√≠,North America
+Linares,Mexico,Nuevo LeÛn,North America
+Matehuala,Mexico,San Luis PotosÌ,North America
+Tamuin,Mexico,San Luis PotosÌ,North America
+Tamazunchale,Mexico,San Luis PotosÌ,North America
 Tula,Mexico,Tamaulipas,North America
 Aldama,Mexico,Tamaulipas,North America
 San Fernando,Mexico,Tamaulipas,North America
@@ -3983,11 +3943,11 @@ Puerto Vallarta,Mexico,Jalisco,North America
 La Barca,Mexico,Jalisco,North America
 Ciudad Guzman,Mexico,Jalisco,North America
 Lagos de Moreno,Mexico,Jalisco,North America
-Morelia,Mexico,Michoac√°n,North America
-Lazaro Cardenas,Mexico,Michoac√°n,North America
-Zamora,Mexico,Michoac√°n,North America
-Coalcoman,Mexico,Michoac√°n,North America
-Uruapan,Mexico,Michoac√°n,North America
+Morelia,Mexico,Michoac·n,North America
+Lazaro Cardenas,Mexico,Michoac·n,North America
+Zamora,Mexico,Michoac·n,North America
+Coalcoman,Mexico,Michoac·n,North America
+Uruapan,Mexico,Michoac·n,North America
 Tuxpan,Mexico,Nayarit,North America
 Tepic,Mexico,Nayarit,North America
 Compostela,Mexico,Nayarit,North America
@@ -4011,8 +3971,8 @@ Ayutla,Mexico,Guerrero,North America
 Ciudad Altamirano,Mexico,Guerrero,North America
 Petatlan,Mexico,Guerrero,North America
 Pachuca,Mexico,Hidalgo,North America
-Toluca,Mexico,M√©xico,North America
-Zumpango,Mexico,M√©xico,North America
+Toluca,Mexico,MÈxico,North America
+Zumpango,Mexico,MÈxico,North America
 Minatitlan,Mexico,Veracruz,North America
 Coatzacoalcos,Mexico,Veracruz,North America
 Poza Rica de Hidalgo,Mexico,Veracruz,North America
@@ -4023,10 +3983,10 @@ Panuco,Mexico,Veracruz,North America
 Pijijiapan,Mexico,Chiapas,North America
 Isla Mujeres,Mexico,Quintana Roo,North America
 Felipe Carrillo Puerto,Mexico,Quintana Roo,North America
-Tizimin,Mexico,Yucat√°n,North America
-Valladolid,Mexico,Yucat√°n,North America
-Izamal,Mexico,Yucat√°n,North America
-Ticul,Mexico,Yucat√°n,North America
+Tizimin,Mexico,Yucat·n,North America
+Valladolid,Mexico,Yucat·n,North America
+Izamal,Mexico,Yucat·n,North America
+Ticul,Mexico,Yucat·n,North America
 Ensenada,Mexico,Baja California,North America
 Saltillo,Mexico,Coahuila,North America
 Ciudad Juarez,Mexico,Chihuahua,North America
@@ -4039,10 +3999,10 @@ Manzanillo,Mexico,Colima,North America
 Tehuantepec,Mexico,Oaxaca,North America
 Villahermosa,Mexico,Tabasco,North America
 Cuernavaca,Mexico,Morelos,North America
-Queretaro,Mexico,Quer√©taro,North America
+Queretaro,Mexico,QuerÈtaro,North America
 Tapachula,Mexico,Chiapas,North America
 Chetumal,Mexico,Quintana Roo,North America
-Progreso,Mexico,Yucat√°n,North America
+Progreso,Mexico,Yucat·n,North America
 Cabo San Lucas,Mexico,Baja California Sur,North America
 Monclova,Mexico,Coahuila,North America
 Ometepec,Mexico,Guerrero,North America
@@ -4054,7 +4014,7 @@ Culiacan,Mexico,Sinaloa,North America
 Nogales,Mexico,Sonora,North America
 Hermosillo,Mexico,Sonora,North America
 Guaymas,Mexico,Sonora,North America
-San Luis Potosi,Mexico,San Luis Potos√≠,North America
+San Luis Potosi,Mexico,San Luis PotosÌ,North America
 Matamoros,Mexico,Tamaulipas,North America
 Nuevo Laredo,Mexico,Tamaulipas,North America
 Colima,Mexico,Colima,North America
@@ -4069,10 +4029,10 @@ Acapulco,Mexico,Guerrero,North America
 Veracruz,Mexico,Veracruz,North America
 Tuxtla Gutierrez,Mexico,Chiapas,North America
 Cancun,Mexico,Quintana Roo,North America
-Merida,Mexico,Yucat√°n,North America
+Merida,Mexico,Yucat·n,North America
 Guadalajara,Mexico,Jalisco,North America
 Puebla,Mexico,Puebla,North America
-Monterrey,Mexico,Nuevo Le√≥n,North America
+Monterrey,Mexico,Nuevo LeÛn,North America
 Mexico City,Mexico,Distrito Federal,North America
 Dubasari,Moldova,Transnistria,Europe
 Balti,Moldova,Balti,Europe
@@ -4081,9 +4041,9 @@ Tiraspol,Moldova,Bender,Europe
 Chisinau,Moldova,Chisinau,Europe
 Monaco,Monaco,,Europe
 Suchboatar,Mongolia,Selenge,Asia
-Dzuunmod,Mongolia,T√∂v,Asia
+Dzuunmod,Mongolia,Tˆv,Asia
 Tsetserleg,Mongolia,Arhangay,Asia
-Olgiy,Mongolia,Bayan-√ñlgiy,Asia
+Olgiy,Mongolia,Bayan-÷lgiy,Asia
 Ulaan-Uul,Mongolia,Dornogovi,Asia
 Hodrogo,Mongolia,Dzavhan,Asia
 Buyant-Uhaa,Mongolia,Dornogovi,Asia
@@ -4091,44 +4051,44 @@ Ondorhaan,Mongolia,Hentiy,Asia
 Bayankhongor,Mongolia,Bayanhongor,Asia
 Uliastay,Mongolia,Dzavhan,Asia
 Altay,Mongolia,Govi-Altay,Asia
-Moron,Mongolia,H√∂vsg√∂l,Asia
+Moron,Mongolia,Hˆvsgˆl,Asia
 Ulaangom,Mongolia,Uvs,Asia
 Bulgan,Mongolia,Bulgan,Asia
 Mandalgovi,Mongolia,Dundgovi,Asia
 Darhan,Mongolia,Selenge,Asia
 Dzuunharaa,Mongolia,Selenge,Asia
-Arvayheer,Mongolia,√ñv√∂rhangay,Asia
-Baruun Urt,Mongolia,S√ºhbaatar,Asia
-Dalandzadgad,Mongolia,√ñmn√∂govi,Asia
+Arvayheer,Mongolia,÷vˆrhangay,Asia
+Baruun Urt,Mongolia,S¸hbaatar,Asia
+Dalandzadgad,Mongolia,÷mnˆgovi,Asia
 Dund-Us,Mongolia,Hovd,Asia
 Choybalsan,Mongolia,Dornod,Asia
 Erdenet,Mongolia,Orhon,Asia
 Ulaanbaatar,Mongolia,Ulaanbaatar,Asia
 Podgorica,Montenegro,Podgorica,Europe
-Ksar El Kebir,Morocco,Tanger - T√©touan,Africa
-Larache,Morocco,Tanger - T√©touan,Africa
+Ksar El Kebir,Morocco,Tanger - TÈtouan,Africa
+Larache,Morocco,Tanger - TÈtouan,Africa
 Taza,Morocco,Taza - Al Hoceima - Taounate,Africa
-Ouezzane,Morocco,Gharb - Chrarda - B√©ni Hssen,Africa
-Kenitra,Morocco,Gharb - Chrarda - B√©ni Hssen,Africa
+Ouezzane,Morocco,Gharb - Chrarda - BÈni Hssen,Africa
+Kenitra,Morocco,Gharb - Chrarda - BÈni Hssen,Africa
 Settat,Morocco,Chaouia - Ouardigha,Africa
-Er Rachidia,Morocco,Mekn√®s - Tafilalet,Africa
-Meknes,Morocco,Mekn√®s - Tafilalet,Africa
-Tiznit,Morocco,Souss - Massa - Dra√¢,Africa
+Er Rachidia,Morocco,MeknËs - Tafilalet,Africa
+Meknes,Morocco,MeknËs - Tafilalet,Africa
+Tiznit,Morocco,Souss - Massa - Dra‚,Africa
 El Jadida,Morocco,Doukkala - Abda,Africa
-Dawra,Morocco,La√¢youne - Boujdour - Sakia El Hamra,Africa
-Lemsid,Morocco,La√¢youne - Boujdour - Sakia El Hamra,Africa
+Dawra,Morocco,La‚youne - Boujdour - Sakia El Hamra,Africa
+Lemsid,Morocco,La‚youne - Boujdour - Sakia El Hamra,Africa
 Tan Tan,Morocco,Guelmim - Es-Semara,Africa
 Bir Anzarane,Morocco,Oued el Dahab,Africa
-Tangier,Morocco,Tanger - T√©touan,Africa
-Agadir,Morocco,Souss - Massa - Dra√¢,Africa
+Tangier,Morocco,Tanger - TÈtouan,Africa
+Agadir,Morocco,Souss - Massa - Dra‚,Africa
 Goulimine,Morocco,Guelmim - Es-Semara,Africa
 Smara,Morocco,Guelmim - Es-Semara,Africa
 Ad Dakhla,Morocco,Oued el Dahab,Africa
 Oujda,Morocco,Oriental,Africa
 Safi,Morocco,Doukkala - Abda,Africa
-Laayoune,Morocco,La√¢youne - Boujdour - Sakia El Hamra,Africa
-Fez,Morocco,F√®s - Boulemane,Africa
-Rabat,Morocco,Rabat - Sal√© - Zemmour - Zaer,Africa
+Laayoune,Morocco,La‚youne - Boujdour - Sakia El Hamra,Africa
+Fez,Morocco,FËs - Boulemane,Africa
+Rabat,Morocco,Rabat - SalÈ - Zemmour - Zaer,Africa
 Marrakesh,Morocco,Marrakech - Tensift - Al Haouz,Africa
 Casablanca,Morocco,Grand Casablanca,Africa
 Moatize,Mozambique,Tete,Africa
@@ -4301,7 +4261,7 @@ Jinotepe,Nicaragua,Carazo,South America
 Jinotega,Nicaragua,Jinotega,South America
 Masaya,Nicaragua,Masaya,South America
 San Juan del Sur,Nicaragua,Nicaragua,South America
-Esteli,Nicaragua,Estel√≠,South America
+Esteli,Nicaragua,EstelÌ,South America
 Boaco,Nicaragua,Boaco,South America
 Juigalpa,Nicaragua,Chontales,South America
 Rivas,Nicaragua,Nicaragua,South America
@@ -4309,9 +4269,9 @@ San Juan de Nicaragua,Nicaragua,Nicaragua,South America
 Granada,Nicaragua,Granada,South America
 Chinandega,Nicaragua,Chinandega,South America
 Matagalpa,Nicaragua,Matagalpa,South America
-Puerto Cabezas,Nicaragua,Atl√°ntico Norte,South America
-Leon,Nicaragua,Le√≥n,South America
-Bluefields,Nicaragua,Atl√°ntico Sur,South America
+Puerto Cabezas,Nicaragua,Atl·ntico Norte,South America
+Leon,Nicaragua,LeÛn,South America
+Bluefields,Nicaragua,Atl·ntico Sur,South America
 Managua,Nicaragua,Managua,South America
 Goure,Niger,Zinder,Africa
 Gaya,Niger,Dosso,Africa
@@ -4436,13 +4396,13 @@ Hamar,Norway,Hedmark,Europe
 Tonsberg,Norway,Vestfold,Europe
 Finnsnes,Norway,Troms,Europe
 Gjovik,Norway,Oppland,Europe
-Rorvik,Norway,Nord-Tr√∏ndelag,Europe
+Rorvik,Norway,Nord-Tr¯ndelag,Europe
 Harstad,Norway,Troms,Europe
-Alesund,Norway,M√∏re og Romsdal,Europe
+Alesund,Norway,M¯re og Romsdal,Europe
 Sandnes,Norway,Rogaland,Europe
 Drammen,Norway,Buskerud,Europe
-Moss,Norway,√Éstfold,Europe
-Steinkjer,Norway,Nord-Tr√∏ndelag,Europe
+Moss,Norway,√stfold,Europe
+Steinkjer,Norway,Nord-Tr¯ndelag,Europe
 Svolvaer,Norway,Nordland,Europe
 Mo i Rana,Norway,Nordland,Europe
 Narvik,Norway,Nordland,Europe
@@ -4450,16 +4410,16 @@ Bodo,Norway,Nordland,Europe
 Haugesund,Norway,Rogaland,Europe
 Stavanger,Norway,Rogaland,Europe
 Skien,Norway,Telemark,Europe
-Namsos,Norway,Nord-Tr√∏ndelag,Europe
+Namsos,Norway,Nord-Tr¯ndelag,Europe
 Alta,Norway,Finnmark,Europe
 Vadso,Norway,Finnmark,Europe
-Molde,Norway,M√∏re og Romsdal,Europe
+Molde,Norway,M¯re og Romsdal,Europe
 Lillehammer,Norway,Oppland,Europe
 Kirkenes,Norway,Finnmark,Europe
 Kristiansand,Norway,Vest-Agder,Europe
 Hammerfest,Norway,Finnmark,Europe
 Tromso,Norway,Troms,Europe
-Trondheim,Norway,S√∏r-Tr√∏ndelag,Europe
+Trondheim,Norway,S¯r-Tr¯ndelag,Europe
 Bergen,Norway,Hordaland,Europe
 Oslo,Norway,Oslo,Europe
 Alayat Samail,Oman,Ad Dakhliyah,Asia
@@ -4520,18 +4480,18 @@ Al Khalil,Palestine,,Asia
 Nablus,Palestine,,Asia
 Gaza,Palestine,,Asia
 El Porvenir,Panama,Kuna Yala,North America
-Penonome,Panama,Cocl√©,North America
+Penonome,Panama,CoclÈ,North America
 Chitre,Panama,Herrera,North America
-Jaque,Panama,Dari√©n,North America
+Jaque,Panama,DariÈn,North America
 Bocas del Toro,Panama,Bocas del Toro,North America
 Almirante,Panama,Bocas del Toro,North America
 Las Tablas,Panama,Los Santos,North America
 Santiago,Panama,Veraguas,North America
-La Palma,Panama,Dari√©n,North America
-Colon,Panama,Col√≥n,North America
+La Palma,Panama,DariÈn,North America
+Colon,Panama,ColÛn,North America
 Balboa,Panama,Panama,North America
-Puerto Armuelles,Panama,Chiriqu√≠,North America
-David,Panama,Chiriqu√≠,North America
+Puerto Armuelles,Panama,ChiriquÌ,North America
+David,Panama,ChiriquÌ,North America
 Panama City,Panama,Panama,North America
 Wabag,Papua New Guinea,Enga,Africa
 Vanimo,Papua New Guinea,Sandaun,Africa
@@ -4556,43 +4516,43 @@ Mt. Hagen,Papua New Guinea,Western Highlands,Africa
 Rabaul,Papua New Guinea,East New Britain,Africa
 Lae,Papua New Guinea,Morobe,Africa
 Port Moresby,Papua New Guinea,Central,Africa
-Mariscal Jose F. Estigarribia,Paraguay,Boquer√≥n,South America
+Mariscal Jose F. Estigarribia,Paraguay,BoquerÛn,South America
 Caacupe,Paraguay,Cordillera,South America
-General Eugenio Alejandrino Garay,Paraguay,Boquer√≥n,South America
+General Eugenio Alejandrino Garay,Paraguay,BoquerÛn,South America
 Arroyos y Esteros,Paraguay,Cordillera,South America
 Villa Hayes,Paraguay,Presidente Hayes,South America
 Fortin Falcon,Paraguay,Presidente Hayes,South America
 Puerto Pinasco,Paraguay,Presidente Hayes,South America
 Pozo Colorado,Paraguay,Presidente Hayes,South America
 San Pedro,Paraguay,San Pedro,South America
-San Lorenzo,Paraguay,Asunci√≥n,South America
-Ypacarai,Paraguay,Asunci√≥n,South America
+San Lorenzo,Paraguay,AsunciÛn,South America
+Ypacarai,Paraguay,AsunciÛn,South America
 San Juan Bautista,Paraguay,Misiones,South America
-Paraguari,Paraguay,Paraguar√≠,South America
-Nacunday,Paraguay,Alto Paran√°,South America
-Coronel Oviedo,Paraguay,Caaguaz√∫,South America
-Caazapa,Paraguay,Caazap√°,South America
-Ype Jhu,Paraguay,Canindey√∫,South America
-Encarnacion,Paraguay,Itap√∫a,South America
-Coronel Bogado,Paraguay,Itap√∫a,South America
+Paraguari,Paraguay,ParaguarÌ,South America
+Nacunday,Paraguay,Alto Paran·,South America
+Coronel Oviedo,Paraguay,Caaguaz˙,South America
+Caazapa,Paraguay,Caazap·,South America
+Ype Jhu,Paraguay,Canindey˙,South America
+Encarnacion,Paraguay,Itap˙a,South America
+Coronel Bogado,Paraguay,Itap˙a,South America
 Fuerte Olimpo,Paraguay,Alto Paraguay,South America
 Capitan Pablo Lagerenza,Paraguay,Alto Paraguay,South America
 La Victoria,Paraguay,Alto Paraguay,South America
-Horqueta,Paraguay,Concepci√≥n,South America
-Belen,Paraguay,Concepci√≥n,South America
+Horqueta,Paraguay,ConcepciÛn,South America
+Belen,Paraguay,ConcepciÛn,South America
 Rosario,Paraguay,San Pedro,South America
-Ita,Paraguay,Asunci√≥n,South America
-Pilar,Paraguay,√ëeembuc√∫,South America
+Ita,Paraguay,AsunciÛn,South America
+Pilar,Paraguay,—eembuc˙,South America
 Pedro Juan Caballero,Paraguay,Amambay,South America
 Bella Vista,Paraguay,Amambay,South America
-Abai,Paraguay,Caazap√°,South America
-Ygatimi,Paraguay,Canindey√∫,South America
-Hohenau,Paraguay,Itap√∫a,South America
-Concepcion,Paraguay,Concepci√≥n,South America
-Villarrica,Paraguay,Guair√°,South America
-Filadelfia,Paraguay,Boquer√≥n,South America
-Ciudad del Este,Paraguay,Alto Paran√°,South America
-Asuncion,Paraguay,Asunci√≥n,South America
+Abai,Paraguay,Caazap·,South America
+Ygatimi,Paraguay,Canindey˙,South America
+Hohenau,Paraguay,Itap˙a,South America
+Concepcion,Paraguay,ConcepciÛn,South America
+Villarrica,Paraguay,Guair·,South America
+Filadelfia,Paraguay,BoquerÛn,South America
+Ciudad del Este,Paraguay,Alto Paran·,South America
+Asuncion,Paraguay,AsunciÛn,South America
 Ferrenafe,Peru,Lambayeque,South America
 Motupe,Peru,Lambayeque,South America
 Mollendo,Peru,Arequipa,South America
@@ -4600,16 +4560,16 @@ Urubamba,Peru,Cusco,South America
 Santo Tomas,Peru,Cusco,South America
 Putina,Peru,Callao,South America
 Casma,Peru,Ancash,South America
-Tournavista,Peru,Hu√°nuco,South America
+Tournavista,Peru,Hu·nuco,South America
 Huamachuco,Peru,La Libertad,South America
 Otuzco,Peru,La Libertad,South America
-Lamas,Peru,San Mart√≠n,South America
+Lamas,Peru,San MartÌn,South America
 Nauta,Peru,Loreto,South America
 Puquio,Peru,Ayacucho,South America
 Chosica,Peru,Lima,South America
-Satipo,Peru,Jun√≠n,South America
-Tarma,Peru,Jun√≠n,South America
-La Oroya,Peru,Jun√≠n,South America
+Satipo,Peru,JunÌn,South America
+Tarma,Peru,JunÌn,South America
+La Oroya,Peru,JunÌn,South America
 Huaura,Peru,Lima,South America
 Huacho,Peru,Lima,South America
 Pimentel,Peru,Lambayeque,South America
@@ -4617,7 +4577,7 @@ Olmos,Peru,Lambayeque,South America
 Sechura,Peru,Piura,South America
 Chulucanas,Peru,Piura,South America
 Sullana,Peru,Piura,South America
-Abancay,Peru,Apur√≠mac,South America
+Abancay,Peru,ApurÌmac,South America
 Camana,Peru,Arequipa,South America
 Sicuani,Peru,Cusco,South America
 Puno,Peru,Callao,South America
@@ -4628,10 +4588,10 @@ Huarmey,Peru,Ancash,South America
 Cajabamba,Peru,Cajamarca,South America
 Jaen,Peru,Cajamarca,South America
 Chota,Peru,Cajamarca,South America
-Tingo Maria,Peru,Hu√°nuco,South America
-Moyobamba,Peru,San Mart√≠n,South America
-Juanjui,Peru,San Mart√≠n,South America
-Tocache,Peru,San Mart√≠n,South America
+Tingo Maria,Peru,Hu·nuco,South America
+Moyobamba,Peru,San MartÌn,South America
+Juanjui,Peru,San MartÌn,South America
+Tocache,Peru,San MartÌn,South America
 Sechura,Peru,Amazonas,South America
 Chachapoyas,Peru,Amazonas,South America
 Caballococha,Peru,Loreto,South America
@@ -4644,16 +4604,16 @@ Huanta,Peru,Ayacucho,South America
 Coracora,Peru,Ayacucho,South America
 Chincha Alta,Peru,Ica,South America
 Santiago,Peru,Ica,South America
-San Ramon,Peru,Jun√≠n,South America
-Junin,Peru,Jun√≠n,South America
-Jauja,Peru,Jun√≠n,South America
+San Ramon,Peru,JunÌn,South America
+Junin,Peru,JunÌn,South America
+Jauja,Peru,JunÌn,South America
 Pativilca,Peru,Lima,South America
 Chancay,Peru,Lima,South America
 Chilca,Peru,Lima,South America
 Chiclayo,Peru,Lambayeque,South America
 Juliaca,Peru,Callao,South America
 Cerro de Pasco,Peru,Pasco,South America
-Tarapoto,Peru,San Mart√≠n,South America
+Tarapoto,Peru,San MartÌn,South America
 Ayacucho,Peru,Ayacucho,South America
 Callao,Peru,Lima,South America
 Paita,Peru,Piura,South America
@@ -4664,7 +4624,7 @@ Ilo,Peru,Moquegua,South America
 Moquegua,Peru,Moquegua,South America
 Huaraz,Peru,Ancash,South America
 Cajamarca,Peru,Cajamarca,South America
-Huanuco,Peru,Hu√°nuco,South America
+Huanuco,Peru,Hu·nuco,South America
 Pacasmayo,Peru,La Libertad,South America
 Salaverry,Peru,La Libertad,South America
 Gueppi,Peru,Loreto,South America
@@ -4677,7 +4637,7 @@ Arequipa,Peru,Arequipa,South America
 Chimbote,Peru,Ancash,South America
 Pucallpa,Peru,Ucayali,South America
 Iquitos,Peru,Loreto,South America
-Huancayo,Peru,Jun√≠n,South America
+Huancayo,Peru,JunÌn,South America
 Cusco,Peru,Cusco,South America
 Tacna,Peru,Tacna,South America
 Trujillo,Peru,La Libertad,South America
@@ -4741,7 +4701,7 @@ Kielce,Poland,Swietokrzyskie,Europe
 Bialystok,Poland,Podlachian,Europe
 Lublin,Poland,Lublin,Europe
 Rzeszow,Poland,Subcarpathian,Europe
-Lodz,Poland,L√≥dz,Europe
+Lodz,Poland,LÛdz,Europe
 Gdansk,Poland,Pomeranian,Europe
 Krakow,Poland,Lesser Poland,Europe
 Warsaw,Poland,Masovian,Europe
@@ -4749,10 +4709,10 @@ Aveiro,Portugal,Aveiro,Europe
 Leiria,Portugal,Leiria,Europe
 Viana Do Castelo,Portugal,Viana do Castelo,Europe
 Beja,Portugal,Beja,Europe
-Evora,Portugal,√âvora,Europe
+Evora,Portugal,…vora,Europe
 Portalegre,Portugal,Portalegre,Europe
-Santarem,Portugal,Santar√©m,Europe
-Braganca,Portugal,Bragan√ßa,Europe
+Santarem,Portugal,SantarÈm,Europe
+Braganca,Portugal,BraganÁa,Europe
 Castelo Branco,Portugal,Castelo Branco,Europe
 Guarda,Portugal,Guarda,Europe
 Viseu,Portugal,Viseu,Europe
@@ -4777,7 +4737,7 @@ Doha,Qatar,Ad Dawhah,Asia
 Targu Jiu,Romania,Gorj,Europe
 Slatina,Romania,Olt,Europe
 Alexandria,Romania,Teleorman,Europe
-Targoviste,Romania,D√¢mbovita,Europe
+Targoviste,Romania,D‚mbovita,Europe
 Giurgiu,Romania,Giurgiu,Europe
 Slobozia,Romania,Ialomita,Europe
 Alba Lulia,Romania,Alba,Europe
@@ -4785,7 +4745,7 @@ Bistrita,Romania,Bistrita-Nasaud,Europe
 Deva,Romania,Hunedoara,Europe
 Zalau,Romania,Salaj,Europe
 Satu Mare,Romania,Satu Mare,Europe
-Rimnicu Vilcea,Romania,V√¢lcea,Europe
+Rimnicu Vilcea,Romania,V‚lcea,Europe
 Sfintu-Gheorghe,Romania,Covasna,Europe
 Miercurea-Cuic,Romania,Harghita,Europe
 Piatra-Neamt,Romania,Neamt,Europe
@@ -5446,7 +5406,7 @@ Riyadh,Saudi Arabia,Ar Riyad,Asia
 Fatick,Senegal,Fatick,Africa
 Diourbel,Senegal,Diourbel,Africa
 Louga,Senegal,Louga,Africa
-Thies,Senegal,Thi√®s,Africa
+Thies,Senegal,ThiËs,Africa
 Kolda,Senegal,Kolda,Africa
 Tambacounda,Senegal,Tambacounda,Africa
 Kedougou,Senegal,Tambacounda,Africa
@@ -5455,11 +5415,11 @@ Kaolack,Senegal,Kaolack,Africa
 Kaedi,Senegal,Matam,Africa
 Dakar,Senegal,Dakar,Africa
 Subotica,Serbia,Severno-Backi,Europe
-Kragujevac,Serbia,≈†umadijski,Europe
+Kragujevac,Serbia,¶umadijski,Europe
 Zrenjanin,Serbia,Srednje-Banatski,Europe
 Pec,Serbia,Moravicki,Europe
-Nis,Serbia,Ni≈°avski,Europe
-Novi Sad,Serbia,Ju≈æno-Backi,Europe
+Nis,Serbia,Ni®avski,Europe
+Novi Sad,Serbia,Ju∏no-Backi,Europe
 Belgrade,Serbia,Grad Beograd,Europe
 Victoria,Seychelles,,
 Makeni,Sierra Leone,Northern,Africa
@@ -5468,13 +5428,13 @@ Kenema,Sierra Leone,Eastern,Africa
 Bo,Sierra Leone,Southern,Africa
 Freetown,Sierra Leone,Western,Africa
 Singapore,Singapore,,Asia
-Banska Bystrica,Slovakia,Banskobystrick√Ω,Europe
-Trnava,Slovakia,Trnavsk√Ω,Europe
-Zvolen,Slovakia,Banskobystrick√Ω,Europe
-Zilina,Slovakia,≈Ωilinsk√Ω,Europe
-Kosice,Slovakia,Ko≈°ick√Ω,Europe
-Presov,Slovakia,Pre≈°ov,Europe
-Bratislava,Slovakia,Bratislavsk√Ω,Europe
+Banska Bystrica,Slovakia,Banskobystrick˝,Europe
+Trnava,Slovakia,Trnavsk˝,Europe
+Zvolen,Slovakia,Banskobystrick˝,Europe
+Zilina,Slovakia,¥ilinsk˝,Europe
+Kosice,Slovakia,Ko®ick˝,Europe
+Presov,Slovakia,Pre®ov,Europe
+Bratislava,Slovakia,Bratislavsk˝,Europe
 Maribor,Slovenia,Maribor,Europe
 Ljubljana,Slovenia,Osrednjeslovenska,Europe
 Gizo,Solomon Islands,Choiseul,
@@ -5629,53 +5589,53 @@ Juba,South Sudan,Central Equatoria,Africa
 Malakal,South Sudan,Upper Nile,Africa
 Wau,South Sudan,West Bahr-al-Ghazal,Africa
 Merida,Spain,Extremadura,Europe
-Marbella,Spain,Andaluc√≠a,Europe
-Linares,Spain,Andaluc√≠a,Europe
-Algeciras,Spain,Andaluc√≠a,Europe
-Leon,Spain,Castilla y Le√≥n,Europe
-Mataro,Spain,Catalu√±a,Europe
+Marbella,Spain,AndalucÌa,Europe
+Linares,Spain,AndalucÌa,Europe
+Algeciras,Spain,AndalucÌa,Europe
+Leon,Spain,Castilla y LeÛn,Europe
+Mataro,Spain,CataluÒa,Europe
 Gijon,Spain,Principado de Asturias,Europe
-Vitoria,Spain,Pa√≠s Vasco,Europe
-Almeria,Spain,Andaluc√≠a,Europe
-Malaga,Spain,Andaluc√≠a,Europe
-Jaen,Spain,Andaluc√≠a,Europe
-Huelva,Spain,Andaluc√≠a,Europe
+Vitoria,Spain,PaÌs Vasco,Europe
+Almeria,Spain,AndalucÌa,Europe
+Malaga,Spain,AndalucÌa,Europe
+Jaen,Spain,AndalucÌa,Europe
+Huelva,Spain,AndalucÌa,Europe
 Albacete,Spain,Castilla-La Mancha,Europe
 Toledo,Spain,Castilla-La Mancha,Europe
 Guadalajara,Spain,Castilla-La Mancha,Europe
 Santander,Spain,Cantabria,Europe
-Salamanca,Spain,Castilla y Le√≥n,Europe
-Burgos,Spain,Castilla y Le√≥n,Europe
-Tarragona,Spain,Catalu√±a,Europe
-Lorca,Spain,Regi√≥n de Murcia,Europe
-Cartagena,Spain,Regi√≥n de Murcia,Europe
+Salamanca,Spain,Castilla y LeÛn,Europe
+Burgos,Spain,Castilla y LeÛn,Europe
+Tarragona,Spain,CataluÒa,Europe
+Lorca,Spain,RegiÛn de Murcia,Europe
+Cartagena,Spain,RegiÛn de Murcia,Europe
 Oviedo,Spain,Principado de Asturias,Europe
 Santiago de Compostela,Spain,Galicia,Europe
 Badajoz,Spain,Extremadura,Europe
 Logrono,Spain,La Rioja,Europe
-San Sebastian,Spain,Pa√≠s Vasco,Europe
+San Sebastian,Spain,PaÌs Vasco,Europe
 Alicante,Spain,Comunidad Valenciana,Europe
 Castello,Spain,Comunidad Valenciana,Europe
 Arrecife,Spain,,Europe
-Cadiz,Spain,Andaluc√≠a,Europe
-Granada,Spain,Andaluc√≠a,Europe
-Murcia,Spain,Regi√≥n de Murcia,Europe
+Cadiz,Spain,AndalucÌa,Europe
+Granada,Spain,AndalucÌa,Europe
+Murcia,Spain,RegiÛn de Murcia,Europe
 Ceuta,Spain,Ceuta,Europe
 La Coruna,Spain,Galicia,Europe
 Ourense,Spain,Galicia,Europe
 Pamplona,Spain,Comunidad Foral de Navarra,Europe
-Valladolid,Spain,Castilla y Le√≥n,Europe
+Valladolid,Spain,Castilla y LeÛn,Europe
 Melilla,Spain,Melilla,Europe
 Palma,Spain,Islas Baleares,Europe
-Zaragoza,Spain,Arag√≥n,Europe
+Zaragoza,Spain,AragÛn,Europe
 Santa Cruz de Tenerife,Spain,,Europe
-Cordoba,Spain,Andaluc√≠a,Europe
+Cordoba,Spain,AndalucÌa,Europe
 Vigo,Spain,Galicia,Europe
-Bilbao,Spain,Pa√≠s Vasco,Europe
+Bilbao,Spain,PaÌs Vasco,Europe
 Las Palmas,Spain,,Europe
-Seville,Spain,Andaluc√≠a,Europe
+Seville,Spain,AndalucÌa,Europe
 Valencia,Spain,Comunidad Valenciana,Europe
-Barcelona,Spain,Catalu√±a,Europe
+Barcelona,Spain,CataluÒa,Europe
 Madrid,Spain,Comunidad de Madrid,Europe
 Trincomalee,Sri Lanka,Trincomalee,Asia
 Puttalan,Sri Lanka,Puttalam,Asia
@@ -5740,41 +5700,41 @@ Golela,Swaziland,Shiselweni,Africa
 Lobamba,Swaziland,Manzini,Africa
 Mbabane,Swaziland,Hhohho,Africa
 Falun,Sweden,Dalarna,Europe
-Nykoping,Sweden,S√∂dermanland,Europe
-Harnosand,Sweden,V√§sternorrland,Europe
+Nykoping,Sweden,Sˆdermanland,Europe
+Harnosand,Sweden,V‰sternorrland,Europe
 Karlskrona,Sweden,Blekinge,Europe
-Mariestad,Sweden,V√§stra G√∂taland,Europe
-Vannersborg,Sweden,V√§stra G√∂taland,Europe
+Mariestad,Sweden,V‰stra Gˆtaland,Europe
+Vannersborg,Sweden,V‰stra Gˆtaland,Europe
 Borlange,Sweden,Dalarna,Europe
-Vasteraas,Sweden,V√§stmanland,Europe
-Bollnas,Sweden,G√§vleborg,Europe
-Gavle,Sweden,G√§vleborg,Europe
+Vasteraas,Sweden,V‰stmanland,Europe
+Bollnas,Sweden,G‰vleborg,Europe
+Gavle,Sweden,G‰vleborg,Europe
 Kalmar,Sweden,Kalmar,Europe
 Vaxjo,Sweden,Kronoberg,Europe
 Orebro,Sweden,Orebro,Europe
-Norrkoping,Sweden,√ñsterg√∂tland,Europe
+Norrkoping,Sweden,÷stergˆtland,Europe
 Halmstad,Sweden,Halland,Europe
-Karlstad,Sweden,V√§rmland,Europe
-Skelleftea,Sweden,V√§sterbotten,Europe
+Karlstad,Sweden,V‰rmland,Europe
+Skelleftea,Sweden,V‰sterbotten,Europe
 Visby,Sweden,Gotland,Europe
-Trollhattan,Sweden,V√§stra G√∂taland,Europe
-Boras,Sweden,V√§stra G√∂taland,Europe
-Kristianstad,Sweden,Sk√•ne,Europe
-Helsingborg,Sweden,Sk√•ne,Europe
-Jonkoping,Sweden,J√∂nk√∂ping,Europe
-Ornskoldsvik,Sweden,V√§sternorrland,Europe
-Linkoping,Sweden,√ñsterg√∂tland,Europe
-Ostersund,Sweden,J√§mtland,Europe
+Trollhattan,Sweden,V‰stra Gˆtaland,Europe
+Boras,Sweden,V‰stra Gˆtaland,Europe
+Kristianstad,Sweden,SkÂne,Europe
+Helsingborg,Sweden,SkÂne,Europe
+Jonkoping,Sweden,Jˆnkˆping,Europe
+Ornskoldsvik,Sweden,V‰sternorrland,Europe
+Linkoping,Sweden,÷stergˆtland,Europe
+Ostersund,Sweden,J‰mtland,Europe
 Kiruna,Sweden,Norrbotten,Europe
-Umea,Sweden,V√§sterbotten,Europe
+Umea,Sweden,V‰sterbotten,Europe
 Uppsala,Sweden,Uppsala,Europe
-Goteborg,Sweden,V√§stra G√∂taland,Europe
+Goteborg,Sweden,V‰stra Gˆtaland,Europe
 Lulea,Sweden,Norrbotten,Europe
-Sundsvall,Sweden,V√§sternorrland,Europe
-Malmo,Sweden,Sk√•ne,Europe
+Sundsvall,Sweden,V‰sternorrland,Europe
+Malmo,Sweden,SkÂne,Europe
 Stockholm,Sweden,Stockholm,Europe
 Delemont,Switzerland,Jura,Europe
-Neuchatel,Switzerland,Neuch√¢tel,Europe
+Neuchatel,Switzerland,Neuch‚tel,Europe
 Aarau,Switzerland,Aargau,Europe
 Stans,Switzerland,Nidwalden,Europe
 Sion,Switzerland,Valais,Europe
@@ -5792,15 +5752,15 @@ Liestal,Switzerland,Basel-Landschaft,Europe
 Solothurn,Switzerland,Solothurn,Europe
 Sarnen,Switzerland,Obwalden,Europe
 Appenzell,Switzerland,Appenzell Innerrhoden,Europe
-Chur,Switzerland,Graub√ºnden,Europe
+Chur,Switzerland,Graub¸nden,Europe
 Biel,Switzerland,Bern,Europe
 Luzern,Switzerland,Lucerne,Europe
 Lugano,Switzerland,Ticino,Europe
 Lausanne,Switzerland,Vaud,Europe
 Basel,Switzerland,Basel-Stadt,Europe
 Bern,Switzerland,Bern,Europe
-Zurich,Switzerland,Z√ºrich,Europe
-Geneva,Switzerland,Gen√®ve,Europe
+Zurich,Switzerland,Z¸rich,Europe
+Geneva,Switzerland,GenËve,Europe
 Dar'a,Syria,Dar`a,Asia
 Al Ladhiqiyah,Syria,Lattakia (Al Ladhiqiyah),Asia
 Madinat ath Thawrah,Syria,Ar Raqqah,Asia
@@ -6014,27 +5974,27 @@ Neiafu,Tonga,,
 Nukualofa,Tonga,,
 San Fernando,Trinidad and Tobago,San Fernando,South America
 Port-of-Spain,Trinidad and Tobago,Port of Spain,South America
-Medemine,Tunisia,M√©denine,Africa
+Medemine,Tunisia,MÈdenine,Africa
 Kebili,Tunisia,Kebili,Africa
 Tataouine,Tunisia,Tataouine,Africa
 L'Ariana,Tunisia,Manubah,Africa
 Jendouba,Tunisia,Jendouba,Africa
-Kasserine,Tunisia,Kass√©rine,Africa
+Kasserine,Tunisia,KassÈrine,Africa
 Sdid Bouzid,Tunisia,Sidi Bou Zid,Africa
 Siliana,Tunisia,Siliana,Africa
 Mahdia,Tunisia,Mahdia,Africa
 Monasir,Tunisia,Monastir,Africa
 Zaghouan,Tunisia,Zaghouan,Africa
-Ben Gardane,Tunisia,M√©denine,Africa
-Zarzis,Tunisia,M√©denine,Africa
+Ben Gardane,Tunisia,MÈdenine,Africa
+Zarzis,Tunisia,MÈdenine,Africa
 Dehibat,Tunisia,Tataouine,Africa
 Tozeur,Tunisia,Tozeur,Africa
-Beja,Tunisia,B√©ja,Africa
+Beja,Tunisia,BÈja,Africa
 Bizerte,Tunisia,Bizerte,Africa
 Nabeul,Tunisia,Nabeul,Africa
 El Kef,Tunisia,Le Kef,Africa
-Qasserine,Tunisia,Kass√©rine,Africa
-Gabes,Tunisia,Gab√®s,Africa
+Qasserine,Tunisia,KassÈrine,Africa
+Gabes,Tunisia,GabËs,Africa
 Gafsa,Tunisia,Gafsa,Africa
 Qairouan,Tunisia,Kairouan,Africa
 Sfax,Tunisia,Sfax,Africa
@@ -6052,23 +6012,23 @@ Giresun,Turkey,Giresun,Asia
 Sinop,Turkey,Sinop,Asia
 Tokat,Turkey,Tokat,Asia
 Coruh,Turkey,Artvin,Asia
-Bingol,Turkey,Bing√∂l,Asia
+Bingol,Turkey,Bingˆl,Asia
 Bitlis,Turkey,Bitlis,Asia
-Cankiri,Turkey,√áankiri,Asia
+Cankiri,Turkey,«ankiri,Asia
 Nigde,Turkey,Nigde,Asia
 Yozgat,Turkey,Yozgat,Asia
-Gumushane,Turkey,G√ºm√ºshane,Asia
+Gumushane,Turkey,G¸m¸shane,Asia
 Siirt,Turkey,Siirt,Asia
 Tunceli,Turkey,Tunceli,Asia
 Aydin,Turkey,Aydin,Asia
 Luleburgaz,Turkey,Kirklareli,Asia
 Isparta,Turkey,Isparta,Asia
-Kutahya,Turkey,K√ºtahya,Asia
+Kutahya,Turkey,K¸tahya,Asia
 Mugla,Turkey,Mugla,Asia
 Elazig,Turkey,Elazig,Asia
 Kahramanmaras,Turkey,K. Maras,Asia
 Icel,Turkey,Mersin,Asia
-Corum,Turkey,√áorum,Asia
+Corum,Turkey,«orum,Asia
 Rize,Turkey,Rize,Asia
 Tatvan,Turkey,Bitlis,Asia
 Polatli,Turkey,Ankara,Asia
@@ -6077,7 +6037,7 @@ Nusaybin,Turkey,Mardin,Asia
 Hakkari,Turkey,Hakkari,Asia
 Soke,Turkey,Aydin,Asia
 Balikesir,Turkey,Balikesir,Asia
-Canakkale,Turkey,√áanakkale,Asia
+Canakkale,Turkey,«anakkale,Asia
 Edirne,Turkey,Edirne,Asia
 Tekirdag,Turkey,Tekirdag,Asia
 Kocaeli,Turkey,Kocaeli,Asia
@@ -7074,14 +7034,14 @@ New York,United States of America,New York,North America
 Christiansted,United States Virgin Islands,,North America
 Colonia del Sacramento,Uruguay,Colonia,South America
 Trinidad,Uruguay,Flores,South America
-Fray Bentos,Uruguay,R√≠o Negro,South America
+Fray Bentos,Uruguay,RÌo Negro,South America
 Canelones,Uruguay,Canelones,South America
 Florida,Uruguay,Florida,South America
 Artigas,Uruguay,Artigas,South America
 Baltasar Brum,Uruguay,Artigas,South America
 Tranqueras,Uruguay,Rivera,South America
-Tacuarembo,Uruguay,Tacuaremb√≥,South America
-Paso de los Toros,Uruguay,Tacuaremb√≥,South America
+Tacuarembo,Uruguay,TacuarembÛ,South America
+Paso de los Toros,Uruguay,TacuarembÛ,South America
 Vergara,Uruguay,Treinta y Tres,South America
 Treinta y Tres,Uruguay,Treinta y Tres,South America
 Santa Lucia,Uruguay,Canelones,South America
@@ -7098,9 +7058,9 @@ Melo,Uruguay,Cerro Largo,South America
 Rivera,Uruguay,Rivera,South America
 Lascano,Uruguay,Rocha,South America
 Castillos,Uruguay,Rocha,South America
-San Jose de Mayo,Uruguay,San Jos√©,South America
+San Jose de Mayo,Uruguay,San JosÈ,South America
 Rocha,Uruguay,Rocha,South America
-Paysandu,Uruguay,Paysand√∫,South America
+Paysandu,Uruguay,Paysand˙,South America
 Salto,Uruguay,Salto,South America
 Durazno,Uruguay,Durazno,South America
 Montevideo,Uruguay,Montevideo,South America
@@ -7138,7 +7098,7 @@ Port-Vila,Vanuatu,Shefa,
 Vatican City,Vatican (Holy Sea),Lazio,
 San Carlos,Venezuela,Cojedes,South America
 San Felipe,Venezuela,Yaracuy,South America
-San Juan De Los Morros,Venezuela,Gu√°rico,South America
+San Juan De Los Morros,Venezuela,Gu·rico,South America
 La Asuncion,Venezuela,Nueva Esparta,South America
 Guasdualito,Venezuela,Apure,South America
 Barinas,Venezuela,Barinas,South America
@@ -7146,10 +7106,10 @@ Valera,Venezuela,Trujillo,South America
 Cabimas,Venezuela,Trujillo,South America
 Carora,Venezuela,Lara,South America
 Guanare,Venezuela,Portuguesa,South America
-Puerto la Cruz,Venezuela,Anzo√°tegui,South America
-Anaco,Venezuela,Anzo√°tegui,South America
+Puerto la Cruz,Venezuela,Anzo·tegui,South America
+Anaco,Venezuela,Anzo·tegui,South America
 Los Teques,Venezuela,Distrito Capital,South America
-Valle de la Pascua,Venezuela,Gu√°rico,South America
+Valle de la Pascua,Venezuela,Gu·rico,South America
 Ocumare del Tuy,Venezuela,Miranda,South America
 Carupano,Venezuela,Sucre,South America
 Trujillo,Venezuela,Trujillo,South America
@@ -7158,93 +7118,93 @@ Machiques,Venezuela,Zulia,South America
 San Carlos del Zulia,Venezuela,Zulia,South America
 Puerto Cabello,Venezuela,Carabobo,South America
 Acarigua,Venezuela,Portuguesa,South America
-Upata,Venezuela,Bol√≠var,South America
-El Manteco,Venezuela,Bol√≠var,South America
-Chaguaramas,Venezuela,Anzo√°tegui,South America
-Barcelona,Venezuela,Anzo√°tegui,South America
-El Tigre,Venezuela,Anzo√°tegui,South America
+Upata,Venezuela,BolÌvar,South America
+El Manteco,Venezuela,BolÌvar,South America
+Chaguaramas,Venezuela,Anzo·tegui,South America
+Barcelona,Venezuela,Anzo·tegui,South America
+El Tigre,Venezuela,Anzo·tegui,South America
 Maiquetia,Venezuela,Vargas,South America
-Calabozo,Venezuela,Gu√°rico,South America
-Zaraza,Venezuela,Gu√°rico,South America
-Altagracia de Orituco,Venezuela,Gu√°rico,South America
+Calabozo,Venezuela,Gu·rico,South America
+Zaraza,Venezuela,Gu·rico,South America
+Altagracia de Orituco,Venezuela,Gu·rico,South America
 Tucupita,Venezuela,Monagas,South America
 Porlamar,Venezuela,Nueva Esparta,South America
 San Fernando de Apure,Venezuela,Apure,South America
 Barquisimeto,Venezuela,Lara,South America
 Maturin,Venezuela,Monagas,South America
 Cumana,Venezuela,Sucre,South America
-Coro,Venezuela,Falc√≥n,South America
-Punto Fijo,Venezuela,Falc√≥n,South America
+Coro,Venezuela,FalcÛn,South America
+Punto Fijo,Venezuela,FalcÛn,South America
 La Esmeralda,Venezuela,Amazonas,South America
-Ciudad Bolivar,Venezuela,Bol√≠var,South America
-El Dorado,Venezuela,Bol√≠var,South America
+Ciudad Bolivar,Venezuela,BolÌvar,South America
+El Dorado,Venezuela,BolÌvar,South America
 Maracay,Venezuela,Aragua,South America
-Merida,Venezuela,M√©rida,South America
+Merida,Venezuela,MÈrida,South America
 Puerto Ayacucho,Venezuela,Amazonas,South America
-San Cristobal,Venezuela,T√°chira,South America
+San Cristobal,Venezuela,T·chira,South America
 Valencia,Venezuela,Carabobo,South America
-Ciudad Guayana,Venezuela,Bol√≠var,South America
+Ciudad Guayana,Venezuela,BolÌvar,South America
 Maracaibo,Venezuela,Zulia,South America
 Caracas,Venezuela,Distrito Capital,South America
-Tay Ninh,Vietnam,T√¢y Ninh,Asia
-Luan Chau,Vietnam,ƒêi·ªán Bi√™n,Asia
+Tay Ninh,Vietnam,T‚y Ninh,Asia
+Luan Chau,Vietnam,?i?n BiÍn,Asia
 Bac Kan,Vietnam,Bac Kan,Asia
-Lang Son,Vietnam,L·∫°ng S∆°n,Asia
+Lang Son,Vietnam,L?ng S?n,Asia
 Son La,Vietnam,Son La,Asia
-Tuyen Quang,Vietnam,Tuy√™n Quang,Asia
-Yen Bai,Vietnam,Y√™n B√°i,Asia
-Hai Duong,Vietnam,H·∫£i D∆∞∆°ng ,Asia
-Thai Binh,Vietnam,Th√°i B√¨nh,Asia
-Tuy Hoa,Vietnam,Ph√∫ Y√™n,Asia
-Thu Dau Mot,Vietnam,B√¨nh Duong,Asia
-Dong Ha,Vietnam,Qu·∫£ng Tr·ªã ,Asia
-Cao Lanh,Vietnam,ƒê·ªìng Th√°p ,Asia
-Truc Giang,Vietnam,B·∫øn Tre ,Asia
-Tra Vinh,Vietnam,Tr√† Vinh,Asia
+Tuyen Quang,Vietnam,TuyÍn Quang,Asia
+Yen Bai,Vietnam,YÍn B·i,Asia
+Hai Duong,Vietnam,H?i D??ng ,Asia
+Thai Binh,Vietnam,Th·i BÏnh,Asia
+Tuy Hoa,Vietnam,Ph˙ YÍn,Asia
+Thu Dau Mot,Vietnam,BÏnh Duong,Asia
+Dong Ha,Vietnam,Qu?ng Tr? ,Asia
+Cao Lanh,Vietnam,??ng Th·p ,Asia
+Truc Giang,Vietnam,B?n Tre ,Asia
+Tra Vinh,Vietnam,Tr‡ Vinh,Asia
 Vinh Long,Vietnam,Vinh Long,Asia
-Cao Bang,Vietnam,Cao B·∫±ng,Asia
-Hong Gai,Vietnam,Qu·∫£ng Ninh ,Asia
-Cam Pha,Vietnam,Qu·∫£ng Ninh ,Asia
-Lao Chi,Vietnam,L√†o Cai,Asia
-Hoa Binh,Vietnam,H√≤a B√¨nh,Asia
-Son Tay,Vietnam,H√† T√¢y,Asia
-Ninh Binh,Vietnam,Ninh B√¨nh,Asia
-Viet Tri,Vietnam,Ph√∫ Th·ªç ,Asia
-Bac Giang,Vietnam,B·∫Øc Giang ,Asia
+Cao Bang,Vietnam,Cao B?ng,Asia
+Hong Gai,Vietnam,Qu?ng Ninh ,Asia
+Cam Pha,Vietnam,Qu?ng Ninh ,Asia
+Lao Chi,Vietnam,L‡o Cai,Asia
+Hoa Binh,Vietnam,HÚa BÏnh,Asia
+Son Tay,Vietnam,H‡ T‚y,Asia
+Ninh Binh,Vietnam,Ninh BÏnh,Asia
+Viet Tri,Vietnam,Ph˙ Th? ,Asia
+Bac Giang,Vietnam,B?c Giang ,Asia
 Ha Tinh,Vietnam,Ha Tinh,Asia
 Buon Me Thuot,Vietnam,Dak Lak,Asia
-Da Lat,Vietnam,L√¢m ƒê·ªìng ,Asia
-Phan Rang,Vietnam,Ninh Thu·∫≠n ,Asia
-Hon Quan,Vietnam,B√¨nh Ph∆∞·ªõc ,Asia
+Da Lat,Vietnam,L‚m ??ng ,Asia
+Phan Rang,Vietnam,Ninh Thu?n ,Asia
+Hon Quan,Vietnam,BÏnh Ph??c ,Asia
 Kon Tum,Vietnam,Kon Tum,Asia
-Quang Ngai,Vietnam,Qu·∫£ng Ng√£i¬† ,Asia
-Quang Tri,Vietnam,Qu·∫£ng Tr·ªã ,Asia
-Vung Tau,Vietnam,B√† R·ªãa‚ÄìV≈©ng T√†u ,Asia
-Phan Thiet,Vietnam,B√¨nh Thu·∫≠n ,Asia
+Quang Ngai,Vietnam,Qu?ng Ng„i† ,Asia
+Quang Tri,Vietnam,Qu?ng Tr? ,Asia
+Vung Tau,Vietnam,B‡ R?a-V?ng T‡u ,Asia
+Phan Thiet,Vietnam,BÏnh Thu?n ,Asia
 Long Xuyen,Vietnam,An Giang,Asia
 Chau Doc,Vietnam,An Giang,Asia
-Rach Gia,Vietnam,Ki√™n Giang,Asia
+Rach Gia,Vietnam,KiÍn Giang,Asia
 Tan An,Vietnam,Long An,Asia
-My Tho,Vietnam,Ti·ªÅn Giang ,Asia
-Bac Lieu,Vietnam,B·∫°c Li√™u ,Asia
-Ca Mau,Vietnam,C√† Mau,Asia
-Soc Trang,Vietnam,S√≥c Trang,Asia
-Ha Giang,Vietnam,H√† Giang,Asia
-Thai Nguyen,Vietnam,Th√°i Nguy√™n,Asia
-Thanh Hoa,Vietnam,Thanh H√≥a,Asia
-Nam Dinh,Vietnam,Nam ƒê·ªãnh ,Asia
-Vinh,Vietnam,Ngh·ªá An ,Asia
-Dong Hoi,Vietnam,Qu·∫£ng B√¨nh ,Asia
+My Tho,Vietnam,Ti?n Giang ,Asia
+Bac Lieu,Vietnam,B?c LiÍu ,Asia
+Ca Mau,Vietnam,C‡ Mau,Asia
+Soc Trang,Vietnam,SÛc Trang,Asia
+Ha Giang,Vietnam,H‡ Giang,Asia
+Thai Nguyen,Vietnam,Th·i NguyÍn,Asia
+Thanh Hoa,Vietnam,Thanh HÛa,Asia
+Nam Dinh,Vietnam,Nam ??nh ,Asia
+Vinh,Vietnam,Ngh? An ,Asia
+Dong Hoi,Vietnam,Qu?ng BÏnh ,Asia
 Play Ku,Vietnam,Gia Lai,Asia
-Nha Trang,Vietnam,Kh√°nh H√≤a,Asia
-Cam Ranh,Vietnam,Kh√°nh H√≤a,Asia
-Qui Nhon,Vietnam,B√¨nh ƒê·ªãnh ,Asia
-Hue,Vietnam,Th·ª´a Thi√™n‚ÄìHu·∫ø ,Asia
-Bien Hoa,Vietnam,ƒê·ªìng Nai ,Asia
+Nha Trang,Vietnam,Kh·nh HÚa,Asia
+Cam Ranh,Vietnam,Kh·nh HÚa,Asia
+Qui Nhon,Vietnam,BÏnh ??nh ,Asia
+Hue,Vietnam,Th?a ThiÍn-Hu? ,Asia
+Bien Hoa,Vietnam,??ng Nai ,Asia
 Can Tho,Vietnam,Can Tho,Asia
-Haiphong,Vietnam,Qu·∫£ng Ninh,Asia
+Haiphong,Vietnam,Qu?ng Ninh,Asia
 Da Nang,Vietnam,Da Nang,Asia
-Hanoi,Vietnam,Th√°i Nguy√™n,Asia
+Hanoi,Vietnam,Th·i NguyÍn,Asia
 Ho Chi Minh City,Vietnam,Ho Chi Minh City,Asia
 Bir Lehlou,Western Sahara,,Africa
 Al Bayda,Yemen,Al Bayda',Africa
