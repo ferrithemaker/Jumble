@@ -34,6 +34,7 @@ pygame_screen_y=400
 tweetstring = ""
 tweetfrom = ""
 continent = ""
+choice = ""
 
 found = False
 
@@ -61,7 +62,7 @@ access_token_secret=""
 # This is the string to search in the twitter feed
 # May be  a word, an #hashtag or a @username
 
-search_strings = ['makerspace','arduino','raspberry pi','#raspberrypi','esp8266','ESP8266','tinkering','Raspberry Pi','Raspberry pi','Raspberry PI','Arduino','raspberry PI']
+search_strings = ['arduino','raspberry pi','#raspberrypi','Raspberry Pi','Raspberry pi','Raspberry PI','Arduino','raspberry PI','#arduino','#Arduino']
 
 class StdOutListener(StreamListener):
     """
@@ -75,22 +76,45 @@ class StdOutListener(StreamListener):
 		global continent
 		global continentsandcities
 		global found
+		global choice
 		continent = ""
 		len_continent = 0
 		data  = json.loads(data)
+		print ("INCOMMING TWEET!")
 		if data['user']['location'] is not None:
 			for element in continentsandcities:
-				if element[0].encode('utf-8').lower() in data['user']['location'].encode('utf-8').lower() or element[1].encode('utf-8').lower() in data['user']['location'].encode('utf-8').lower() or ((element[2].encode('utf-8').lower() in data['user']['location'].encode('utf-8').lower()) and element[2].encode('utf-8') != ""):
-					if len(element[3].encode('utf-8')) > len_continent:
-						len_continent = len(element[3].encode('utf-8'))
-						continent = element[3].encode('utf-8')
+				if element[0].encode('utf-8').lower() in data['user']['location'].encode('utf-8').lower():
+					if len(element[0].encode('utf-8')) > len_continent:
+						len_continent = len(element[0].encode('utf-8'))
+						continent = element[3].encode('utf-8')[:-1]
+						element_temp = element
+				if element[1].encode('utf-8').lower() in data['user']['location'].encode('utf-8').lower():
+					if len(element[1].encode('utf-8')) > len_continent:
+						len_continent = len(element[1].encode('utf-8'))
+						continent = element[3].encode('utf-8')[:-1]
+						element_temp = element
+				if element[2].encode('utf-8').lower() in data['user']['location'].encode('utf-8').lower() and element[2].encode('utf-8') != "":
+					if len(element[2].encode('utf-8')) > len_continent:
+						len_continent = len(element[2].encode('utf-8'))
+						continent = element[3].encode('utf-8')[:-1]
+						element_temp = element
 			if continent != "":
-				print ("\nContinent: "+continent[:-1])
+				if "raspberry" in data['text'].encode('utf-8').lower():
+					choice = "R"
+				else:
+					choice = "A"
 				tweetstring = data['text'].encode('utf-8')
 				tweetfrom =  "Tweet from: "+data['user']['location'].encode('utf-8')
+				print ("Tweet about: "+choice)
+				print ("Selected Db element: "+element_temp[0]+","+element_temp[1]+","+element_temp[2]+","+element_temp[3][:-1])
 				print (tweetfrom)
-				print (tweetstring)
+				print ("Continent: "+continent)
+				print (tweetstring+"\n")
 				found = True
+			else:
+				lost_cities = open("lost_cities","a")
+				lost_cities.write(data['user']['location'].encode('utf-8')+"\n")
+				lost_cities.close()
 		return True
 
     def on_error(self, status):
@@ -123,6 +147,7 @@ class StdOutListener(StreamListener):
 
 def show_npxl():
 	global found
+	global choice
 	# LED strip configuration:
 	LED_COUNT      = 26      # Number of LED pixels.
 	LED_PIN        = 18      # GPIO pin connected to the pixels (18 uses PWM!).
@@ -138,10 +163,13 @@ def show_npxl():
 	# Intialize the library (must be called once before other functions).
 	strip.begin()
 	#color_continent=Color(random.randint(0,255),random.randint(0,255),random.randint(0,255))
-	color_continent=Color(200,50,200)
 	print ('Press Ctrl-C to quit.')
 	while True:
 		#color_continent=Color(random.randint(0,255),random.randint(0,255),random.randint(0,255))
+		if choice == "R":
+			color_continent=Color(230,50,200)
+		else:
+			color_continent=Color(50,50,250)
 		if "Europe" in continent:
 			for i in range(strip.numPixels()):
 				strip.setPixelColor(i, Color(0,0,0))
