@@ -27,8 +27,38 @@
 				console.log(this.$.attr('id'));
 				console.log(this);
 				console.log("release : " + value);
+				console.log($("#amount-sp1-1").val());
+				$.ajax({
+					type: 'POST',
+					cache: false,
+					url: './postdata.php',
+					data: 'amount-sp1-1='+$("#amount-sp1-1").val()+
+						  '&amount-sp1-2='+$("#amount-sp1-2").val()+
+						  '&amount-sp1-3='+$("#amount-sp1-3").val()+
+						  '&amount-sp1-4='+$("#amount-sp1-4").val()+
+						  '&amount-sp1-5='+$("#amount-sp1-5").val()+
+						  '&amount-sp1-6='+$("#amount-sp1-6").val()+
+						  '&amount-sp1-7='+$("#amount-sp1-7").val()+
+						  '&amount-sp1-8='+$("#amount-sp1-8").val()+
+						  '&amount-sp2-1='+$("#amount-sp2-1").val()+
+						  '&amount-sp2-2='+$("#amount-sp2-2").val()+
+						  '&amount-sp2-3='+$("#amount-sp2-3").val()+
+						  '&amount-sp2-4='+$("#amount-sp2-4").val()+
+						  '&amount-sp2-5='+$("#amount-sp2-5").val()+
+						  '&amount-sp2-6='+$("#amount-sp2-6").val()+
+						  '&amount-sp2-7='+$("#amount-sp2-7").val()+
+						  '&amount-sp2-8='+$("#amount-sp2-8").val()+
+						  '&amount-sp3-1='+$("#amount-sp3-1").val()+
+						  '&amount-sp3-2='+$("#amount-sp3-2").val()+
+						  '&amount-sp3-3='+$("#amount-sp3-3").val()+
+						  '&amount-sp3-4='+$("#amount-sp3-4").val()+
+						  '&amount-sp3-5='+$("#amount-sp3-5").val()
+					, 
+					//success: function(msg) {
+					//	$("#boxContentId").html(msg);
+					//}
+				});
 				
-
 			},
 			cancel : function () {
 				console.log("cancel : ", this);
@@ -113,7 +143,7 @@
 <body>
 <form id="lifeboxform" action="postdata.php" method="POST">
 <div id="tabs">
-  <ul>
+  <ul style="background: white;">
     <li style="background: lightblue;"><a href="#tabs-1">Specie 1 (yellow)</a></li>
     <li style="background: lightblue;"><a href="#tabs-2">Specie 2 (blue)</a></li>
     <li style="background: lightblue;"><a href="#tabs-3">Mana (white)</a></li>
@@ -260,9 +290,6 @@
     <div id="sp3-5"></div>
   </div>
 </div>
-<div style="margin-top:50px">
-<input type="submit" style="width: 30em;  height: 3em; background: lightblue;" value="Update LifeBox values">
-
 </form>
 </div>
  
