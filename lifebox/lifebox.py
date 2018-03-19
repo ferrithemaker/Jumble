@@ -8,6 +8,7 @@ pygame.font.init()
 pygame.display.set_caption('LifeBox')
 
 graph_mode = 0
+real_mode = 1
 
 if graph_mode == 1:
 	screen = pygame.display.set_mode((1000,600))
@@ -75,7 +76,7 @@ PLANTS_ENERGY_BASE_PER_CYCLE = 5
 #yellow
 SPECIE1_LIFE_EXPECTANCY = 200
 SPECIE1_RANDOM_BORN_CHANCES = 5000
-SPECIE1_NEARBORN_CHANCES = 18
+SPECIE1_NEARBORN_CHANCES = 12
 SPECIE1_RANDOM_DIE_CHANCES = 2
 SPECIE1_ENERGY_BASE = 20
 SPECIE1_ENERGY_NEEDED_PER_CYCLE = 5
@@ -85,12 +86,16 @@ SPECIE1_ENERGY_TO_REPLICATE = 5
 #blue
 SPECIE2_LIFE_EXPECTANCY = 200
 SPECIE2_RANDOM_BORN_CHANCES = 5000
-SPECIE2_NEARBORN_CHANCES = 17
+SPECIE2_NEARBORN_CHANCES = 12
 SPECIE2_RANDOM_DIE_CHANCES = 2
 SPECIE2_ENERGY_BASE = 20
 SPECIE2_ENERGY_NEEDED_PER_CYCLE = 5
-SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 10
-SPECIE2_ENERGY_TO_REPLICATE = 6
+SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 7
+SPECIE2_ENERGY_TO_REPLICATE = 5
+
+specie2_individuals = 0
+specie1_individuals = 0
+plants_individuals = 0
 
 while (True):
 	msElapsed = clock.tick(20)
@@ -100,6 +105,9 @@ while (True):
 	 		sys.exit()
 
 	# init totals
+	plants_last_individuals = plants_individuals
+        specie2_last_individuals = specie2_individuals
+        specie1_last_individuals = specie1_individuals
 	specie2_individuals = 0
 	specie1_individuals = 0
 	plants_individuals = 0
@@ -199,17 +207,17 @@ while (True):
 				plants[x][y][1] = plants[x][y][1]+PLANTS_ENERGY_BASE_PER_CYCLE
 				plants_individuals += 1
 				plants_energy += plants[x][y][1]
-			# spontaneous generation
-			if plants[x][y][0] == 0 and plants_neighbours == 0 and plants[x][y][2] == 0:
-				random_number = random.randint(1,PLANTS_RANDOM_BORN_CHANCES)
-				if random_number == 1:
-					plants[x][y][0] = 1
-					plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE
-					plants_individuals += 1
-					plants_energy += plants[x][y][1]
 			# plant reproduction
-			if plants[x][y][0] == 0 and plants_neighbours > 0 and plants[x][y][2] == 0:
-				random_number = random.randint(1,PLANTS_NEARBORN_CHANCES)
+                        if plants[x][y][0] == 0 and plants_neighbours > 0 and plants[x][y][2] == 0:
+                                random_number = random.randint(1,PLANTS_NEARBORN_CHANCES)
+                                if random_number == 1:
+                                        plants[x][y][0] = 1
+                                        plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE
+                                        plants_individuals += 1
+                                        plants_energy += plants[x][y][1]
+			# spontaneous generation
+			if plants[x][y][0] == 0 and plants_neighbours == 0 and plants[x][y][2] == 0 and ((plants_last_individuals == 0 and plants_individuals == 0 and real_mode == 1) or real_mode == 0):
+				random_number = random.randint(1,PLANTS_RANDOM_BORN_CHANCES)
 				if random_number == 1:
 					plants[x][y][0] = 1
 					plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE
@@ -315,7 +323,7 @@ while (True):
 				specie1_individuals += 1
 				specie1_energy += specie1[x][y][1]
 			# if no individual is alive, random born to avoid extintion
-  			if specie1[x][y][0] == 0 and specie1_neighbours==0 and specie1[x][y][2] == 0:
+  			if specie1[x][y][0] == 0 and specie1_neighbours==0 and specie1[x][y][2] == 0 and ((specie1_last_individuals == 0 and specie1_individuals == 0 and real_mode == 1) or real_mode == 0):
   				random_number = random.randint(1,SPECIE1_RANDOM_BORN_CHANCES)
   				if random_number==1:
 					specie1[x][y][0] = 1
@@ -408,7 +416,7 @@ while (True):
                         	specie2_individuals += 1
 				specie2_energy += specie2[x][y][1]
 			# if no individual is alive, random born to avoid extintion
-                        if specie2[x][y][0] == 0 and specie2_neighbours == 0 and specie2[x][y][2] == 0:
+                        if specie2[x][y][0] == 0 and specie2_neighbours == 0 and specie2[x][y][2] == 0 and ((specie2_last_individuals == 0 and specie2_individuals == 0 and real_mode == 1) or real_mode == 0):
                                 random_number = random.randint(1,SPECIE2_RANDOM_BORN_CHANCES)
                                 if random_number==1:
                                         specie2[x][y][0] = 1
