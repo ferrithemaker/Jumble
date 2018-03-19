@@ -45,7 +45,15 @@ specie1 = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
 specie2 = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
 plants = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
 
-# [x][y] [1]:age [2]:energy [3]:mask 
+# mask
+for x in range(0,10):
+	for y in range(0,10):
+		specie1[x][y][2] = 1
+		specie2[x][y][2] = 1
+		plants[x][y][2] = 1
+
+
+# [x][y] [0]:age [1]:energy [2]:mask 
 
 # graph arrays
 
@@ -192,7 +200,7 @@ while (True):
 				plants_individuals += 1
 				plants_energy += plants[x][y][1]
 			# spontaneous generation
-			if plants[x][y][0] == 0 and plants_neighbours == 0:
+			if plants[x][y][0] == 0 and plants_neighbours == 0 and plants[x][y][2] == 0:
 				random_number = random.randint(1,PLANTS_RANDOM_BORN_CHANCES)
 				if random_number == 1:
 					plants[x][y][0] = 1
@@ -200,7 +208,7 @@ while (True):
 					plants_individuals += 1
 					plants_energy += plants[x][y][1]
 			# plant reproduction
-			if plants[x][y][0] == 0 and plants_neighbours > 0:
+			if plants[x][y][0] == 0 and plants_neighbours > 0 and plants[x][y][2] == 0:
 				random_number = random.randint(1,PLANTS_NEARBORN_CHANCES)
 				if random_number == 1:
 					plants[x][y][0] = 1
@@ -234,7 +242,7 @@ while (True):
 					specie1[x][y][0] = 0
 					#print "("+str(x)+","+str(y)+") dies"
   				# try to replicate
-  				if specie1[x][y][1] > SPECIE1_ENERGY_TO_REPLICATE:
+  				if specie1[x][y][1] > SPECIE1_ENERGY_TO_REPLICATE and specie1[x][y][2] == 0:
   					available_spots = [0 for numspots in range(8)]
   					pos=0
   					random_number = random.randint(1,SPECIE1_NEARBORN_CHANCES)
@@ -307,7 +315,7 @@ while (True):
 				specie1_individuals += 1
 				specie1_energy += specie1[x][y][1]
 			# if no individual is alive, random born to avoid extintion
-  			if specie1[x][y][0] == 0 and specie1_neighbours==0:
+  			if specie1[x][y][0] == 0 and specie1_neighbours==0 and specie1[x][y][2] == 0:
   				random_number = random.randint(1,SPECIE1_RANDOM_BORN_CHANCES)
   				if random_number==1:
 					specie1[x][y][0] = 1
@@ -338,7 +346,7 @@ while (True):
                                          specie2[x][y][1] = 0
                                          specie2[x][y][0] = 0
 				# try to replicate
-                                if specie2[x][y][1] > SPECIE2_ENERGY_TO_REPLICATE:
+                                if specie2[x][y][1] > SPECIE2_ENERGY_TO_REPLICATE and specie2[x][y][2] == 0:
                                         available_spots = [0 for numspots in range(8)]
                                         pos=0
                                         random_number = random.randint(1,SPECIE2_NEARBORN_CHANCES)
@@ -400,7 +408,7 @@ while (True):
                         	specie2_individuals += 1
 				specie2_energy += specie2[x][y][1]
 			# if no individual is alive, random born to avoid extintion
-                        if specie2[x][y][0] == 0 and specie2_neighbours == 0:
+                        if specie2[x][y][0] == 0 and specie2_neighbours == 0 and specie2[x][y][2] == 0:
                                 random_number = random.randint(1,SPECIE2_RANDOM_BORN_CHANCES)
                                 if random_number==1:
                                         specie2[x][y][0] = 1
