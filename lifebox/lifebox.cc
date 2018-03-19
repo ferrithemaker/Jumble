@@ -31,7 +31,7 @@
 using std::min;
 using std::max;
 std::string potValues;
-int controldata[21];
+int controldata[21] = { 0 };
 
 #define TERM_ERR  "\033[1;31m"
 #define TERM_NORM "\033[0m"
@@ -74,13 +74,16 @@ std::vector<std::string> split(std::string str,std::string sep){
 }
 
 void getPotValues() {
+  int lastdata[21];
 	while (!interrupt_received) {
 		potValues = exec("cat /var/www/html/lifeboxdata");
 		std::vector<std::string> arr;
 		arr=split(potValues,"|");
 		for(size_t i=0;i<arr.size();i++) {
 			//printf("%s\n",arr[i].c_str());
-			controldata[i]=atoi((arr[i].c_str()));
+			lastdata[i]=atoi((arr[i].c_str()));
+      if (lastdata[i]<controldata[i]) { controldata[i]--; }
+      if (lastdata[i]>controldata[i]) { controldata[i]++; }
 			//printf("%i - %i\n",i,controldata[i]);
 		}
 		//std::cout << potValues;
@@ -157,10 +160,10 @@ public:
   				if (specie2[x][y].age==0 && specie2[xm][yp].age>0) { specie2_neighbours++; }
   				if (specie2[x][y].age==0 && specie2[x][yp].age>0) { specie2_neighbours++; }
   				if (specie2[x][y].age==0 && specie2[xp][yp].age>0) { specie2_neighbours++; }
-  				
+
   				// Plants logic
 
-  				
+
   				if (theplants[x][y].age>=(int)((PLANTS_LIFE_EXPECTANCY*controldata[16]/100))) { theplants[x][y].age=0; theplants[x][y].energy=0;  } // plant dies
   				if (theplants[x][y].age>0 && theplants[x][y].age<(int)((PLANTS_LIFE_EXPECTANCY*controldata[16]/100)) && theplants[x][y].energy<=0) { theplants[x][y].age=0; theplants[x][y].energy=0; } // plant dies
   				if (theplants[x][y].age>0 && theplants[x][y].age<(int)((PLANTS_LIFE_EXPECTANCY*controldata[16]/100))) { theplants[x][y].age++; theplants[x][y].energy=theplants[x][y].energy+(int)(PLANTS_ENERGY_BASE_PER_CYCLE*controldata[20]/100); } // plant grows
@@ -178,7 +181,7 @@ public:
 						if (random_number==1) { theplants[x][y].age=1; theplants[x][y].energy=1; }
 					}
   				}
-  				
+
   				// Specie1 logic
   				if (specie1[x][y].age>0) { // if there are an individual alive
   					// try to eat
@@ -236,8 +239,8 @@ public:
 						}
   					}
   				}
-  				
-  				
+
+
   				// Spescrcie2 logic
 
   				if (specie2[x][y].age>0) { // if there are an individual alive
@@ -297,7 +300,7 @@ public:
   					}
   				}
 
-  				
+
   				// draw
   				if (specie1[x][y].age>0 && specie2[x][y].age>0) { canvas()->SetPixel(x, y, 255, 0, 255); } // species comp
   				if (specie1[x][y].age>0 && specie2[x][y].age==0) { canvas()->SetPixel(x, y, 255, 255, 0);} // only specie1
@@ -307,7 +310,7 @@ public:
   			}
   		}
 
-  
+
   		usleep(TIME_TO_DRAW);
 
 
@@ -458,7 +461,7 @@ int main(int argc, char *argv[]) {
     case 'b':
       matrix_options.brightness = atoi(optarg);
       break;
-      
+
 	case 'h':
 		return usage(argv[0]);
 
@@ -467,7 +470,7 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  
+
   if (rotation % 90 != 0) {
     fprintf(stderr, TERM_ERR "Rotation %d not allowed! "
             "Only 0, 90, 180 and 270 are possible.\n" TERM_NORM, rotation);
@@ -497,9 +500,9 @@ int main(int argc, char *argv[]) {
   // The ThreadedCanvasManipulator objects are filling
   // the matrix continuously.
   ThreadedCanvasManipulator *image_gen = NULL;
-  
+
   image_gen = new LifeBox(canvas);
-  
+
   std::thread pv(getPotValues);
 
   if (image_gen == NULL)
