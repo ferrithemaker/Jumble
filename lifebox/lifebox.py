@@ -17,7 +17,7 @@ if graph_mode == 1:
 else:
 	# size for full HD screen
 	screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-	x_array = 100
+	x_array = 95
 	y_array = 55
 	circle_size = 9
 
@@ -38,12 +38,14 @@ lightgrey = (200,200,200)
 clock = pygame.time.Clock()
 
 # species matrix
-t, w, h= 2,x_array, y_array
+t, w, h = 3,x_array, y_array
 # age 0 at z
 # energy 1 at z
 specie1 = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
 specie2 = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
 plants = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
+
+# [x][y] [1]:age [2]:energy [3]:mask 
 
 # graph arrays
 
@@ -65,21 +67,21 @@ PLANTS_ENERGY_BASE_PER_CYCLE = 5
 #yellow
 SPECIE1_LIFE_EXPECTANCY = 200
 SPECIE1_RANDOM_BORN_CHANCES = 5000
-SPECIE1_NEARBORN_CHANCES = 20
+SPECIE1_NEARBORN_CHANCES = 18
 SPECIE1_RANDOM_DIE_CHANCES = 2
 SPECIE1_ENERGY_BASE = 20
-SPECIE1_ENERGY_NEEDED_PER_CYCLE = 2
-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 20
+SPECIE1_ENERGY_NEEDED_PER_CYCLE = 5
+SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 7
 SPECIE1_ENERGY_TO_REPLICATE = 5
 
 #blue
-SPECIE2_LIFE_EXPECTANCY = 280
+SPECIE2_LIFE_EXPECTANCY = 200
 SPECIE2_RANDOM_BORN_CHANCES = 5000
-SPECIE2_NEARBORN_CHANCES = 18
+SPECIE2_NEARBORN_CHANCES = 17
 SPECIE2_RANDOM_DIE_CHANCES = 2
 SPECIE2_ENERGY_BASE = 20
-SPECIE2_ENERGY_NEEDED_PER_CYCLE = 2
-SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 20
+SPECIE2_ENERGY_NEEDED_PER_CYCLE = 5
+SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 10
 SPECIE2_ENERGY_TO_REPLICATE = 6
 
 while (True):
@@ -101,18 +103,27 @@ while (True):
 
 	for x in range(0,x_array):
 		# adjacent coordinates
-		xp = (x+1) & x_array - 1
-		xm = (x-1) & x_array - 1
+		xp = (x+1)
+		if xp >= x_array:
+			xp = x_array - 1
+		xm = (x-1)
+		if xm < 0:
+			xm = 0
 		for y in range(0,y_array):
 			# calculations
 			# adjacent coordinates
-			yp = (y+1) & y_array - 1
-			ym = (y-1) & y_array - 1
+			yp = (y+1)
+			if yp >= y_array:
+				yp = y_array - 1
+			ym = (y-1)
+			if ym < 0:
+				ym = 0
 			# count the number of currently live neighbouring cells
   			plants_neighbours = 0
   			specie1_neighbours = 0
   			specie2_neighbours = 0
   			# [Plants]
+
   			if plants[x][y][0] == 0 and plants[xm][y][0] > 0:
 				plants_neighbours += 1
   			if plants[x][y][0] == 0 and plants[xp][y][0] > 0:
