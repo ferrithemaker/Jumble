@@ -7,8 +7,20 @@ pygame.font.init()
 
 pygame.display.set_caption('LifeBox')
 
+graph_mode = 0
 
-screen = pygame.display.set_mode((1000,600))
+if graph_mode == 1:
+	screen = pygame.display.set_mode((1000,600))
+	x_array = 32
+	y_array = 32
+	circle_size = 5
+else:
+	# size for full HD screen
+	screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+	x_array = 100
+	y_array = 55
+	circle_size = 9
+
 textfont = pygame.font.SysFont('arial',30)
 
 # colors
@@ -26,7 +38,7 @@ lightgrey = (200,200,200)
 clock = pygame.time.Clock()
 
 # species matrix
-t, w, h= 2,32, 32
+t, w, h= 2,x_array, y_array
 # age 0 at z
 # energy 1 at z
 specie1 = [[[0 for x in range(t)] for y in range(h)] for z in range(w)]
@@ -87,15 +99,15 @@ while (True):
 
 	screen.fill(black)
 
-	for x in range(0,32):
+	for x in range(0,x_array):
 		# adjacent coordinates
-		xp = (x+1) & 31
-		xm = (x-1) & 31
-		for y in range(0,32):
+		xp = (x+1) & x_array - 1
+		xm = (x-1) & x_array - 1
+		for y in range(0,y_array):
 			# calculations
 			# adjacent coordinates
-			yp = (y+1) & 31
-			ym = (y-1) & 31
+			yp = (y+1) & y_array - 1
+			ym = (y-1) & y_array - 1
 			# count the number of currently live neighbouring cells
   			plants_neighbours = 0
   			specie1_neighbours = 0
@@ -388,48 +400,50 @@ while (True):
 
 			# draw
 			if specie1[x][y][0] > 0 and specie2[x][y][0] > 0:
-				pygame.draw.circle(screen,magenta,(((x*10)+5)+40,((y*10)+5)+40),5,0)
+				pygame.draw.circle(screen,magenta,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 			if specie1[x][y][0] > 0 and specie2[x][y][0] == 0:
-                                pygame.draw.circle(screen,yellow,(((x*10)+5)+40,((y*10)+5)+40),5,0)
+                                pygame.draw.circle(screen,yellow,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 			if specie1[x][y][0] == 0 and specie2[x][y][0] > 0:
-                                pygame.draw.circle(screen,blue,(((x*10)+5)+40,((y*10)+5)+40),5,0)
+                                pygame.draw.circle(screen,blue,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 			if specie1[x][y][0] == 0 and specie2[x][y][0] == 0 and plants[x][y][0] > 0:
-                                pygame.draw.circle(screen,white,(((x*10)+5)+40,((y*10)+5)+40),5,0)
+                                pygame.draw.circle(screen,white,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 			if specie1[x][y][0] == 0 and specie2[x][y][0] == 0 and plants[x][y][0] == 0:
-                                pygame.draw.circle(screen,darkgrey,(((x*10)+5)+40,((y*10)+5)+40),5,0)
+                                pygame.draw.circle(screen,darkgrey,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 
-	# generate graphs
-	for x in range(1,200):
-		specie1_Iarray[x-1] = specie1_Iarray[x]
-		specie2_Iarray[x-1] = specie2_Iarray[x]
-		plants_Iarray[x-1] = plants_Iarray[x]
-		specie1_Earray[x-1] = specie1_Earray[x]
-		specie2_Earray[x-1] = specie2_Earray[x]
-		plants_Earray[x-1] = plants_Earray[x]
-	specie1_Iarray[199] = specie1_individuals
-	specie2_Iarray[199] = specie2_individuals
-	plants_Iarray[199] = plants_individuals
-	specie1_Earray[199] = specie1_energy
-	specie2_Earray[199] = specie2_energy
-	plants_Earray[199] = plants_energy
+	if graph_mode == 1:
+		# generate graphs
+		for x in range(1,200):
+			specie1_Iarray[x-1] = specie1_Iarray[x]
+			specie2_Iarray[x-1] = specie2_Iarray[x]
+			plants_Iarray[x-1] = plants_Iarray[x]
+			specie1_Earray[x-1] = specie1_Earray[x]
+			specie2_Earray[x-1] = specie2_Earray[x]
+			plants_Earray[x-1] = plants_Earray[x]
+		specie1_Iarray[199] = specie1_individuals
+		specie2_Iarray[199] = specie2_individuals
+		plants_Iarray[199] = plants_individuals
+		specie1_Earray[199] = specie1_energy
+		specie2_Earray[199] = specie2_energy
+		plants_Earray[199] = plants_energy
 
-	# draw graphs
-	pygame.draw.line(screen,white,(450,350),(650,350))
-	pygame.draw.line(screen,white,(650,350),(650,20))
-	pygame.draw.line(screen,white,(700,350),(900,350))
-	pygame.draw.line(screen,white,(900,350),(900,20))
-	text_individuals = textfont.render("Individuals",False, lightgrey, black)
-	text_energy = textfont.render("Energy",False, lightgrey, black)
-	screen.blit(text_individuals,(480,400))
-	screen.blit(text_energy,(740,400))
+		# draw graphs
+		pygame.draw.line(screen,white,(450,350),(650,350))
+		pygame.draw.line(screen,white,(650,350),(650,20))
+		pygame.draw.line(screen,white,(700,350),(900,350))
+		pygame.draw.line(screen,white,(900,350),(900,20))
+		text_individuals = textfont.render("Individuals",False, lightgrey, black)
+		text_energy = textfont.render("Energy",False, lightgrey, black)
+		screen.blit(text_individuals,(480,400))
+		screen.blit(text_energy,(740,400))
 
-	for x in range(0,200):
-		pygame.draw.line(screen,yellow,(450+x,350-int(specie1_Iarray[x]/3)),(450+x,350-int(specie1_Iarray[x]/3)))
-		pygame.draw.line(screen,blue,(450+x,350-int(specie2_Iarray[x]/3)),(450+x,350-int(specie2_Iarray[x]/3)))
-		pygame.draw.line(screen,white,(450+x,350-int(plants_Iarray[x]/3)),(450+x,350-int(plants_Iarray[x]/3)))
-		pygame.draw.line(screen,yellow,(700+x,350-int(specie1_Earray[x]/500)),(700+x,350-int(specie1_Earray[x]/500)))
-                pygame.draw.line(screen,blue,(700+x,350-int(specie2_Earray[x]/500)),(700+x,350-int(specie2_Earray[x]/500)))
-                pygame.draw.line(screen,white,(700+x,350-int(plants_Earray[x]/500)),(700+x,350-int(plants_Earray[x]/500)))
+		for x in range(0,200):
+			pygame.draw.line(screen,yellow,(450+x,350-int(specie1_Iarray[x]/3)),(450+x,350-int(specie1_Iarray[x]/3)))
+			pygame.draw.line(screen,blue,(450+x,350-int(specie2_Iarray[x]/3)),(450+x,350-int(specie2_Iarray[x]/3)))
+			pygame.draw.line(screen,white,(450+x,350-int(plants_Iarray[x]/3)),(450+x,350-int(plants_Iarray[x]/3)))
+			pygame.draw.line(screen,yellow,(700+x,350-int(specie1_Earray[x]/500)),(700+x,350-int(specie1_Earray[x]/500)))
+	        	pygame.draw.line(screen,blue,(700+x,350-int(specie2_Earray[x]/500)),(700+x,350-int(specie2_Earray[x]/500)))
+	        	pygame.draw.line(screen,white,(700+x,350-int(plants_Earray[x]/500)),(700+x,350-int(plants_Earray[x]/500)))
 
-	pygame.draw.rect(screen,lightgrey,(40,40,320,320),1)
+	if graph_mode == 1:
+		pygame.draw.rect(screen,lightgrey,(40,40,320,320),1)
 	pygame.display.update()
