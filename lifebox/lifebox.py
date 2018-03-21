@@ -9,6 +9,7 @@ pygame.display.set_caption('LifeBox')
 
 graph_mode = 0
 real_mode = 1
+gradient_mode = 1
 
 if graph_mode == 1:
 	screen = pygame.display.set_mode((1000,600))
@@ -54,7 +55,7 @@ for x in range(0,10):
 		plants[x][y][2] = 1
 
 
-# [x][y] [0]:age [1]:energy [2]:mask 
+# [x][y] [0]:age [1]:energy [2]:mask
 
 # graph arrays
 
@@ -426,6 +427,24 @@ while (True):
 
 
 			# draw
+			if gradient_mode ==1:
+				if plants[x][y][1]>255:
+					white = (255,255,255)
+				else:
+					white = (plants[x][y][1],plants[x][y][1],plants[x][y][1])
+				if specie1[x][y][1]>255:
+					yellow = (255,255,0)
+				else:
+					yellow = (specie1[x][y][1],specie1[x][y][1],0)
+				if specie2[x][y][1]>255:
+					blue = (0,0,255)
+				else:
+					blue = (0,0,specie2[x][y][1])
+				if specie1[x][y][1]+specie2[x][y][1]>255:
+					magenta = (255,0,255)
+				else:
+					magenta = (specie1[x][y][1]+specie2[x][y][1],0,specie1[x][y][1]+specie2[x][y][1])
+
 			if specie1[x][y][0] > 0 and specie2[x][y][0] > 0:
 				pygame.draw.circle(screen,magenta,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 			if specie1[x][y][0] > 0 and specie2[x][y][0] == 0:
