@@ -282,7 +282,7 @@ public:
 							if (pos>0) {
 								rand_pos=random() % pos;
 								switch (available[rand_pos]) { // one individual born radomly
-									case 1: if (random_number==1) { specie2[xm][y].age=1; specie2[xm][y].energy=(int)(SPECIE2_ENERGY_BASEc+ontroldata[12]); specie2_individuals = specie2_individuals + 1;} break;
+									case 1: if (random_number==1) { specie2[xm][y].age=1; specie2[xm][y].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
 									case 2: if (random_number==1) { specie2[xp][y].age=1; specie2[xp][y].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
 									case 3: if (random_number==1) { specie2[xm][ym].age=1; specie2[xm][ym].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;}break;
 									case 4: if (random_number==1) { specie2[x][ym].age=1; specie2[x][ym].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
@@ -385,31 +385,31 @@ private:
   int specie2_last_individuals;
   int specie1_last_individuals;
 
-  const int PLANTS_LIFE_EXPECTANCY = 30;
+  const int PLANTS_LIFE_EXPECTANCY = 130;
   const int PLANTS_RANDOM_BORN_CHANCES = 120;
-  const int PLANTS_NEARBORN_CHANCES = 120;
+  const int PLANTS_NEARBORN_CHANCES = 101;
   const int PLANTS_RANDOM_DIE_CHANCES = 2; // not used now
-  const int PLANTS_ENERGY_BASE_PER_CYCLE = 5;
+  const int PLANTS_ENERGY_BASE_PER_CYCLE = 30;
 
-  const int SPECIE1_LIFE_EXPECTANCY = 30;
+  const int SPECIE1_LIFE_EXPECTANCY = 130;
   const int SPECIE1_RANDOM_BORN_CHANCES = 120;
-  const int SPECIE1_NEARBORN_CHANCES = 120;
+  const int SPECIE1_NEARBORN_CHANCES = 101;
   const int SPECIE1_RANDOM_DIE_CHANCES = 2; // not used now
-  const int SPECIE1_ENERGY_BASE = 20;
+  const int SPECIE1_ENERGY_BASE = 30;
   const int SPECIE1_ENERGY_NEEDED_PER_CYCLE = 2;
   const int SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 20;
   const int SPECIE1_ENERGY_TO_REPLICATE = 5;
 
-  const int SPECIE2_LIFE_EXPECTANCY = 30;
+  const int SPECIE2_LIFE_EXPECTANCY = 130;
   const int SPECIE2_RANDOM_BORN_CHANCES = 120;
-  const int SPECIE2_NEARBORN_CHANCES = 120;
+  const int SPECIE2_NEARBORN_CHANCES = 101;
   const int SPECIE2_RANDOM_DIE_CHANCES = 2; // not used now
-  const int SPECIE2_ENERGY_BASE = 20;
+  const int SPECIE2_ENERGY_BASE = 30;
   const int SPECIE2_ENERGY_NEEDED_PER_CYCLE = 2;
   const int SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 20;
   const int SPECIE2_ENERGY_TO_REPLICATE = 5;
 
-  const int TIME_TO_DRAW = 5000;
+  const int TIME_TO_DRAW = 9000;
 
   typedef struct plants
 	{
