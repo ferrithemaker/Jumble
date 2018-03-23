@@ -170,20 +170,20 @@ public:
   				// Plants logic
 
 
-  				if (theplants[x][y].age>=(int)((PLANTS_LIFE_EXPECTANCY*controldata[16]/100))) { theplants[x][y].age=0; theplants[x][y].energy=0;  } // plant dies
-  				if (theplants[x][y].age>0 && theplants[x][y].age<(int)((PLANTS_LIFE_EXPECTANCY*controldata[16]/100)) && theplants[x][y].energy<=0) { theplants[x][y].age=0; theplants[x][y].energy=0; } // plant dies
-  				if (theplants[x][y].age>0 && theplants[x][y].age<(int)((PLANTS_LIFE_EXPECTANCY*controldata[16]/100))) { theplants[x][y].age++; theplants[x][y].energy=theplants[x][y].energy+(int)(PLANTS_ENERGY_BASE_PER_CYCLE*controldata[20]/100); plants_individuals = plants_individuals + 1; } // plant grows
+  				if (theplants[x][y].age>=(int)((PLANTS_LIFE_EXPECTANCY+controldata[16]))) { theplants[x][y].age=0; theplants[x][y].energy=0;  } // plant dies
+  				if (theplants[x][y].age>0 && theplants[x][y].age<(int)((PLANTS_LIFE_EXPECTANCY+controldata[16])) && theplants[x][y].energy<=0) { theplants[x][y].age=0; theplants[x][y].energy=0; } // plant dies
+  				if (theplants[x][y].age>0 && theplants[x][y].age<(int)((PLANTS_LIFE_EXPECTANCY+controldata[16]))) { theplants[x][y].age++; theplants[x][y].energy=theplants[x][y].energy+(int)(PLANTS_ENERGY_BASE_PER_CYCLE+controldata[20]); plants_individuals = plants_individuals + 1; } // plant grows
   				if (theplants[x][y].age==0 && plants_neighbours==0) { // no neighbours plant born
   					//srand(time(NULL));
   					if (controldata[18]>0 && plants_neighbours == 0 && ((plants_last_individuals == 0 && plants_individuals == 0 && realistic_mode == 1) || realistic_mode == 0)) {
-						random_number = random() % (int)(PLANTS_RANDOM_BORN_CHANCES*controldata[18]/100);
+						random_number = random() % (int)(PLANTS_RANDOM_BORN_CHANCES-controldata[18]);
 						if (random_number==1) { theplants[x][y].age=1; theplants[x][y].energy=1; plants_individuals = plants_individuals + 1;}
 					}
   				}
   				if (theplants[x][y].age==0 && plants_neighbours>0) {  // neighbours plant born
   					//srand(time(NULL));
   					if (controldata[17]>0) {
-						random_number = random() % (int)(PLANTS_NEARBORN_CHANCES*controldata[17]/100);
+						random_number = random() % (int)(PLANTS_NEARBORN_CHANCES-controldata[17]);
 						if (random_number==1) { theplants[x][y].age=1; theplants[x][y].energy=1; 	plants_individuals = plants_individuals + 1;}
 					}
   				}
@@ -194,21 +194,21 @@ public:
   					// try to eat
   					if (theplants[x][y].energy>0) {
   						total_energy=0;
-  						if (theplants[x][y].energy>SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE*controldata[6]/100) { total_energy=SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE*controldata[6]/100; theplants[x][y].energy=theplants[x][y].energy-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE*controldata[6]/100; }
+  						if (theplants[x][y].energy>SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]) { total_energy=SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]; theplants[x][y].energy=theplants[x][y].energy-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]; }
   					else { total_energy=theplants[x][y].energy; theplants[x][y].energy=0;}
   					specie1[x][y].energy=specie1[x][y].energy+total_energy;
   					}
   					// grow and decrease energy
   					specie1[x][y].age++;
-  					specie1[x][y].energy=specie1[x][y].energy-(int)(SPECIE1_ENERGY_NEEDED_PER_CYCLE*controldata[5]/100);
+  					specie1[x][y].energy=specie1[x][y].energy-(int)(SPECIE1_ENERGY_NEEDED_PER_CYCLE+controldata[5]);
   					if (specie1[x][y].energy<0) { specie1[x][y].energy=0; specie1[x][y].age=0;} // die
   					// try to replicate
-  					if (specie1[x][y].energy>(int)(SPECIE1_ENERGY_TO_REPLICATE*controldata[7]/100)) {
+  					if (specie1[x][y].energy>(int)(SPECIE1_ENERGY_TO_REPLICATE+controldata[7])) {
   						for (i=0;i<8;i++) { available[i]=0; }
   						pos=0;
   						//srand(time(NULL));
   						if (controldata[1]>0) {
-							random_number = random() % (int)(SPECIE1_NEARBORN_CHANCES*controldata[1]/100);
+							random_number = random() % (int)(SPECIE1_NEARBORN_CHANCES-controldata[1]);
 							if (specie1[xm][y].age==0) { available[pos]=1; pos++; }
 							if (specie1[xp][y].age==0) { available[pos]=2; pos++; }
 							if (specie1[xm][ym].age==0) { available[pos]=3; pos++; }
@@ -221,28 +221,28 @@ public:
 							if (pos>0) {
 								rand_pos=random() % pos;
 								switch (available[rand_pos]) { // one individual born radomly
-									case 1: if (random_number==1) { specie1[xm][y].age=1; specie1[xm][y].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1;} break;
-									case 2: if (random_number==1) { specie1[xp][y].age=1; specie1[xp][y].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1; } break;
-									case 3: if (random_number==1) { specie1[xm][ym].age=1; specie1[xm][ym].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1;} break;
-									case 4: if (random_number==1) { specie1[x][ym].age=1; specie1[x][ym].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1;} break;
-									case 5: if (random_number==1) { specie1[xp][ym].age=1; specie1[xp][ym].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1;} break;
-									case 6: if (random_number==1) { specie1[xm][yp].age=1; specie1[xm][yp].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1;} break;
-									case 7: if (random_number==1) { specie1[x][yp].age=1; specie1[x][yp].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1;} break;
-									case 8: if (random_number==1) { specie1[xp][yp].age=1; specie1[xp][yp].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1;} break;
+									case 1: if (random_number==1) { specie1[xm][y].age=1; specie1[xm][y].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;} break;
+									case 2: if (random_number==1) { specie1[xp][y].age=1; specie1[xp][y].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1; } break;
+									case 3: if (random_number==1) { specie1[xm][ym].age=1; specie1[xm][ym].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;} break;
+									case 4: if (random_number==1) { specie1[x][ym].age=1; specie1[x][ym].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;} break;
+									case 5: if (random_number==1) { specie1[xp][ym].age=1; specie1[xp][ym].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;} break;
+									case 6: if (random_number==1) { specie1[xm][yp].age=1; specie1[xm][yp].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;} break;
+									case 7: if (random_number==1) { specie1[x][yp].age=1; specie1[x][yp].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;} break;
+									case 8: if (random_number==1) { specie1[xp][yp].age=1; specie1[xp][yp].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;} break;
 									default: printf("ERROR\n"); break; // all full
 								}
 							}
 						}
   					}
   					// die if too old
-  					if (specie1[x][y].age>(int)((SPECIE1_LIFE_EXPECTANCY*controldata[0]/100))) { specie1[x][y].energy=0; specie1[x][y].age=0;}
+  					if (specie1[x][y].age>(int)((SPECIE1_LIFE_EXPECTANCY+controldata[0]))) { specie1[x][y].energy=0; specie1[x][y].age=0;}
   				}
   				if (specie1[x][y].age==0) { // if theres no individual, new individual will born? (to avoid extintion)
   					if (specie1_neighbours==0 && ((specie1_last_individuals == 0 && specie1_individuals == 0 && realistic_mode == 1) || realistic_mode == 0)) {
   						//srand(time(NULL));
   						if (controldata[2]>0) {
-							random_number = random() % (int)(SPECIE1_RANDOM_BORN_CHANCES*controldata[2]/100);
-							if (random_number==1) { specie1[x][y].age=1; specie1[x][y].energy=(int)(SPECIE1_ENERGY_BASE*controldata[4]/100); specie1_individuals = specie1_individuals + 1;}
+							random_number = random() % (int)(SPECIE1_RANDOM_BORN_CHANCES-controldata[2]);
+							if (random_number==1) { specie1[x][y].age=1; specie1[x][y].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;}
 						}
   					}
   				}
@@ -255,21 +255,21 @@ public:
             specie2_individuals = specie2_individuals + 1;
   					if (theplants[x][y].energy>0) {
   						total_energy=0;
-  						if (theplants[x][y].energy>SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE*controldata[14]/100) { total_energy=SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE*controldata[14]/100; theplants[x][y].energy=theplants[x][y].energy-SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE*controldata[14]/100; }
+  						if (theplants[x][y].energy>SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[14]) { total_energy=SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[14]; theplants[x][y].energy=theplants[x][y].energy-SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[14]; }
   						else { total_energy=theplants[x][y].energy; theplants[x][y].energy=0;}
   						specie2[x][y].energy=specie2[x][y].energy+total_energy;
   					}
   					// grow and decrease energy
   					specie2[x][y].age++;
-  					specie2[x][y].energy=specie2[x][y].energy-(int)(SPECIE2_ENERGY_NEEDED_PER_CYCLE*controldata[13]/100);
+  					specie2[x][y].energy=specie2[x][y].energy-(int)(SPECIE2_ENERGY_NEEDED_PER_CYCLE+controldata[13]);
   					if (specie2[x][y].energy<0) { specie2[x][y].energy=0; specie2[x][y].age=0;} // die
   					// try to replicate
-  					if (specie2[x][y].energy>(int)(SPECIE2_ENERGY_TO_REPLICATE*controldata[15]/100)) {
+  					if (specie2[x][y].energy>(int)(SPECIE2_ENERGY_TO_REPLICATE+controldata[15])) {
   						for (i=0;i<8;i++) { available[i]=0; }
   						pos=0;
   						//srand(time(NULL));
   						if (controldata[9] >0) {
-							random_number = random() % (int)(SPECIE2_NEARBORN_CHANCES*controldata[9]/100);
+							random_number = random() % (int)(SPECIE2_NEARBORN_CHANCES-controldata[9]);
 							if (specie2[xm][y].age==0) { available[pos]=1; pos++; }
 							if (specie2[xp][y].age==0) { available[pos]=2; pos++; }
 							if (specie2[xm][ym].age==0) { available[pos]=3; pos++; }
@@ -282,59 +282,68 @@ public:
 							if (pos>0) {
 								rand_pos=random() % pos;
 								switch (available[rand_pos]) { // one individual born radomly
-									case 1: if (random_number==1) { specie2[xm][y].age=1; specie2[xm][y].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1;} break;
-									case 2: if (random_number==1) { specie2[xp][y].age=1; specie2[xp][y].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1;} break;
-									case 3: if (random_number==1) { specie2[xm][ym].age=1; specie2[xm][ym].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1;}break;
-									case 4: if (random_number==1) { specie2[x][ym].age=1; specie2[x][ym].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1;} break;
-									case 5: if (random_number==1) { specie2[xp][ym].age=1; specie2[xp][ym].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1;} break;
-									case 6: if (random_number==1) { specie2[xm][yp].age=1; specie2[xm][yp].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1;} break;
-									case 7: if (random_number==1) { specie2[x][yp].age=1; specie2[x][yp].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1;} break;
-									case 8: if (random_number==1) { specie2[xp][yp].age=1; specie2[xp][yp].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1;} break;
+									case 1: if (random_number==1) { specie2[xm][y].age=1; specie2[xm][y].energy=(int)(SPECIE2_ENERGY_BASEc+ontroldata[12]); specie2_individuals = specie2_individuals + 1;} break;
+									case 2: if (random_number==1) { specie2[xp][y].age=1; specie2[xp][y].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
+									case 3: if (random_number==1) { specie2[xm][ym].age=1; specie2[xm][ym].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;}break;
+									case 4: if (random_number==1) { specie2[x][ym].age=1; specie2[x][ym].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
+									case 5: if (random_number==1) { specie2[xp][ym].age=1; specie2[xp][ym].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
+									case 6: if (random_number==1) { specie2[xm][yp].age=1; specie2[xm][yp].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
+									case 7: if (random_number==1) { specie2[x][yp].age=1; specie2[x][yp].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
+									case 8: if (random_number==1) { specie2[xp][yp].age=1; specie2[xp][yp].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1;} break;
 									// default: break; // all full
 								}
 							}
 						}
   					}
   				// die if too old
-  				if (specie2[x][y].age>(int)((SPECIE2_LIFE_EXPECTANCY*controldata[8]/100))) { specie2[x][y].energy=0; specie2[x][y].age=0;}
+  				if (specie2[x][y].age>(int)((SPECIE2_LIFE_EXPECTANCY+controldata[8]))) { specie2[x][y].energy=0; specie2[x][y].age=0;}
   				}
   				if (specie2[x][y].age==0) { // if theres no individual, new individual will born? (to avoid extintion)
   					if (specie2_neighbours==0) {
   						//srand(time(NULL));
-  						if (controldata[10] > 0 && ((specie2_last_individuals == 0 && specie2_individuals == 0 && realistic_mode == 1) || realistic_mode == 0))) {
-							random_number = random() % (int)(SPECIE2_RANDOM_BORN_CHANCES*controldata[10]/100);
-							if (random_number==1) { specie2[x][y].age=1; specie2[x][y].energy=(int)(SPECIE2_ENERGY_BASE*controldata[12]/100); specie2_individuals = specie2_individuals + 1; }
+  						if (controldata[10] > 0 && ((specie2_last_individuals == 0 && specie2_individuals == 0 && realistic_mode == 1) || realistic_mode == 0)) {
+							random_number = random() % (int)(SPECIE2_RANDOM_BORN_CHANCES-controldata[10]);
+							if (random_number==1) { specie2[x][y].age=1; specie2[x][y].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1; }
 						}
   					}
   				}
 
-          # draw
+          // draw
           if (gradient_mode == 1) {
-            if (theplants[x][y].energy>255 && specie1[x][y].age==0 && specie2[x][y].age==0 && theplants[x][y].age>0) {
-              red = 255; green = 255; blue = 255;
+            if (specie1[x][y].age==0 && specie2[x][y].age==0 && theplants[x][y].age>0) {
+              if (theplants[x][y].energy>255) {
+				red = 255; green = 255; blue = 255;
+				}
+			  else {
+				red = theplants[x][y].energy; green = theplants[x][y].energy; blue = theplants[x][y].energy;
+			  }
+			}
+            if (specie1[x][y].age>0 && specie2[x][y].age==0) {
+				if (specie1[x][y].energy>255) {
+					red = 255; green = 255; blue = 0;
+				}
+				else {
+					red = specie1[x][y].energy; green = specie1[x][y].energy; blue = 0;
+				}
+			}
+            if (specie1[x][y].age==0 && specie2[x][y].age>0) {
+              if (specie2[x][y].energy>255) {
+				red = 0; green = 0; blue = 255;
+			  }
+			  else {
+                red = 0; green= 0; blue = specie2[x][y].energy;
+              }
             }
-            else {
-              red = theplants[x][y].energy; green = theplants[x][y].energy; blue = theplants[x][y].energy;
-            }
-            if (specie1[x][y].energy>255 && specie1[x][y].age>0 && specie2[x][y].age==0) {
-              red = 255; green = 255; blue = 0;
-            }
-            else {
-              red = specie1[x][y].energy; green = specie1[x][y].energy; blue = 0;
-            }
-            if (specie2[x][y].energy>255 && specie1[x][y].age==0 && specie2[x][y].age>0) {
-              red = 0; green = 0; blue = 255;
-            else {
-              red = 0; green= 0; blue = specie2[x][y].energy;
-            }
-            if (specie1[x][y].energy+specie2[x][y].energy>255 && specie1[x][y].age>0 && specie2[x][y].age>0) {
-              red = 255; green = 0; blue = 255;
-            }
-            else {
-    					red = specie1[x][y].energy+specie2[x][y].energy; green = 0; blue = specie1[x][y].energy+specie2[x][y].energy;
-            }
+            if (specie1[x][y].age>0 && specie2[x][y].age>0) {
+              if (specie1[x][y].energy+specie2[x][y].energy>255) {
+				red = 255; green = 0; blue = 255;
+			  }
+              else {
+    			red = specie1[x][y].energy+specie2[x][y].energy; green = 0; blue = specie1[x][y].energy+specie2[x][y].energy;
+              }
+		    }
           }
-  				// draw
+  		
           if (gradient_mode == 0) {
   				      if (specie1[x][y].age>0 && specie2[x][y].age>0) { canvas()->SetPixel(x, y, 255, 0, 255); } // species comp
   				      if (specie1[x][y].age>0 && specie2[x][y].age==0) { canvas()->SetPixel(x, y, 255, 255, 0);} // only specie1
@@ -376,29 +385,29 @@ private:
   int specie2_last_individuals;
   int specie1_last_individuals;
 
-  const int PLANTS_LIFE_EXPECTANCY = 100;
-  const int PLANTS_RANDOM_BORN_CHANCES = 1000;
-  const int PLANTS_NEARBORN_CHANCES = 100;
-  const int PLANTS_RANDOM_DIE_CHANCES = 2;
+  const int PLANTS_LIFE_EXPECTANCY = 30;
+  const int PLANTS_RANDOM_BORN_CHANCES = 120;
+  const int PLANTS_NEARBORN_CHANCES = 120;
+  const int PLANTS_RANDOM_DIE_CHANCES = 2; // not used now
   const int PLANTS_ENERGY_BASE_PER_CYCLE = 5;
 
-  const int SPECIE1_LIFE_EXPECTANCY = 200;
-  const int SPECIE1_RANDOM_BORN_CHANCES = 5000;
-  const int SPECIE1_NEARBORN_CHANCES = 50;
-  const int SPECIE1_RANDOM_DIE_CHANCES = 2;
+  const int SPECIE1_LIFE_EXPECTANCY = 30;
+  const int SPECIE1_RANDOM_BORN_CHANCES = 120;
+  const int SPECIE1_NEARBORN_CHANCES = 120;
+  const int SPECIE1_RANDOM_DIE_CHANCES = 2; // not used now
   const int SPECIE1_ENERGY_BASE = 20;
   const int SPECIE1_ENERGY_NEEDED_PER_CYCLE = 2;
   const int SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 20;
   const int SPECIE1_ENERGY_TO_REPLICATE = 5;
 
-  const int SPECIE2_LIFE_EXPECTANCY = 170;
-  const int SPECIE2_RANDOM_BORN_CHANCES = 4000;
-  const int SPECIE2_NEARBORN_CHANCES = 40;
-  const int SPECIE2_RANDOM_DIE_CHANCES = 2;
+  const int SPECIE2_LIFE_EXPECTANCY = 30;
+  const int SPECIE2_RANDOM_BORN_CHANCES = 120;
+  const int SPECIE2_NEARBORN_CHANCES = 120;
+  const int SPECIE2_RANDOM_DIE_CHANCES = 2; // not used now
   const int SPECIE2_ENERGY_BASE = 20;
   const int SPECIE2_ENERGY_NEEDED_PER_CYCLE = 2;
   const int SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 20;
-  const int SPECIE2_ENERGY_TO_REPLICATE = 6;
+  const int SPECIE2_ENERGY_TO_REPLICATE = 5;
 
   const int TIME_TO_DRAW = 5000;
 
