@@ -128,12 +128,16 @@ public:
       plants_individuals = 0;
 		for(x=0;x<32;x++) {
   			// Calculate adjacent coordinates with correct wrap at edges
-  			xp = (x + 1) & 31;
-  			xm = (x - 1) & 31;
+  			xp = (x + 1);
+			if (xp >= 32) { xp = 31; }
+  			xm = (x - 1);
+			if (xm < 0) { xm = 0; }
 
   			for(y=0;y<32;y++) {
-  				yp = (y + 1) & 31;
-  				ym = (y - 1) & 31;
+  				yp = (y + 1);
+				if (yp >= 32) { yp = 31; }
+  				ym = (y - 1);
+				if (ym < 0) { ym = 0; }
 
   				// Count the number of currently live neighbouring cells
   				plants_neighbours=0;
@@ -177,7 +181,7 @@ public:
   					//srand(time(NULL));
   					if (controldata[18]>0 && plants_neighbours == 0 && ((plants_last_individuals == 0 && plants_individuals == 0 && realistic_mode == 1) || realistic_mode == 0)) {
 						int randomborn;
-						if (PLANTS_RANDOM_BORN_CHANCES-controldata[18]) < 2) { randomborn = 2; } else { randomborn = PLANTS_RANDOM_BORN_CHANCES-controldata[18]; }
+						if (PLANTS_RANDOM_BORN_CHANCES-controldata[18] < 2) { randomborn = 2; } else { randomborn = PLANTS_RANDOM_BORN_CHANCES-controldata[18]; }
 						random_number = random() % (int)(randomborn);
 						if (random_number==1) { theplants[x][y].age=1; theplants[x][y].energy=1; plants_individuals = plants_individuals + 1;}
 					}
@@ -213,7 +217,7 @@ public:
   						//srand(time(NULL));
   						if (controldata[1]>0) {
 							int randomborn;
-							if (SPECIE1_NEARBORN_CHANCES-controldata[1]) < 2) { randomborn = 2; } else { randomborn = SPECIE1_NEARBORN_CHANCES-controldata[1]; }
+							if (SPECIE1_NEARBORN_CHANCES-controldata[1] < 2) { randomborn = 2; } else { randomborn = SPECIE1_NEARBORN_CHANCES-controldata[1]; }
 							random_number = random() % (int)(randomborn);
 							if (specie1[xm][y].age==0) { available[pos]=1; pos++; }
 							if (specie1[xp][y].age==0) { available[pos]=2; pos++; }
@@ -248,7 +252,7 @@ public:
   						//srand(time(NULL));
   						if (controldata[2]>0) {
 							int randomborn;
-							if (SPECIE1_RANDOM_BORN_CHANCES-controldata[2]) < 2) { randomborn = 2; } else { randomborn = SPECIE1_RANDOM_BORN_CHANCES-controldata[2]; }
+							if (SPECIE1_RANDOM_BORN_CHANCES-controldata[2] < 2) { randomborn = 2; } else { randomborn = SPECIE1_RANDOM_BORN_CHANCES-controldata[2]; }
 							random_number = random() % (int)(randomborn);
 							if (random_number==1) { specie1[x][y].age=1; specie1[x][y].energy=(int)(SPECIE1_ENERGY_BASE+controldata[4]); specie1_individuals = specie1_individuals + 1;}
 						}
@@ -278,7 +282,7 @@ public:
   						//srand(time(NULL));
   						if (controldata[9] >0) {
 							int randomborn;
-							if (SPECIE2_NEARBORN_CHANCES-controldata[9]) < 2) { randomborn = 2; } else { randomborn = SPECIE2_NEARBORN_CHANCES-controldata[9]; }
+							if (SPECIE2_NEARBORN_CHANCES-controldata[9] < 2) { randomborn = 2; } else { randomborn = SPECIE2_NEARBORN_CHANCES-controldata[9]; }
 							random_number = random() % (int)(randomborn);
 							if (specie2[xm][y].age==0) { available[pos]=1; pos++; }
 							if (specie2[xp][y].age==0) { available[pos]=2; pos++; }
@@ -313,7 +317,7 @@ public:
   						//srand(time(NULL));
   						if (controldata[10] > 0) {
 							int randomborn;
-							if (SPECIE2_RANDOM_BORN_CHANCES-controldata[10]) < 2) { randomborn = 2; } else { randomborn = SPECIE2_RANDOM_BORN_CHANCES-controldata[10]; }
+							if (SPECIE2_RANDOM_BORN_CHANCES-controldata[10] < 2) { randomborn = 2; } else { randomborn = SPECIE2_RANDOM_BORN_CHANCES-controldata[10]; }
 							random_number = random() % (int)(randomborn);
 							if (random_number==1) { specie2[x][y].age=1; specie2[x][y].energy=(int)(SPECIE2_ENERGY_BASE+controldata[12]); specie2_individuals = specie2_individuals + 1; }
 						}
@@ -397,8 +401,8 @@ private:
   int specie2_last_individuals;
   int specie1_last_individuals;
   
-  int species_draw_threshold = 20;
-  int plants_draw_threshold = 20;
+  int species_draw_threshold = 50;
+  int plants_draw_threshold = 50;
 
   const int PLANTS_LIFE_EXPECTANCY = 100;
   const int PLANTS_RANDOM_BORN_CHANCES = 1000;
