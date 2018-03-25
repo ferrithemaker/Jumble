@@ -176,14 +176,18 @@ public:
   				if (theplants[x][y].age==0 && plants_neighbours==0) { // no neighbours plant born
   					//srand(time(NULL));
   					if (controldata[18]>0 && plants_neighbours == 0 && ((plants_last_individuals == 0 && plants_individuals == 0 && realistic_mode == 1) || realistic_mode == 0)) {
-						random_number = random() % (int)(PLANTS_RANDOM_BORN_CHANCES-controldata[18]);
+						int radndomborn;
+						if (PLANTS_RANDOM_BORN_CHANCES-controldata[18]) < 2) { randomborn = 2; } else { randomborn = PLANTS_RANDOM_BORN_CHANCES-controldata[18]; }
+						random_number = random() % (int)(randomborn);
 						if (random_number==1) { theplants[x][y].age=1; theplants[x][y].energy=1; plants_individuals = plants_individuals + 1;}
 					}
   				}
   				if (theplants[x][y].age==0 && plants_neighbours>0) {  // neighbours plant born
   					//srand(time(NULL));
   					if (controldata[17]>0) {
-						random_number = random() % (int)(PLANTS_NEARBORN_CHANCES-controldata[17]);
+						int randomborn;
+						if (PLANTS_NEARBORN_CHANCES-controldata[17] < 2) { randomborn = 2; } else { randomborn = PLANTS_NEARBORN_CHANCES-controldata[17]; }
+						random_number = random() % (int)(randomborn);
 						if (random_number==1) { theplants[x][y].age=1; theplants[x][y].energy=1; 	plants_individuals = plants_individuals + 1;}
 					}
   				}
