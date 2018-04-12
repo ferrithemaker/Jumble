@@ -15,7 +15,7 @@ def readdatafromfile(stop):
 		time.sleep(2)
 
 # run thread
-stop = []
+stop = False
 t = threading.Thread(target=readdatafromfile,args=(stop,))
 t.daemon = True
 t.start()
@@ -93,7 +93,7 @@ plants_Earray = [0 for x in range(200)]
 # species variables
 
 PLANTS_LIFE_EXPECTANCY = 100
-PLANTS_RANDOM_BORN_CHANCES = 1000 # high is less chances
+PLANTS_RANDOM_BORN_CHANCES = 1000
 PLANTS_NEARBORN_CHANCES = 100
 PLANTS_RANDOM_DIE_CHANCES = 2
 PLANTS_ENERGY_BASE_PER_CYCLE = 5
@@ -123,11 +123,11 @@ specie1_individuals = 0
 plants_individuals = 0
 
 while (True):
-	#print (datafromfile[2])
+	print (datafromfile[2])
 	msElapsed = clock.tick(20)
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
-			stop.append(True)
+			stop = True
         		pygame.quit()
 	 		sys.exit()
 
@@ -221,33 +221,41 @@ while (True):
 			# [plants logic]
 
 			# if old, plant dies
-			if plants[x][y][0] >= PLANTS_LIFE_EXPECTANCY:
+			if plants[x][y][0] >= PLANTS_LIFE_EXPECTANCY + int(datafromfile[16]):
 				plants[x][y][0] = 0
 				plants[x][y][1] = 0
 			# if no energy, plant dies
-			if plants[x][y][0] > 0 and plants[x][y][0] < PLANTS_LIFE_EXPECTANCY and plants[x][y][1] <= 0:
+			if plants[x][y][0] > 0 and plants[x][y][0] < PLANTS_LIFE_EXPECTANCY + int(datafromfile[16]) and plants[x][y][1] <= 0:
  				plants[x][y][0] = 0
 				plants[x][y][1] = 0
 			# plant grows
-			if plants[x][y][0]>0 and plants[x][y][0] < PLANTS_LIFE_EXPECTANCY:
+			if plants[x][y][0]>0 and plants[x][y][0] < PLANTS_LIFE_EXPECTANCY + int(datafromfile[16]):
  				plants[x][y][0] += 1
-				plants[x][y][1] = plants[x][y][1]+PLANTS_ENERGY_BASE_PER_CYCLE
+				plants[x][y][1] = plants[x][y][1] + PLANTS_ENERGY_BASE_PER_CYCLE + int(datafromfile[20])
 				plants_individuals += 1
 				plants_energy += plants[x][y][1]
 			# plant reproduction
-                        if plants[x][y][0] == 0 and plants_neighbours > 0 and plants[x][y][2] == 0:
-                                random_number = random.randint(1,PLANTS_NEARBORN_CHANCES)
+                        if int(datafromfile[17]) > 0 and plants[x][y][0] == 0 and plants_neighbours > 0 and plants[x][y][2] == 0:
+				if PLANTS_NEARBORN_CHANCES - int(datafromfile[17]) < 2:
+					randomborn = 2
+				else:
+					randomborn = PLANTS_NEARBORN_CHANCES - int(datafromfile[17])
+                                random_number = random.randint(1,randomborn)
                                 if random_number == 1:
                                         plants[x][y][0] = 1
-                                        plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE
+                                        plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE + int(datafromfile[20])
                                         plants_individuals += 1
                                         plants_energy += plants[x][y][1]
 			# spontaneous generation
-			if plants[x][y][0] == 0 and plants_neighbours == 0 and plants[x][y][2] == 0 and ((plants_last_individuals == 0 and plants_individuals == 0 and real_mode == 1) or real_mode == 0):
-				random_number = random.randint(1,PLANTS_RANDOM_BORN_CHANCES)
+			if int(datafromfile[18]) > 0 and plants[x][y][0] == 0 and plants_neighbours == 0 and plants[x][y][2] == 0 and ((plants_last_individuals == 0 and plants_individuals == 0 and real_mode == 1) or real_mode == 0):
+				if PLANTS_RANDOM_BORN_CHANCES - int(datafromfile[18]) < 2:
+                                        randomborn = 2
+                                else:
+                                        randomborn = PLANTS_RANDOM_BORN_CHANCES - int(datafromfile[18])
+				random_number = random.randint(1,randomborn)
 				if random_number == 1:
 					plants[x][y][0] = 1
-					plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE
+					plants[x][y][1] = PLANTS_ENERGY_BASE_PER_CYCLE + int(datafromfile[20])
 					plants_individuals += 1
 					plants_energy += plants[x][y][1]
 
