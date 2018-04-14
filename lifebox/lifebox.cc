@@ -202,7 +202,7 @@ public:
   					// try to eat
   					if (theplants[x][y].energy>0) {
   						total_energy=0;
-  						if (theplants[x][y].energy>SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]) { total_energy=SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]; theplants[x][y].energy=theplants[x][y].energy-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]; }
+  						if (theplants[x][y].energy>SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]) { total_energy=SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]; theplants[x][y].energy=theplants[x][y].energy-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE+controldata[6]; } // ERROR, FALTA PARENTESIS RESTA
   					else { total_energy=theplants[x][y].energy; theplants[x][y].energy=0;}
   					specie1[x][y].energy=specie1[x][y].energy+total_energy;
   					}
@@ -359,7 +359,7 @@ public:
               }
 		    }
           }
-  		
+
           if (gradient_mode == 0) {
   				      if (specie1[x][y].age>0 && specie2[x][y].age>0) { canvas()->SetPixel(x, y, 255, 0, 255); } // species comp
   				      if (specie1[x][y].age>0 && specie2[x][y].age==0) { canvas()->SetPixel(x, y, 255, 255, 0);} // only specie1
@@ -400,7 +400,7 @@ private:
   int plants_last_individuals;
   int specie2_last_individuals;
   int specie1_last_individuals;
-  
+
   int species_draw_threshold = 50;
   int plants_draw_threshold = 50;
 

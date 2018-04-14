@@ -93,30 +93,30 @@ plants_Earray = [0 for x in range(200)]
 # species variables
 
 PLANTS_LIFE_EXPECTANCY = 100
-PLANTS_RANDOM_BORN_CHANCES = 1000
-PLANTS_NEARBORN_CHANCES = 100
+PLANTS_RANDOM_BORN_CHANCES = 2000
+PLANTS_NEARBORN_CHANCES = 300
 PLANTS_RANDOM_DIE_CHANCES = 2
-PLANTS_ENERGY_BASE_PER_CYCLE = 5
+PLANTS_ENERGY_BASE_PER_CYCLE = 200
 
 #yellow
 SPECIE1_LIFE_EXPECTANCY = 200
 SPECIE1_RANDOM_BORN_CHANCES = 5000
-SPECIE1_NEARBORN_CHANCES = 12
+SPECIE1_NEARBORN_CHANCES = 80
 SPECIE1_RANDOM_DIE_CHANCES = 2
-SPECIE1_ENERGY_BASE = 20
-SPECIE1_ENERGY_NEEDED_PER_CYCLE = 5
-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 7
-SPECIE1_ENERGY_TO_REPLICATE = 5
+SPECIE1_ENERGY_BASE = 200
+SPECIE1_ENERGY_NEEDED_PER_CYCLE = 70
+SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 100
+SPECIE1_ENERGY_TO_REPLICATE = 50
 
 #blue
 SPECIE2_LIFE_EXPECTANCY = 200
 SPECIE2_RANDOM_BORN_CHANCES = 5000
-SPECIE2_NEARBORN_CHANCES = 12
+SPECIE2_NEARBORN_CHANCES = 80
 SPECIE2_RANDOM_DIE_CHANCES = 2
-SPECIE2_ENERGY_BASE = 20
-SPECIE2_ENERGY_NEEDED_PER_CYCLE = 5
-SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 7
-SPECIE2_ENERGY_TO_REPLICATE = 5
+SPECIE2_ENERGY_BASE = 200
+SPECIE2_ENERGY_NEEDED_PER_CYCLE = 70
+SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 100
+SPECIE2_ENERGY_TO_REPLICATE = 50
 
 specie2_individuals = 0
 specie1_individuals = 0
@@ -267,9 +267,9 @@ while (True):
 				# try to eat
   				if plants[x][y][1] > 0:
   					total_energy=0
-  					if plants[x][y][1] > SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE:
-						total_energy = SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE
-						plants[x][y][1] = plants[x][y][1] - SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE
+  					if plants[x][y][1] > SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(datafromfile[6]):
+						total_energy = SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(datafromfile[6])
+						plants[x][y][1] = plants[x][y][1] - (SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(datafromfile[6]))
   					else:
 						total_energy = plants[x][y][1]
 						plants[x][y][1] = 0
@@ -277,7 +277,7 @@ while (True):
 					#print "("+str(x)+","+str(y)+") eats"
   				# grow and decrease energy
   				specie1[x][y][0] += 1
-  				specie1[x][y][1] = specie1[x][y][1] - SPECIE1_ENERGY_NEEDED_PER_CYCLE
+  				specie1[x][y][1] = specie1[x][y][1] - (SPECIE1_ENERGY_NEEDED_PER_CYCLE  + int(datafromfile[5]))
 				#print "("+str(x)+","+str(y)+") grows"
  				# die if no energy
 				if specie1[x][y][1] < 0:
@@ -285,73 +285,78 @@ while (True):
 					specie1[x][y][0] = 0
 					#print "("+str(x)+","+str(y)+") dies"
   				# try to replicate
-  				if specie1[x][y][1] > SPECIE1_ENERGY_TO_REPLICATE and specie1[x][y][2] == 0:
+  				if specie1[x][y][1] > SPECIE1_ENERGY_TO_REPLICATE + int(datafromfile[7]) and specie1[x][y][2] == 0:
   					available_spots = [0 for numspots in range(8)]
   					pos=0
-  					random_number = random.randint(1,SPECIE1_NEARBORN_CHANCES)
-  					if specie1[xm][y][0] == 0:
-						available_spots[pos] = 1
-						pos += 1
-  					if specie1[xp][y][0] == 0:
-						available_spots[pos] = 2
-						pos += 1
-  					if specie1[xm][ym][0] == 0:
-						available_spots[pos] = 3
-						pos += 1
-  					if specie1[x][ym][0] == 0:
-						available_spots[pos] = 4
-						pos += 1
-  					if specie1[xp][ym][0] == 0:
-						available_spots[pos] = 5
-						pos += 1
-  					if specie1[xm][yp][0] == 0:
-						available_spots[pos] = 6
-						pos += 1
-  					if specie1[x][yp][0] == 0:
-						available_spots[pos] = 7
-						pos += 1
- 					if specie1[xp][yp][0] == 0:
-						available_spots[pos] = 8
-						pos += 1
-  					if pos > 0:
-  						rand_pos=random.randint(0,pos-1)
-						if random_number == 1:
-							#print "ready to reproduce at ("+str(xm)+","+str(ym)+") - ("+str(xp)+","+str(yp)+") - center ("+str(x)+","+str(y)+")"
-							if available_spots[rand_pos] == 1:
-								specie1[xm][y][0] = 1
-								specie1[xm][y][1] = SPECIE1_ENERGY_BASE
-								#print "("+str(xm)+","+str(y)+") born"
-							if available_spots[rand_pos] == 2:
-                                                                specie1[xp][y][0] = 1
-                                                                specie1[xp][y][1] = SPECIE1_ENERGY_BASE
-								#print "("+str(xp)+","+str(y)+") born"
-							if available_spots[rand_pos] == 3:
-                                                                specie1[xm][ym][0] = 1
-                                                                specie1[xm][ym][1] = SPECIE1_ENERGY_BASE
-								#print "("+str(xm)+","+str(ym)+") born"
-							if available_spots[rand_pos] == 4:
-                                                                specie1[x][ym][0] = 1
-                                                                specie1[x][ym][1] = SPECIE1_ENERGY_BASE
-								#print "("+str(x)+","+str(ym)+") born"
-							if available_spots[rand_pos] == 5:
-                                                                specie1[xp][ym][0] = 1
-                                                                specie1[xp][ym][1] = SPECIE1_ENERGY_BASE
-								#print "("+str(xp)+","+str(ym)+") born"
-							if available_spots[rand_pos] == 6:
-                                                                specie1[xm][yp][0] = 1
-                                                                specie1[xm][yp][1] = SPECIE1_ENERGY_BASE
-								#print "("+str(xm)+","+str(yp)+") born"
-							if available_spots[rand_pos] == 7:
-                                                                specie1[x][yp][0] = 1
-                                                                specie1[x][yp][1] = SPECIE1_ENERGY_BASE
-								#print "("+str(x)+","+str(yp)+") born"
-							if available_spots[rand_pos] == 8:
-                                                                specie1[xp][yp][0] = 1
-                                                                specie1[xp][yp][1] = SPECIE1_ENERGY_BASE
-								#print "("+str(xp)+","+str(yp)+") born"
-							#print "end of reproduction"
+					if int(datafromfile[1]) > 0:
+						if SPECIE1_NEARBORN_CHANCES - int(datafromfile[1]) < 2:
+                                        		randomborn = 2
+                                		else:
+                                        		randomborn = SPECIE1_NEARBORN_CHANCES - int(datafromfile[1])
+  						random_number = random.randint(1,randomborn)
+  						if specie1[xm][y][0] == 0:
+							available_spots[pos] = 1
+							pos += 1
+  						if specie1[xp][y][0] == 0:
+							available_spots[pos] = 2
+							pos += 1
+  						if specie1[xm][ym][0] == 0:
+							available_spots[pos] = 3
+							pos += 1
+  						if specie1[x][ym][0] == 0:
+							available_spots[pos] = 4
+							pos += 1
+  						if specie1[xp][ym][0] == 0:
+							available_spots[pos] = 5
+							pos += 1
+  						if specie1[xm][yp][0] == 0:
+							available_spots[pos] = 6
+							pos += 1
+  						if specie1[x][yp][0] == 0:
+							available_spots[pos] = 7
+							pos += 1
+ 						if specie1[xp][yp][0] == 0:
+							available_spots[pos] = 8
+							pos += 1
+  						if pos > 0:
+  							rand_pos=random.randint(0,pos-1)
+							if random_number == 1:
+								#print "ready to reproduce at ("+str(xm)+","+str(ym)+") - ("+str(xp)+","+str(yp)+") - center ("+str(x)+","+str(y)+")"
+								if available_spots[rand_pos] == 1:
+									specie1[xm][y][0] = 1
+									specie1[xm][y][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+									#print "("+str(xm)+","+str(y)+") born"
+								if available_spots[rand_pos] == 2:
+                                                                	specie1[xp][y][0] = 1
+                                                                	specie1[xp][y][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+									#print "("+str(xp)+","+str(y)+") born"
+								if available_spots[rand_pos] == 3:
+                                                                	specie1[xm][ym][0] = 1
+                                                                	specie1[xm][ym][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+									#print "("+str(xm)+","+str(ym)+") born"
+								if available_spots[rand_pos] == 4:
+                                                                	specie1[x][ym][0] = 1
+                                                                	specie1[x][ym][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+									#print "("+str(x)+","+str(ym)+") born"
+								if available_spots[rand_pos] == 5:
+                                                                	specie1[xp][ym][0] = 1
+                                                                	specie1[xp][ym][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+									#print "("+str(xp)+","+str(ym)+") born"
+								if available_spots[rand_pos] == 6:
+                                                                	specie1[xm][yp][0] = 1
+                                                                	specie1[xm][yp][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+									#print "("+str(xm)+","+str(yp)+") born"
+								if available_spots[rand_pos] == 7:
+                                                                	specie1[x][yp][0] = 1
+                                                                	specie1[x][yp][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+									#print "("+str(x)+","+str(yp)+") born"
+								if available_spots[rand_pos] == 8:
+                                                                	specie1[xp][yp][0] = 1
+                                                                	specie1[xp][yp][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+									#print "("+str(xp)+","+str(yp)+") born"
+								#print "end of reproduction"
   				# die if too old
-  				if specie1[x][y][0] > SPECIE1_LIFE_EXPECTANCY:
+  				if specie1[x][y][0] > SPECIE1_LIFE_EXPECTANCY + int(datafromfile[0]):
 					specie1[x][y][1] = 0
 					specie1[x][y][0] = 0
 					#print "("+str(x)+","+str(y)+") dies"
@@ -359,13 +364,18 @@ while (True):
 				specie1_energy += specie1[x][y][1]
 			# if no individual is alive, random born to avoid extintion
   			if specie1[x][y][0] == 0 and specie1_neighbours==0 and specie1[x][y][2] == 0 and ((specie1_last_individuals == 0 and specie1_individuals == 0 and real_mode == 1) or real_mode == 0):
-  				random_number = random.randint(1,SPECIE1_RANDOM_BORN_CHANCES)
-  				if random_number==1:
-					specie1[x][y][0] = 1
-					specie1[x][y][1] = SPECIE1_ENERGY_BASE
-					#print "("+str(x)+","+str(y)+") random born"
-					specie1_individuals += 1
-					specie1_energy += specie1[x][y][1]
+  				if int(datafromfile[2]) > 0:
+					if SPECIE1_RANDOM_BORN_CHANCES - int(datafromfile[2]) < 2:
+                                		randomborn = 2
+                        		else:
+                                		randomborn = SPECIE1_RANDOM_BORN_CHANCES - int(datafromfile[2])
+                        		random_number = random.randint(1,randomborn)
+  					if random_number==1:
+						specie1[x][y][0] = 1
+						specie1[x][y][1] = SPECIE1_ENERGY_BASE + int(datafromfile[4])
+						#print "("+str(x)+","+str(y)+") random born"
+						specie1_individuals += 1
+						specie1_energy += specie1[x][y][1]
 
 			# [species 2 logic]
 
@@ -374,90 +384,100 @@ while (True):
                                 # try to eat
                                 if plants[x][y][1] > 0:
                                         total_energy=0
-                                        if plants[x][y][1] > SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE:
-                                                total_energy = SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE
-                                                plants[x][y][1] = plants[x][y][1] - SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE
+                                        if plants[x][y][1] > SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(datafromfile[14]):
+                                                total_energy = SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(datafromfile[14])
+                                                plants[x][y][1] = plants[x][y][1] - (SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(datafromfile[14]))
                                         else:
                                                 total_energy = plants[x][y][1]
                                                 plants[x][y][1] = 0
                                         specie2[x][y][1] = specie2[x][y][1] + total_energy
                                 # grow and decrease energy
                                 specie2[x][y][0] += 1
-                                specie2[x][y][1] = specie2[x][y][1] - SPECIE2_ENERGY_NEEDED_PER_CYCLE
+                                specie2[x][y][1] = specie2[x][y][1] - (SPECIE2_ENERGY_NEEDED_PER_CYCLE + int(datafromfile[13]))
                                 # die if no energy
                                 if specie2[x][y][1] < 0:
                                          specie2[x][y][1] = 0
                                          specie2[x][y][0] = 0
 				# try to replicate
-                                if specie2[x][y][1] > SPECIE2_ENERGY_TO_REPLICATE and specie2[x][y][2] == 0:
+                                if specie2[x][y][1] > SPECIE2_ENERGY_TO_REPLICATE  + int(datafromfile[15]) and specie2[x][y][2] == 0:
                                         available_spots = [0 for numspots in range(8)]
                                         pos=0
-                                        random_number = random.randint(1,SPECIE2_NEARBORN_CHANCES)
-                                        if specie2[xm][y][0] == 0:
-                                                available_spots[pos] = 1
-                                                pos += 1
-                                        if specie2[xp][y][0] == 0:
-                                                available_spots[pos] = 2
-                                                pos += 1
-                                        if specie2[xm][ym][0] == 0:
-                                                available_spots[pos] = 3
-                                                pos += 1
-                                        if specie2[x][ym][0] == 0:
-                                                available_spots[pos] = 4
-                                                pos += 1
-                                        if specie2[xp][ym][0] == 0:
-                                                available_spots[pos] = 5
-                                                pos += 1
-                                        if specie2[xm][yp][0] == 0:
-                                                available_spots[pos] = 6
-                                                pos += 1
-                                        if specie2[x][yp][0] == 0:
-                                                available_spots[pos] = 7
-                                                pos += 1
-                                        if specie2[xp][yp][0] == 0:
-                                                available_spots[pos] = 8
-                                                pos += 1
-					if pos > 0:
-                                                rand_pos=random.randint(0,pos-1)
-                                                if random_number == 1:
-                                                        if available_spots[rand_pos] == 1:
-                                                                specie2[xm][y][0] = 1
-                                                                specie2[xm][y][1] = SPECIE2_ENERGY_BASE
-                                                        if available_spots[rand_pos] == 2:
-                                                                specie2[xp][y][0] = 1
-                                                                specie2[xp][y][1] = SPECIE2_ENERGY_BASE
-                                                        if available_spots[rand_pos] == 3:
-                                                                specie2[xm][ym][0] = 1
-                                                                specie2[xm][ym][1] = SPECIE2_ENERGY_BASE
-                                                        if available_spots[rand_pos] == 4:
-                                                                specie2[x][ym][0] = 1
-                                                                specie2[x][ym][1] = SPECIE2_ENERGY_BASE
-                                                        if available_spots[rand_pos] == 5:
-                                                                specie2[xp][ym][0] = 1
-                                                                specie2[xp][ym][1] = SPECIE2_ENERGY_BASE
-                                                        if available_spots[rand_pos] == 6:
-                                                                specie2[xm][yp][0] = 1
-                                                                specie2[xm][yp][1] = SPECIE2_ENERGY_BASE
-                                                        if available_spots[rand_pos] == 7:
-                                                                specie2[x][yp][0] = 1
-                                                                specie2[x][yp][1] = SPECIE2_ENERGY_BASE
-                                                        if available_spots[rand_pos] == 8:
-                                                                specie2[xp][yp][0] = 1
-                                                                specie2[xp][yp][1] = SPECIE2_ENERGY_BASE
+					if int(datafromfile[9]) > 0:
+						if SPECIE2_NEARBORN_CHANCES - int(datafromfile[9]) < 2:
+                                                        randomborn = 2
+                                                else:
+                                                        randomborn = SPECIE2_NEARBORN_CHANCES - int(datafromfile[9])
+                                                random_number = random.randint(1,randomborn)
+                                        	if specie2[xm][y][0] == 0:
+                                                	available_spots[pos] = 1
+                                                	pos += 1
+                                        	if specie2[xp][y][0] == 0:
+                                                	available_spots[pos] = 2
+                                                	pos += 1
+                                        	if specie2[xm][ym][0] == 0:
+                                                	available_spots[pos] = 3
+                                                	pos += 1
+                                        	if specie2[x][ym][0] == 0:
+                                                	available_spots[pos] = 4
+                                                	pos += 1
+                                        	if specie2[xp][ym][0] == 0:
+                                                	available_spots[pos] = 5
+                                                	pos += 1
+                                        	if specie2[xm][yp][0] == 0:
+                                                	available_spots[pos] = 6
+                                                	pos += 1
+                                        	if specie2[x][yp][0] == 0:
+                                                	available_spots[pos] = 7
+                                                	pos += 1
+                                        	if specie2[xp][yp][0] == 0:
+                                                	available_spots[pos] = 8
+                                                	pos += 1
+						if pos > 0:
+                                                	rand_pos=random.randint(0,pos-1)
+                                                	if random_number == 1:
+                                                        	if available_spots[rand_pos] == 1:
+                                                                	specie2[xm][y][0] = 1
+                                                                	specie2[xm][y][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
+                                                        	if available_spots[rand_pos] == 2:
+                                                                	specie2[xp][y][0] = 1
+                                                                	specie2[xp][y][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
+                                                        	if available_spots[rand_pos] == 3:
+                                                                	specie2[xm][ym][0] = 1
+                                                                	specie2[xm][ym][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
+                                                        	if available_spots[rand_pos] == 4:
+                                                                	specie2[x][ym][0] = 1
+                                                                	specie2[x][ym][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
+                                                        	if available_spots[rand_pos] == 5:
+                                                                	specie2[xp][ym][0] = 1
+                                                                	specie2[xp][ym][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
+                                                        	if available_spots[rand_pos] == 6:
+                                                                	specie2[xm][yp][0] = 1
+                                                                	specie2[xm][yp][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
+                                                        	if available_spots[rand_pos] == 7:
+                                                                	specie2[x][yp][0] = 1
+                                                                	specie2[x][yp][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
+                                                        	if available_spots[rand_pos] == 8:
+                                                                	specie2[xp][yp][0] = 1
+                                                                	specie2[xp][yp][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
 				# die if too old
-                                if specie2[x][y][0] > SPECIE2_LIFE_EXPECTANCY:
+                                if specie2[x][y][0] > SPECIE2_LIFE_EXPECTANCY + int(datafromfile[8]):
                                         specie2[x][y][1] = 0
                                         specie2[x][y][0] = 0
                         	specie2_individuals += 1
 				specie2_energy += specie2[x][y][1]
 			# if no individual is alive, random born to avoid extintion
                         if specie2[x][y][0] == 0 and specie2_neighbours == 0 and specie2[x][y][2] == 0 and ((specie2_last_individuals == 0 and specie2_individuals == 0 and real_mode == 1) or real_mode == 0):
-                                random_number = random.randint(1,SPECIE2_RANDOM_BORN_CHANCES)
-                                if random_number==1:
-                                        specie2[x][y][0] = 1
-                                        specie2[x][y][1] = SPECIE2_ENERGY_BASE
-					specie2_individuals +=1
-					specie2_energy += specie2[x][y][1]
+                                if int(datafromfile[10]) > 0:
+					if SPECIE2_RANDOM_BORN_CHANCES - int(datafromfile[10]) < 2:
+                                                randomborn = 2
+                                        else:
+                                                randomborn = SPECIE2_RANDOM_BORN_CHANCES - int(datafromfile[10])
+                                        random_number = random.randint(1,randomborn)
+                                	if random_number==1:
+                                        	specie2[x][y][0] = 1
+                                        	specie2[x][y][1] = SPECIE2_ENERGY_BASE + int(datafromfile[12])
+						specie2_individuals +=1
+						specie2_energy += specie2[x][y][1]
 
 
 			# draw
