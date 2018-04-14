@@ -92,31 +92,31 @@ plants_Earray = [0 for x in range(200)]
 
 # species variables
 
-PLANTS_LIFE_EXPECTANCY = 100
-PLANTS_RANDOM_BORN_CHANCES = 2000
-PLANTS_NEARBORN_CHANCES = 300
-PLANTS_RANDOM_DIE_CHANCES = 2
-PLANTS_ENERGY_BASE_PER_CYCLE = 200
+PLANTS_LIFE_EXPECTANCY = 40 #(40-140)
+PLANTS_RANDOM_BORN_CHANCES = 2000 # (2000-1900) # bad
+PLANTS_NEARBORN_CHANCES = 100 #(50-150)
+PLANTS_RANDOM_DIE_CHANCES = 2 # not used
+PLANTS_ENERGY_BASE_PER_CYCLE = 50 #(50-150) 
 
 #yellow
-SPECIE1_LIFE_EXPECTANCY = 200
-SPECIE1_RANDOM_BORN_CHANCES = 5000
-SPECIE1_NEARBORN_CHANCES = 80
-SPECIE1_RANDOM_DIE_CHANCES = 2
-SPECIE1_ENERGY_BASE = 200
-SPECIE1_ENERGY_NEEDED_PER_CYCLE = 70
-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 100
-SPECIE1_ENERGY_TO_REPLICATE = 50
+SPECIE1_LIFE_EXPECTANCY = 40 #(40-140)
+SPECIE1_RANDOM_BORN_CHANCES = 5000 # (500-4900) #bad
+SPECIE1_NEARBORN_CHANCES = 70 #(50-150)
+SPECIE1_RANDOM_DIE_CHANCES = 2 # not used
+SPECIE1_ENERGY_BASE = 200 #(200-300)
+SPECIE1_ENERGY_NEEDED_PER_CYCLE = 50 #(50-150)
+SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 100 #(100-150) 
+SPECIE1_ENERGY_TO_REPLICATE = 100 #(100-150)
 
 #blue
-SPECIE2_LIFE_EXPECTANCY = 200
+SPECIE2_LIFE_EXPECTANCY = 40
 SPECIE2_RANDOM_BORN_CHANCES = 5000
-SPECIE2_NEARBORN_CHANCES = 80
-SPECIE2_RANDOM_DIE_CHANCES = 2
+SPECIE2_NEARBORN_CHANCES = 70
+SPECIE2_RANDOM_DIE_CHANCES = 2 # not used
 SPECIE2_ENERGY_BASE = 200
-SPECIE2_ENERGY_NEEDED_PER_CYCLE = 70
+SPECIE2_ENERGY_NEEDED_PER_CYCLE = 50
 SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE = 100
-SPECIE2_ENERGY_TO_REPLICATE = 50
+SPECIE2_ENERGY_TO_REPLICATE = 100
 
 specie2_individuals = 0
 specie1_individuals = 0
@@ -481,23 +481,23 @@ while (True):
 
 
 			# draw
-			if gradient_mode ==1:
-				if plants[x][y][1]>255:
+			if gradient_mode == 1:
+				if plants[x][y][1]>255*3:
 					white = (255,255,255)
 				else:
-					white = (plants[x][y][1],plants[x][y][1],plants[x][y][1])
+					white = (int(plants[x][y][1]/3),int(plants[x][y][1]/3),int(plants[x][y][1]/3))
 				if specie1[x][y][1]>255:
 					yellow = (255,255,0)
 				else:
-					yellow = (specie1[x][y][1],specie1[x][y][1],0)
-				if specie2[x][y][1]>255:
+					yellow = (int(specie1[x][y][1]/3),int(specie1[x][y][1]/3),0)
+				if specie2[x][y][1]>255*3:
 					blue = (0,0,255)
 				else:
-					blue = (0,0,specie2[x][y][1])
-				if specie1[x][y][1]+specie2[x][y][1]>255:
+					blue = (0,0,int(specie2[x][y][1]/3))
+				if specie1[x][y][1]+specie2[x][y][1] > 255*3:
 					magenta = (255,0,255)
 				else:
-					magenta = (specie1[x][y][1]+specie2[x][y][1],0,specie1[x][y][1]+specie2[x][y][1])
+					magenta = (int(specie1[x][y][1]/3)+int(specie2[x][y][1]/3),0,int((specie1[x][y][1]+specie2[x][y][1])/3))
 
 			if specie1[x][y][0] > 0 and specie2[x][y][0] > 0:
 				pygame.draw.circle(screen,magenta,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
