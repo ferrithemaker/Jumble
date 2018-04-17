@@ -27,11 +27,12 @@ pygame.font.init()
 
 pygame.display.set_caption('LifeBox')
 
-graph_mode = 1
+graph_mode = 0
 real_mode = 1
 gradient_mode = 1
-fullscreen_mode = 0
-rf = 3 # reduction factor
+fullscreen_mode = 1
+fullscreen_graph = 1
+rf = 1 # reduction factor
 
 if fullscreen_mode == 0:
 	screen = pygame.display.set_mode((1000,600))
@@ -51,15 +52,16 @@ textfont = pygame.font.SysFont('arial',30)
 red = (255,0,0)
 green = (0,255,0)
 blue = (0,0,255)
-bluegraph = (0,0,255)
+bluegraph = (0,0,255,50)
 yellow = (255,255,0)
-yellowgraph = (255,255,0)
+yellowgraph = (255,255,0,50)
 magenta = (255,0,255)
 white = (255,255,255)
+whitegraph = (255,255,255,50)
 midgrey = (128,128,128)
 black = (0,0,0)
 darkgrey = (30,30,30)
-lightgrey = (200,200,200)
+lightgrey = (200,200,200,50)
 
 # fps management
 clock = pygame.time.Clock()
@@ -122,6 +124,9 @@ SPECIE2_ENERGY_TO_REPLICATE = 100
 specie2_individuals = 0
 specie1_individuals = 0
 plants_individuals = 0
+
+# screen for transparent graph
+graphsurface = pygame.Surface((1920, 1080), pygame.SRCALPHA, 32)
 
 while (True):
 	#print (datafromfile[2])
@@ -544,6 +549,23 @@ while (True):
 			pygame.draw.line(screen,yellowgraph,(700+x,350-int(specie1_Earray[x]/(500*rf))),(700+x,350-int(specie1_Earray[x]/(500*rf))))
 	        	pygame.draw.line(screen,bluegraph,(700+x,350-int(specie2_Earray[x]/(500*rf))),(700+x,350-int(specie2_Earray[x]/(500*rf))))
 	        	pygame.draw.line(screen,lightgrey,(700+x,350-int(plants_Earray[x]/(5000*rf))),(700+x,350-int(plants_Earray[x]/(5000*rf))))
+
+		# transparent graph for fullscreen mode
+	if fullscreen_graph == 1 and fullscreen_mode == 1:
+		# generate fullscreen graphs
+                for x in range(1,200):
+                        specie1_Iarray[x-1] = specie1_Iarray[x]
+                        specie2_Iarray[x-1] = specie2_Iarray[x]
+                        plants_Iarray[x-1] = plants_Iarray[x]
+                specie1_Iarray[199] = specie1_individuals
+                specie2_Iarray[199] = specie2_individuals
+                plants_Iarray[199] = plants_individuals
+
+		for x in range(0,200):
+			pygame.draw.rect(graphsurface,bluegraph,pygame.Rect(x*10,1080-(int(specie2_Iarray[x]/(3*rf))+int(plants_Iarray[x]/(3*rf))+int(specie1_Iarray[x]/(3*rf))),10,int(specie2_Iarray[x]/(3*rf))))
+			pygame.draw.rect(graphsurface,yellowgraph,pygame.Rect(x*10,1080-(int(specie1_Iarray[x]/(3*rf))+int(plants_Iarray[x]/(3*rf))),10,int(specie1_Iarray[x]/(3*rf))))
+                        pygame.draw.rect(graphsurface,whitegraph,pygame.Rect(x*10,1080-int(plants_Iarray[x]/(3*rf)),10,int(plants_Iarray[x]/(3*rf))))
+		screen.blit(graphsurface,(0,0))
 
 	if graph_mode == 1:
 		pygame.draw.rect(screen,black,(40,40,320,320),1)
