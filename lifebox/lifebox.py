@@ -31,7 +31,7 @@ graph_mode = 0
 real_mode = 1
 gradient_mode = 1
 fullscreen_mode = 1
-fullscreen_graph = 1
+fullscreen_graph = 0
 rf = 1 # reduction factor
 
 if fullscreen_mode == 0:
@@ -42,9 +42,9 @@ if fullscreen_mode == 0:
 else:
 	# size for full HD screen
 	screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-	x_array = 95
-	y_array = 55
-	circle_size = 9
+	x_array = 75
+	y_array = 42
+	circle_size = 12
 
 textfont = pygame.font.SysFont('arial',30)
 
