@@ -40,7 +40,8 @@ if fullscreen_mode == 0:
 	y_array = 32
 	circle_size = 5
 else:
-	# size for full HD screen
+	# size for full HD screen (1920,1080)
+	# if you have other screen size, you need yo change x_array,y_array and circle_size
 	screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 	x_array = 75
 	y_array = 42
@@ -95,21 +96,32 @@ plants_Earray = [0 for x in range(200)]
 
 # species variables
 
-PLANTS_LIFE_EXPECTANCY = 40 #(40-140)
-PLANTS_RANDOM_BORN_CHANCES = 5100 # (5100-100)
-PLANTS_NEARBORN_CHANCES = 150 #(150-100)
+PLANTS_LIFE_EXPECTANCY = 40
+PLANTS_RANDOM_BORN_CHANCES = 5100
+PLANTS_NEARBORN_CHANCES = 150
 PLANTS_RANDOM_DIE_CHANCES = 2 # not used
-PLANTS_ENERGY_BASE_PER_CYCLE = 50 #(50-150) 
+PLANTS_ENERGY_BASE_PER_CYCLE = 50
+# Each mana invidivual generates a defined amout of energy per cycle. This energy is gathered by the species. Low energy generation means a poor enviroment for the species to survive, and high energy generation a rich one.
 
 #yellow
-SPECIE1_LIFE_EXPECTANCY = 40 #(40-140)
-SPECIE1_RANDOM_BORN_CHANCES = 5100 # (5100-100) #bad
-SPECIE1_NEARBORN_CHANCES = 25 #(25-5)
-SPECIE1_RANDOM_DIE_CHANCES = 2 # not used
-SPECIE1_ENERGY_BASE = 200 #(200-300)
-SPECIE1_ENERGY_NEEDED_PER_CYCLE = 50 #(50-150)
-SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 100 #(100-150) 
-SPECIE1_ENERGY_TO_REPLICATE = 100 #(100-150)
+SPECIE1_LIFE_EXPECTANCY = 40
+# Life expectancy is an statistical measure of the average time an organism is expected to live. Once a pixelic entity becomes stable, life expectancy determines how many reiterations does the pixel survive.
+SPECIE1_RANDOM_BORN_CHANCES = 5100
+# Parthenogesis is a rare trait among species which allows them to reproduce without mating. The species inside LifeBox! can reproduce in a similar way. In case they achieve it, offspring is randomly populated inside the grid. 
+# Setting this variable with a high value means less chances to reproduce that way. Otherwise, if user choose to reduce this value, parthenogenesis is more probable to happen
+SPECIE1_NEARBORN_CHANCES = 25
+# When two pixelic entities of the same specie are adjacent to each other, they can reproduce. This variable determines the reproduction chances, so a higher value means a higher chances to survive.
+SPECIE1_RANDOM_DIE_CHANCES = 2
+# NOT USED YET
+# As in real life, LifeBox! pixelic species can die before reaching their life expectancy. Setting a low value, will allow pixelic entities to arrive at their expected life time. While a higher value will reduce seriously their chances to survive until the expected average life time.
+SPECIE1_ENERGY_BASE = 200
+# Every spices has a defined base level of energy when it borns, this base level will condition the chances of survival at very first stages of its life.
+SPECIE1_ENERGY_NEEDED_PER_CYCLE = 50
+# This parameter defines the species amount of energy consumtion at each iteration. Higher values mean that the species needs more energy per iteration cycle, meaning less efficiency.
+SPECIE1_MAX_ENERGY_RECOLECTED_PER_CYCLE = 100
+# As the previous parameter defines the efficiency of energy consumtion, this one defines the efficiency of energy gathering from the mana. Higher values mean more gathering efficiency.
+SPECIE1_ENERGY_TO_REPLICATE = 100
+# To allow the species replication, each individual needs to exceed an energy threshold, the minimum amount of energy needed to be able to reproduce itself. Higher values mean higher threshold.
 
 #blue
 SPECIE2_LIFE_EXPECTANCY = 40
