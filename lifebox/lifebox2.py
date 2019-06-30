@@ -4,6 +4,7 @@ import random
 import threading
 import time
 from pyfirmata import ArduinoMega, util
+import rtmidi # midi library
 
 import lifebox_constants as constants
 
@@ -16,6 +17,8 @@ def plants_next_iteration(x,y):
 	global plants_individuals
 	global full_matrix_plants_energy
 	neighbours = 0
+	#if midi_enable:
+	#			midiout.send_message(note_off_white)
 	# adjacent coordinates
 	xp = (x+1)
 	if xp >= matrix_size_x:
@@ -72,6 +75,8 @@ def plants_next_iteration(x,y):
 			plants[x][y][0] = 1
 			plants[x][y][1] = constants.PLANTS_ENERGY_BASE_PER_CYCLE + int(potData[20])
 			plants_individuals += 1
+			#if midi_enable:
+			#	midiout.send_message(note_on_white)
 			full_matrix_plants_energy += plants[x][y][1]
 	# spontaneous generation
 	if int(plants[x][y][0] == 0) and neighbours == 0 and plants[x][y][2] == 0 and ((plants_last_individuals == 0 and plants_individuals == 0 and real_mode == 1) or real_mode == 0):
@@ -81,6 +86,9 @@ def plants_next_iteration(x,y):
 			plants[x][y][1] = constants.PLANTS_ENERGY_BASE_PER_CYCLE + int(potData[20])
 			plants_individuals += 1
 			full_matrix_plants_energy += plants[x][y][1]
+			#if midi_enable:
+			#	midiout.send_message(note_on_white)
+			
 
 	
 def species_next_iteration(x,y):
@@ -88,6 +96,12 @@ def species_next_iteration(x,y):
 	global specie2_individuals
 	global full_matrix_specie1_energy
 	global full_matrix_specie2_energy
+	# midi
+	
+	if midi_enable:
+		midiout.send_message(note_off_blue)
+		midiout.send_message(note_off_yellow)
+
 	# adjacent coordinates
 	xp = (x+1)
 	if xp >= matrix_size_x:
@@ -235,11 +249,14 @@ def species_next_iteration(x,y):
 							specie1[xp][yp][1] = constants.SPECIE1_ENERGY_BASE
 							#print "("+str(xp)+","+str(yp)+") born"
 						#print "end of reproduction"
+						if midi_enable:
+							midiout.send_message(note_on_yellow)
 		# die if too old
 		if specie1[x][y][0] > constants.SPECIE1_LIFE_EXPECTANCY + int(potData[0]):
 			specie1[x][y][1] = 0
 			specie1[x][y][0] = 0
 			#print "("+str(x)+","+str(y)+") dies"
+		# accounting individuals
 		specie1_individuals += 1
 		full_matrix_specie1_energy += specie1[x][y][1]
 	# if no individual is alive, random born to avoid extintion
@@ -249,6 +266,8 @@ def species_next_iteration(x,y):
 			specie1[x][y][0] = 1
 			specie1[x][y][1] = constants.SPECIE1_ENERGY_BASE
 			#print "("+str(x)+","+str(y)+") random born"
+			if midi_enable:
+				midiout.send_message(note_on_yellow)
 			specie1_individuals += 1
 			full_matrix_specie1_energy += specie1[x][y][1]
 			
@@ -347,11 +366,14 @@ def species_next_iteration(x,y):
 							specie2[xp][yp][1] = constants.SPECIE2_ENERGY_BASE
 							#print "("+str(xp)+","+str(yp)+") born"
 						#print "end of reproduction"
+						if midi_enable:
+							midiout.send_message(note_on_blue)
 		# die if too old
 		if specie2[x][y][0] > constants.SPECIE2_LIFE_EXPECTANCY + int(potData[8]):
 			specie2[x][y][1] = 0
 			specie2[x][y][0] = 0
 			#print "("+str(x)+","+str(y)+") dies"
+		# accounting individuals
 		specie2_individuals += 1
 		full_matrix_specie2_energy += specie2[x][y][1]
 	# if no individual is alive, random born to avoid extintion
@@ -361,6 +383,8 @@ def species_next_iteration(x,y):
 			specie2[x][y][0] = 1
 			specie2[x][y][1] = constants.SPECIE2_ENERGY_BASE
 			#print "("+str(x)+","+str(y)+") random born"
+			if midi_enable:
+				midiout.send_message(note_on_blue)
 			specie2_individuals += 1
 			full_matrix_specie2_energy += specie2[x][y][1]
 
@@ -442,6 +466,7 @@ def readPotDatafromFilefromArduino(stop):
 			#potData[9] = board.analog[5].read() # sp2 nearborn chances
 		time.sleep(1)
 
+midi_enable = 0 # play generative sound through midi out (under development)
 graph_mode = 0 # show graphs
 real_mode = 1 # respawn control
 app_mode = 1 # via web / app or manual controller
@@ -463,6 +488,19 @@ t.start()
 
 pygame.init()
 pygame.font.init()
+
+# midi setup
+if midi_enable:
+	midiout = rtmidi.MidiOut()
+	available_ports = midiout.get_ports()
+	midiout.open_port(1) # this is my default Roland JD-Xi port, you must change it, check available_ports.
+	note_on_white = [0x90,60,112] # channel 1, note C , velocity 112
+	note_on_blue = [0x90,64,112] # channel 1, note E , velocity 112
+	note_on_yellow = [0x90,67,112] # channel 1, note G , velocity 112
+	note_off_white = [0x80,60,0]
+	note_off_blue = [0x80,64,0]
+	note_off_yellow = [0x80,67,0]
+	
 
 pygame.display.set_caption('LifeBox')
 
