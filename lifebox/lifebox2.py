@@ -3,12 +3,31 @@ import sys
 import random
 import threading
 import time
+import os
 from pyfirmata import ArduinoMega, util
 import rtmidi # midi library
 
 import lifebox_constants as constants
 
-potData = [0] * 21
+potData = [0] * 11
+
+# potData[0] Vitality [Plants] A0
+# potData[1] Reproduction [Plants] A1
+# potData[2] Generation [Plants] A2
+
+# potData[3] Reproduction [Specie2] A3
+# potData[4] Vitality [Specie2] A4
+# potData[5] Efficiency [Specie2] A5
+# potData[6] Gathering [Specie2] A6
+
+# potData[7] Vitality [Specie1] A7
+# potData[8] Reproduction [Specie1] A8
+# potData[9] Efficiency [Specie1] A9
+# potData[10] Gathering [Specie1] A10
+
+
+
+
 
 
 # lifebox functions
@@ -49,31 +68,30 @@ def plants_next_iteration(x,y):
 		neighbours += 1
 	if plants[x][y][0] == 0 and plants[xp][yp][0] > 0:
 		neighbours += 1
-	#print (potData[20])
 	# if too old, plant dies
-	if plants[x][y][0] >= constants.PLANTS_LIFE_EXPECTANCY + int(potData[16]):
+	if plants[x][y][0] >= constants.PLANTS_LIFE_EXPECTANCY + int(potData[0]):
 		plants[x][y][0] = 0
 		plants[x][y][1] = 0
 	# if no energy, plant dies
-	if plants[x][y][0] > 0 and plants[x][y][0] < constants.PLANTS_LIFE_EXPECTANCY + int(potData[16]) and plants[x][y][1] <= 0:
+	if plants[x][y][0] > 0 and plants[x][y][0] < constants.PLANTS_LIFE_EXPECTANCY + int(potData[0]) and plants[x][y][1] <= 0:
 		plants[x][y][0] = 0
 		plants[x][y][1] = 0
 	# plant grows
-	if plants[x][y][0]>0 and plants[x][y][0] < constants.PLANTS_LIFE_EXPECTANCY + int(potData[16]):
+	if plants[x][y][0]>0 and plants[x][y][0] < constants.PLANTS_LIFE_EXPECTANCY + int(potData[0]):
 		plants[x][y][0] += 1
-		plants[x][y][1] = plants[x][y][1] + constants.PLANTS_ENERGY_BASE_PER_CYCLE + int(potData[20])
+		plants[x][y][1] = plants[x][y][1] + constants.PLANTS_ENERGY_BASE_PER_CYCLE
 		plants_individuals += 1
 		full_matrix_plants_energy += plants[x][y][1]
 	# plant reproduction
-	if int(potData[17]) > 0 and plants[x][y][0] == 0 and neighbours > 0 and plants[x][y][2] == 0:
-		if constants.PLANTS_NEARBORN_CHANCES - int(potData[17]) < 2:
+	if int(potData[1]) > 0 and plants[x][y][0] == 0 and neighbours > 0 and plants[x][y][2] == 0:
+		if constants.PLANTS_NEARBORN_CHANCES - int(potData[1]) < 2:
 			randomborn = 2
 		else:
-			randomborn = constants.PLANT_NEARBORN_CHANCES[index] - int(potData[17])
+			randomborn = constants.PLANT_NEARBORN_CHANCES[index] - int(potData[1])
 		random_number = random.randint(1,randomborn)
 		if random_number == 1:
 			plants[x][y][0] = 1
-			plants[x][y][1] = constants.PLANTS_ENERGY_BASE_PER_CYCLE + int(potData[20])
+			plants[x][y][1] = constants.PLANTS_ENERGY_BASE_PER_CYCLE + int(potData[2])
 			plants_individuals += 1
 			#if midi_enable:
 			#	midiout.send_message(note_on_white)
@@ -83,7 +101,7 @@ def plants_next_iteration(x,y):
 		random_number = random.randint(1,constants.PLANTS_RANDOM_BORN_CHANCES)
 		if random_number == 1:
 			plants[x][y][0] = 1
-			plants[x][y][1] = constants.PLANTS_ENERGY_BASE_PER_CYCLE + int(potData[20])
+			plants[x][y][1] = constants.PLANTS_ENERGY_BASE_PER_CYCLE + int(potData[2])
 			plants_individuals += 1
 			full_matrix_plants_energy += plants[x][y][1]
 			#if midi_enable:
@@ -182,11 +200,11 @@ def species_next_iteration(x,y):
 		if specie1[x][y][1] > constants.SPECIE1_ENERGY_TO_REPLICATE and specie1[x][y][2] == 0:
 			available_spots = [0 for numspots in range(8)]
 			pos=0
-			if int(potData[1]) > 0:
-				if constants.SPECIE1_NEARBORN_CHANCES - int(potData[1]) < 2:
+			if int(potData[3]) > 0:
+				if constants.SPECIE1_NEARBORN_CHANCES - int(potData[3]) < 2:
 					randomborn = 2
 				else:
-					randomborn = constants.SPECIE1_NEARBORN_CHANCES - int(potData[1])
+					randomborn = constants.SPECIE1_NEARBORN_CHANCES - int(potData[3])
 				random_number = random.randint(1,randomborn)
 				if specie1[xm][y][0] == 0:
 					available_spots[pos] = 1
@@ -252,7 +270,7 @@ def species_next_iteration(x,y):
 						if midi_enable:
 							midiout.send_message(note_on_yellow)
 		# die if too old
-		if specie1[x][y][0] > constants.SPECIE1_LIFE_EXPECTANCY + int(potData[0]):
+		if specie1[x][y][0] > constants.SPECIE1_LIFE_EXPECTANCY + int(potData[4]):
 			specie1[x][y][1] = 0
 			specie1[x][y][0] = 0
 			#print "("+str(x)+","+str(y)+") dies"
@@ -278,9 +296,9 @@ def species_next_iteration(x,y):
 		# try to eat
 		if plants[x][y][1] > 0:
 			total_energy=0
-			if plants[x][y][1] > constants.SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(potData[14]):
-				total_energy = constants.SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(potData[14])
-				plants[x][y][1] = plants[x][y][1] - (constants.SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(potData[14]))
+			if plants[x][y][1] > constants.SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(potData[10]):
+				total_energy = constants.SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(potData[10])
+				plants[x][y][1] = plants[x][y][1] - (constants.SPECIE2_MAX_ENERGY_RECOLECTED_PER_CYCLE + int(potData[10]))
 			else:
 				total_energy = plants[x][y][1]
 				plants[x][y][1] = 0
@@ -288,7 +306,7 @@ def species_next_iteration(x,y):
 			#print "("+str(x)+","+str(y)+") eats"
 		# grow and decrease energy
 		specie2[x][y][0] += 1
-		specie2[x][y][1] = specie2[x][y][1] - (constants.SPECIE2_ENERGY_NEEDED_PER_CYCLE  + int(potData[13]))
+		specie2[x][y][1] = specie2[x][y][1] - (constants.SPECIE2_ENERGY_NEEDED_PER_CYCLE  + int(potData[9]))
 		#print "("+str(x)+","+str(y)+") grows"
 		# die if no energy
 		if specie2[x][y][1] < 0:
@@ -299,11 +317,11 @@ def species_next_iteration(x,y):
 		if specie2[x][y][1] > constants.SPECIE2_ENERGY_TO_REPLICATE and specie2[x][y][2] == 0:
 			available_spots = [0 for numspots in range(8)]
 			pos=0
-			if int(potData[9]) > 0:
-				if constants.SPECIE2_NEARBORN_CHANCES - int(potData[9]) < 2:
+			if int(potData[8]) > 0:
+				if constants.SPECIE2_NEARBORN_CHANCES - int(potData[8]) < 2:
 					randomborn = 2
 				else:
-					randomborn = constants.SPECIE2_NEARBORN_CHANCES - int(potData[9])
+					randomborn = constants.SPECIE2_NEARBORN_CHANCES - int(potData[8])
 				random_number = random.randint(1,randomborn)
 				if specie2[xm][y][0] == 0:
 					available_spots[pos] = 1
@@ -369,7 +387,7 @@ def species_next_iteration(x,y):
 						if midi_enable:
 							midiout.send_message(note_on_blue)
 		# die if too old
-		if specie2[x][y][0] > constants.SPECIE2_LIFE_EXPECTANCY + int(potData[8]):
+		if specie2[x][y][0] > constants.SPECIE2_LIFE_EXPECTANCY + int(potData[7]):
 			specie2[x][y][1] = 0
 			specie2[x][y][0] = 0
 			#print "("+str(x)+","+str(y)+") dies"
@@ -432,53 +450,44 @@ def readPotDatafromFile(stop):
 	while not stop:
 		file = open("/var/www/html/lifeboxdata", "r")
 		potData = file.read().split("|")
-		#print (potData[2])
-		time.sleep(2)
-		
-def readPotDatafromFilefromArduino(stop):
-	global potData
-	# load default values from 
-	file = open("/var/www/html/lifeboxdata", "r")
-	potData = file.read().split("|")
-	# remove 
-	board = ArduinoMega('/dev/ttyACM0')
-	it = util.Iterator(board)
-	it.start()
-	for i in range (0,11):
-		board.analog[i].enable_reporting()
-	while not stop:
-		#for i in range (0,11):
-			#if board.analog[i].read() is not None:
-				#print("Pin:"+str(i)+" Value:"+str(int(board.analog[i].read()*1000)))
-		if board.analog[i].read() is not None:
-			#potData[16] = board.analog[8].read() # plants life expectancy
-			#potData[20] = board.analog[10].read() # plants energy generation
-			print("Value:"+str(int(board.analog[9].read()*1000)))
-			potData[17] = int(map(int(board.analog[9].read()*1000),0,1000,1,2000)) # plants nearborn chances
-			print ("Return:" +str(potData[17]))
-			#potData[6] = board.analog[3].read() # sp1 gathering
-			#potData[5] = board.analog[2].read() # sp1 efficency
-			#potData[0] = board.analog[0].read() # sp1 life exp
-			#potData[1] = board.analog[1].read() # sp1 nearborn chances
-			#potData[14] = board.analog[7].read() # sp2 gathering
-			#potData[13] = board.analog[6].read() # sp2 efficency
-			#potData[8] = board.analog[4].read() # sp2 life exp
-			#potData[9] = board.analog[5].read() # sp2 nearborn chances
 		time.sleep(1)
+		
+def readPotDatafromArduino(stop):
+	global potData
+	try:
+		board = ArduinoMega('/dev/ttyACM0')
+		it = util.Iterator(board)
+		it.start()
+		for i in range (0,11):
+			board.analog[i].enable_reporting()
+		while not stop:
+			for i in range (0,11):
+				if board.analog[i].read() is not None:
+					potData[i] = int(board.analog[i].read() * 1023)
+					#print ("Analog input ",i," > ",int(potData[i]*1023))
+				else:
+					#print("Error analog read ", i)
+					pass
+			# map the values if needed
+			#potData[x] = map(potData[x],0,1023,low,high)
+			time.sleep(1)
+	except:
+		print("Arduino connection error! Change to app mode.")
+		os._exit(1)
 
 midi_enable = 0 # play generative sound through midi out (under development)
 graph_mode = 0 # show graphs
 real_mode = 1 # respawn control
-app_mode = 1 # via web / app or manual controller
+app_mode = 0 # via web / app or manual controller
 gradient_mode = 1 # individual fade in / out linked to energy
-fullscreen_mode = 1
+fullscreen_mode = 0
 fullscreen_graph = 0
 rf = 1 # reduction factor
 
 # run thread
 stop = False
 if app_mode == 0:
-	t = threading.Thread(target=readPotDatafromFilefromArduino,args=(stop,))
+	t = threading.Thread(target=readPotDatafromArduino,args=(stop,))
 else:
 	t = threading.Thread(target=readPotDatafromFile,args=(stop,))
 t.daemon = True
