@@ -87,7 +87,7 @@ def plants_next_iteration(x,y):
 		if constants.PLANTS_NEARBORN_CHANCES - int(potData[1]) < 2:
 			randomborn = 2
 		else:
-			randomborn = constants.PLANT_NEARBORN_CHANCES[index] - int(potData[1])
+			randomborn = constants.PLANTS_NEARBORN_CHANCES - int(potData[1])
 		random_number = random.randint(1,randomborn)
 		if random_number == 1:
 			plants[x][y][0] = 1
@@ -454,26 +454,24 @@ def readPotDatafromFile(stop):
 		
 def readPotDatafromArduino(stop):
 	global potData
-	try:
-		board = ArduinoMega('/dev/ttyACM0')
-		it = util.Iterator(board)
-		it.start()
+	board = ArduinoMega('/dev/ttyACM0')
+	it = util.Iterator(board)
+	it.start()
+	for i in range (0,11):
+		board.analog[i].enable_reporting()
+	while not stop:
 		for i in range (0,11):
-			board.analog[i].enable_reporting()
-		while not stop:
-			for i in range (0,11):
-				if board.analog[i].read() is not None:
-					potData[i] = int(board.analog[i].read() * 1023)
-					#print ("Analog input ",i," > ",int(potData[i]*1023))
-				else:
-					#print("Error analog read ", i)
-					pass
-			# map the values if needed
-			#potData[x] = map(potData[x],0,1023,low,high)
-			time.sleep(1)
-	except:
-		print("Arduino connection error! Change to app mode.")
-		os._exit(1)
+			if board.analog[i].read() is not None:
+				potData[i] = int(board.analog[i].read() * 1023)
+				print ("Analog input ",i," > ",int(potData[i]))
+			else:
+				#print("Error analog read ", i)
+				pass
+		# map the values if needed
+		#potData[x] = map(potData[x],0,1023,low,high)
+		time.sleep(1)
+	#print("Arduino connection error! Change to app mode.")
+	#os._exit(1)
 
 midi_enable = 0 # play generative sound through midi out (under development)
 graph_mode = 0 # show graphs
