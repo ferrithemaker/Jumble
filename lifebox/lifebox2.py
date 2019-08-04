@@ -15,15 +15,15 @@ potData = [0] * 11
 # potData[1] Reproduction [Plants] A1
 # potData[2] Generation [Plants] A2
 
-# potData[3] Reproduction [Specie2] A3
-# potData[4] Vitality [Specie2] A4
-# potData[5] Efficiency [Specie2] A5
-# potData[6] Gathering [Specie2] A6
+# potData[3] Reproduction [Specie1] A3
+# potData[4] Vitality [Specie1] A4
+# potData[5] Efficiency [Specie1] A5
+# potData[6] Gathering [Specie1] A6
 
-# potData[7] Vitality [Specie1] A7
-# potData[8] Reproduction [Specie1] A8
-# potData[9] Efficiency [Specie1] A9
-# potData[10] Gathering [Specie1] A10
+# potData[7] Vitality [Specie2] A7
+# potData[8] Reproduction [Specie2] A8
+# potData[9] Efficiency [Specie2] A9
+# potData[10] Gathering [Specie2] A10
 
 
 
@@ -36,6 +36,8 @@ def plants_next_iteration(x,y):
 	global plants_individuals
 	global full_matrix_plants_energy
 	neighbours = 0
+	# maping plants potData
+	plantsreproduction = map(potData[1],0,1023,0,120)
 	#if midi_enable:
 	#			midiout.send_message(note_off_white)
 	# adjacent coordinates
@@ -76,18 +78,18 @@ def plants_next_iteration(x,y):
 	if plants[x][y][0] > 0 and plants[x][y][0] < constants.PLANTS_LIFE_EXPECTANCY + int(potData[0]) and plants[x][y][1] <= 0:
 		plants[x][y][0] = 0
 		plants[x][y][1] = 0
-	# plant grows
+	# plant growsplants
 	if plants[x][y][0]>0 and plants[x][y][0] < constants.PLANTS_LIFE_EXPECTANCY + int(potData[0]):
 		plants[x][y][0] += 1
 		plants[x][y][1] = plants[x][y][1] + constants.PLANTS_ENERGY_BASE_PER_CYCLE
 		plants_individuals += 1
 		full_matrix_plants_energy += plants[x][y][1]
 	# plant reproduction
-	if int(potData[1]) > 0 and plants[x][y][0] == 0 and neighbours > 0 and plants[x][y][2] == 0:
-		if constants.PLANTS_NEARBORN_CHANCES - int(potData[1]) < 2:
+	if int(plantsreproduction) > 0 and plants[x][y][0] == 0 and neighbours > 0 and plants[x][y][2] == 0:
+		if constants.PLANTS_NEARBORN_CHANCES - int(plantsreproduction) < 2:
 			randomborn = 2
 		else:
-			randomborn = constants.PLANTS_NEARBORN_CHANCES - int(potData[1])
+			randomborn = constants.PLANTS_NEARBORN_CHANCES - int(plantsreproduction)
 		random_number = random.randint(1,randomborn)
 		if random_number == 1:
 			plants[x][y][0] = 1
@@ -114,8 +116,10 @@ def species_next_iteration(x,y):
 	global specie2_individuals
 	global full_matrix_specie1_energy
 	global full_matrix_specie2_energy
+	# maping plants potData
+	sp1reproduction = map(potData[3],0,1023,0,80)
+	sp2reproduction = map(potData[8],0,1023,0,80)
 	# midi
-	
 	if midi_enable:
 		midiout.send_message(note_off_blue)
 		midiout.send_message(note_off_yellow)
@@ -200,11 +204,11 @@ def species_next_iteration(x,y):
 		if specie1[x][y][1] > constants.SPECIE1_ENERGY_TO_REPLICATE and specie1[x][y][2] == 0:
 			available_spots = [0 for numspots in range(8)]
 			pos=0
-			if int(potData[3]) > 0:
-				if constants.SPECIE1_NEARBORN_CHANCES - int(potData[3]) < 2:
+			if int(sp1reproduction) > 0:
+				if constants.SPECIE1_NEARBORN_CHANCES - int(sp1reproduction) < 2:
 					randomborn = 2
 				else:
-					randomborn = constants.SPECIE1_NEARBORN_CHANCES - int(potData[3])
+					randomborn = constants.SPECIE1_NEARBORN_CHANCES - int(sp1reproduction)
 				random_number = random.randint(1,randomborn)
 				if specie1[xm][y][0] == 0:
 					available_spots[pos] = 1
@@ -317,11 +321,11 @@ def species_next_iteration(x,y):
 		if specie2[x][y][1] > constants.SPECIE2_ENERGY_TO_REPLICATE and specie2[x][y][2] == 0:
 			available_spots = [0 for numspots in range(8)]
 			pos=0
-			if int(potData[8]) > 0:
-				if constants.SPECIE2_NEARBORN_CHANCES - int(potData[8]) < 2:
+			if int(sp2reproduction) > 0:
+				if constants.SPECIE2_NEARBORN_CHANCES - int(sp2reproduction) < 2:
 					randomborn = 2
 				else:
-					randomborn = constants.SPECIE2_NEARBORN_CHANCES - int(potData[8])
+					randomborn = constants.SPECIE2_NEARBORN_CHANCES - int(sp2reproduction)
 				random_number = random.randint(1,randomborn)
 				if specie2[xm][y][0] == 0:
 					available_spots[pos] = 1
@@ -408,28 +412,29 @@ def species_next_iteration(x,y):
 
 
 def map(x,in_min,in_max,out_min,out_max):
-	return float((float(x) - float(in_min)) * (float(out_max) - float(out_min)) / (float(in_max) - float(in_min)) + float(out_min))
+	return int((float(x) - float(in_min)) * (float(out_max) - float(out_min)) / (float(in_max) - float(in_min)) + float(out_min))
 
 def draw_species(x,y):
 	if gradient_mode == 1:
-		if plants[x][y][1]>255 * rf:
-			white = (255,255,255)
+		if plants[x][y][1]>200 * rf:
+			green = (0,200,0)
 		else:
-			white = (int(plants[x][y][1]/rf),int(plants[x][y][1]/rf),int(plants[x][y][1]/rf))
-		if specie1[x][y][1]>255:
-			yellow = (255,255,0)
+			green = (0,int(plants[x][y][1]/rf),0)
+		if specie1[x][y][1]>200 * rf:
+			yellow = (200,200,0)
 		else:
 			yellow = (int(specie1[x][y][1]/rf),int(specie1[x][y][1]/rf),0)
-		if specie2[x][y][1]>255 * rf:
-			blue = (0,0,255)
+		if specie2[x][y][1]>200 * rf:
+			blue = (0,0,200)
 		else:
 			blue = (0,0,int(specie2[x][y][1]/rf))
-		if specie1[x][y][1]+specie2[x][y][1] > 255 * rf:
-			magenta = (255,0,255)
+		if specie1[x][y][1]+specie2[x][y][1] > 200 * rf:
+			magenta = (200,0,200)
 		else:
 			magenta = (int(specie1[x][y][1]/rf)+int(specie2[x][y][1]/rf),0,int((specie1[x][y][1]+specie2[x][y][1])/rf))
 	else:
 		white = (255,255,255)
+		green = (0,255,0)
 		yellow = (255,255,0)
 		blue = (0,0,255)
 		magenta = (255,0,255)
@@ -441,7 +446,7 @@ def draw_species(x,y):
 	if specie1[x][y][0] == 0 and specie2[x][y][0] > 0:
 		pygame.draw.circle(screen,blue,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 	if specie1[x][y][0] == 0 and specie2[x][y][0] == 0 and plants[x][y][0] > 0:
-		pygame.draw.circle(screen,white,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
+		pygame.draw.circle(screen,green,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 	if specie1[x][y][0] == 0 and specie2[x][y][0] == 0 and plants[x][y][0] == 0:
 		pygame.draw.circle(screen,constants.BLACK,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 
@@ -463,7 +468,8 @@ def readPotDatafromArduino(stop):
 		for i in range (0,11):
 			if board.analog[i].read() is not None:
 				potData[i] = int(board.analog[i].read() * 1023)
-				print ("Analog input ",i," > ",int(potData[i]))
+				if debug == True:
+					print ("Analog input ",i," > ",int(potData[i]))
 			else:
 				#print("Error analog read ", i)
 				pass
@@ -478,9 +484,10 @@ graph_mode = 0 # show graphs
 real_mode = 1 # respawn control
 app_mode = 0 # via web / app or manual controller
 gradient_mode = 1 # individual fade in / out linked to energy
-fullscreen_mode = 0
+fullscreen_mode = 1
 fullscreen_graph = 0
-rf = 1 # reduction factor
+debug = False
+rf = 2 # reduction factor
 
 # run thread
 stop = False
