@@ -118,7 +118,7 @@ def plants_next_iteration(x,y):
 			#	midiout.send_message(note_on_white)
 			full_matrix_plants_energy += plants[x][y][1]
 	# spontaneous generation
-	if int(plants[x][y][0] == 0) and neighbours == 0 and plants[x][y][2] == 0 and ((plants_last_individuals == 0 and plants_individuals == 0 and real_mode == 1) or real_mode == 0):
+	if int(plants[x][y][0] == 0) and neighbours == 0 and plants[x][y][2] == 0 and ((plants_last_individuals == 0 and plants_individuals == 0 and real_mode == True) or real_mode == False):
 		random_number = random.randint(1,constants.PLANTS_RANDOM_BORN_CHANCES)
 		if random_number == 1:
 			plants[x][y][0] = 1
@@ -317,7 +317,7 @@ def species_next_iteration(x,y):
 		specie1_individuals += 1
 		full_matrix_specie1_energy += specie1[x][y][1]
 	# if no individual is alive, random born to avoid extintion
-	if specie1[x][y][0] == 0 and specie1_neighbours==0 and ((specie1_last_individuals == 0 and specie1_individuals == 0 and real_mode == 1) or real_mode == 0):
+	if specie1[x][y][0] == 0 and specie1_neighbours==0 and ((specie1_last_individuals == 0 and specie1_individuals == 0 and real_mode == True) or real_mode == False):
 		random_number = random.randint(1,constants.SPECIE1_RANDOM_BORN_CHANCES)
 		if random_number==1:
 			specie1[x][y][0] = 1
@@ -435,7 +435,7 @@ def species_next_iteration(x,y):
 		specie2_individuals += 1
 		full_matrix_specie2_energy += specie2[x][y][1]
 	# if no individual is alive, random born to avoid extintion
-	if specie2[x][y][0] == 0 and specie2_neighbours==0 and specie2[x][y][2] == 0 and ((specie2_last_individuals == 0 and specie2_individuals == 0 and real_mode == 1) or real_mode == 0):
+	if specie2[x][y][0] == 0 and specie2_neighbours==0 and specie2[x][y][2] == 0 and ((specie2_last_individuals == 0 and specie2_individuals == 0 and real_mode == True) or real_mode == False):
 		random_number = random.randint(1,constants.SPECIE2_RANDOM_BORN_CHANCES)
 		if random_number==1:
 			specie2[x][y][0] = 1
@@ -451,7 +451,7 @@ def map(x,in_min,in_max,out_min,out_max):
 	return int((float(x) - float(in_min)) * (float(out_max) - float(out_min)) / (float(in_max) - float(in_min)) + float(out_min))
 
 def draw_species(x,y):
-	if gradient_mode == 1:
+	if gradient_mode:
 		if plants[x][y][1]>12000:
 			green = (0,240,0)
 		else:
@@ -464,10 +464,10 @@ def draw_species(x,y):
 			blue = (0,0,240)
 		else:
 			blue = (0,0,map(specie2[x][y][1],0,4000,50,240))
-		if specie1[x][y][1]+specie2[x][y][1] > 4000:
+		if specie1[x][y][1]+specie2[x][y][1] > 8000:
 			magenta = (240,0,240)
 		else:
-			magenta = (map(specie1[x][y][1],0,4000,50,240)+map(specie2[x][y][1],0,4000,50,240),0,map(specie1[x][y][1],0,4000,50,240)+map(specie2[x][y][1],0,4000,50,240))
+			magenta = (map(specie1[x][y][1],0,4000,50,120)+map(specie2[x][y][1],0,4000,50,120),0,map(specie1[x][y][1],0,4000,50,120)+map(specie2[x][y][1],0,4000,50,120))
 	else:
 		white = (255,255,255)
 		green = (0,255,0)
@@ -476,7 +476,7 @@ def draw_species(x,y):
 		magenta = (255,0,255)
 
 	if specie1[x][y][0] > 0 and specie2[x][y][0] > 0:
-		pygame.draw.circle(screen,magenta,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
+		pygame.draw.circle(screen,magenta,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0) # upper left margin = 40
 	if specie1[x][y][0] > 0 and specie2[x][y][0] == 0:
 		pygame.draw.circle(screen,yellow,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 	if specie1[x][y][0] == 0 and specie2[x][y][0] > 0:
@@ -547,11 +547,11 @@ def readPotDatafromArduino(stop):
 	#print("Arduino connection error! Change to app mode.")
 	#os._exit(1)
 
-midi_enable = 0 # play generative sound through midi out (under development)
-graph_mode = 0 # show graphs
-real_mode = 1 # respawn control
+midi_enable = False # play generative sound through midi out (under development)
+graph_mode = False # show graphs
+real_mode = True # respawn control
 app_mode = True # via web / app or manual controller
-gradient_mode = 1 # individual fade in / out linked to energy
+gradient_mode = True # individual fade in / out linked to energy
 fullscreen_mode = True
 fullscreen_graph = False
 debug = False
@@ -595,9 +595,9 @@ else:
 	# size for full HD screen (1920,1080)
 	# if you have other screen size, you need yo change matrix_size_x,matrix_size_y and circle_size
 	screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-	matrix_size_x = 70
-	matrix_size_y = 52
-	circle_size = 7
+	matrix_size_x = 92
+	matrix_size_y = 50
+	circle_size = 10
 
 textfont = pygame.font.SysFont('arial',30)
 debugfont = pygame.font.SysFont('arial',15)
@@ -681,7 +681,7 @@ while (True):
 			draw_species(x,y)
 			
 
-	if graph_mode == 1:
+	if graph_mode:
 		# generate graphs
 		for x in range(1,200):
 			specie1IndividualsArray[x-1] = specie1IndividualsArray[x]
@@ -734,6 +734,6 @@ while (True):
 			pygame.draw.rect(graphsurface,constants.WHITEGRAPH,pygame.Rect(x*10,1080-int(plantsIndividualsArray[x]/(3*rf)),10,int(plantsIndividualsArray[x]/(3*rf))))
 		screen.blit(graphsurface,(0,0))
 
-	if graph_mode == 1:
+	if graph_mode:
 		pygame.draw.rect(screen,constants.BLACK,(40,40,320,320),1)
 	pygame.display.update()
