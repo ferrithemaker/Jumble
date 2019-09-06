@@ -464,19 +464,21 @@ def draw_species(x,y):
 			blue = (0,0,240)
 		else:
 			blue = (0,0,map(specie2[x][y][1],0,4000,50,240))
-		if specie1[x][y][1]+specie2[x][y][1] > 8000:
-			magenta = (240,0,240)
+		if specie1[x][y][1] + specie2[x][y][1] > 8000:
+			yellowandblue = (240,240,240)
 		else:
-			magenta = (map(specie1[x][y][1],0,4000,50,120)+map(specie2[x][y][1],0,4000,50,120),0,map(specie1[x][y][1],0,4000,50,120)+map(specie2[x][y][1],0,4000,50,120))
+			#yellowandblue = (map(specie1[x][y][1],0,4000,50,120)+map(specie2[x][y][1],0,4000,50,120),0,map(specie1[x][y][1],0,4000,50,120)+map(specie2[x][y][1],0,4000,50,120))
+			yellowandblue = (map(specie1[x][y][1],0,4000,50,240),map(specie1[x][y][1],0,4000,50,240),map(specie2[x][y][1],0,4000,50,120))
+
 	else:
 		white = (255,255,255)
 		green = (0,255,0)
 		yellow = (255,255,0)
 		blue = (0,0,255)
-		magenta = (255,0,255)
+		yellowandblue = (255,0,255) # not actual yellow and blue, but magenta
 
 	if specie1[x][y][0] > 0 and specie2[x][y][0] > 0:
-		pygame.draw.circle(screen,magenta,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0) # upper left margin = 40
+		pygame.draw.circle(screen,yellowandblue,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0) # upper left margin = 40
 	if specie1[x][y][0] > 0 and specie2[x][y][0] == 0:
 		pygame.draw.circle(screen,yellow,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
 	if specie1[x][y][0] == 0 and specie2[x][y][0] > 0:
@@ -595,9 +597,9 @@ else:
 	# size for full HD screen (1920,1080)
 	# if you have other screen size, you need yo change matrix_size_x,matrix_size_y and circle_size
 	screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-	matrix_size_x = 92
-	matrix_size_y = 50
-	circle_size = 10
+	matrix_size_x = 61 # max 92 at size 10
+	matrix_size_y = 33 # max 50 at size 10
+	circle_size = 15
 
 textfont = pygame.font.SysFont('arial',30)
 debugfont = pygame.font.SysFont('arial',15)
@@ -639,10 +641,11 @@ specie1_individuals = 0
 plants_individuals = 0
 
 # screen for transparent graph
-graphsurface = pygame.Surface((1920, 1080), pygame.SRCALPHA, 32)
+if fullscreen_graph == True and fullscreen_mode == True:
+	graphsurface = pygame.Surface((1920, 1080), pygame.SRCALPHA, 32)
 
 while (True):
-	msElapsed = clock.tick(20)
+	msElapsed = clock.tick(10)
 	# control lifebox exit
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
