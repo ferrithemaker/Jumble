@@ -597,9 +597,9 @@ else:
 	# size for full HD screen (1920,1080)
 	# if you have other screen size, you need yo change matrix_size_x,matrix_size_y and circle_size
 	screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-	matrix_size_x = 61 # max 92 at size 10
-	matrix_size_y = 33 # max 50 at size 10
-	circle_size = 15
+	matrix_size_x = 92 #61 # max 92 at size 10
+	matrix_size_y = 50 # 33 # max 50 at size 10
+	circle_size = 10 #15
 
 textfont = pygame.font.SysFont('arial',30)
 debugfont = pygame.font.SysFont('arial',15)
