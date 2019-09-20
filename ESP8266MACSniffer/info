@@ -1,0 +1,1 @@
+Goal: ESP8266 gets the MAC address of the devices around (promiscous mode) and send to info to a MQTT server.
