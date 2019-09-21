@@ -1,6 +1,8 @@
 // by Ray Burnette 20161013 compiled on Linux 16.3 using Arduino 1.6.12
 //Hacked by Kosme 20170520 compiled on Ubuntu 14.04 using Arduino 1.6.11
 
+// sending MAC data through MQTT by Ferri 20190921 Ubuntu 19.04 & Arduino 1.8.9
+
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
 #include "./functions.h"
@@ -8,38 +10,30 @@
 #define disable 0
 #define enable  1
 unsigned int channel = 1;
-unsigned long lastchange;
-unsigned long timer;
-bool sniffing = true;
 
-const char* ssid     = "xxx";         // The SSID (name) of the Wi-Fi network you want to connect to
-const char* password = "xxx";
+const char* ssid     = "xxxx";         // The SSID (name) of the Wi-Fi network you want to connect to
+const char* password = "xxxx";
 
-const char* mqttServer = "xxx";
+const char* mqttServer = "xxxx";
 const int mqttPort = 1883;
-const char* mqttUser = "xxx";
-const char* mqttPassword = "xxx";
+const char* mqttUser = "xxxx";
+const char* mqttPassword = "xxxx";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
 
 void setup() {
   Serial.begin(57600);
+  
   Serial.printf("\n\nSDK version:%s\n\r", system_get_sdk_version());
-  Serial.println(F("ESP8266 enhanced sniffer by Kosme https://github.com/kosme"));
+  Serial.println(F("based on ESP8266 enhanced sniffer by Kosme https://github.com/kosme"));
   enablesniffer();
 }
 
 void loop() {
-  timer = millis();
-  if (timer-lastchange>10000) {
-    if (sniffing == true) {
-      enablesender();
-      sniffing = false;
-    } else {
-      enablesniffer();
-      sniffing = true;
-    }
+  if (sniffing == false) {
+    sendMQTTdata();
+    sniffing = true;
   }
   if (sniffing == true) {
     channel = 1;
@@ -61,14 +55,12 @@ void loop() {
 void enablesniffer() {
   wifi_set_opmode(STATION_MODE);            // Promiscuous works only with station mode
   wifi_set_channel(channel);
-  // Send the IP address of the ESP8266 to the computer
   wifi_promiscuous_enable(disable);
   wifi_set_promiscuous_rx_cb(promisc_cb);   // Set up promiscuous callback
   wifi_promiscuous_enable(enable);
-  lastchange = millis();
 }
 
-void enablesender() {
+void sendMQTTdata() {
   wifi_promiscuous_enable(disable);
   WiFi.begin(ssid, password);             // Connect to the network
   Serial.print("Connecting to ");
@@ -102,8 +94,17 @@ void enablesender() {
  
     }
   }
- 
-  client.publish("esp/test", "Hello from ESP8266");
-   
-  lastchange = millis(); 
+  for (int i=0;i<MAXlist;i++) {
+          char strMAC[11]= {lastMACs[i][0],lastMACs[i][1],lastMACs[i][2],lastMACs[i][3],lastMACs[i][4],lastMACs[i][5],lastMACs[i][6],lastMACs[i][7],lastMACs[i][8],lastMACs[i][9],'\0'};
+          client.publish("esp/sniffer", strMAC);
+          delay(200);
+  }
+  
+  // reenable sniffing
+  
+  wifi_set_opmode(STATION_MODE);            // Promiscuous works only with station mode
+  wifi_set_channel(channel);
+  wifi_promiscuous_enable(disable);
+  wifi_set_promiscuous_rx_cb(promisc_cb);   // Set up promiscuous callback
+  wifi_promiscuous_enable(enable); 
 }

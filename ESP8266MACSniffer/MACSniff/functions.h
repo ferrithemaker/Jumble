@@ -19,7 +19,6 @@ int aps_known_count = 0;                                  // Number of known APs
 int nothing_new = 0;
 int clients_known_count = 0;                              // Number of known CLIENTs
 
-
 void promisc_cb(uint8_t *buf, uint16_t len)
 {
   signed potencia;
@@ -34,12 +33,15 @@ void promisc_cb(uint8_t *buf, uint16_t len)
     struct sniffer_buf *sniffer = (struct sniffer_buf*) buf;
     potencia = sniffer->rx_ctrl.rssi;
   }
-
+  char currentMAC[10];
+  
   // Position 12 in the array is where the packet type number is located
   // For info on the different packet type numbers check:
   // https://stackoverflow.com/questions/12407145/interpreting-frame-control-bytes-in-802-11-wireshark-trace
   // https://supportforums.cisco.com/document/52391/80211-frames-starter-guide-learn-wireless-sniffer-traces
   // https://ilovewifi.blogspot.mx/2012/07/80211-frame-types.html
+
+  
   if((buf[12]==0x88)||(buf[12]==0x40)||(buf[12]==0x94)||(buf[12]==0xa4)||(buf[12]==0xb4)||(buf[12]==0x08))
   {
     //Serial.printf("%02x\n",buf[12]);
@@ -48,13 +50,46 @@ void promisc_cb(uint8_t *buf, uint16_t len)
     // if(buf[12]==0x88) Serial.printf("QOS: ");
     // Origin MAC address starts at byte 22
     // Print MAC address
-    for(int i=0;i<5;i++) {
-      //Serial.printf("%02x:",buf[22+i]);
+
+    // convert *buf (only MAC) to string
+
+    sprintf(currentMAC,"%02x%02x%02x%02x%02x",buf[22],buf[23],buf[24],buf[25],buf[26]);
+    int foundMAC = 0;
+    //Serial.print("Current MAC:");
+    //Serial.println(currentMAC);
+    for (int i=0;i<MAXlist;i++) {
+      if (currentMAC[0] == lastMACs[i][0] && currentMAC[1] == lastMACs[i][1] && currentMAC[2] == lastMACs[i][2] && currentMAC[3] == lastMACs[i][3] && currentMAC[4] == lastMACs[i][4] &&
+          currentMAC[5] == lastMACs[i][5] && currentMAC[6] == lastMACs[i][6] && currentMAC[7] == lastMACs[i][7] && currentMAC[8] == lastMACs[i][8] && currentMAC[9] == lastMACs[i][9]) 
+        {
+        foundMAC = 1;
+        Serial.print("FOUND RECORDED MAC AT ");
+        Serial.println(i);
+        break;
+      }
+    }
+    if (!foundMAC) {
+      strncpy(lastMACs[MACindex],currentMAC,10);
+      MACindex++;
+    }
+    if (MACindex == MAXlist-1) {
+      for (int i=0;i<MAXlist;i++) {
+        for (int i2=0;i2<10;i2++) {
+          Serial.print(lastMACs[i][i2]);
+        }
+        Serial.println();
+      }
+      Serial.println("----------------");
+      MACindex = 0;
+      // sending data
+      sniffing = false;
+    }  
+   /*for(int i=0;i<5;i++) {
+      Serial.printf("%02x:",buf[22+i]);
     }
     //Serial.printf("%02x  ",buf[22+5]);
     // Signal strength is in byte 0
     //Serial.printf("%i\n",int8_t(buf[0]));
-
+    */
     // Enable this lines if you want to scan for a specific MAC address
     // Specify desired MAC address on line 10 of structures.h
     int same = 1;
@@ -68,12 +103,12 @@ void promisc_cb(uint8_t *buf, uint16_t len)
     }
     if(same)
     {
-    Serial.println("Trobat!");
+      //Serial.println("Trobat!");
     }
     //different device
     else
     {
-
+      //Serial.println(currentMAC);
     }
   }
   //Different packet type numbers

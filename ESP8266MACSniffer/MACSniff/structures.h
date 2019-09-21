@@ -9,6 +9,15 @@ uint8_t broadcast3[3] = { 0x33, 0x33, 0x00 };
 //If you want to detect a specific MAC Addess, put it here.
 uint8_t desired[6] = { 0x48, 0x2c, 0xa0, 0x69, 0x30, 0x6f };
 
+bool sniffing = true;
+
+const int MAXlist = 30;
+
+char lastMACs[MAXlist][10];
+
+int MACindex = 0;
+
+
 struct beaconinfo
 {
   uint8_t bssid[ETH_MAC_LEN];
