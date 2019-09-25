@@ -15,7 +15,7 @@ def on_message(client,userdata,message):
 		if len(points) == 0:
 			json_insert = [ { "measurement" : "traffic_accounting", "tags" : { "mac" : mac }, "fields" : { "total" : 1 } } ]
 			influxclient.write_points(json_insert)
-			print("mac added to influx!")
+			#print("mac added to influx!")
 
 # MQTT server
 
@@ -29,17 +29,17 @@ influxclient = InfluxDBClient(host='localhost', port=8086)
 influxclient.switch_database('sniffer')
 
 
-print("creating new instance")
+#print("creating new instance")
 mqttclient = mqtt.Client("mqttsniffer") #create new instance
 
 mqttclient.username_pw_set(broker_user,broker_password)
 
-print("connecting to broker")
+#print("connecting to broker")
 mqttclient.connect(broker_address,port=broker_port) #connect to broker
 
 mqttclient.loop_start()
 
-print("Subscribing to topic")
+#print("Subscribing to topic")
 mqttclient.subscribe("esp/sniffer")
 
 mqttclient.on_message=on_message        #attach function to callback
