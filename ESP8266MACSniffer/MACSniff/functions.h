@@ -67,8 +67,9 @@ void promisc_cb(uint8_t *buf, uint16_t len)
         break;
       }
     }
-    if (!foundMAC) {
+    if (!foundMAC && int8_t(buf[0])>SIGNAL_THRESHOLD) {
       strncpy(lastMACs[MACindex],currentMAC,10);
+      Serial.println("SENYAL BONA!");
       MACindex++;
     }
     if (MACindex == MAXlist-1) {

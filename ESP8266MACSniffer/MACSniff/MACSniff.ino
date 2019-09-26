@@ -11,13 +11,15 @@
 #define enable  1
 unsigned int channel = 1;
 
-const char* ssid     = "xxxx";         // The SSID (name) of the Wi-Fi network you want to connect to
-const char* password = "xxxx";
+//const char* ssid     = "";         // The SSID (name) of the Wi-Fi network you want to connect to
+//const char* password = "";
+const char* ssid     = "";         // The SSID (name) of the Wi-Fi network you want to connect to
+const char* password = "";
 
-const char* mqttServer = "xxxx";
+const char* mqttServer = "";
 const int mqttPort = 1883;
-const char* mqttUser = "xxxx";
-const char* mqttPassword = "xxxx";
+const char* mqttUser = "";
+const char* mqttPassword = "";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
