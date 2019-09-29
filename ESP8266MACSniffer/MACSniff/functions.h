@@ -72,7 +72,7 @@ void promisc_cb(uint8_t *buf, uint16_t len)
       Serial.println("SENYAL BONA!");
       MACindex++;
     }
-    if (MACindex == MAXlist-1) {
+    if (MACindex == MAXlist) {
       for (int i=0;i<MAXlist;i++) {
         for (int i2=0;i2<10;i2++) {
           Serial.print(lastMACs[i][i2]);

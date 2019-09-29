@@ -11,6 +11,9 @@
 #define enable  1
 unsigned int channel = 1;
 
+unsigned long lastupload;
+unsigned long timer;
+
 //const char* ssid     = "";         // The SSID (name) of the Wi-Fi network you want to connect to
 //const char* password = "";
 const char* ssid     = "";         // The SSID (name) of the Wi-Fi network you want to connect to
@@ -30,11 +33,14 @@ void setup() {
   Serial.printf("\n\nSDK version:%s\n\r", system_get_sdk_version());
   Serial.println(F("based on ESP8266 enhanced sniffer by Kosme https://github.com/kosme"));
   enablesniffer();
+  lastupload = millis();
 }
 
 void loop() {
-  if (sniffing == false) {
+  timer = millis();
+  if (sniffing == false || timer-lastupload > 900000) { // set a time limit to send the data to MQTT server (15 min)
     sendMQTTdata();
+    lastupload = millis(); 
     sniffing = true;
   }
   if (sniffing == true) {
@@ -98,8 +104,12 @@ void sendMQTTdata() {
   }
   for (int i=0;i<MAXlist;i++) {
           char strMAC[11]= {lastMACs[i][0],lastMACs[i][1],lastMACs[i][2],lastMACs[i][3],lastMACs[i][4],lastMACs[i][5],lastMACs[i][6],lastMACs[i][7],lastMACs[i][8],lastMACs[i][9],'\0'};
-          client.publish("esp/sniffer", strMAC);
-          delay(200);
+          if (strMAC!="0000000000") { // if MAC is all 0's skip
+            client.publish("esp/sniffer", strMAC);
+            delay(200);
+          }
+          for (int i2=0;i2<10;i2++) lastMACs[i][i2]=0x00; // clean the array (fill with 0's)
+          MACindex = 0;
   }
   
   // reenable sniffing
