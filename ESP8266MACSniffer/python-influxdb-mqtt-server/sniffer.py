@@ -7,15 +7,20 @@ def on_message(client,userdata,message):
 	mac = str(message.payload.decode("utf-8"))
 	print("message received: " , mac)
 	if mac != "":
-		results = influxclient.query('SELECT total FROM traffic_accounting WHERE mac = \''+mac+'\' and time > now() - 1h;')
+		last15mResults = influxclient.query('SELECT total FROM traffic_accounting WHERE mac = \''+mac+'\' and time > now() - 15m;')
 		#print('SELECT total FROM traffic_accounting WHERE mac = \''+mac+'\' and time > now() - 1h;')
-		points = results.get_points()
-		points = list(points)
+		last15mPoints = last15mResults.get_points()
+		last15mPoints = list(last15mPoints)
 		#print(len(points))
-		if len(points) == 0:
-			json_insert = [ { "measurement" : "traffic_accounting", "tags" : { "mac" : mac }, "fields" : { "total" : 1 } } ]
+		halfDayResults = influxclient.query('SELECT total FROM traffic_accounting WHERE mac = \''+mac+'\' and time > now() - 12h;')
+		halfDayPoints = halfDayResults.get_points()
+		halfDayPoints = list(halfDayPoints)
+		if len(last15mPoints) == 0 and len(halfDayPoints) > 6:
+			json_insert = [ { "measurement" : "traffic_accounting", "tags" : { "mac" : mac, "permanent" : "yes" }, "fields" : { "total" : 1 } } ]
 			influxclient.write_points(json_insert)
-			#print("mac added to influx!")
+		if len(last15mPoints) == 0 and len(halfDayPoints) <= 6:
+                        json_insert = [ { "measurement" : "traffic_accounting", "tags" : { "mac" : mac, "permanent" : "no" }, "fields" : { "total" : 1 } } ]
+                        influxclient.write_points(json_insert)
 
 # MQTT server
 
