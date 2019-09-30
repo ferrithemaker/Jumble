@@ -29,9 +29,8 @@ PubSubClient client(espClient);
 
 void setup() {
   Serial.begin(57600);
-  
-  Serial.printf("\n\nSDK version:%s\n\r", system_get_sdk_version());
-  Serial.println(F("based on ESP8266 enhanced sniffer by Kosme https://github.com/kosme"));
+  Serial.println(F("MAC Sniffer and MQTT client logger by FerriTheMaker https://github.com/ferrithemaker/Jumble"));
+  Serial.println(F("Based on ESP8266 enhanced sniffer by Kosme https://github.com/kosme"));
   enablesniffer();
   lastupload = millis();
 }
@@ -113,10 +112,5 @@ void sendMQTTdata() {
   }
   
   // reenable sniffing
-  
-  wifi_set_opmode(STATION_MODE);            // Promiscuous works only with station mode
-  wifi_set_channel(channel);
-  wifi_promiscuous_enable(disable);
-  wifi_set_promiscuous_rx_cb(promisc_cb);   // Set up promiscuous callback
-  wifi_promiscuous_enable(enable); 
+  enablesniffer();
 }
