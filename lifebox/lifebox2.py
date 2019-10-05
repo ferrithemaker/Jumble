@@ -5,7 +5,7 @@ import threading
 import time
 import os
 from pyfirmata import ArduinoMega, util
-import rtmidi # midi library
+#import rtmidi # midi library
 
 import lifebox_constants as constants
 
@@ -448,7 +448,13 @@ def species_next_iteration(x,y):
 
 
 def map(x,in_min,in_max,out_min,out_max):
-	return int((float(x) - float(in_min)) * (float(out_max) - float(out_min)) / (float(in_max) - float(in_min)) + float(out_min))
+	if x >= in_max:
+		mapvalue = out_max
+	if x <= in_min:
+		mapvalue = out_min
+	if x < in_max and x > in_min:
+		mapvalue = int((float(x) - float(in_min)) * (float(out_max) - float(out_min)) / (float(in_max) - float(in_min)) + float(out_min)) 
+	return mapvalue
 
 def draw_species(x,y):
 	if gradient_mode:
@@ -469,7 +475,6 @@ def draw_species(x,y):
 		else:
 			#yellowandblue = (map(specie1[x][y][1],0,4000,50,120)+map(specie2[x][y][1],0,4000,50,120),0,map(specie1[x][y][1],0,4000,50,120)+map(specie2[x][y][1],0,4000,50,120))
 			yellowandblue = (map(specie1[x][y][1],0,4000,50,240),map(specie1[x][y][1],0,4000,50,240),map(specie2[x][y][1],0,4000,50,120))
-
 	else:
 		white = (255,255,255)
 		green = (0,255,0)
@@ -478,6 +483,7 @@ def draw_species(x,y):
 		yellowandblue = (255,0,255) # not actual yellow and blue, but magenta
 
 	if specie1[x][y][0] > 0 and specie2[x][y][0] > 0:
+		print(yellowandblue)
 		pygame.draw.circle(screen,yellowandblue,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0) # upper left margin = 40
 	if specie1[x][y][0] > 0 and specie2[x][y][0] == 0:
 		pygame.draw.circle(screen,yellow,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
@@ -526,7 +532,7 @@ def readPotDatafromFile(stop):
 		
 def readPotDatafromArduino(stop):
 	global potData
-	board = ArduinoMega('/dev/ttyACM0')
+	board = ArduinoMega(sys.argv[1])
 	it = util.Iterator(board)
 	it.start()
 	for i in range (0,11):
@@ -552,12 +558,16 @@ def readPotDatafromArduino(stop):
 midi_enable = False # play generative sound through midi out (under development)
 graph_mode = False # show graphs
 real_mode = True # respawn control
-app_mode = True # via web / app or manual controller
+app_mode = False # via web / app or manual controller
 gradient_mode = True # individual fade in / out linked to energy
-fullscreen_mode = True
+fullscreen_mode = False
 fullscreen_graph = False
 debug = False
 rf = 2 # reduction factor
+
+if len(sys.argv) < 2:
+	print("Usage: lifebox2.py SERIAL_DEVICE")
+	sys.exit(0)
 
 # run thread
 stop = False
@@ -597,9 +607,9 @@ else:
 	# size for full HD screen (1920,1080)
 	# if you have other screen size, you need yo change matrix_size_x,matrix_size_y and circle_size
 	screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-	matrix_size_x = 92 #61 # max 92 at size 10
-	matrix_size_y = 50 # 33 # max 50 at size 10
-	circle_size = 10 #15
+	matrix_size_x = 61 #61 at size 15 # max 92 at size 10
+	matrix_size_y = 33 # 33 at size 15 # max 50 at size 10
+	circle_size = 15 
 
 textfont = pygame.font.SysFont('arial',30)
 debugfont = pygame.font.SysFont('arial',15)
