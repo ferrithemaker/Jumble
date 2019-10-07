@@ -12,7 +12,7 @@ while(True):
 	board.pass_time(2)
 	f = open('controllerdata','w')
 	for pin in range (0,11):
-		print ("Analog Pin %i : %s" % (pin, int(board.analog[pin].read()*1023)))
+		#print ("Analog Pin %i : %s" % (pin, int(board.analog[pin].read()*1023)))
 		f.write(str(int(board.analog[pin].read()*1023)))
 		f.write('\n')
 	f.close()

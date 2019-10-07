@@ -483,7 +483,6 @@ def draw_species(x,y):
 		yellowandblue = (255,0,255) # not actual yellow and blue, but magenta
 
 	if specie1[x][y][0] > 0 and specie2[x][y][0] > 0:
-		print(yellowandblue)
 		pygame.draw.circle(screen,yellowandblue,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0) # upper left margin = 40
 	if specie1[x][y][0] > 0 and specie2[x][y][0] == 0:
 		pygame.draw.circle(screen,yellow,(((x*2*circle_size)+circle_size)+40,((y*2*circle_size)+circle_size)+40),circle_size,0)
@@ -528,11 +527,11 @@ def readPotDatafromFile(stop):
 			potData[index] = int(x)
 			index = index + 1
 		file.close()
-		time.sleep(1)
+		time.sleep(0.2)
 		
 def readPotDatafromArduino(stop):
 	global potData
-	board = ArduinoMega(sys.argv[1])
+	board = ArduinoMega(sys.argv[2])
 	it = util.Iterator(board)
 	it.start()
 	for i in range (0,11):
@@ -558,16 +557,27 @@ def readPotDatafromArduino(stop):
 midi_enable = False # play generative sound through midi out (under development)
 graph_mode = False # show graphs
 real_mode = True # respawn control
-app_mode = False # via web / app or manual controller
 gradient_mode = True # individual fade in / out linked to energy
-fullscreen_mode = False
+fullscreen_mode = True
 fullscreen_graph = False
 debug = False
 rf = 2 # reduction factor
 
-if len(sys.argv) < 2:
-	print("Usage: lifebox2.py SERIAL_DEVICE")
-	sys.exit(0)
+if len(sys.argv) == 2: # no serial device
+	if sys.argv[1]!="--app":
+		print("Usage: lifebox2.py --app or lifebox2.py --controller [SERIAL_DEVICE]")
+		sys.exit(0)
+	else:
+		app_mode = True # app (data from file) mode
+if len(sys.argv) == 3: # serial device
+	if sys.argv[1]!="--controller":
+		print("Usage: lifebox2.py --app or lifebox2.py --controller [SERIAL_DEVICE]")
+		sys.exit(0)
+	else:
+		app_mode = False # get data directly from controller
+if len(sys.argv) != 2 and len(sys.argv) != 3:
+		print("Usage: lifebox2.py --app or lifebox2.py --controller [SERIAL_DEVICE]")
+		sys.exit(0)
 
 # run thread
 stop = False
