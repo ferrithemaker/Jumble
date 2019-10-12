@@ -142,69 +142,69 @@
     <p>
   	<label for="amount-sp1-1">LIFE:</label>
   	<p>Life expectancy of yellow species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp1-1" name="amount-sp1-1" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[0]?>">
+  	<input class="knob" id="amount-sp1-1" name="amount-sp1-1" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[4]?>">
     </p>
     <div id="sp1-1"></div>
     <p>
   	<label for="amount-sp1-2">REPRODUCTION:</label>
   	<p>Reproduction capability of yellow species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp1-2" name="amount-sp1-2" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[1]?>">
+  	<input class="knob" id="amount-sp1-2" name="amount-sp1-2" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[3]?>">
     </p>
     <div id="sp1-2"></div>
     <p>
   	<label for="amount-sp1-3">EFFICIENCY:</label>
   	<p>Energy consumption of yellow species individuals. Low values are better.</p>
-	<input class="knob" id="amount-sp1-3" name="amount-sp1-3" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[2]?>">
+	<input class="knob" id="amount-sp1-3" name="amount-sp1-3" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[5]?>">
     </p>
     <div id="sp1-3"></div>
     <p>
   	<label for="amount-sp1-4">GATHERING:</label>
   	<p>Energy gathering of yellow species individuals from green species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp1-4" name="amount-sp1-4" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[3]?>">
+  	<input class="knob" id="amount-sp1-4" name="amount-sp1-4" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[6]?>">
     </p>
   </div>
   <div id="tabs-2">
 	<p>
   	<label for="amount-sp2-1">LIFE:</label>
   	<p>Life expectancy of blue species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp2-1" name="amount-sp2-1" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[4]?>">
+  	<input class="knob" id="amount-sp2-1" name="amount-sp2-1" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[7]?>">
     </p>
     <div id="sp2-1"></div>
     <p>
   	<label for="amount-sp2-2">REPRODUCTION:</label>
 	<p>Reproduction capability of blue species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp2-2" name="amount-sp2-2" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[5]?>">
+  	<input class="knob" id="amount-sp2-2" name="amount-sp2-2" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[8]?>">
     </p>
     <div id="sp2-2"></div>
     <p>
   	<label for="amount-sp2-3">EFFICIENCY:</label>
   	<p>Energy consumption of blue species individuals. Low values are better.</p>
-  	<input class="knob" id="amount-sp2-3" name="amount-sp2-3" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[6]?>">
+  	<input class="knob" id="amount-sp2-3" name="amount-sp2-3" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[9]?>">
     </p>
     <div id="sp2-3"></div>
     <p>
   	<label for="amount-sp2-4">GATHERING:</label>
   	<p>Energy gathering of blue species individuals from green species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp2-4" name="amount-sp2-4" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[7]?>">
+  	<input class="knob" id="amount-sp2-4" name="amount-sp2-4" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[10]?>">
     </p>
   </div>
   <div id="tabs-3">
 	<p>
   	<label for="amount-sp3-1">LIFE:</label>
   	<p>Life expectancy of green species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp3-1" name="amount-sp3-1" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[8]?>">
+  	<input class="knob" id="amount-sp3-1" name="amount-sp3-1" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[0]?>">
     </p>
     <div id="sp3-1"></div>
     <p>
   	<label for="amount-sp3-2">REPRODUCTION:</label>
 	<p>Reproduction capability of green species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp3-2" name="amount-sp3-2" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[9]?>">
+  	<input class="knob" id="amount-sp3-2" name="amount-sp3-2" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[1]?>">
     </p>
     <div id="sp3-2"></div>
     <p>
   	<label for="amount-sp3-3">GENERATION:</label>
   	<p>Energy generation of green species individuals. High values are better.</p>
-  	<input class="knob" id="amount-sp3-3" name="amount-sp3-3" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[10]?>">
+  	<input class="knob" id="amount-sp3-3" name="amount-sp3-3" data-width="200" data-min="1" data-max="1023" value="<?=$lifeboxarray[2]?>">
     </p>
   </div>
 </div>
