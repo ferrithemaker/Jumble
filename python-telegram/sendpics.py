@@ -21,7 +21,7 @@ def handle(msg):
     from_id = msg['from']['id']
     #chat_id = msg['chat']['id']
     #print 'Got command: %s' % command
-    if from_id == 192114914:
+    if from_id == 0000000: #your chat id
     	if command.lower() == 'show':
         	camera.start_preview()
         	time.sleep(5)
