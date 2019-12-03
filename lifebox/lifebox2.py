@@ -610,9 +610,9 @@ pygame.display.set_caption('LifeBox')
 
 if fullscreen_mode == False:
 	screen = pygame.display.set_mode((1000,600))
-	matrix_size_x = 32
-	matrix_size_y = 32
-	circle_size = 5
+	matrix_size_x = 61
+	matrix_size_y = 33
+	circle_size = 15
 else:
 	# size for full HD screen (1920,1080)
 	# if you have other screen size, you need yo change matrix_size_x,matrix_size_y and circle_size
