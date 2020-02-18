@@ -1,5 +1,5 @@
 import time
-import rtmidi
+import rtmidi # sudo apt-get install python3-rtmidi not pip3 install rtmidi
 import random
 
 def chordGenerator():
