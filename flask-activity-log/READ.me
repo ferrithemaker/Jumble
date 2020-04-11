@@ -1,0 +1,26 @@
+install flask
+
+follow https://flask.palletsprojects.com/en/1.1.x/quickstart/
+
+$ export FLASK_APP=log.py
+$ flask run
+* Running on http://127.0.0.1:5000/
+
+
+install: sudo apt install libapache2-mod-wsgi-py3 
+
+Apache2 virtualhost:
+
+<VirtualHost *:80>
+
+    WSGIDaemonProcess log user=www-data group=www-data threads=5
+    WSGIScriptAlias / /var/www/webapp/log.wsgi
+
+    <Directory /var/www/webapp>
+        WSGIProcessGroup log
+        WSGIApplicationGroup %{GLOBAL}
+        Order deny,allow
+        Allow from all
+    </Directory>
+</VirtualHost>
+
