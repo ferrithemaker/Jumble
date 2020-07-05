@@ -1,6 +1,7 @@
 library(ggplot2)
 require(plyr)
 
+countrySelected = "Spain"
 
 get.spline.info <- function(object) {
   data.frame(x=object$x,y=object$y,df=object$df)
@@ -14,10 +15,10 @@ covidReshaped$daysFrom2020 <- (as.numeric(as.POSIXct(covidReshaped$date, format=
 covidReshaped <- subset(covidReshaped, select = -dateRep ) # elimina dateRep
 covidReshaped$deathsPer100K <- (covidReshaped$deaths/covidReshaped$popData2019)*100000
 covidReshaped$casesPer100K <- (covidReshaped$cases/covidReshaped$popData2019)*100000
-covidReshaped$maCases <- c(0)
-covidReshaped$maDeaths <- c(0)
+covidReshaped$movingAverageCases <- c(0)
+covidReshaped$movingAverageDeaths <- c(0)
 
-covidSubsetByCountry <- subset(covidReshaped,countriesAndTerritories=="France")
+covidSubsetByCountry <- subset(covidReshaped,countriesAndTerritories==countrySelected)
 
 for (row in 1:nrow(covidSubsetByCountry)) {
   country <- covidSubsetByCountry[row,"countriesAndTerritories"]
@@ -35,22 +36,22 @@ for (row in 1:nrow(covidSubsetByCountry)) {
     maCases <- (maL1$casesPer100K+maL2$casesPer100K+maL3$casesPer100K+maL4$casesPer100K+maL5$casesPer100K+maL6$casesPer100K+maL7$casesPer100K)/7
     maDeaths <- (maL1$deathsPer100K+maL2$deathsPer100K+maL3$deathsPer100K+maL4$deathsPer100K+maL5$deathsPer100K+maL6$deathsPer100K+maL7$deathsPer100K)/7
     if (length(maCases)>0) {
-      covidSubsetByCountry[row,"maCases"] <- maCases
+      covidSubsetByCountry[row,"movingAverageCases"] <- maCases
     }
     if (length(maDeaths)>0) {
-      covidSubsetByCountry[row,"maDeaths"] <- maDeaths
+      covidSubsetByCountry[row,"movingAverageDeaths"] <- maDeaths
     }
   }
 }
 
-splineCases <- smooth.spline(x=covidSubsetByCountry$daysFrom2020,y=covidSubsetByCountry$maCases,df=15)
-splineDeaths <- smooth.spline(x=covidSubsetByCountry$daysFrom2020,y=covidSubsetByCountry$maDeaths,df=15)
+splineCases <- smooth.spline(x=covidSubsetByCountry$daysFrom2020,y=covidSubsetByCountry$movingAverageCases,df=15)
+splineDeaths <- smooth.spline(x=covidSubsetByCountry$daysFrom2020,y=covidSubsetByCountry$movingAverageDeaths,df=15)
 spCases <- ldply(list(splineCases),get.spline.info) # convert the spline into dataframe (?)
 spDeaths <- ldply(list(splineDeaths),get.spline.info) # convert the spline into dataframe (?)
 
 #plot(covidSubsetByCountry$date,covidSubsetByCountry$ma)
-ggplot(covidSubsetByCountry, aes(daysFrom2020, maCases) ) +
-  geom_point() + geom_line(data=spCases,aes(x,y),color = "red")
+ggplot(covidSubsetByCountry, aes(daysFrom2020, movingAverageCases) ) +
+  geom_point() + geom_line(data=spCases,aes(x,y),color = "red") + ggtitle(paste("Evolution of COVID-19 cases: " ,countrySelected))
 
-ggplot(covidSubsetByCountry, aes(daysFrom2020, maDeaths) ) +
-  geom_point() + geom_line(data=spDeaths,aes(x,y),color = "red")
+ggplot(covidSubsetByCountry, aes(daysFrom2020, movingAverageDeaths) ) +
+  geom_point() + geom_line(data=spDeaths,aes(x,y),color = "red") + ggtitle(paste("Evolution of COVID-19 deaths: ",countrySelected))
