@@ -1,8 +1,0 @@
-setup.py
-Adafruit_PCA9685/PCA9685.py
-Adafruit_PCA9685/__init__.py
-Adafruit_PCA9685.egg-info/PKG-INFO
-Adafruit_PCA9685.egg-info/SOURCES.txt
-Adafruit_PCA9685.egg-info/dependency_links.txt
-Adafruit_PCA9685.egg-info/requires.txt
-Adafruit_PCA9685.egg-info/top_level.txt
