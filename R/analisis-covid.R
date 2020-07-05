@@ -1,7 +1,7 @@
 library(ggplot2)
 require(plyr)
 
-countrySelected = "Spain"
+countrySelected = "United_States_of_America"
 
 get.spline.info <- function(object) {
   data.frame(x=object$x,y=object$y,df=object$df)
@@ -15,8 +15,8 @@ covidReshaped$daysFrom2020 <- (as.numeric(as.POSIXct(covidReshaped$date, format=
 covidReshaped <- subset(covidReshaped, select = -dateRep ) # elimina dateRep
 covidReshaped$deathsPer100K <- (covidReshaped$deaths/covidReshaped$popData2019)*100000
 covidReshaped$casesPer100K <- (covidReshaped$cases/covidReshaped$popData2019)*100000
-covidReshaped$movingAverageCases <- c(0)
-covidReshaped$movingAverageDeaths <- c(0)
+covidReshaped$movingAverageCasesPer100K <- c(0)
+covidReshaped$movingAverageDeathsPer100K <- c(0)
 
 covidSubsetByCountry <- subset(covidReshaped,countriesAndTerritories==countrySelected)
 
@@ -36,10 +36,10 @@ for (row in 1:nrow(covidSubsetByCountry)) {
     maCases <- (maL1$casesPer100K+maL2$casesPer100K+maL3$casesPer100K+maL4$casesPer100K+maL5$casesPer100K+maL6$casesPer100K+maL7$casesPer100K)/7
     maDeaths <- (maL1$deathsPer100K+maL2$deathsPer100K+maL3$deathsPer100K+maL4$deathsPer100K+maL5$deathsPer100K+maL6$deathsPer100K+maL7$deathsPer100K)/7
     if (length(maCases)>0) {
-      covidSubsetByCountry[row,"movingAverageCases"] <- maCases
+      covidSubsetByCountry[row,"movingAverageCasesPer100K"] <- maCases
     }
     if (length(maDeaths)>0) {
-      covidSubsetByCountry[row,"movingAverageDeaths"] <- maDeaths
+      covidSubsetByCountry[row,"movingAverageDeathsPer100K"] <- maDeaths
     }
   }
 }
@@ -50,8 +50,8 @@ spCases <- ldply(list(splineCases),get.spline.info) # convert the spline into da
 spDeaths <- ldply(list(splineDeaths),get.spline.info) # convert the spline into dataframe (?)
 
 #plot(covidSubsetByCountry$date,covidSubsetByCountry$ma)
-ggplot(covidSubsetByCountry, aes(daysFrom2020, movingAverageCases) ) +
+ggplot(covidSubsetByCountry, aes(daysFrom2020, movingAverageCasesPer100K) ) +
   geom_point() + geom_line(data=spCases,aes(x,y),color = "red") + ggtitle(paste("Evolution of COVID-19 cases: " ,countrySelected))
 
-ggplot(covidSubsetByCountry, aes(daysFrom2020, movingAverageDeaths) ) +
+ggplot(covidSubsetByCountry, aes(daysFrom2020, movingAverageDeathsPer100K) ) +
   geom_point() + geom_line(data=spDeaths,aes(x,y),color = "red") + ggtitle(paste("Evolution of COVID-19 deaths: ",countrySelected))
