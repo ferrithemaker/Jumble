@@ -28,7 +28,7 @@ def chip8Cycle():
                 print ("Current PC: ",pc,hex(pc), "The memory[pc] is an integer:",memory[pc])                  
         else:                   
                 print ("Current PC: ", pc,hex(pc), "memory[pc]:",hex(ord(memory[pc])))
-        #t=V[0]+2 # break with error if v[0] is not int. DEBUG line
+        t=V[0]+2 # break with error if v[0] is not int. DEBUG line
         if (opcode & 0xF000) == 0x0000:
                 if (opcode & 0x000F) == 0x0000:
                         print ("Clears the screen")
@@ -155,12 +155,7 @@ def chip8Cycle():
                                 if (ord(pixel) & (0x80 >> xline)) != 0:
                                         if gfx[(xPos + xline + ((yPos + yline) * 64))] == 1:
                                                 V[0xF] = 1
-                                        conv = bytes(gfx[xPos + xline + ((yPos + yline) * 64)])
-                                        print(type(conv))
-                                        convtoint = int.from_bytes(conv,byteorder='big')
-                                        conv = convtoint ^ 1
-                                        conv.to_bytes(2,byteorder='big')
-                                        gfx[xPos + xline + ((yPos + yline) * 64)] = conv
+                                        gfx[xPos + xline + ((yPos + yline) * 64)] = gfx[xPos + xline + ((yPos + yline) * 64)] ^ 1
                 drawFlag = 1                    
                 pc=pc+2      
         if (opcode & 0xF000) == 0xE000:
@@ -304,26 +299,26 @@ sound_timer = 0 # 1 byte
 
 # fontset 
 chip8_fontset = [
-    b'\xF0', b'\x90', b'\x90', b'\x90', b'\xF0',
-    b'\x20', b'\x60', b'\x20', b'\x20', b'\x70',
-    b'\xF0', b'\x10', b'\xF0', b'\x80', b'\xF0',
-    b'\xF0', b'\x10', b'\xF0', b'\x10', b'\xF0',
-    b'\x90', b'\x90', b'\xF0', b'\x10', b'\x10',
-    b'\xF0', b'\x80', b'\xF0', b'\x10', b'\xF0',
-    b'\xF0', b'\x80', b'\xF0', b'\x90', b'\xF0',
-    b'\xF0', b'\x10', b'\x20', b'\x40', b'\x40',
-    b'\xF0', b'\x90', b'\xF0', b'\x90', b'\xF0',
-    b'\xF0', b'\x90', b'\xF0', b'\x10', b'\xF0',
-    b'\xF0', b'\x90', b'\xF0', b'\x90', b'\x90',
-    b'\xE0', b'\x90', b'\xE0', b'\x90', b'\xE0',
-    b'\xF0', b'\x80', b'\x80', b'\x80', b'\xF0',
-    b'\xE0', b'\x90', b'\x90', b'\x90', b'\xE0',
-    b'\xF0', b'\x80', b'\xF0', b'\x80', b'\xF0',
-    b'\xF0', b'\x80', b'\xF0', b'\x80', b'\x80']
+    0xF0, 0x90, 0x90, 0x90, 0xF0,
+    0x20, 0x60, 0x20, 0x20, 0x70,
+    0xF0, 0x10, 0xF0, 0x80, 0xF0,
+    0xF0, 0x10, 0xF0, 0x10, 0xF0,
+    0x90, 0x90, 0xF0, 0x10, 0x10,
+    0xF0, 0x80, 0xF0, 0x10, 0xF0,
+    0xF0, 0x80, 0xF0, 0x90, 0xF0,
+    0xF0, 0x10, 0x20, 0x40, 0x40,
+    0xF0, 0x90, 0xF0, 0x90, 0xF0,
+    0xF0, 0x90, 0xF0, 0x10, 0xF0,
+    0xF0, 0x90, 0xF0, 0x90, 0x90,
+    0xE0, 0x90, 0xE0, 0x90, 0xE0,
+    0xF0, 0x80, 0x80, 0x80, 0xF0,
+    0xE0, 0x90, 0x90, 0x90, 0xE0,
+    0xF0, 0x80, 0xF0, 0x80, 0xF0,
+    0xF0, 0x80, 0xF0, 0x80, 0x80]
 
 # init memory (blank)
 for i in range (0,maxMemorySize):
-        memory.append(b'\x00')
+        memory.append(0x00)
 
 # load fontset to memory
 for (i, value) in enumerate(chip8_fontset): # copy fontset to memory array
@@ -332,19 +327,19 @@ for (i, value) in enumerate(chip8_fontset): # copy fontset to memory array
 
 # init keys
 for i in range (0,maxKeyStats):
-        keys.append(b'\x00')
+        keys.append(0x00)
 
 # init gfx
 for i in range(0,gfxSize):
-        gfx.append(b'\x00')
+        gfx.append(0x00)
 
 # init stack
 for i in range(0,stackSize):
-        stack.append(b'\x00')
+        stack.append(0x00)
 
 # init V (CPU registers)
 for i in range(0,maxV):
-        V.append(b'\x00')
+        V.append(0x00)
 
 # ***************** TESTED OK
 
@@ -353,9 +348,9 @@ drawFlag = 1 # 1 true 0 false
 
         
 i=0
-with open('../roms/invaders.c8','rb') as rom:
+with open('../roms/tetris.c8','rb') as rom:
         while 1: # copy ROM to memory
-                byte_read=rom.read(1)
+                byte_read=rom.read(0x01)
                 if not byte_read:
                         rom.close() # close file
                         break
@@ -363,9 +358,6 @@ with open('../roms/invaders.c8','rb') as rom:
                 i=i+1
 romLen=i # store the lenght of the loaded ROM
 
-for (pos,el) in enumerate(memory):
-        print(pos,el)
-#sys.exit()
 # pygame init
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
