@@ -3,6 +3,11 @@ int[][][] position = new int[4][6][2];
 float minutesRadius;
 float hoursRadius;
 float clockDiameter;
+int minFirstDigit;
+int minSecondDigit;
+int hourFirstDigit;
+int hourSecondDigit;
+
 
 void initNumbers() {
   number[0][0][0]=6; number[0][0][1]=15;
@@ -17,6 +22,12 @@ void initNumbers() {
   number[1][3][0]=0; number[1][3][1]=30;
   number[1][4][0]=7; number[1][4][1]=35;
   number[1][5][0]=0; number[1][5][1]=0;
+  number[2][0][0]=3; number[2][0][1]=15;
+  number[2][1][0]=9; number[2][1][1]=30;
+  number[2][2][0]=3; number[2][2][1]=30;
+  number[2][3][0]=0; number[2][3][1]=45;
+  number[2][4][0]=0; number[2][4][1]=15;
+  number[2][5][0]=9; number[2][5][1]=45;
   number[3][0][0]=3; number[3][0][1]=15;
   number[3][1][0]=6; number[3][1][1]=45;
   number[3][2][0]=3; number[3][2][1]=15;
@@ -29,6 +40,12 @@ void initNumbers() {
   number[4][3][0]=9; number[4][3][1]=30;
   number[4][4][0]=7; number[4][4][1]=35;
   number[4][5][0]=0; number[4][5][1]=0;
+  number[5][0][0]=3; number[5][0][1]=30;
+  number[5][1][0]=9; number[5][1][1]=45;
+  number[5][2][0]=0; number[5][2][1]=15;
+  number[5][3][0]=9; number[5][3][1]=30;
+  number[5][4][0]=3; number[5][4][1]=15;
+  number[5][5][0]=0; number[5][5][1]=45;
   number[6][0][0]=6; number[6][0][1]=30;
   number[6][1][0]=2; number[6][1][1]=10;
   number[6][2][0]=0; number[6][2][1]=30;
@@ -118,13 +135,20 @@ void draw() {
   
   // Draw the clock background
   fill(80);
-  int second = 1;
+  int second = 5;
   
-  for (int pos = 0;pos<4;pos++) {
+  //for (int pos = 0;pos<4;pos++) {
     for (int i=0;i<6;i++) {
-      drawClock(position[pos][i][0],position[pos][i][1],number[second][i][0],number[second][i][1]);
+      minFirstDigit=int(minute() / 10);
+      minSecondDigit=int(minute() % 10);
+      hourFirstDigit=int(hour() / 10);
+      hourSecondDigit=int(hour() % 10);
+      drawClock(position[0][i][0],position[0][i][1],number[hourFirstDigit][i][0],number[hourFirstDigit][i][1]);
+      drawClock(position[1][i][0],position[1][i][1],number[hourSecondDigit][i][0],number[hourSecondDigit][i][1]);
+      drawClock(position[2][i][0],position[2][i][1],number[minFirstDigit][i][0],number[minFirstDigit][i][1]);
+      drawClock(position[3][i][0],position[3][i][1],number[minSecondDigit][i][0],number[minSecondDigit][i][1]);
     }
-  }
+  //}
   
   
 }
