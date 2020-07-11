@@ -8,9 +8,9 @@ int minSecondDigit;
 int hourFirstDigit;
 int hourSecondDigit;
 int oldMinSecondDigit = -1;
-boolean init = true;
 int count = 0;
 boolean runningAnimation=true;
+int time;
 
 void initNumbers() {
   number[0][0][0]=6; number[0][0][1]=15;
@@ -38,7 +38,7 @@ void initNumbers() {
   number[3][4][0]=3; number[3][4][1]=15;
   number[3][5][0]=0; number[3][5][1]=45;
   number[4][0][0]=6; number[4][0][1]=30;
-  number[4][1][0]=2; number[4][1][1]=10;
+  number[4][1][0]=1; number[4][1][1]=5;
   number[4][2][0]=0; number[4][2][1]=15;
   number[4][3][0]=9; number[4][3][1]=30;
   number[4][4][0]=7; number[4][4][1]=35;
@@ -50,17 +50,17 @@ void initNumbers() {
   number[5][4][0]=3; number[5][4][1]=15;
   number[5][5][0]=0; number[5][5][1]=45;
   number[6][0][0]=6; number[6][0][1]=30;
-  number[6][1][0]=2; number[6][1][1]=10;
+  number[6][1][0]=1; number[6][1][1]=5;
   number[6][2][0]=0; number[6][2][1]=30;
   number[6][3][0]=9; number[6][3][1]=30;
   number[6][4][0]=0; number[6][4][1]=15;
   number[6][5][0]=0; number[6][5][1]=45;
-  number[7][0][0]=9; number[7][0][1]=15;
+  number[7][0][0]=3; number[7][0][1]=15;
   number[7][1][0]=9; number[7][1][1]=30;
   number[7][2][0]=7; number[7][2][1]=35;
   number[7][3][0]=0; number[7][3][1]=30;
   number[7][4][0]=7; number[7][4][1]=35;
-  number[7][5][0]=0; number[7][5][1]=30;
+  number[7][5][0]=0; number[7][5][1]=0;
   number[8][0][0]=6; number[8][0][1]=15;
   number[8][1][0]=6; number[8][1][1]=45;
   number[8][2][0]=0; number[8][2][1]=20;
@@ -106,7 +106,8 @@ void drawClock(int cx,int cy,int hour,int min) {
   float m = map(min, 0, 60, 0, TWO_PI) - HALF_PI; 
   float h = map(hour, 0, 24, 0, TWO_PI * 2) - HALF_PI;
   
-  noFill();
+  //noFill();
+  fill(0);
   strokeWeight(4);
   stroke(200,100,100);
   ellipse(cx, cy, clockDiameter, clockDiameter);
@@ -130,48 +131,60 @@ void setup() {
   minutesRadius = radius * 0.60;
   hoursRadius = radius * 0.60;
   clockDiameter = radius * 1.3;
+  time = millis();
 }
 
 void draw() {
-  int time = millis();
-  if (millis() > time + 2000)
-  {
-    // action
-    time = millis();
-  }
-  if (runningAnimation == false) {
-    background(0);
+  if (runningAnimation == true) {
+    if (millis() > time + 500)
+    {
+      for (int i=0;i<6;i++) {
+        if (int(random(0,12))==0) {
+          drawClock(position[0][i][0],position[0][i][1],int(random(0,11)),int(random(0,59)));
+        }
+        if (int(random(0,12))==0) {
+          drawClock(position[1][i][0],position[1][i][1],int(random(0,11)),int(random(0,59)));
+        }
+        if (int(random(0,12))==0) {
+          drawClock(position[2][i][0],position[2][i][1],int(random(0,11)),int(random(0,59)));
+        }
+        if (int(random(0,12))==0) {
+          drawClock(position[3][i][0],position[3][i][1],int(random(0,11)),int(random(0,59)));
+        }
+      }
+      count++;
+      time = millis();
+      if (count == 10) {
+        runningAnimation = false;
+        count = 0;
+      }
+    }
   }
   minFirstDigit=int(minute() / 10);
   minSecondDigit=int(minute() % 10);
   hourFirstDigit=int(hour() / 10);
   hourSecondDigit=int(hour() % 10);
-  if (oldMinSecondDigit!=minSecondDigit && init==true) {
+  if (oldMinSecondDigit!=minSecondDigit) {
     runningAnimation = true;
-    count = 0;
-    for (int i=0;i<6;i++) {  
-      drawClock(position[0][i][0],position[0][i][1],int(random(0,11)),int(random(0,59)));
-      drawClock(position[1][i][0],position[1][i][1],int(random(0,11)),int(random(0,59)));
-      drawClock(position[2][i][0],position[2][i][1],int(random(0,11)),int(random(0,59)));
-      drawClock(position[3][i][0],position[3][i][1],int(random(0,11)),int(random(0,59)));
-    }
-    init = false;
   } else {
     if (runningAnimation == false) {
-      for (int i=0;i<6;i++) {  
-        drawClock(position[0][i][0],position[0][i][1],number[hourFirstDigit][i][0],number[hourFirstDigit][i][1]);
-        drawClock(position[1][i][0],position[1][i][1],number[hourSecondDigit][i][0],number[hourSecondDigit][i][1]);
-        drawClock(position[2][i][0],position[2][i][1],number[minFirstDigit][i][0],number[minFirstDigit][i][1]);
-        drawClock(position[3][i][0],position[3][i][1],number[minSecondDigit][i][0],number[minSecondDigit][i][1]);
+      //background(0);
+      for (int i=0;i<6;i++) {
+        if (int(random(0,6))==0) {
+          drawClock(position[0][i][0],position[0][i][1],number[hourFirstDigit][i][0],number[hourFirstDigit][i][1]);
+        }
+        if (int(random(0,6))==0) {
+          drawClock(position[1][i][0],position[1][i][1],number[hourSecondDigit][i][0],number[hourSecondDigit][i][1]);
+        }
+        if (int(random(0,6))==0) {
+          drawClock(position[2][i][0],position[2][i][1],number[minFirstDigit][i][0],number[minFirstDigit][i][1]);
+        }
+        if (int(random(0,6))==0) {
+          drawClock(position[3][i][0],position[3][i][1],number[minSecondDigit][i][0],number[minSecondDigit][i][1]);
+        }
+        delay(100);
       }
-      oldMinSecondDigit=minSecondDigit;
-      init = true;
-      count = 0;
     }
   }
-  if (count > 500) {
-    runningAnimation = false;
-  }
-  count++;
-  println(count);
+  oldMinSecondDigit=minSecondDigit;
 }
