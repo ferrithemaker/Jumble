@@ -92,10 +92,10 @@ public void initNumbers() {
 }
 
 public void initPositions() {
-  int centerDistance = 25;
-  int upRow = 100;
+  int centerDistance = 27;
+  int upRow = 90;
   int midRow = 170;
-  int downRow = 240;
+  int downRow = 250;
   position[0][0][0]=centerDistance;position[0][0][1]=upRow;
   position[0][1][0]=centerDistance*3;position[0][1][1]=upRow;
   position[0][2][0]=centerDistance;position[0][2][1]=midRow;
@@ -134,9 +134,9 @@ public void drawClock(int cx,int cy,int hour,int min) {
   
   // Draw the hands of the clock
   stroke(200);
-  strokeWeight(1);
+  strokeWeight(2);
   line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
-  strokeWeight(1);
+  strokeWeight(2);
   line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
 }
 
@@ -147,7 +147,7 @@ public void setup() {
   
   background(0);
   stroke(255);
-  int radius = 45;
+  int radius = 48;
   minutesRadius = radius * 0.5f;
   hoursRadius = radius * 0.5f;
   clockDiameter = radius * 1;
