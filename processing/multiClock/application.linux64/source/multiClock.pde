@@ -76,15 +76,15 @@ void initNumbers() {
 }
 
 void initPositions() {
-  int centerDistance = 27;
-  int upRow = 90;
+  int centerDistance = 30;
+  int upRow = 95;
   int midRow = 170;
-  int downRow = 250;
-  position[0][0][0]=centerDistance;position[0][0][1]=upRow;
+  int downRow = 245;
+  position[0][0][0]=centerDistance-5;position[0][0][1]=upRow;
   position[0][1][0]=centerDistance*3;position[0][1][1]=upRow;
-  position[0][2][0]=centerDistance;position[0][2][1]=midRow;
+  position[0][2][0]=centerDistance-5;position[0][2][1]=midRow;
   position[0][3][0]=centerDistance*3;position[0][3][1]=midRow;
-  position[0][4][0]=centerDistance;position[0][4][1]=downRow;
+  position[0][4][0]=centerDistance-5;position[0][4][1]=downRow;
   position[0][5][0]=centerDistance*3;position[0][5][1]=downRow;
   position[1][0][0]=centerDistance*5;position[1][0][1]=upRow;
   position[1][1][0]=centerDistance*7;position[1][1][1]=upRow;
