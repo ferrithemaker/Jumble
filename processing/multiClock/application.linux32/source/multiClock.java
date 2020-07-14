@@ -92,34 +92,34 @@ public void initNumbers() {
 }
 
 public void initPositions() {
-  int centerDistance = 50;
-  int midRow = 150;
-  int upRow = 80;
-  int downRow = 220;
+  int centerDistance = 25;
+  int upRow = 100;
+  int midRow = 170;
+  int downRow = 240;
   position[0][0][0]=centerDistance;position[0][0][1]=upRow;
-  position[0][1][0]=centerDistance*2;position[0][1][1]=upRow;
+  position[0][1][0]=centerDistance*3;position[0][1][1]=upRow;
   position[0][2][0]=centerDistance;position[0][2][1]=midRow;
-  position[0][3][0]=centerDistance*2;position[0][3][1]=midRow;
+  position[0][3][0]=centerDistance*3;position[0][3][1]=midRow;
   position[0][4][0]=centerDistance;position[0][4][1]=downRow;
-  position[0][5][0]=centerDistance*2;position[0][5][1]=downRow;
-  position[1][0][0]=centerDistance*3;position[1][0][1]=upRow;
-  position[1][1][0]=centerDistance*4;position[1][1][1]=upRow;
-  position[1][2][0]=centerDistance*3;position[1][2][1]=midRow;
-  position[1][3][0]=centerDistance*4;position[1][3][1]=midRow;
-  position[1][4][0]=centerDistance*3;position[1][4][1]=downRow;
-  position[1][5][0]=centerDistance*4;position[1][5][1]=downRow;
-  position[2][0][0]=centerDistance*5;position[2][0][1]=upRow;
-  position[2][1][0]=centerDistance*6;position[2][1][1]=upRow;
-  position[2][2][0]=centerDistance*5;position[2][2][1]=midRow;
-  position[2][3][0]=centerDistance*6;position[2][3][1]=midRow;
-  position[2][4][0]=centerDistance*5;position[2][4][1]=downRow;
-  position[2][5][0]=centerDistance*6;position[2][5][1]=downRow;
-  position[3][0][0]=centerDistance*7;position[3][0][1]=upRow;
-  position[3][1][0]=centerDistance*8;position[3][1][1]=upRow;
-  position[3][2][0]=centerDistance*7;position[3][2][1]=midRow;
-  position[3][3][0]=centerDistance*8;position[3][3][1]=midRow;
-  position[3][4][0]=centerDistance*7;position[3][4][1]=downRow;
-  position[3][5][0]=centerDistance*8;position[3][5][1]=downRow;
+  position[0][5][0]=centerDistance*3;position[0][5][1]=downRow;
+  position[1][0][0]=centerDistance*5;position[1][0][1]=upRow;
+  position[1][1][0]=centerDistance*7;position[1][1][1]=upRow;
+  position[1][2][0]=centerDistance*5;position[1][2][1]=midRow;
+  position[1][3][0]=centerDistance*7;position[1][3][1]=midRow;
+  position[1][4][0]=centerDistance*5;position[1][4][1]=downRow;
+  position[1][5][0]=centerDistance*7;position[1][5][1]=downRow;
+  position[2][0][0]=centerDistance*9;position[2][0][1]=upRow;
+  position[2][1][0]=centerDistance*11;position[2][1][1]=upRow;
+  position[2][2][0]=centerDistance*9;position[2][2][1]=midRow;
+  position[2][3][0]=centerDistance*11;position[2][3][1]=midRow;
+  position[2][4][0]=centerDistance*9;position[2][4][1]=downRow;
+  position[2][5][0]=centerDistance*11;position[2][5][1]=downRow;
+  position[3][0][0]=centerDistance*13;position[3][0][1]=upRow;
+  position[3][1][0]=centerDistance*15;position[3][1][1]=upRow;
+  position[3][2][0]=centerDistance*13;position[3][2][1]=midRow;
+  position[3][3][0]=centerDistance*15;position[3][3][1]=midRow;
+  position[3][4][0]=centerDistance*13;position[3][4][1]=downRow;
+  position[3][5][0]=centerDistance*15;position[3][5][1]=downRow;
 }
 
 public void drawClock(int cx,int cy,int hour,int min) {
