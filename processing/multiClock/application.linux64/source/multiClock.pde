@@ -112,15 +112,15 @@ void drawClock(int cx,int cy,int hour,int min) {
   
   //noFill();
   fill(0);
-  strokeWeight(1);
-  stroke(200,100,100);
-  ellipse(cx, cy, clockDiameter, clockDiameter);
+  //strokeWeight(1);
+  //stroke(200,100,100);
+  //ellipse(cx, cy, clockDiameter, clockDiameter);
   
   // Draw the hands of the clock
   stroke(200);
-  strokeWeight(2);
+  strokeWeight(3);
   line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
-  strokeWeight(2);
+  strokeWeight(3);
   line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
 }
 
