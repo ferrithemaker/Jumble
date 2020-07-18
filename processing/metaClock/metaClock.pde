@@ -76,7 +76,7 @@ void initNumbers() {
 }
 
 void initPositions() {
-  int centerDistance = 30;
+  int centerDistance = 45;
   int upRow = 95;
   int midRow = 170;
   int downRow = 245;
@@ -113,8 +113,8 @@ void drawClock(int cx,int cy,int hour,int min) {
   //noFill();
   fill(0);
   strokeWeight(3);
-  //stroke(200,100,100);
-  stroke(0);
+  stroke(200,100,100);
+  //stroke(0);
   ellipse(cx, cy, clockDiameter, clockDiameter);
   
   // Draw the hands of the clock
@@ -129,10 +129,10 @@ void drawClock(int cx,int cy,int hour,int min) {
 void setup() {
   initNumbers();
   initPositions();
-  size(480, 320);
+  size(800, 800);
   background(0);
   stroke(255);
-  int radius = 48;
+  int radius = 70;
   minutesRadius = radius * 0.5;
   hoursRadius = radius * 0.5;
   clockDiameter = radius * 1;

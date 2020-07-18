@@ -1,19 +1,3 @@
-import processing.core.*; 
-import processing.data.*; 
-import processing.event.*; 
-import processing.opengl.*; 
-
-import java.util.HashMap; 
-import java.util.ArrayList; 
-import java.io.File; 
-import java.io.BufferedReader; 
-import java.io.PrintWriter; 
-import java.io.InputStream; 
-import java.io.OutputStream; 
-import java.io.IOException; 
-
-public class multiClock extends PApplet {
-
 int[][][] number = new int[10][6][2];
 int[][][] position = new int[4][6][2];
 float minutesRadius;
@@ -28,7 +12,7 @@ int count = 0;
 boolean runningAnimation=true;
 int time;
 
-public void initNumbers() {
+void initNumbers() {
   number[0][0][0]=6; number[0][0][1]=15;
   number[0][1][0]=6; number[0][1][1]=45;
   number[0][2][0]=0; number[0][2][1]=30;
@@ -91,8 +75,8 @@ public void initNumbers() {
   number[9][5][0]=0; number[9][5][1]=30;
 }
 
-public void initPositions() {
-  int centerDistance = 30;
+void initPositions() {
+  int centerDistance = 45;
   int upRow = 95;
   int midRow = 170;
   int downRow = 245;
@@ -122,15 +106,15 @@ public void initPositions() {
   position[3][5][0]=centerDistance*15;position[3][5][1]=downRow;
 }
 
-public void drawClock(int cx,int cy,int hour,int min) {
+void drawClock(int cx,int cy,int hour,int min) {
   float m = map(min, 0, 60, 0, TWO_PI) - HALF_PI; 
   float h = map(hour, 0, 24, 0, TWO_PI * 2) - HALF_PI;
   
   //noFill();
   fill(0);
   strokeWeight(3);
-  //stroke(200,100,100);
-  stroke(0);
+  stroke(200,100,100);
+  //stroke(0);
   ellipse(cx, cy, clockDiameter, clockDiameter);
   
   // Draw the hands of the clock
@@ -142,35 +126,35 @@ public void drawClock(int cx,int cy,int hour,int min) {
 }
 
 
-public void setup() {
+void setup() {
   initNumbers();
   initPositions();
-  
+  size(800, 800);
   background(0);
   stroke(255);
-  int radius = 48;
-  minutesRadius = radius * 0.5f;
-  hoursRadius = radius * 0.5f;
+  int radius = 70;
+  minutesRadius = radius * 0.5;
+  hoursRadius = radius * 0.5;
   clockDiameter = radius * 1;
   time = millis();
 }
 
-public void draw() {
+void draw() {
   if (runningAnimation == true) {
     if (millis() > time + 500)
     {
       for (int i=0;i<6;i++) {
-        if (PApplet.parseInt(random(0,12))==0) {
-          drawClock(position[0][i][0],position[0][i][1],PApplet.parseInt(random(0,11)),PApplet.parseInt(random(0,59)));
+        if (int(random(0,12))==0) {
+          drawClock(position[0][i][0],position[0][i][1],int(random(0,11)),int(random(0,59)));
         }
-        if (PApplet.parseInt(random(0,12))==0) {
-          drawClock(position[1][i][0],position[1][i][1],PApplet.parseInt(random(0,11)),PApplet.parseInt(random(0,59)));
+        if (int(random(0,12))==0) {
+          drawClock(position[1][i][0],position[1][i][1],int(random(0,11)),int(random(0,59)));
         }
-        if (PApplet.parseInt(random(0,12))==0) {
-          drawClock(position[2][i][0],position[2][i][1],PApplet.parseInt(random(0,11)),PApplet.parseInt(random(0,59)));
+        if (int(random(0,12))==0) {
+          drawClock(position[2][i][0],position[2][i][1],int(random(0,11)),int(random(0,59)));
         }
-        if (PApplet.parseInt(random(0,12))==0) {
-          drawClock(position[3][i][0],position[3][i][1],PApplet.parseInt(random(0,11)),PApplet.parseInt(random(0,59)));
+        if (int(random(0,12))==0) {
+          drawClock(position[3][i][0],position[3][i][1],int(random(0,11)),int(random(0,59)));
         }
       }
       count++;
@@ -181,26 +165,26 @@ public void draw() {
       }
     }
   }
-  minFirstDigit=PApplet.parseInt(minute() / 10);
-  minSecondDigit=PApplet.parseInt(minute() % 10);
-  hourFirstDigit=PApplet.parseInt(hour() / 10);
-  hourSecondDigit=PApplet.parseInt(hour() % 10);
+  minFirstDigit=int(minute() / 10);
+  minSecondDigit=int(minute() % 10);
+  hourFirstDigit=int(hour() / 10);
+  hourSecondDigit=int(hour() % 10);
   if (oldMinSecondDigit!=minSecondDigit) {
     runningAnimation = true;
   } else {
     if (runningAnimation == false) {
       //background(0);
       for (int i=0;i<6;i++) {
-        if (PApplet.parseInt(random(0,4))==0) {
+        if (int(random(0,4))==0) {
           drawClock(position[0][i][0],position[0][i][1],number[hourFirstDigit][i][0],number[hourFirstDigit][i][1]);
         }
-        if (PApplet.parseInt(random(0,4))==0) {
+        if (int(random(0,4))==0) {
           drawClock(position[1][i][0],position[1][i][1],number[hourSecondDigit][i][0],number[hourSecondDigit][i][1]);
         }
-        if (PApplet.parseInt(random(0,4))==0) {
+        if (int(random(0,4))==0) {
           drawClock(position[2][i][0],position[2][i][1],number[minFirstDigit][i][0],number[minFirstDigit][i][1]);
         }
-        if (PApplet.parseInt(random(0,4))==0) {
+        if (int(random(0,4))==0) {
           drawClock(position[3][i][0],position[3][i][1],number[minSecondDigit][i][0],number[minSecondDigit][i][1]);
         }
         delay(100);
@@ -208,14 +192,4 @@ public void draw() {
     }
   }
   oldMinSecondDigit=minSecondDigit;
-}
-  public void settings() {  size(480, 320); }
-  static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "--present", "--window-color=#000000", "--hide-stop", "multiClock" };
-    if (passedArgs != null) {
-      PApplet.main(concat(appletArgs, passedArgs));
-    } else {
-      PApplet.main(appletArgs);
-    }
-  }
 }
