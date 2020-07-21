@@ -25,6 +25,7 @@ int hourFirstDigit;
 int hourSecondDigit;
 int oldMinSecondDigit = -1;
 int count = 0;
+boolean rainbow=true;
 boolean runningAnimation=true;
 int time;
 
@@ -92,7 +93,7 @@ public void initNumbers() {
 }
 
 public void initPositions() {
-  int centerDistance = 45;
+  int centerDistance = 30;
   int upRow = 95;
   int midRow = 170;
   int downRow = 245;
@@ -129,10 +130,16 @@ public void drawClock(int cx,int cy,int hour,int min) {
   //noFill();
   fill(0);
   strokeWeight(3);
-  stroke(200,100,100);
-  //stroke(0);
-  ellipse(cx, cy, clockDiameter, clockDiameter);
-  
+  //stroke(200,100,100); red stroke
+  if (rainbow==true) {
+    stroke(0); // black stroke
+    fill(map(min,0,59,0,255),map(hour,0,23,0,255),map(cx+cy,0,1600,0,255));
+    ellipse(cx, cy, clockDiameter+3, clockDiameter+3);
+  } else {
+    //stroke(200,100,100)
+    stroke(0); // black stroke
+    ellipse(cx, cy, clockDiameter, clockDiameter);
+  }
   // Draw the hands of the clock
   stroke(200);
   strokeWeight(3);
@@ -148,7 +155,7 @@ public void setup() {
   
   background(0);
   stroke(255);
-  int radius = 70;
+  int radius = 48;
   minutesRadius = radius * 0.5f;
   hoursRadius = radius * 0.5f;
   clockDiameter = radius * 1;
@@ -209,7 +216,7 @@ public void draw() {
   }
   oldMinSecondDigit=minSecondDigit;
 }
-  public void settings() {  size(800, 800); }
+  public void settings() {  size(480, 320); }
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "--present", "--window-color=#000000", "--hide-stop", "metaClock" };
     if (passedArgs != null) {
