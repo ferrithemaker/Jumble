@@ -73,11 +73,11 @@ void initNumbers() {
   number[9][2][0]=0; number[9][2][1]=15;
   number[9][3][0]=0; number[9][3][1]=30;
   number[9][4][0]=7; number[9][4][1]=35;
-  number[9][5][0]=0; number[9][5][1]=30;
+  number[9][5][0]=0; number[9][5][1]=0;
 }
 
 void initPositions() {
-  int centerDistance = 30;
+  int centerDistance = 45;
   int upRow = 95;
   int midRow = 170;
   int downRow = 245;
@@ -118,7 +118,7 @@ void drawClock(int cx,int cy,int hour,int min) {
   if (rainbow==true) {
     stroke(0); // black stroke
     fill(map(min,0,59,0,255),map(hour,0,23,0,255),map(cx+cy,0,1600,0,255));
-    ellipse(cx, cy, clockDiameter+3, clockDiameter+3);
+    ellipse(cx, cy, clockDiameter+4, clockDiameter+4);
   } else {
     //stroke(200,100,100)
     stroke(0); // black stroke
@@ -126,9 +126,9 @@ void drawClock(int cx,int cy,int hour,int min) {
   }
   // Draw the hands of the clock
   stroke(200);
-  strokeWeight(3);
+  strokeWeight(4);
   line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
-  strokeWeight(3);
+  strokeWeight(4);
   line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
 }
 
@@ -136,10 +136,10 @@ void drawClock(int cx,int cy,int hour,int min) {
 void setup() {
   initNumbers();
   initPositions();
-  size(480, 320);
+  size(800, 800);
   background(0);
   stroke(255);
-  int radius = 48;
+  int radius = 70;
   minutesRadius = radius * 0.5;
   hoursRadius = radius * 0.5;
   clockDiameter = radius * 1;
