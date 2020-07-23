@@ -9,7 +9,7 @@ int hourFirstDigit;
 int hourSecondDigit;
 int oldMinSecondDigit = -1;
 int count = 0;
-boolean rainbow=true;
+boolean rainbow=false;
 boolean runningAnimation=true;
 int time;
 
@@ -120,8 +120,8 @@ void drawClock(int cx,int cy,int hour,int min) {
     fill(map(min,0,59,0,255),map(hour,0,23,0,255),map(cx+cy,0,1600,0,255));
     ellipse(cx, cy, clockDiameter+4, clockDiameter+4);
   } else {
-    //stroke(200,100,100)
-    stroke(0); // black stroke
+    stroke(200,100,100);
+    //stroke(0); // black stroke
     ellipse(cx, cy, clockDiameter, clockDiameter);
   }
   // Draw the hands of the clock
