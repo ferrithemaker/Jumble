@@ -5,7 +5,7 @@
  */
 final static int W = 800;  // width of the hight map
 final static int H = 600;  // height of the hight map
-final static float k = 0.04;  //noise coefficient. play with it to get more or less «rough» land
+final static float k = 0.004;  //noise coefficient. play with it to get more or less «rough» land
 
 final static int l = 10;  //show hight differense with this many contour lines
 
@@ -21,7 +21,7 @@ void setup() {
   m = new float[W][H];
   for (int j=0; j<H; j++) {
     for (int i=0; i<W; i++) {    
-      m[i][j] = noise((W+i)*k/4,(H+j)*k/4);
+      m[i][j] = noise((i)*k,(j)*k);
     }
   }
 }
