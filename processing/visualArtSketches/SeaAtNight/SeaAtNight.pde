@@ -58,7 +58,6 @@ void draw() {
     }
     endShape();
   }
-  delay(10);
 }
 
   

@@ -7,7 +7,7 @@ final static int W = 800;  // width of the hight map
 final static int H = 600;  // height of the hight map
 final static float k = 0.004;  //noise coefficient. play with it to get more or less «rough» land
 
-final static int l = 10;  //show hight differense with this many contour lines
+final static int l = 50;  //show hight differense with this many contour lines
 
 final static color c0 = #000000;  //color to draw background
 final static color c1 = #008888;  //color to draw isolines
