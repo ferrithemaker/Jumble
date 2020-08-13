@@ -9,7 +9,7 @@ int hourFirstDigit;
 int hourSecondDigit;
 int oldMinSecondDigit = -1;
 int count = 0;
-boolean rainbow=false;
+boolean rainbow=true;
 boolean runningAnimation=true;
 int time;
 
@@ -77,10 +77,10 @@ void initNumbers() {
 }
 
 void initPositions() {
-  int centerDistance = 45;
-  int upRow = 95;
-  int midRow = 170;
-  int downRow = 245;
+  int centerDistance = 120;
+  int upRow = 250;
+  int midRow = 550;
+  int downRow = 850;
   position[0][0][0]=centerDistance-5;position[0][0][1]=upRow;
   position[0][1][0]=centerDistance*3;position[0][1][1]=upRow;
   position[0][2][0]=centerDistance-5;position[0][2][1]=midRow;
@@ -117,7 +117,8 @@ void drawClock(int cx,int cy,int hour,int min) {
   //stroke(200,100,100); red stroke
   if (rainbow==true) {
     stroke(0); // black stroke
-    fill(map(min,0,59,0,255),map(hour,0,23,0,255),map(cx+cy,0,1600,0,255));
+    //noStroke();
+    fill(map(min,0,59,0,255),map(hour,0,23,0,255),map(int((cx+cy)/3),0,3000,0,155));
     ellipse(cx, cy, clockDiameter+4, clockDiameter+4);
   } else {
     stroke(200,100,100);
@@ -126,20 +127,25 @@ void drawClock(int cx,int cy,int hour,int min) {
   }
   // Draw the hands of the clock
   stroke(200);
-  strokeWeight(4);
+  strokeWeight(6);
   line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
-  strokeWeight(4);
+  strokeWeight(6);
   line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
 }
 
 
 void setup() {
+  fullScreen(P2D);
+  smooth(8);
+  PImage img;
+  img = loadImage("wood-background1.jpg");
+  background(img);
+  //size(800, 800);
   initNumbers();
   initPositions();
-  size(800, 800);
-  background(0);
+  //background(0);
   stroke(255);
-  int radius = 70;
+  int radius = 200;
   minutesRadius = radius * 0.5;
   hoursRadius = radius * 0.5;
   clockDiameter = radius * 1;
