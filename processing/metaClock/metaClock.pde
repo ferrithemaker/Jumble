@@ -118,7 +118,7 @@ void drawClock(int cx,int cy,int hour,int min) {
   if (rainbow==true) {
     stroke(0); // black stroke
     //noStroke();
-    fill(map(min,0,59,0,255),map(hour,0,23,0,255),map(int((cx+cy)/3),0,3000,0,155));
+    fill(map(min,0,59,0,255),map(hour,0,23,0,255),map(int((cx+cy)/3),0,1500,0,255));
     ellipse(cx, cy, clockDiameter+4, clockDiameter+4);
   } else {
     stroke(200,100,100);
@@ -139,15 +139,16 @@ void setup() {
   smooth(8);
   PImage img;
   img = loadImage("wood-background1.jpg");
-  background(img);
+  //background(img);
+  background(0);
   //size(800, 800);
   initNumbers();
   initPositions();
   //background(0);
   stroke(255);
   int radius = 200;
-  minutesRadius = radius * 0.5;
-  hoursRadius = radius * 0.5;
+  minutesRadius = radius * 0.45;
+  hoursRadius = radius * 0.45;
   clockDiameter = radius * 1;
   time = millis();
 }
