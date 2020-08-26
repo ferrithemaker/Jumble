@@ -21,9 +21,9 @@ int plantsCount = 0;
 int plantsCountLastIteration = 0;
 
 // hardcoded plants data parameters only for testing)
-int[] plantsParameters={ 160, 200, 70} ;
+int[] plantsParameters={ 160, 200, 90} ;
 final int PLANTS_LIFE_EXPECTANCY = 70;
-final int PLANTS_ENERGY_BASE_PER_CYCLE = 50; 
+final int PLANTS_ENERGY_BASE_PER_CYCLE = 60; 
 final int PLANTS_RANDOM_BORN_CHANCES = 2000;
 final int PLANTS_NEARBORN_CHANCES = 220;
 
@@ -100,13 +100,13 @@ void draw() {
           float intensityA = (float((plantsMatrix[x][y][0])/10) / d);
           float intensityB = (float((plantsMatrix[x][y][1])/10) / d);
           sumA += intensityA * 0.8;
-          sumB += intensityB * 2.8;
+          sumB += intensityB * 4.8;
         }
       }
       if (noColor) {
         pixels[indexPixel] = color(sumA);
       } else {
-        pixels[indexPixel] = color(constrain(sumA,10,220),constrain(sumB,10,220),200);
+        pixels[indexPixel] = color(constrain(sumA,10,240),constrain(sumB,10,240),200);
       }
       //println(sum);
     }
