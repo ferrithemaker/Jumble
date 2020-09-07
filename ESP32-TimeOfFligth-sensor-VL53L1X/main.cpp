@@ -25,7 +25,25 @@ int servoPin = 25;
 void setup()
 {
   Serial.begin(115200);
-  Wire.begin();
+  //Wire.begin(); // for heltec
+  Wire.begin(23,22); // for TTGO - WROOM32 ESP32
+
+	// platform.ini for TTGO - WROOM32
+
+	//[env:nodemcu-32s]
+	//platform = espressif32
+	//board = nodemcu-32s
+	//framework = arduino
+	//monitor_speed = 115200
+
+	// platform.ini for HELTEC LORA - WIFI
+
+	//[env:heltec_wifi_lora_32]
+	//platform = espressif32
+	//board = heltec_wifi_lora_32
+	//framework = arduino
+	//monitor_speed = 115200
+  
   Wire.setClock(400000); // use 400 kHz I2C
 
   sensor.setTimeout(500);
