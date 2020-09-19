@@ -14,13 +14,15 @@ int count = 0;
 float sv = 1.0;
 int svdir = 1;
 int wait = 0;
+int cdir = 1;
+int colorCount=0;
 float theta = 0.0;
 float[] amplitude = new float[maxwaves];   // Height of wave
 float[] dx = new float[maxwaves];          // Value for incrementing X, to be calculated as a function of period and xspacing
 float[] yvalues;                           // Using an array to store height values for the wave (not entirely necessary)
 
 void setup() {
-  size(640, 360);
+  size(640, 480);
   //fullScreen();
   frameRate(30);
   colorMode(HSB, 255, 255, 255, 100);
@@ -52,7 +54,7 @@ void draw() {
 
 void calcWave() {
   // Increment theta (try different values for 'angular velocity' here
-  theta += 0.01;
+  theta += 0.02;
 
   // Set all height values to zero
   for (int i = 0; i < yvalues.length; i++) {
@@ -74,23 +76,31 @@ void calcWave() {
 void renderWave() {
   // A simple way to draw the wave with an ellipse at each location
   noStroke();
-  fill(255,50);
+  //fill(255,50);
   ellipseMode(CENTER);
   for (int x = 0; x < yvalues.length; x++) {
     for (int lines = 0; lines < 25; lines ++) {
-      fill(0+lines*15,0+lines*15,255-lines*15);
-      scale(1);
-      ellipse(x*xspacing,height+yvalues[x]-(lines*40),0.5,40);
+      if (colorCount>1024 || colorCount<0) { cdir = -cdir; }
+      if (cdir == 1) {
+        //println("up");
+        colorCount++;
+      } else {
+        colorCount--;
+        //println("down");
+      }
+      fill(0+lines*15,0+lines*15,(255)-lines*15,int(colorCount/4));
+      scale(sv-((sv-1)/3));
+      ellipse(x*xspacing,height+yvalues[x]-(lines*40),5.5,30);
     }
   }
-  if (sv < 1.001) {
+  if (sv < 1.0001) {
     wait++;
-    sv=1.001;
+    sv=1.0001;
     //println("zero");
   }
   if (wait > 10) { wait=0; }
-  if (svdir == 1 && wait==0) { sv=sv+0.00001; } else { sv=sv-0.00001; }
-  if (sv>1.001 || sv<1) {
+  if (svdir == 1 && wait==0) { sv=sv+0.000001; } else { sv=sv-0.000001; }
+  if (sv>1.0002 || sv<1.0001) {
     //println("Cambi direccio");
     svdir = -svdir; 
 }
