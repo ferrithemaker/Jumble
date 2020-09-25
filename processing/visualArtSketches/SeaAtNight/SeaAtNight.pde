@@ -18,7 +18,7 @@ float yoff = 0 + distance;
     float xoff = 0;
     for (int x = 0; x < cols-1; x++) {
       terrain[x][y] = map(noise(xoff,yoff),0,1,-80,10)+map(noise(xoff+wave+sin(xoff),yoff+wave+cos(yoff)),0,1,-10,10)*2;
-      colorofvertex[x][y] = map(noise(xoff,yoff),0,1,0,30)+map(noise(xoff+wave+sin(xoff),yoff+wave+cos(yoff)),0,1,-0,70)*2;
+      colorofvertex[x][y] = map(noise(xoff,yoff),0,1,0,80)+map(noise(xoff+wave+sin(xoff),yoff+wave+cos(yoff)),0,1,-0,170)*2;
       xoff = xoff + 0.2;
     }
     yoff = yoff + 0.2;
@@ -26,7 +26,7 @@ float yoff = 0 + distance;
 }
 
 void setup() {
- bg = loadImage("starsBg.jpg");
+ bg = loadImage("/home/ferran/c.jpg");
  //size (1920,1080,P3D);
  fullScreen(P3D);
  cols = w / scl;
