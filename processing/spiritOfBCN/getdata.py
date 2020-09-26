@@ -123,26 +123,31 @@ with open('2019_naixements_lloc-de-naixement.csv') as data:
 #print(perc2015)
 
 with open("dataOutput2015.csv", "w") as data:
+	data.write("fecha,pais,numero,color\n");
 	for elem in perc2015:
 		print(elem[0],elem[1],elem[2],total)
 		data.write("2015,"+elem[0]+","+str((float(elem[1])/float(total))*100.0)+","+elem[2]+"\n")
 		
 with open("dataOutput2016.csv", "w") as data:
+	data.write("fecha,pais,numero,color\n");
 	for elem in perc2016:
 		print(elem[0],elem[1],elem[2],total)
 		data.write("2016,"+elem[0]+","+str((float(elem[1])/float(total))*100.0)+","+elem[2]+"\n")
 		
 with open("dataOutput2017.csv", "w") as data:
+	data.write("fecha,pais,numero,color\n");
 	for elem in perc2017:
 		print(elem[0],elem[1],elem[2],total)
 		data.write("2017,"+elem[0]+","+str((float(elem[1])/float(total))*100.0)+","+elem[2]+"\n")
 		
 with open("dataOutput2018.csv", "w") as data:
+	data.write("fecha,pais,numero,color\n");
 	for elem in perc2018:
 		print(elem[0],elem[1],elem[2],total)
 		data.write("2018,"+elem[0]+","+str((float(elem[1])/float(total))*100.0)+","+elem[2]+"\n")
 		
 with open("dataOutput2019.csv", "w") as data:
+	data.write("fecha,pais,numero,color\n");
 	for elem in perc2019:
 		print(elem[0],elem[1],elem[2],total)
 		data.write("2019,"+elem[0]+","+str((float(elem[1])/float(total))*100.0)+","+elem[2]+"\n")

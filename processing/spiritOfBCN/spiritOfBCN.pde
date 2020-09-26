@@ -76,6 +76,18 @@ void calculateMatrix() {
   }
 }
 
+color getElement(int year) {
+  color c = color(3,3,3);
+  Table data = loadTable("dataOutput"+str(year)+".csv","header");
+  for (TableRow row : data.rows()) {
+    String pais = row.getString("pais");
+    float num = row.getFloat("numero");
+    String col = row.getString("color");
+    println(pais,num,col);
+  }
+  return c;
+}
+
 
 void setup() {
   size(1920,1080);
@@ -89,6 +101,7 @@ void setup() {
       screenMap[x][y][5]=1;
     }
   }
+  color c = getElement(2015);
 }
 
 void draw() {
