@@ -8,6 +8,8 @@ float[] dataper = new float[200];
 String[] datacol = new String[200];
 String[] pais = new String[200];
 int index;
+int yr = 2015;
+int loopindex = 0;
 
 int[][][] screenMap = new int[matrixSizeX][matrixSizeY][6]; // 0 used or not 1 R 2 G 3 B 4 Alpha 5 fade in /fade out
 // city background
@@ -132,7 +134,16 @@ void setup() {
 }
 
 void draw() {
+  
   background(0);
+  
+  loopindex++;
+  if (loopindex == 1000) {
+    loopindex=0;
+    yr++;
+    if (yr==2020) { yr=2015;}
+    getPaises(yr);
+  }
   
   calculateMatrix();
   for (int x=0;x<matrixSizeX;x++) {
@@ -145,8 +156,10 @@ void draw() {
   textSize(42);
   fill(0, 102, 153);
   text("Spirit of Barcelona", 1300, 100);
+  textSize(32);
+  text(str(yr),30,50);
   textSize(20);
   for (int i=0;i<40;i++) {
-    text(pais[i], 30, 60+(i*23));
+    text(pais[i], 30, 80+(i*23));
   }   
 }
