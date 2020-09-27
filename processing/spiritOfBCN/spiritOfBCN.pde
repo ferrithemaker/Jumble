@@ -157,16 +157,17 @@ void draw() {
   fill(180,180,180,50);
   rect(1200,40,720,90);
   fill(160, 162, 163,188);
-  text("the spirit of Barcelona", 1300, 100);
+  text("the spirit of Barcelona", 1230, 100);
   //textSize(32);
   //text("Any "+str(yr)+" (els 40 països principals)",80,50);
   textSize(70);
-  text(str(yr),350,230);
+  text(str(yr),300,230);
   textSize(10);
   for (int i=0;i<index;i++) {
     color c = unhex("FF" + datacol[i]);
     fill(red(c), green(c), blue(c));
     rect(10,8+(i*10),8,8);
+    fill(255, 255, 255);
     text(pais[i]+" "+nf(dataper[i],0,2)+"%", 30, 15+(i*10));
   }   
 }
