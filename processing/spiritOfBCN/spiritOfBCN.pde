@@ -154,14 +154,19 @@ void draw() {
     }
   }
   textSize(42);
-  fill(60, 122, 153,188);
-  text("Spirit of Barcelona", 1300, 100);
-  textSize(32);
-  text(str(yr)+": els 40 països principals",30,50);
-  textSize(20);
-  for (int i=0;i<40;i++) {
+  fill(180,180,180,50);
+  rect(1200,40,720,90);
+  fill(160, 162, 163,188);
+  text("the spirit of Barcelona", 1300, 100);
+  //textSize(32);
+  //text("Any "+str(yr)+" (els 40 països principals)",80,50);
+  textSize(70);
+  text(str(yr),350,230);
+  textSize(10);
+  for (int i=0;i<index;i++) {
     color c = unhex("FF" + datacol[i]);
-    fill(red(c), green(c), blue(c),188);
-    text(pais[i]+" "+nf(dataper[i],0,2)+"%", 30, 80+(i*23));
+    fill(red(c), green(c), blue(c));
+    rect(10,8+(i*10),8,8);
+    text(pais[i]+" "+nf(dataper[i],0,2)+"%", 30, 15+(i*10));
   }   
 }
