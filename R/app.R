@@ -13,11 +13,8 @@ covidReshaped$movingAverageDeathsPer100K <- c(0)
 
 listOfTerritories <- unique(covidReshaped["countriesAndTerritories"])
 
-covidSubsetByCountry <- subset(covidReshaped,countriesAndTerritories==countrySelected)
-
-
 ui <- fluidPage(
-  titlePanel(windowTitle="Updated real-time data of Covid-19 cases & deaths",title=h4("Updated real-time data of Covid-19 cases & deaths (7 days moving average x 100K pop.)", align="center")),
+  titlePanel(windowTitle="Updated real-time data of Covid-19 cases & deaths",title=h4("Updated real-time data of Covid-19 cases & deaths (7 days moving average x 100K population x day)", align="center")),
   selectInput("casesordeaths","Cases or deaths:",c("Cases","Deaths")),
   selectInput("country","Select country:",listOfTerritories$countriesAndTerritories),
   submitButton("Update graph", icon("refresh")),
@@ -43,18 +40,24 @@ server <- function(input,output,session) {
         maCases <- (maL1$casesPer100K+maL2$casesPer100K+maL3$casesPer100K+maL4$casesPer100K+maL5$casesPer100K+maL6$casesPer100K+maL7$casesPer100K)/7
         maDeaths <- (maL1$deathsPer100K+maL2$deathsPer100K+maL3$deathsPer100K+maL4$deathsPer100K+maL5$deathsPer100K+maL6$deathsPer100K+maL7$deathsPer100K)/7
         if (length(maCases)>0) {
+          if (maCases<0) { 
+            maCases = 0
+          }
           covidSubsetByCountry[row,"movingAverageCasesPer100K"] <- maCases
         }
         if (length(maDeaths)>0) {
+          if (maDeaths<0) {
+            maDeaths = 0
+          }
           covidSubsetByCountry[row,"movingAverageDeathsPer100K"] <- maDeaths
         }
       }
     }
     if (input$casesordeaths=="Cases") {
-      plot(covidSubsetByCountry$date,covidSubsetByCountry$movingAverageCasesPer100K,type="l",xlab="Date",ylab="Cases: 7 day moving average x 100K pop.")
+      plot(covidSubsetByCountry$date,covidSubsetByCountry$movingAverageCasesPer100K,type="l",xlab="Date",ylab="Cases: 7 day moving average x 100K population x day.")
     }
     if (input$casesordeaths=="Deaths") {
-      plot(covidSubsetByCountry$date,covidSubsetByCountry$movingAverageDeathsPer100K,type="l",xlab="Date",ylab="Deaths: 7 day moving average x 100K pop.")
+      plot(covidSubsetByCountry$date,covidSubsetByCountry$movingAverageDeathsPer100K,type="l",xlab="Date",ylab="Deaths: 7 day moving average x 100K population x day.")
       }
     
   })
