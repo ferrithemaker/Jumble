@@ -138,7 +138,7 @@ void draw() {
   background(0);
   
   loopindex++;
-  if (loopindex == 1000) {
+  if (loopindex == 200) {
     loopindex=0;
     yr++;
     if (yr==2020) { yr=2015;}
