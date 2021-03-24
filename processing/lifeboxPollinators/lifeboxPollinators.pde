@@ -1,6 +1,23 @@
 /**
  * Lifebox processing version 
  */
+ 
+ class Pollinator { 
+  int pollen;
+  int xpos;
+  int ypos;
+  Pollinator (int p, int x, int y) {  
+    pollen = p;  
+    xpos = x;
+    ypos = y;
+  } 
+  void updatePollen(int p) { 
+    pollen = p;
+  }
+  int getPollen() {
+    return pollen;
+  }
+ }
 
 // screen variables
 int matrixSizeX = 95;
@@ -14,8 +31,12 @@ int padding = 0;
 int[][][] flower1Matrix = new int[matrixSizeX][matrixSizeY][4]; // [0] age [1] pollen [2] xpos [3] ypos
 int[][][] flower2Matrix = new int[matrixSizeX][matrixSizeY][4]; // [0] age [1] pollen [2] xpos [3] ypos
 
-int[][][] pollinator1Matrix = new int[matrixSizeX][matrixSizeY][4]; // [0] pollen [1] not used [2] xpos [3] ypos
-int[][][] pollinator2Matrix = new int[matrixSizeX][matrixSizeY][4]; // [0] pollen [1] not used [2] xpos [3] ypos
+//int[][][] pollinator1Matrix = new int[matrixSizeX][matrixSizeY][4]; // [0] pollen [1] not used [2] xpos [3] ypos
+//int[][][] pollinator2Matrix = new int[matrixSizeX][matrixSizeY][4]; // [0] pollen [1] not used [2] xpos [3] ypos
+ArrayList<Pollinator> pollinator1Individuals = new ArrayList<Pollinator>();
+ArrayList<Pollinator> pollinator2Individuals = new ArrayList<Pollinator>();
+
+
 
 int[] available_spots = new int[8];
 
@@ -34,8 +55,8 @@ int pollinator2CountLastIteration = 0;
 int[] flower1Parameters = { 160, 5, 70, 3}; // life expectancy, reproduction, pollen propagation, pollen generation
 int[] flower2Parameters = { 160, 5, 70, 3}; // life expectancy, reproduction, pollen propagation, pollen generation
 
-int[] specie1Parameters = { 80, 80, 80, 80};
-int[] specie2Parameters = { 80, 80, 80, 80};
+int[] pollinator1Parameters = { 80 }; // number of individuals
+int[] pollinator2Parameters = { 80, 80, 80, 80};
 
 final int FLOWER1_LIFE_EXPECTANCY = 70;
 final int FLOWER2_LIFE_EXPECTANCY = 70;
@@ -74,7 +95,8 @@ final int SPECIE2_RANDOM_BORN_CHANCES = 5000;
 
 
 void setup() {
-  size(1920, 1080);
+  //size(1920, 1080);
+  size(800,600);
 
   colorMode(RGB);
 
@@ -88,10 +110,10 @@ void setup() {
       flower2Matrix[x][y][1]=0; // set pollen to 0
       flower2Matrix[x][y][2]=((x)*(shapeSize+padding));
       flower2Matrix[x][y][3]=((y)*(shapeSize+padding));
-      pollinator1Matrix[x][y][0]=0; // set pollen to 0
-      pollinator1Matrix[x][y][1]=0; // set UNUSED VARIABLE to 0
-      pollinator2Matrix[x][y][0]=0; // set pollen to 0
-      pollinator2Matrix[x][y][1]=0; // set UNUSED VARIABLE to 0
+      //pollinator1Matrix[x][y][0]=0; // set pollen to 0
+      //pollinator1Matrix[x][y][1]=0; // set UNUSED VARIABLE to 0
+      //pollinator2Matrix[x][y][0]=0; // set pollen to 0
+      //pollinator2Matrix[x][y][1]=0; // set UNUSED VARIABLE to 0
     }
   }
   noStroke();
@@ -114,16 +136,16 @@ void draw() {
   for (int x = 0; x < matrixSizeX; x++) {
     for (int y = 0; y < matrixSizeY; y++) {
       calculatePlantsNextIteration(x, y);
-      //calculateSpeciesNextIteration(x,y);
+      calculatePollinatorsNextIteration();
       //println(plantsMatrix[x][y][1]);
       draw = false;
       if (flower1Matrix[x][y][0]>0) {
-        fill(0, map(flower1Matrix[x][y][0], 0, 1500, 0, 255), 0);
+        fill(0, 0, map(flower1Matrix[x][y][0], 0, 1500, 0, 255));
         draw = true;
       }
       
       if (flower2Matrix[x][y][0]>0) {
-        fill(0, map(flower2Matrix[x][y][0], 0, 1500, 0, 255), 0);
+        fill(map(flower2Matrix[x][y][0], 0, 1500, 0, 255), 0, 0);
         draw = true;
       }
       
@@ -305,7 +327,29 @@ void calculatePlantsNextIteration(int x, int y) {
   
 }
 
+void calculatePollinatorsNextIteration() {
+  
+  int pollinator1Number = pollinator1Parameters[0];
+  int pollinator2Number = pollinator2Parameters[0];
+  
+  // adjust quantity of pollinators1
+  
+  // add if needed
+  for (int i = pollinator1Individuals.size(); i < pollinator1Number; i++) {
+    pollinator1Individuals.add(new Pollinator(0,int(random(1, matrixSizeX)),int(random(1, matrixSizeY))));
+  }
+  
+  // remove if needed
+  for (int i = pollinator1Individuals.size(); i > pollinator1Number; i--) {
+    pollinator1Individuals.remove(i-1);
+  }
+  
+  //println(pollinator1Individuals.size());
+  
+  
+}
 
+/*
 void calculateSpeciesNextIteration(int x, int y) {
   int pos;
   int rand_pos;
@@ -539,4 +583,4 @@ void calculateSpeciesNextIteration(int x, int y) {
       species1Count += 1;
     }
   }
-}
+} */
