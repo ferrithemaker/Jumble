@@ -72,12 +72,13 @@ int flower2CountLastIteration = 0;
 int pollinator1CountLastIteration = 0;
 int pollinator2CountLastIteration = 0;
 
-// hardcoded web app controller parameters (only for testing)
-int[] flower1Parameters = { 160, 5, 70, 3}; // life expectancy, reproduction, pollen propagation, pollen generation
-int[] flower2Parameters = { 160, 5, 70, 3}; // life expectancy, reproduction, pollen propagation, pollen generation
 
-int[] pollinator1Parameters = { 10, 2, 5 }; // number of individuals, movement rate, pollination rate
-int[] pollinator2Parameters = { 10, 2, 5 }; // number of individuals, movement rate, pollination rate
+// hardcoded web app controller parameters (only for testing)
+int[] flower1Parameters = { 160, 5, 2, 3}; // life expectancy [max cycles of flower life], reproduction, pollen propagation [quantity of pollen allowed to be relased from flower], pollen generation [quantity of pollen generated per cycle]
+int[] flower2Parameters = { 160, 5, 2, 3}; // life expectancy, reproduction, pollen propagation, pollen generation
+
+int[] pollinator1Parameters = { 10, 20000, 5, 4 }; // number of individuals, movement rate, pollination rate, pollen gathering
+int[] pollinator2Parameters = { 10, 20000, 5, 4 }; // number of individuals, movement rate, pollination rate, pollen gathering
 
 final int FLOWER1_LIFE_EXPECTANCY = 70;
 final int FLOWER2_LIFE_EXPECTANCY = 70;
@@ -327,11 +328,15 @@ void calculatePollinatorsNextIteration() {
   int pollinator1Number = pollinator1Parameters[0];
   int pollinator1MovementRate = pollinator1Parameters[1];
   int pollinator1PollinationRate = pollinator1Parameters[2];
+  int pollinator1GatheringRate = pollinator1Parameters[3];
   int pollinator2Number = pollinator2Parameters[0];
   int pollinator2MovementRate = pollinator2Parameters[1];
   int pollinator2PollinationRate = pollinator2Parameters[2];
+  int pollinator2GatheringRate = pollinator2Parameters[3];
   int flower1PollenGeneration = flower1Parameters[3];
   int flower2PollenGeneration = flower2Parameters[3];
+  int flower1PollenPropagation = flower1Parameters[2];
+  int flower2PollenPropagation = flower2Parameters[2];
   
   // adjust quantity of pollinator1
   
@@ -349,36 +354,45 @@ void calculatePollinatorsNextIteration() {
     int pollinatorXpos = pollinator1Individuals.get(i).getX();
     int pollinatorYpos = pollinator1Individuals.get(i).getY();
     // try to get pollen from flower
-    int randomNumber = int(random(1, 4));
-    if (randomNumber == 1) {
-      if (flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1]>0) {
-        flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1]--; // decrease pollen from flower
-        pollinator1Individuals.get(i).changePollenF1(1); // increase pollen of pollinator
+    if (int(random(1, pollinator1GatheringRate)) == 1) {
+      int flower1pollenQuantity = flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1];
+      int flower2pollenQuantity = flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1];
+      if (flower1pollenQuantity>0) {
+        int remainPollenFlower1 = flower1pollenQuantity - flower1PollenPropagation;
+        if (remainPollenFlower1 < 0) {
+          flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1] = 0;
+          pollinator1Individuals.get(i).changePollenF1(flower1pollenQuantity);
+        } else {
+          flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1] = remainPollenFlower1;
+          pollinator1Individuals.get(i).changePollenF1(flower1PollenPropagation);
+        }
       }
-      if (flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1]>0) {
-        flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1]--;
-        pollinator1Individuals.get(i).changePollenF2(1); // increase pollen of pollinator
+      if (flower2pollenQuantity>0) {
+        int remainPollenFlower2 = flower2pollenQuantity - flower2PollenPropagation;
+        if (remainPollenFlower2 < 0) {
+          flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1] = 0;
+          pollinator1Individuals.get(i).changePollenF2(flower2pollenQuantity);
+        } else {
+          flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1] = remainPollenFlower2;
+          pollinator1Individuals.get(i).changePollenF2(flower2PollenPropagation);
+        }
       }
     }
-    if (int(random(1,10000))==1) {
+    if (int(random(1,pollinator1MovementRate))==1) {
       // random move
-      randomNumber = int(random(1, pollinator1MovementRate));
-      if (randomNumber == 1) {
-        xoff = xoff + PARLIN_NOISE_FACTOR;
-        int randpos = int(map(noise(xoff),0,1,1,16));
-        if (randpos == 4 && pollinatorXpos > 0 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeX(-1); pollinator1Individuals.get(i).changeY(-1); }
-        if (randpos == 5 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeY(-1); }
-        if (randpos == 6 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeX(1); pollinator1Individuals.get(i).changeY(-1); }
-        if (randpos == 7 && pollinatorXpos > 0) { pollinator1Individuals.get(i).changeX(-1); }
-        if (randpos == 8 && pollinatorXpos < matrixSizeX - 1) { pollinator1Individuals.get(i).changeX(1); }
-        if (randpos == 9 && pollinatorXpos > 0 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeX(-1); pollinator1Individuals.get(i).changeY(1); }
-        if (randpos == 10 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeY(1); }
-        if (randpos == 11 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeX(1); pollinator1Individuals.get(i).changeY(1); }
-      }
+      xoff = xoff + PARLIN_NOISE_FACTOR;
+      int randpos = int(map(noise(xoff),0,1,1,16));
+      if (randpos == 4 && pollinatorXpos > 0 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeX(-1); pollinator1Individuals.get(i).changeY(-1); }
+      if (randpos == 5 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeY(-1); }
+      if (randpos == 6 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeX(1); pollinator1Individuals.get(i).changeY(-1); }
+      if (randpos == 7 && pollinatorXpos > 0) { pollinator1Individuals.get(i).changeX(-1); }
+      if (randpos == 8 && pollinatorXpos < matrixSizeX - 1) { pollinator1Individuals.get(i).changeX(1); }
+      if (randpos == 9 && pollinatorXpos > 0 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeX(-1); pollinator1Individuals.get(i).changeY(1); }
+      if (randpos == 10 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeY(1); }
+      if (randpos == 11 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeX(1); pollinator1Individuals.get(i).changeY(1); }
     }
     // try to pollinate
-    randomNumber = int(random(1, pollinator1PollinationRate));
-    if (randomNumber == 1) {
+    if (int(random(1, pollinator1PollinationRate))==1) {
       if (pollinator1Individuals.get(i).getPollenF1()>0) {
         pollinator1Individuals.get(i).changePollenF1(-1);
         flower1Matrix[pollinatorXpos][pollinatorYpos][0] = 1;
