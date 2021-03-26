@@ -393,14 +393,10 @@ void calculatePollinatorsNextIteration() {
   
   int pollinator1Number = pollinator1Parameters[0];
   int pollinator1MovementRate = pollinator1Parameters[1];
-  int pollinator1PollinationRate = pollinator1Parameters[2];
   int pollinator1GatheringRate = pollinator1Parameters[3];
   int pollinator2Number = pollinator2Parameters[0];
   int pollinator2MovementRate = pollinator2Parameters[1];
-  int pollinator2PollinationRate = pollinator2Parameters[2];
   int pollinator2GatheringRate = pollinator2Parameters[3];
-  int flower1PollenGeneration = flower1Parameters[3];
-  int flower2PollenGeneration = flower2Parameters[3];
   int flower1PollenPropagation = flower1Parameters[2];
   int flower2PollenPropagation = flower2Parameters[2];
   
