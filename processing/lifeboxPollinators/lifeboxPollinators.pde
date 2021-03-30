@@ -75,7 +75,7 @@ int[][][] flower2Matrix = new int[matrixSizeX][matrixSizeY][5]; // [0] age [1] p
 
 ArrayList<Pollinator> pollinator1Individuals = new ArrayList<Pollinator>();
 ArrayList<Pollinator> pollinator2Individuals = new ArrayList<Pollinator>();
-
+ArrayList<Pollinator> pollinator3Individuals = new ArrayList<Pollinator>();
 
 
 int[] available_spots = new int[8];
@@ -88,9 +88,6 @@ int pollinator2Count = 0;
 int flower1CountLastIteration = 0;
 int flower2CountLastIteration = 0;
 
-int pollinator1CountLastIteration = 0;
-int pollinator2CountLastIteration = 0;
-
 
 // hardcoded web app controller parameters (only for testing)
 int[] flower1Parameters = { 400, 1000, 2, 3}; // life expectancy [max cycles of flower life], reproduction [marginal reproduction chances high value>slow rate 2-X], pollen propagation [quantity of pollen allowed to be relased from flower], pollen generation [quantity of pollen generated per cycle]
@@ -98,6 +95,7 @@ int[] flower2Parameters = { 400, 1000, 2, 3}; // life expectancy, reproduction, 
 
 int[] pollinator1Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
 int[] pollinator2Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
+int[] pollinator3Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
 
 final int FLOWER1_LIFE_EXPECTANCY = 70;
 final int FLOWER2_LIFE_EXPECTANCY = 70;
@@ -160,7 +158,9 @@ void draw() {
   for (int x = 0; x < matrixSizeX; x++) {
     for (int y = 0; y < matrixSizeY; y++) {
       calculatePlantsNextIteration(x, y);
-      calculatePollinatorsNextIteration();
+      pollinator1Individuals = calculatePollinatorNextIteration(pollinator1Individuals,pollinator1Parameters);
+      pollinator2Individuals = calculatePollinatorNextIteration(pollinator2Individuals,pollinator2Parameters);
+      pollinator3Individuals = calculatePollinatorNextIteration(pollinator3Individuals,pollinator3Parameters);
       //println(plantsMatrix[x][y][1]);
       draw = false;
       if (flower1Matrix[x][y][0]>0) {
@@ -179,14 +179,17 @@ void draw() {
   // paint the pollinator1 individuals
   for (int i=0; i < pollinator1Individuals.size(); i++) {
     fill(100,200,100,map(pollinator1Individuals.get(i).getEnergy(),0,10000000,0,255));
-    //rect(pollinator1Individuals.get(i).getX()*(shapeSize+padding), pollinator1Individuals.get(i).getY()*(shapeSize+padding), shapeSize, shapeSize);
     ellipse((pollinator1Individuals.get(i).getX()+1)*(shapeSize+padding), (pollinator1Individuals.get(i).getY()+1)*(shapeSize+padding), shapeSize, shapeSize);
   }
   // paint the pollinator2 individuals
   for (int i=0; i < pollinator2Individuals.size(); i++) {
     fill(100,0,100,map(pollinator2Individuals.get(i).getEnergy(),0,10000000,100,255));
-    //rect(pollinator2Individuals.get(i).getX()*(shapeSize+padding), pollinator2Individuals.get(i).getY()*(shapeSize+padding), shapeSize, shapeSize);
     ellipse((pollinator2Individuals.get(i).getX()+1)*(shapeSize+padding), (pollinator2Individuals.get(i).getY()+1)*(shapeSize+padding), shapeSize, shapeSize);
+  }
+  // paint the pollinator3 individuals
+  for (int i=0; i < pollinator3Individuals.size(); i++) {
+    fill(150,100,50,map(pollinator3Individuals.get(i).getEnergy(),0,10000000,100,255));
+    ellipse((pollinator3Individuals.get(i).getX()+1)*(shapeSize+padding), (pollinator3Individuals.get(i).getY()+1)*(shapeSize+padding), shapeSize, shapeSize);
   }
   //delay(10);
 }
@@ -444,172 +447,94 @@ void calculatePlantsNextIteration(int x, int y) {
   
 }
 
-void calculatePollinatorsNextIteration() {
+
+ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pollinatorIndividuals,int[] pollinatorParameters) {
   
-  int pollinator1Number = pollinator1Parameters[0];
-  int pollinator1MovementRate = pollinator1Parameters[1];
-  int pollinator1GatheringRate = pollinator1Parameters[3];
-  int pollinator2Number = pollinator2Parameters[0];
-  int pollinator2MovementRate = pollinator2Parameters[1];
-  int pollinator2GatheringRate = pollinator2Parameters[3];
+  int pollinatorNumber = pollinatorParameters[0];
+  int pollinatorMovementRate = pollinatorParameters[1];
+  int pollinatorGatheringRate = pollinatorParameters[3];
+  int pollinatorGatheringEnergy = pollinatorParameters[4];
+  
   int flower1PollenPropagation = flower1Parameters[2];
   int flower2PollenPropagation = flower2Parameters[2];
   
   // adjust quantity of pollinator1
   
   // add if needed
-  for (int i = pollinator1Individuals.size(); i < pollinator1Number; i++) {
+  for (int i = pollinatorIndividuals.size(); i < pollinatorNumber; i++) {
     if (int(random(1, 1000000)) == 1) { 
-      pollinator1Individuals.add(new Pollinator(0, 0, 10000000, int(random(10, matrixSizeX)), int(random(1, matrixSizeY)),0)); // each pollinator starts with  energy to avoid inminent dying
+      pollinatorIndividuals.add(new Pollinator(0, 0, 10000000, int(random(10, matrixSizeX)), int(random(1, matrixSizeY)),0)); // each pollinator starts with  energy to avoid inminent dying
     }
   }
   
   // remove if needed
-  for (int i = pollinator1Individuals.size(); i > pollinator1Number; i--) {
-    pollinator1Individuals.remove(i-1);
+  for (int i = pollinatorIndividuals.size(); i > pollinatorNumber; i--) {
+    pollinatorIndividuals.remove(i-1);
   }
   
-  for (int i=0; i < pollinator1Individuals.size(); i++) {
-    int pollinatorXpos = pollinator1Individuals.get(i).getX();
-    int pollinatorYpos = pollinator1Individuals.get(i).getY();   
+  for (int i=0; i < pollinatorIndividuals.size(); i++) {
+    int pollinatorXpos = pollinatorIndividuals.get(i).getX();
+    int pollinatorYpos = pollinatorIndividuals.get(i).getY();   
     // try to get pollen from flower
-    if (int(random(1, pollinator1GatheringRate)) == 1) {
-      int flower1pollenQuantity = flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1];
-      int flower2pollenQuantity = flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1];
+    if (int(random(1, pollinatorGatheringRate)) == 1) {
+      int flower1pollenQuantity = flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1];
+      int flower2pollenQuantity = flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1];
       if (flower1pollenQuantity>0) {
-        pollinator1Individuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
+        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
         int remainPollenFlower1 = flower1pollenQuantity - flower1PollenPropagation;
         if (remainPollenFlower1 < 0) {
-          flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1] = 0;
-          pollinator1Individuals.get(i).changePollenF1(flower1pollenQuantity);
+          flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = 0;
+          pollinatorIndividuals.get(i).changePollenF1(flower1pollenQuantity);
         } else {
-          flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1] = remainPollenFlower1;
-          pollinator1Individuals.get(i).changePollenF1(flower1PollenPropagation);
+          flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = remainPollenFlower1;
+          pollinatorIndividuals.get(i).changePollenF1(flower1PollenPropagation);
         }
         // get energy from flowers
-        if (flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][4]>pollinator1Parameters[4]) {
-          pollinator1Individuals.get(i).changeEnergy(pollinator1Parameters[4]);
+        if (flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]>pollinatorGatheringEnergy) {
+          pollinatorIndividuals.get(i).changeEnergy(pollinatorGatheringEnergy);
         } else {
-          pollinator1Individuals.get(i).changeEnergy(flower1Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][4]);
+          pollinatorIndividuals.get(i).changeEnergy(flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]);
         }
         
       }
       if (flower2pollenQuantity>0) {
-        pollinator1Individuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
+        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
         int remainPollenFlower2 = flower2pollenQuantity - flower2PollenPropagation;
         if (remainPollenFlower2 < 0) {
-          flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1] = 0;
-          pollinator1Individuals.get(i).changePollenF2(flower2pollenQuantity);
+          flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = 0;
+          pollinatorIndividuals.get(i).changePollenF2(flower2pollenQuantity);
         } else {
-          flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][1] = remainPollenFlower2;
-          pollinator1Individuals.get(i).changePollenF2(flower2PollenPropagation);
+          flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = remainPollenFlower2;
+          pollinatorIndividuals.get(i).changePollenF2(flower2PollenPropagation);
         }
         // get energy from flowers
-        if (flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][4]>pollinator1Parameters[4]) {
-          pollinator1Individuals.get(i).changeEnergy(pollinator1Parameters[4]);
+        if (flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]>pollinatorGatheringEnergy) {
+          pollinatorIndividuals.get(i).changeEnergy(pollinatorGatheringEnergy);
         } else {
-          pollinator1Individuals.get(i).changeEnergy(flower2Matrix[pollinator1Individuals.get(i).getX()][pollinator1Individuals.get(i).getY()][4]);
+          pollinatorIndividuals.get(i).changeEnergy(flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]);
         }
       }
     }
     int movementAlteration = 1;
-    if (pollinator1Individuals.get(i).getLocalMovement()>0) { movementAlteration = 4; }
-    if (int(random(1,pollinator1MovementRate*movementAlteration))==1) {
+    if (pollinatorIndividuals.get(i).getLocalMovement()>0) { movementAlteration = 4; }
+    if (int(random(1,pollinatorMovementRate*movementAlteration))==1) {
       // random move
       xoff = xoff + PARLIN_NOISE_FACTOR;
       int randpos = int(map(noise(xoff),0,1,1,16));
-      if (randpos == 4 && pollinatorXpos > 0 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeX(-1); pollinator1Individuals.get(i).changeY(-1); }
-      if (randpos == 5 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeY(-1); }
-      if (randpos == 6 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos > 0) { pollinator1Individuals.get(i).changeX(1); pollinator1Individuals.get(i).changeY(-1); }
-      if (randpos == 7 && pollinatorXpos > 0) { pollinator1Individuals.get(i).changeX(-1); }
-      if (randpos == 8 && pollinatorXpos < matrixSizeX - 1) { pollinator1Individuals.get(i).changeX(1); }
-      if (randpos == 9 && pollinatorXpos > 0 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeX(-1); pollinator1Individuals.get(i).changeY(1); }
-      if (randpos == 10 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeY(1); }
-      if (randpos == 11 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos < matrixSizeY - 1) { pollinator1Individuals.get(i).changeX(1); pollinator1Individuals.get(i).changeY(1); }
+      if (randpos == 4 && pollinatorXpos > 0 && pollinatorYpos > 0) { pollinatorIndividuals.get(i).changeX(-1); pollinatorIndividuals.get(i).changeY(-1); }
+      if (randpos == 5 && pollinatorYpos > 0) { pollinatorIndividuals.get(i).changeY(-1); }
+      if (randpos == 6 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos > 0) { pollinatorIndividuals.get(i).changeX(1); pollinatorIndividuals.get(i).changeY(-1); }
+      if (randpos == 7 && pollinatorXpos > 0) { pollinatorIndividuals.get(i).changeX(-1); }
+      if (randpos == 8 && pollinatorXpos < matrixSizeX - 1) { pollinatorIndividuals.get(i).changeX(1); }
+      if (randpos == 9 && pollinatorXpos > 0 && pollinatorYpos < matrixSizeY - 1) { pollinatorIndividuals.get(i).changeX(-1); pollinatorIndividuals.get(i).changeY(1); }
+      if (randpos == 10 && pollinatorYpos < matrixSizeY - 1) { pollinatorIndividuals.get(i).changeY(1); }
+      if (randpos == 11 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos < matrixSizeY - 1) { pollinatorIndividuals.get(i).changeX(1); pollinatorIndividuals.get(i).changeY(1); }
     }
     // comsume energy and reduce local movement
-    pollinator1Individuals.get(i).changeEnergy(-1);
-    pollinator1Individuals.get(i).changeLocalMovement(-1);
+    pollinatorIndividuals.get(i).changeEnergy(-1);
+    pollinatorIndividuals.get(i).changeLocalMovement(-1);
     // die
-    if (pollinator1Individuals.get(i).getEnergy() <1) { pollinator1Individuals.remove(i);}
+    if (pollinatorIndividuals.get(i).getEnergy() <1) { pollinatorIndividuals.remove(i);}
   }
-  
-
-  // adjust quantity of pollinator2
-  
-  // add if needed
-  for (int i = pollinator2Individuals.size(); i < pollinator2Number; i++) {
-    if (int(random(1, 1000000)) == 1) { 
-      pollinator2Individuals.add(new Pollinator(0,0,10000000,int(random(1, matrixSizeX)),int(random(1, matrixSizeY)),0)); // each pollinator starts with energy to avoid inminent dying
-    }
-  }
-  
-  // remove if needed
-  for (int i = pollinator2Individuals.size(); i > pollinator2Number; i--) {
-    pollinator2Individuals.remove(i-1);
-  }
-  
-  for (int i=0; i < pollinator2Individuals.size(); i++) {
-    int pollinatorXpos = pollinator2Individuals.get(i).getX();
-    int pollinatorYpos = pollinator2Individuals.get(i).getY();
-    // try to get pollen from flower
-    if (int(random(1, pollinator2GatheringRate)) == 1) {
-      int flower1pollenQuantity = flower1Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][1];
-      int flower2pollenQuantity = flower2Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][1];
-      if (flower1pollenQuantity>0) {
-        pollinator2Individuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
-        int remainPollenFlower1 = flower1pollenQuantity - flower1PollenPropagation;
-        if (remainPollenFlower1 < 0) {
-          flower1Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][1] = 0;
-          pollinator2Individuals.get(i).changePollenF1(flower1pollenQuantity);
-        } else {
-          flower1Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][1] = remainPollenFlower1;
-          pollinator2Individuals.get(i).changePollenF1(flower1PollenPropagation);
-        }
-        // get energy from flowers
-        if (flower1Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][4]>pollinator2Parameters[4]) {
-          pollinator2Individuals.get(i).changeEnergy(pollinator2Parameters[4]);
-        } else {
-          pollinator2Individuals.get(i).changeEnergy(flower1Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][4]);
-        }
-      }
-      if (flower2pollenQuantity>0) {
-        pollinator2Individuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
-        int remainPollenFlower2 = flower2pollenQuantity - flower2PollenPropagation;
-        if (remainPollenFlower2 < 0) {
-          flower2Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][1] = 0;
-          pollinator2Individuals.get(i).changePollenF2(flower2pollenQuantity);
-        } else {
-          flower2Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][1] = remainPollenFlower2;
-          pollinator2Individuals.get(i).changePollenF2(flower2PollenPropagation);
-        }
-        // get energy from flowers
-        if (flower2Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][4]>pollinator2Parameters[4]) {
-          pollinator2Individuals.get(i).changeEnergy(pollinator2Parameters[4]);
-        } else {
-          pollinator2Individuals.get(i).changeEnergy(flower2Matrix[pollinator2Individuals.get(i).getX()][pollinator2Individuals.get(i).getY()][4]);
-        }
-      }
-    }
-    int movementAlteration = 1;
-    if (pollinator2Individuals.get(i).getLocalMovement()>0) { movementAlteration = 4; }
-    if (int(random(1,pollinator2MovementRate*movementAlteration))==1) {
-      // random move
-      xoff = xoff + PARLIN_NOISE_FACTOR;
-      int randpos = int(map(noise(xoff),0,1,1,16));
-      if (randpos == 4 && pollinatorXpos > 0 && pollinatorYpos > 0) { pollinator2Individuals.get(i).changeX(-1); pollinator2Individuals.get(i).changeY(-1); }
-      if (randpos == 5 && pollinatorYpos > 0) { pollinator2Individuals.get(i).changeY(-1); }
-      if (randpos == 6 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos > 0) { pollinator2Individuals.get(i).changeX(1); pollinator2Individuals.get(i).changeY(-1); }
-      if (randpos == 7 && pollinatorXpos > 0) { pollinator2Individuals.get(i).changeX(-1); }
-      if (randpos == 8 && pollinatorXpos < matrixSizeX - 1) { pollinator2Individuals.get(i).changeX(1); }
-      if (randpos == 9 && pollinatorXpos > 0 && pollinatorYpos < matrixSizeY - 1) { pollinator2Individuals.get(i).changeX(-1); pollinator2Individuals.get(i).changeY(1); }
-      if (randpos == 10 && pollinatorYpos < matrixSizeY - 1) { pollinator2Individuals.get(i).changeY(1); }
-      if (randpos == 11 && pollinatorXpos < matrixSizeX - 1 && pollinatorYpos < matrixSizeY - 1) { pollinator2Individuals.get(i).changeX(1); pollinator2Individuals.get(i).changeY(1); }
-    }
-    // comsume energy and reduce local movement
-    pollinator2Individuals.get(i).changeEnergy(-1);
-    pollinator2Individuals.get(i).changeLocalMovement(-1);
-    // die
-    if (pollinator2Individuals.get(i).getEnergy() <1) { pollinator2Individuals.remove(i); }
-  } 
+  return pollinatorIndividuals;
 }
