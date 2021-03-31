@@ -60,6 +60,15 @@
   }
  }
  
+// debug mode
+boolean debug = true;
+
+// messages list
+String[] messages = new String[25];
+int message_index = 0;
+
+int[] totalPollinations = new int[3];
+
 // parlin offset
 float xoff = 0.0;
 
@@ -109,6 +118,12 @@ void setup() {
   //size(800,600);
 
   colorMode(RGB);
+  
+  for (int i=0;i<25;i++) { messages[i]=""; }
+  
+  totalPollinations[0] = 1;
+  totalPollinations[1] = 1;
+  totalPollinations[2] = 1;
 
   for (int x = 0; x < matrixSizeX; x++) {
     for (int y = 0; y < matrixSizeY; y++) {
@@ -181,7 +196,14 @@ void draw() {
     fill(150,100,50,map(pollinator3Individuals.get(i).getEnergy(),0,10000000,100,255));
     ellipse((pollinator3Individuals.get(i).getX()+1)*(shapeSize+padding), (pollinator3Individuals.get(i).getY()+1)*(shapeSize+padding), shapeSize, shapeSize);
   }
-  //delay(10);
+  if (debug) {
+    fill(150, 150, 150, 150);
+    textSize(32);
+    text("Blue flowers:"+flowerCount[0]+"/"+totalPollinations[0]+"          Red flowers:"+flowerCount[1]+"/"+totalPollinations[1]+"          Green flowers:"+flowerCount[2]+"/"+totalPollinations[2], 40, 1000);
+    for (int i=0;i<25;i++) {
+      text(messages[i],1500,50+(i*40));
+    }
+  }
 }
 
 int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[] flowerParameters, int numberOfFlower) {
@@ -264,7 +286,7 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
     // we are on a potential reproductive spot, we have a pollinator?
     boolean pollinatorOverFlower = false;
     for (int i=0; i < pollinator1Individuals.size(); i++) {
-      if (x == pollinator1Individuals.get(i).getX() && y == pollinator1Individuals.get(i).getX()) {
+      if (x == pollinator1Individuals.get(i).getX() && y == pollinator1Individuals.get(i).getY()) {
         pollinatorOverFlower = true;
         if (int(random(1, pollinator1PollinationRate))==1) {
           if (pollinator1Individuals.get(i).getPollen(1)>0) {
@@ -273,14 +295,16 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
             flowerMatrix[x][y][1] = flowerPollenGeneration;
             flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
             flowerCount[numberOfFlower] += 1;
-            println("CREATED POLLINATED!");
+            if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated!"); }
+            if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated!"); }
+            if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated!"); }
           }
         }
       }
     }
     if (!pollinatorOverFlower) {
       for (int i=0; i < pollinator2Individuals.size(); i++) {
-        if (x == pollinator2Individuals.get(i).getX() && y == pollinator2Individuals.get(i).getX()) {
+        if (x == pollinator2Individuals.get(i).getX() && y == pollinator2Individuals.get(i).getY()) {
           pollinatorOverFlower = true;
           if (int(random(1, pollinator2PollinationRate))==1) {
             if (pollinator2Individuals.get(i).getPollen(2)>0) {
@@ -289,7 +313,9 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
               flowerMatrix[x][y][1] = flowerPollenGeneration;
               flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
               flowerCount[numberOfFlower] += 1;
-              println("CREATED POLLINATED!");
+              if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated!"); }
+              if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated!"); }
+              if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated!"); }
             }
           }
         }
@@ -297,7 +323,7 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
     }
     if (!pollinatorOverFlower) {
       for (int i=0; i < pollinator3Individuals.size(); i++) {
-        if (x == pollinator3Individuals.get(i).getX() && y == pollinator3Individuals.get(i).getX()) {
+        if (x == pollinator3Individuals.get(i).getX() && y == pollinator3Individuals.get(i).getY()) {
           pollinatorOverFlower = true;
           if (int(random(1, pollinator3PollinationRate))==1) {
             if (pollinator3Individuals.get(i).getPollen(3)>0) {
@@ -306,7 +332,9 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
               flowerMatrix[x][y][1] = flowerPollenGeneration;
               flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
               flowerCount[numberOfFlower] += 1;
-              println("CREATED POLLINATED!");
+              if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated!"); }
+              if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated!"); }
+              if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated!"); }
             }
           }
         }
@@ -378,7 +406,7 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
       int flower3pollenQuantity = flower3Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1];
       
       if (flower1pollenQuantity>0) {
-        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
+        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, start local movement instead of "big jumps"
         int remainPollenFlower1 = flower1pollenQuantity - flower1PollenPropagation;
         if (remainPollenFlower1 < 0) {
           flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = 0;
@@ -396,7 +424,7 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
       }
       
       if (flower2pollenQuantity>0) {
-        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
+        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, start local movement instead of "big jumps"
         int remainPollenFlower2 = flower2pollenQuantity - flower2PollenPropagation;
         if (remainPollenFlower2 < 0) {
           flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = 0;
@@ -414,7 +442,7 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
       }
       
       if (flower3pollenQuantity>0) {
-        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
+        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, start local movement instead of "big jumps"
         int remainPollenFlower3 = flower3pollenQuantity - flower3PollenPropagation;
         if (remainPollenFlower3 < 0) {
           flower3Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = 0;
@@ -454,4 +482,17 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
     if (pollinatorIndividuals.get(i).getEnergy() <1) { pollinatorIndividuals.remove(i);}
   }
   return pollinatorIndividuals;
+}
+
+void addMessage(String m) {
+  if (message_index < 25) {
+    messages[message_index] = m;
+    message_index = message_index + 1;
+  } else {
+    for (int i=1;i<25;i++) {
+      messages[i-1] = messages[i];
+    }
+    messages[24] = m;
+    message_index = 24;
+  }
 }
