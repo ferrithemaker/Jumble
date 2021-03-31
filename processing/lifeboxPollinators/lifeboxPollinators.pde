@@ -5,29 +5,31 @@
  class Pollinator { 
   int pollenF1;
   int pollenF2;
+  int pollenF3;
   int energy;
   int xpos;
   int ypos;
   int localMovement; // 50000 to 0, 0 = no local movement
-  Pollinator (int p1, int p2, int e, int x, int y, int lm) {  
+  Pollinator (int p1, int p2, int p3, int e, int x, int y, int lm) {  
     pollenF1 = p1;
     pollenF2 = p2;
+    pollenF3 = p3;
     xpos = x;
     ypos = y;
     energy = e;
     localMovement = lm;
   } 
-  void changePollenF1(int p) { 
-    pollenF1 = pollenF1 + p;
+  void changePollen(int p, int nf) { 
+    if (nf==1) { pollenF1 = pollenF1 + p; }
+    if (nf==2) { pollenF2 = pollenF2 + p; }
+    if (nf==3) { pollenF3 = pollenF1 + p; }
   }
-  void changePollenF2(int p) { 
-    pollenF2 = pollenF2 + p;
-  }
-  int getPollenF1() {
-    return pollenF1;
-  }
-  int getPollenF2() {
-    return pollenF2;
+  int getPollen(int nf) {
+    int p = 0;
+    if (nf==1) { p = pollenF1; }
+    if (nf==2) { p = pollenF2; }
+    if (nf==3) { p = pollenF3; }
+    return p;
   }
   int getEnergy() {
     return energy;
@@ -72,51 +74,31 @@ int padding = 0;
 // plants variables
 int[][][] flower1Matrix = new int[matrixSizeX][matrixSizeY][5]; // [0] age [1] pollen [2] xpos [3] ypos [4] energy available (nectar)
 int[][][] flower2Matrix = new int[matrixSizeX][matrixSizeY][5]; // [0] age [1] pollen [2] xpos [3] ypos [4] energy available (nectar)
+int[][][] flower3Matrix = new int[matrixSizeX][matrixSizeY][5]; // [0] age [1] pollen [2] xpos [3] ypos [4] energy available (nectar)
 
 ArrayList<Pollinator> pollinator1Individuals = new ArrayList<Pollinator>();
 ArrayList<Pollinator> pollinator2Individuals = new ArrayList<Pollinator>();
 ArrayList<Pollinator> pollinator3Individuals = new ArrayList<Pollinator>();
 
-
 int[] available_spots = new int[8];
 
-int flower1Count = 0;
-int flower2Count = 0;
-int pollinator1Count = 0;
-int pollinator2Count = 0;
+int[] flowerCount = {0,0,0};
 
-int flower1CountLastIteration = 0;
-int flower2CountLastIteration = 0;
+int[] flowerCountLastIteration = {0,0,0};
 
 
 // hardcoded web app controller parameters (only for testing)
-int[] flower1Parameters = { 400, 1000, 2, 3}; // life expectancy [max cycles of flower life], reproduction [marginal reproduction chances high value>slow rate 2-X], pollen propagation [quantity of pollen allowed to be relased from flower], pollen generation [quantity of pollen generated per cycle]
-int[] flower2Parameters = { 400, 1000, 2, 3}; // life expectancy, reproduction, pollen propagation, pollen generation
+int[] flower1Parameters = { 400, 1000, 2, 3, 5000}; // life expectancy [max cycles of flower life], reproduction [marginal reproduction chances high value>slow rate 2-X], pollen propagation [quantity of pollen allowed to be relased from flower], pollen generation [quantity of pollen generated per cycle]
+int[] flower2Parameters = { 400, 1000, 2, 3, 5000}; // life expectancy, reproduction, pollen propagation, pollen generation, random born chances
+int[] flower3Parameters = { 400, 1000, 2, 3, 5000};
 
 int[] pollinator1Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
 int[] pollinator2Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
 int[] pollinator3Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
 
-final int FLOWER1_LIFE_EXPECTANCY = 70;
-final int FLOWER2_LIFE_EXPECTANCY = 70;
+final int FLOWER_ENERGY_GENERATION = 1000;
 
-final int FLOWER1_REPRODUCTION = 50;
-final int FLOWER2_REPRODUCTION = 50;
-
-final int FLOWER1_POLLEN_PROPAGATION = 50;
-final int FLOWER2_POLLEN_PROPAGATION = 50;
-
-final int FLOWER1_POLLEN_GENERATION = 50;
-final int FLOWER2_POLLEN_GENERATION = 50;
-
-final int FLOWER1_RANDOM_BORN_CHANCES = 5000;
-final int FLOWER2_RANDOM_BORN_CHANCES = 5000;
-
-final int FLOWER1_ENERGY_GENERATION = 1000;
-final int FLOWER2_ENERGY_GENERATION = 1000;
-
-final int FLOWER1_MAXENERGY = 10000000;
-final int FLOWER2_MAXENERGY = 10000000;
+final int FLOWER_MAXENERGY = 10000000;
 
 final float PARLIN_NOISE_FACTOR = 0.3; //randomness of pollinators movement
 
@@ -147,29 +129,37 @@ void setup() {
 
 void draw() {
   boolean draw;
-  flower1CountLastIteration = flower1Count;
-  flower2CountLastIteration = flower2Count;
-  flower1Count = 0;
-  flower2Count = 0;
+  flowerCountLastIteration[0] = flowerCount[0];
+  flowerCountLastIteration[1] = flowerCount[1];
+  flowerCountLastIteration[2] = flowerCount[2];
+  flowerCount[0] = 0;
+  flowerCount[1] = 0;
+  flowerCount[2] = 0;
   
   background(0);
  
   // paint the flowers matrix
   for (int x = 0; x < matrixSizeX; x++) {
     for (int y = 0; y < matrixSizeY; y++) {
-      calculatePlantsNextIteration(x, y);
+      flower1Matrix = calculateFlowerNextIteration(x, y,flower1Matrix,flower1Parameters,0);
+      flower2Matrix = calculateFlowerNextIteration(x, y,flower2Matrix,flower2Parameters,1);
+      flower3Matrix = calculateFlowerNextIteration(x, y,flower3Matrix,flower3Parameters,2);
       pollinator1Individuals = calculatePollinatorNextIteration(pollinator1Individuals,pollinator1Parameters);
       pollinator2Individuals = calculatePollinatorNextIteration(pollinator2Individuals,pollinator2Parameters);
       pollinator3Individuals = calculatePollinatorNextIteration(pollinator3Individuals,pollinator3Parameters);
       //println(plantsMatrix[x][y][1]);
       draw = false;
       if (flower1Matrix[x][y][0]>0) {
-        fill(0, 0, map(flower1Matrix[x][y][0], 0, flower1Parameters[0], 0, 255));
+        fill(0, 0, 255, map(flower1Matrix[x][y][0], 0, flower1Parameters[0], 0, 255));
         draw = true;
       }
       
       if (flower2Matrix[x][y][0]>0) {
-        fill(map(flower2Matrix[x][y][0], 0, flower1Parameters[0], 0, 255), 0, 0);
+        fill(255, 0, 0,map(flower2Matrix[x][y][0], 0, flower2Parameters[0], 0, 255));
+        draw = true;
+      }
+      if (flower3Matrix[x][y][0]>0) {
+        fill(0, 255, 0,map(flower3Matrix[x][y][0], 0, flower3Parameters[0], 0, 255));
         draw = true;
       }
       
@@ -194,19 +184,17 @@ void draw() {
   //delay(10);
 }
 
+int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[] flowerParameters, int numberOfFlower) {
+  int flower_neighbours = 0;
+  int flowerVitality = flowerParameters[0];
+  int flowerReproduction = flowerParameters[1];
+  int flowerPollenGeneration = flower1Parameters[3];
+  int flowerRandomBornChances = flower1Parameters[4];
 
-void calculatePlantsNextIteration(int x, int y) {
-  int flower1_neighbours = 0;
-  int flower2_neighbours = 0;
-  int flower1Vitality = flower1Parameters[0];
-  int flower1Reproduction = flower1Parameters[1];
-  int flower1PollenGeneration = flower1Parameters[3];
-  int flower2Vitality = flower2Parameters[0];
-  int flower2Reproduction = flower2Parameters[1];
-  int flower2PollenGeneration = flower2Parameters[3];
-  
+  // number of pollinators ARE not dynamic!!
   int pollinator1PollinationRate = pollinator1Parameters[2];
   int pollinator2PollinationRate = pollinator2Parameters[2];
+  int pollinator3PollinationRate = pollinator3Parameters[2];
   
   int randomBorn, randomNumber;
 
@@ -228,65 +216,63 @@ void calculatePlantsNextIteration(int x, int y) {
     ym = 0;
   }
   
-  // Flower 1 species
-  
   // count the number of currently live neighbouring cells
-  if (flower1Matrix[x][y][0] == 0 && flower1Matrix[xm][y][0] > 0) {
-    flower1_neighbours += 1;
+  if (flowerMatrix[x][y][0] == 0 && flowerMatrix[xm][y][0] > 0) {
+    flower_neighbours += 1;
   }
-  if (flower1Matrix[x][y][0] == 0 && flower1Matrix[xp][y][0] > 0) {
-    flower1_neighbours += 1;
+  if (flowerMatrix[x][y][0] == 0 && flowerMatrix[xp][y][0] > 0) {
+    flower_neighbours += 1;
   }
-  if (flower1Matrix[x][y][0] == 0 && flower1Matrix[xm][ym][0] > 0) {
-    flower1_neighbours += 1;
+  if (flowerMatrix[x][y][0] == 0 && flowerMatrix[xm][ym][0] > 0) {
+    flower_neighbours += 1;
   }
-  if (flower1Matrix[x][y][0] == 0 && flower1Matrix[x][ym][0] > 0) {
-    flower1_neighbours += 1;
+  if (flowerMatrix[x][y][0] == 0 && flowerMatrix[x][ym][0] > 0) {
+    flower_neighbours += 1;
   }
-  if (flower1Matrix[x][y][0] == 0 && flower1Matrix[xp][ym][0] > 0) {
-    flower1_neighbours += 1;
+  if (flowerMatrix[x][y][0] == 0 && flowerMatrix[xp][ym][0] > 0) {
+    flower_neighbours += 1;
   }
-  if (flower1Matrix[x][y][0] == 0 && flower1Matrix[xm][yp][0] > 0) {
-    flower1_neighbours += 1;
+  if (flowerMatrix[x][y][0] == 0 && flowerMatrix[xm][yp][0] > 0) {
+    flower_neighbours += 1;
   }
-  if (flower1Matrix[x][y][0] == 0 && flower1Matrix[x][yp][0] > 0) {
-    flower1_neighbours += 1;
+  if (flowerMatrix[x][y][0] == 0 && flowerMatrix[x][yp][0] > 0) {
+    flower_neighbours += 1;
   }
-  if (flower1Matrix[x][y][0] == 0 && flower1Matrix[xp][yp][0] > 0) {
-    flower1_neighbours += 1;
+  if (flowerMatrix[x][y][0] == 0 && flowerMatrix[xp][yp][0] > 0) {
+    flower_neighbours += 1;
   }
   // if too old, the flower dies
-  if (flower1Matrix[x][y][0] >= FLOWER1_LIFE_EXPECTANCY + flower1Vitality) {
-    flower1Matrix[x][y][0] = 0;
-    flower1Matrix[x][y][1] = 0;
-    flower1Matrix[x][y][4] = 0;
+  if (flowerMatrix[x][y][0] >= flowerVitality) {
+    flowerMatrix[x][y][0] = 0;
+    flowerMatrix[x][y][1] = 0;
+    flowerMatrix[x][y][4] = 0;
   }
 
   // flower grows
-  if (flower1Matrix[x][y][0]>0 && flower1Matrix[x][y][0] < FLOWER1_LIFE_EXPECTANCY + flower1Vitality) {
-    flower1Matrix[x][y][0] += 1;
-    flower1Matrix[x][y][1] = flower1Matrix[x][y][1] + FLOWER1_POLLEN_GENERATION + flower1PollenGeneration;  // increase pollen available
-    flower1Count += 1;
+  if (flowerMatrix[x][y][0]>0 && flowerMatrix[x][y][0] < flowerVitality) {
+    flowerMatrix[x][y][0] += 1;
+    flowerMatrix[x][y][1] = flowerMatrix[x][y][1] + flowerPollenGeneration;  // increase pollen available
+    flowerCount[numberOfFlower] += 1;
     if (int(random(1, 10))==1) {
-      flower1Matrix[x][y][4] = flower1Matrix[x][y][4] + FLOWER1_ENERGY_GENERATION;
-      if (flower1Matrix[x][y][4] > FLOWER1_MAXENERGY) { flower1Matrix[x][y][4] = FLOWER1_MAXENERGY; }
+      flowerMatrix[x][y][4] = flowerMatrix[x][y][4] + FLOWER_ENERGY_GENERATION;
+      if (flowerMatrix[x][y][4] > FLOWER_MAXENERGY) { flowerMatrix[x][y][4] = FLOWER_MAXENERGY; }
     }
       
   }
   // flower reproduction
-  if (flower1Reproduction > 0 && flower1Matrix[x][y][0] == 0 && flower1_neighbours > 0) {
+  if (flowerReproduction > 0 && flowerMatrix[x][y][0] == 0 && flower_neighbours > 0) {
     // we are on a potential reproductive spot, we have a pollinator?
     boolean pollinatorOverFlower = false;
     for (int i=0; i < pollinator1Individuals.size(); i++) {
       if (x == pollinator1Individuals.get(i).getX() && y == pollinator1Individuals.get(i).getX()) {
         pollinatorOverFlower = true;
         if (int(random(1, pollinator1PollinationRate))==1) {
-          if (pollinator1Individuals.get(i).getPollenF1()>0) {
-            pollinator1Individuals.get(i).changePollenF1(-1);
-            flower1Matrix[x][y][0] = 1;
-            flower1Matrix[x][y][1] = FLOWER1_POLLEN_GENERATION + flower1PollenGeneration;
-            flower1Matrix[x][y][4] = FLOWER1_ENERGY_GENERATION;
-            flower1Count += 1;
+          if (pollinator1Individuals.get(i).getPollen(1)>0) {
+            pollinator1Individuals.get(i).changePollen(-1,1);
+            flowerMatrix[x][y][0] = 1;
+            flowerMatrix[x][y][1] = flowerPollenGeneration;
+            flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
+            flowerCount[numberOfFlower] += 1;
             println("CREATED POLLINATED!");
           }
         }
@@ -297,120 +283,29 @@ void calculatePlantsNextIteration(int x, int y) {
         if (x == pollinator2Individuals.get(i).getX() && y == pollinator2Individuals.get(i).getX()) {
           pollinatorOverFlower = true;
           if (int(random(1, pollinator2PollinationRate))==1) {
-            if (pollinator2Individuals.get(i).getPollenF1()>0) {
-              pollinator2Individuals.get(i).changePollenF1(-1);
-              flower1Matrix[x][y][0] = 1;
-              flower1Matrix[x][y][1] = FLOWER1_POLLEN_GENERATION + flower1PollenGeneration;
-              flower1Matrix[x][y][4] = FLOWER1_ENERGY_GENERATION;
-              flower1Count += 1;
+            if (pollinator2Individuals.get(i).getPollen(2)>0) {
+              pollinator2Individuals.get(i).changePollen(-1,2);
+              flowerMatrix[x][y][0] = 1;
+              flowerMatrix[x][y][1] = flowerPollenGeneration;
+              flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
+              flowerCount[numberOfFlower] += 1;
               println("CREATED POLLINATED!");
             }
           }
         }
       }
     }
-    // if there's no pollinator
     if (!pollinatorOverFlower) {
-      if (flower1Reproduction < 2) {
-        randomBorn = 2;
-      } else {
-        randomBorn =  flower1Reproduction;
-      }
-      randomNumber = int(random(1, randomBorn+1));
-      if (randomNumber == 1) {
-        //println("REPRODUCTION!");
-        flower1Matrix[x][y][0] = 1;
-        flower1Matrix[x][y][1] = FLOWER1_POLLEN_GENERATION + flower1PollenGeneration;
-        flower1Matrix[x][y][4] = FLOWER1_ENERGY_GENERATION;
-        flower1Count += 1;
-      }
-    }
-  }
-  // spontaneous generation
-  if (flower1Matrix[x][y][0] == 0 && flower1_neighbours == 0 && flower1Count == 0 && flower1CountLastIteration == 0) {
-    randomNumber = int(random(1, FLOWER1_RANDOM_BORN_CHANCES));
-    if (randomNumber == 1) {
-      flower1Matrix[x][y][0] = 1;
-      flower1Matrix[x][y][1] = FLOWER1_POLLEN_GENERATION + flower1PollenGeneration;
-      flower1Matrix[x][y][4] = FLOWER1_ENERGY_GENERATION;
-      flower1Count += 1;
-    }
-  }
-  
-  // Flower 2 species
-  
-  // count the number of currently live neighbouring cells
-  if (flower2Matrix[x][y][0] == 0 && flower2Matrix[xm][y][0] > 0) {
-    flower2_neighbours += 1;
-  }
-  if (flower2Matrix[x][y][0] == 0 && flower2Matrix[xp][y][0] > 0) {
-    flower2_neighbours += 1;
-  }
-  if (flower2Matrix[x][y][0] == 0 && flower2Matrix[xm][ym][0] > 0) {
-    flower2_neighbours += 1;
-  }
-  if (flower2Matrix[x][y][0] == 0 && flower2Matrix[x][ym][0] > 0) {
-    flower2_neighbours += 1;
-  }
-  if (flower2Matrix[x][y][0] == 0 && flower2Matrix[xp][ym][0] > 0) {
-    flower2_neighbours += 1;
-  }
-  if (flower2Matrix[x][y][0] == 0 && flower2Matrix[xm][yp][0] > 0) {
-    flower2_neighbours += 1;
-  }
-  if (flower2Matrix[x][y][0] == 0 && flower2Matrix[x][yp][0] > 0) {
-    flower2_neighbours += 1;
-  }
-  if (flower2Matrix[x][y][0] == 0 && flower2Matrix[xp][yp][0] > 0) {
-    flower2_neighbours += 1;
-  }
-  // if too old, the flower dies
-  if (flower2Matrix[x][y][0] >= FLOWER2_LIFE_EXPECTANCY + flower2Vitality) {
-    flower2Matrix[x][y][0] = 0;
-    flower2Matrix[x][y][1] = 0;
-    flower2Matrix[x][y][4] = 0;
-  }
-
-  // flower grows
-  if (flower2Matrix[x][y][0]>0 && flower2Matrix[x][y][0] < FLOWER2_LIFE_EXPECTANCY + flower2Vitality) {
-    flower2Matrix[x][y][0] += 1;
-    flower2Matrix[x][y][1] = flower2Matrix[x][y][1] + FLOWER2_POLLEN_GENERATION + flower2PollenGeneration;  // increase pollen available
-    flower2Count += 1;
-    if (int(random(1, 10))==1) {
-      flower2Matrix[x][y][4] = flower2Matrix[x][y][4] + FLOWER2_ENERGY_GENERATION;
-      if (flower2Matrix[x][y][4] > FLOWER2_MAXENERGY) { flower2Matrix[x][y][4] = FLOWER2_MAXENERGY; }
-    }
-  }
-  // flower reproduction
-  if (flower2Reproduction > 0 && flower2Matrix[x][y][0] == 0 && flower2_neighbours > 0) {
-    // we are on a potential reproductive spot, we have a pollinator?
-    boolean pollinatorOverFlower = false;
-    for (int i=0; i < pollinator1Individuals.size(); i++) {
-      if (x == pollinator1Individuals.get(i).getX() && y == pollinator1Individuals.get(i).getX()) {
-        pollinatorOverFlower = true;
-        if (int(random(1, pollinator1PollinationRate))==1) {
-          if (pollinator1Individuals.get(i).getPollenF2()>0) {
-            pollinator1Individuals.get(i).changePollenF2(-1);
-            flower2Matrix[x][y][0] = 1;
-            flower2Matrix[x][y][1] = FLOWER2_POLLEN_GENERATION + flower2PollenGeneration;
-            flower2Matrix[x][y][4] = FLOWER2_ENERGY_GENERATION;
-            flower2Count += 1;
-            println("CREATED POLLINATED!");
-          }
-        }
-      }
-    }
-    if (!pollinatorOverFlower) {
-      for (int i=0; i < pollinator2Individuals.size(); i++) {
-        if (x == pollinator2Individuals.get(i).getX() && y == pollinator2Individuals.get(i).getX()) {
+      for (int i=0; i < pollinator3Individuals.size(); i++) {
+        if (x == pollinator3Individuals.get(i).getX() && y == pollinator3Individuals.get(i).getX()) {
           pollinatorOverFlower = true;
-          if (int(random(1, pollinator2PollinationRate))==1) {
-            if (pollinator2Individuals.get(i).getPollenF2()>0) {
-              pollinator2Individuals.get(i).changePollenF2(-1);
-              flower2Matrix[x][y][0] = 1;
-              flower2Matrix[x][y][1] = FLOWER2_POLLEN_GENERATION + flower2PollenGeneration;
-              flower2Matrix[x][y][4] = FLOWER2_ENERGY_GENERATION;
-              flower2Count += 1;
+          if (int(random(1, pollinator3PollinationRate))==1) {
+            if (pollinator3Individuals.get(i).getPollen(3)>0) {
+              pollinator3Individuals.get(i).changePollen(-1,3);
+              flowerMatrix[x][y][0] = 1;
+              flowerMatrix[x][y][1] = flowerPollenGeneration;
+              flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
+              flowerCount[numberOfFlower] += 1;
               println("CREATED POLLINATED!");
             }
           }
@@ -419,32 +314,32 @@ void calculatePlantsNextIteration(int x, int y) {
     }
     // if there's no pollinator
     if (!pollinatorOverFlower) {
-      if (flower2Reproduction < 2) {
+      if (flowerReproduction < 2) {
         randomBorn = 2;
       } else {
-        randomBorn = flower2Reproduction;
+        randomBorn =  flowerReproduction;
       }
       randomNumber = int(random(1, randomBorn+1));
       if (randomNumber == 1) {
         //println("REPRODUCTION!");
-        flower2Matrix[x][y][0] = 1;
-        flower2Matrix[x][y][1] = FLOWER2_POLLEN_GENERATION + flower2PollenGeneration;
-        flower2Matrix[x][y][4] = FLOWER2_ENERGY_GENERATION;
-        flower2Count += 1;
+        flowerMatrix[x][y][0] = 1;
+        flowerMatrix[x][y][1] = flowerPollenGeneration;
+        flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
+        flowerCount[numberOfFlower] += 1;
       }
     }
   }
   // spontaneous generation
-  if (flower2Matrix[x][y][0] == 0 && flower2_neighbours == 0 && flower2Count == 0 && flower2CountLastIteration == 0) {
-    randomNumber = int(random(1, FLOWER2_RANDOM_BORN_CHANCES));
+  if (flowerMatrix[x][y][0] == 0 && flower_neighbours == 0 && flowerCount[numberOfFlower] == 0 && flowerCountLastIteration[numberOfFlower] == 0) {
+    randomNumber = int(random(1, flowerRandomBornChances));
     if (randomNumber == 1) {
-      //println("BORN!!");
-      flower2Matrix[x][y][0] = 1;
-      flower2Matrix[x][y][1] = FLOWER2_POLLEN_GENERATION + flower2PollenGeneration;
-      flower2Count += 1;
+      flowerMatrix[x][y][0] = 1;
+      flowerMatrix[x][y][1] = flowerPollenGeneration;
+      flower1Matrix[x][y][4] = FLOWER_ENERGY_GENERATION;
+      flowerCount[numberOfFlower] += 1;
     }
   }
-  
+  return flowerMatrix;
 }
 
 
@@ -457,13 +352,14 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
   
   int flower1PollenPropagation = flower1Parameters[2];
   int flower2PollenPropagation = flower2Parameters[2];
+  int flower3PollenPropagation = flower3Parameters[2];
   
   // adjust quantity of pollinator1
   
   // add if needed
   for (int i = pollinatorIndividuals.size(); i < pollinatorNumber; i++) {
     if (int(random(1, 1000000)) == 1) { 
-      pollinatorIndividuals.add(new Pollinator(0, 0, 10000000, int(random(10, matrixSizeX)), int(random(1, matrixSizeY)),0)); // each pollinator starts with  energy to avoid inminent dying
+      pollinatorIndividuals.add(new Pollinator(0, 0, 0, 10000000, int(random(10, matrixSizeX)), int(random(1, matrixSizeY)),0)); // each pollinator starts with  energy to avoid inminent dying
     }
   }
   
@@ -475,37 +371,39 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
   for (int i=0; i < pollinatorIndividuals.size(); i++) {
     int pollinatorXpos = pollinatorIndividuals.get(i).getX();
     int pollinatorYpos = pollinatorIndividuals.get(i).getY();   
-    // try to get pollen from flower
+    // try to get pollen from flower (flower dependant)
     if (int(random(1, pollinatorGatheringRate)) == 1) {
       int flower1pollenQuantity = flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1];
       int flower2pollenQuantity = flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1];
+      int flower3pollenQuantity = flower3Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1];
+      
       if (flower1pollenQuantity>0) {
         pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
         int remainPollenFlower1 = flower1pollenQuantity - flower1PollenPropagation;
         if (remainPollenFlower1 < 0) {
           flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = 0;
-          pollinatorIndividuals.get(i).changePollenF1(flower1pollenQuantity);
+          pollinatorIndividuals.get(i).changePollen(flower1pollenQuantity,0);
         } else {
           flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = remainPollenFlower1;
-          pollinatorIndividuals.get(i).changePollenF1(flower1PollenPropagation);
+          pollinatorIndividuals.get(i).changePollen(flower1PollenPropagation,0);
         }
         // get energy from flowers
         if (flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]>pollinatorGatheringEnergy) {
           pollinatorIndividuals.get(i).changeEnergy(pollinatorGatheringEnergy);
         } else {
           pollinatorIndividuals.get(i).changeEnergy(flower1Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]);
-        }
-        
+        }     
       }
+      
       if (flower2pollenQuantity>0) {
         pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
         int remainPollenFlower2 = flower2pollenQuantity - flower2PollenPropagation;
         if (remainPollenFlower2 < 0) {
           flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = 0;
-          pollinatorIndividuals.get(i).changePollenF2(flower2pollenQuantity);
+          pollinatorIndividuals.get(i).changePollen(flower2pollenQuantity,1);
         } else {
           flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = remainPollenFlower2;
-          pollinatorIndividuals.get(i).changePollenF2(flower2PollenPropagation);
+          pollinatorIndividuals.get(i).changePollen(flower2PollenPropagation,1);
         }
         // get energy from flowers
         if (flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]>pollinatorGatheringEnergy) {
@@ -514,7 +412,26 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
           pollinatorIndividuals.get(i).changeEnergy(flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]);
         }
       }
+      
+      if (flower3pollenQuantity>0) {
+        pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, star local movement instead of "big jumps"
+        int remainPollenFlower3 = flower3pollenQuantity - flower3PollenPropagation;
+        if (remainPollenFlower3 < 0) {
+          flower3Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = 0;
+          pollinatorIndividuals.get(i).changePollen(flower1pollenQuantity,2);
+        } else {
+          flower3Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1] = remainPollenFlower3;
+          pollinatorIndividuals.get(i).changePollen(flower3PollenPropagation,2);
+        }
+        // get energy from flowers
+        if (flower3Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]>pollinatorGatheringEnergy) {
+          pollinatorIndividuals.get(i).changeEnergy(pollinatorGatheringEnergy);
+        } else {
+          pollinatorIndividuals.get(i).changeEnergy(flower3Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][4]);
+        }     
+      }
     }
+    
     int movementAlteration = 1;
     if (pollinatorIndividuals.get(i).getLocalMovement()>0) { movementAlteration = 4; }
     if (int(random(1,pollinatorMovementRate*movementAlteration))==1) {
