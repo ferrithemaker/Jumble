@@ -1,6 +1,9 @@
 /**
- * Lifebox processing version 
+ * Lifebox pollinators version 
  */
+ 
+ import mqtt.*; // you will need to install mqtt library to connect to lifebox app
+ 
  
  class Pollinator { 
   int pollenF1;
@@ -64,7 +67,7 @@
 boolean debug = true;
 
 // messages list
-String[] messages = new String[25];
+String[] messages = new String[35];
 int message_index = 0;
 
 int[] totalPollinations = new int[3];
@@ -119,7 +122,7 @@ void setup() {
 
   colorMode(RGB);
   
-  for (int i=0;i<25;i++) { messages[i]=""; }
+  for (int i=0;i<35;i++) { messages[i]=""; }
   
   totalPollinations[0] = 1;
   totalPollinations[1] = 1;
@@ -197,11 +200,12 @@ void draw() {
     ellipse((pollinator3Individuals.get(i).getX()+1)*(shapeSize+padding), (pollinator3Individuals.get(i).getY()+1)*(shapeSize+padding), shapeSize, shapeSize);
   }
   if (debug) {
-    fill(150, 150, 150, 150);
+    fill(150, 150, 150, 255);
     textSize(32);
     text("Blue flowers:"+flowerCount[0]+"/"+totalPollinations[0]+"          Red flowers:"+flowerCount[1]+"/"+totalPollinations[1]+"          Green flowers:"+flowerCount[2]+"/"+totalPollinations[2], 40, 1000);
-    for (int i=0;i<25;i++) {
-      text(messages[i],1500,50+(i*40));
+    textSize(20);
+    for (int i=0;i<35;i++) {
+      text(messages[i],1650,50+(i*30));
     }
   }
 }
@@ -295,9 +299,9 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
             flowerMatrix[x][y][1] = flowerPollenGeneration;
             flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
             flowerCount[numberOfFlower] += 1;
-            if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated!"); }
-            if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated!"); }
-            if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated!"); }
+            if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated"); }
+            if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated"); }
+            if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated"); }
           }
         }
       }
@@ -313,9 +317,9 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
               flowerMatrix[x][y][1] = flowerPollenGeneration;
               flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
               flowerCount[numberOfFlower] += 1;
-              if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated!"); }
-              if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated!"); }
-              if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated!"); }
+              if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated"); }
+              if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated"); }
+              if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated"); }
             }
           }
         }
@@ -332,9 +336,9 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
               flowerMatrix[x][y][1] = flowerPollenGeneration;
               flowerMatrix[x][y][4] = FLOWER_ENERGY_GENERATION;
               flowerCount[numberOfFlower] += 1;
-              if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated!"); }
-              if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated!"); }
-              if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated!"); }
+              if (numberOfFlower == 0) { totalPollinations[0]++; addMessage("Blue flower pollinated"); }
+              if (numberOfFlower == 1) { totalPollinations[1]++; addMessage("Red flower pollinated"); }
+              if (numberOfFlower == 2) { totalPollinations[2]++; addMessage("Green flower pollinated"); }
             }
           }
         }
@@ -388,6 +392,7 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
   for (int i = pollinatorIndividuals.size(); i < pollinatorNumber; i++) {
     if (int(random(1, 1000000)) == 1) { 
       pollinatorIndividuals.add(new Pollinator(0, 0, 0, 10000000, int(random(10, matrixSizeX)), int(random(1, matrixSizeY)),0)); // each pollinator starts with  energy to avoid inminent dying
+      addMessage("Pollinator born");
     }
   }
   
@@ -479,20 +484,20 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
     pollinatorIndividuals.get(i).changeEnergy(-1);
     pollinatorIndividuals.get(i).changeLocalMovement(-1);
     // die
-    if (pollinatorIndividuals.get(i).getEnergy() <1) { pollinatorIndividuals.remove(i);}
+    if (pollinatorIndividuals.get(i).getEnergy() <1) { pollinatorIndividuals.remove(i); addMessage("Pollinator dies"); }
   }
   return pollinatorIndividuals;
 }
 
 void addMessage(String m) {
-  if (message_index < 25) {
+  if (message_index < 35) {
     messages[message_index] = m;
     message_index = message_index + 1;
   } else {
-    for (int i=1;i<25;i++) {
+    for (int i=1;i<35;i++) {
       messages[i-1] = messages[i];
     }
-    messages[24] = m;
-    message_index = 24;
+    messages[34] = m;
+    message_index = 34;
   }
 }
