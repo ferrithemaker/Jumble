@@ -4,7 +4,26 @@
  
  import mqtt.*; // you will need to install mqtt library to connect to lifebox app
  
- 
+ MQTTClient client;
+
+class Adapter implements MQTTListener {
+  void clientConnected() {
+    println("client connected");
+    client.subscribe("/lifeboxPollinatorData/data1");
+    client.subscribe("/lifeboxPollinatorData/data2");
+  }
+  void messageReceived(String topic, byte[] payload) {
+    println("new message: " + topic + " - " + new String(payload));
+  }
+
+  void connectionLost() {
+    println("connection lost");
+  }
+}
+
+Adapter adapter;
+
+
  class Pollinator { 
   int pollenF1;
   int pollenF2;
@@ -66,6 +85,9 @@
 // debug mode
 boolean debug = true;
 
+// enable mqtt?
+boolean enableMQTT = true;
+
 // messages list
 String[] messages = new String[35];
 int message_index = 0;
@@ -119,7 +141,12 @@ final float PARLIN_NOISE_FACTOR = 0.3; //randomness of pollinators movement
 void setup() {
   size(1920, 1080);
   //size(800,600);
-
+  
+  if (enableMQTT) {
+    adapter = new Adapter();
+    client = new MQTTClient(this, adapter);
+    client.connect("mqtt://test.mosquitto.org", "lifeboxpollinator");
+  }
   colorMode(RGB);
   
   for (int i=0;i<35;i++) { messages[i]=""; }
@@ -198,6 +225,9 @@ void draw() {
   for (int i=0; i < pollinator3Individuals.size(); i++) {
     fill(150,100,50,map(pollinator3Individuals.get(i).getEnergy(),0,10000000,100,255));
     ellipse((pollinator3Individuals.get(i).getX()+1)*(shapeSize+padding), (pollinator3Individuals.get(i).getY()+1)*(shapeSize+padding), shapeSize, shapeSize);
+  }
+  if (enableMQTT) {
+  client.publish("/lifeboxPollinatorData/flowerData", str(flowerCount[0])+"/"+str(totalPollinations[0])+"Red flowers:"+str(flowerCount[1])+"/"+str(totalPollinations[1])+"Green flowers:"+str(flowerCount[2])+"/"+st(totalPollinations[2]));
   }
   if (debug) {
     fill(150, 150, 150, 255);
