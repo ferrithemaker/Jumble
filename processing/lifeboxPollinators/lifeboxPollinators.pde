@@ -227,7 +227,7 @@ void draw() {
     ellipse((pollinator3Individuals.get(i).getX()+1)*(shapeSize+padding), (pollinator3Individuals.get(i).getY()+1)*(shapeSize+padding), shapeSize, shapeSize);
   }
   if (enableMQTT) {
-  client.publish("/lifeboxPollinatorData/flowerData", str(flowerCount[0])+"/"+str(totalPollinations[0])+"Red flowers:"+str(flowerCount[1])+"/"+str(totalPollinations[1])+"Green flowers:"+str(flowerCount[2])+"/"+st(totalPollinations[2]));
+  client.publish("/lifeboxPollinatorData/flowerData", "Blue flowers:"+str(flowerCount[0])+"/"+str(totalPollinations[0])+" Red flowers:"+str(flowerCount[1])+"/"+str(totalPollinations[1])+" Green flowers:"+str(flowerCount[2])+"/"+str(totalPollinations[2]));
   }
   if (debug) {
     fill(150, 150, 150, 255);
