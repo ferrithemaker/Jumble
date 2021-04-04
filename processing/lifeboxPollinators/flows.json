@@ -1,1 +1,761 @@
-[{"id":"5e8dedd6.614734","type":"tab","label":"Lifebox Pollinators","disabled":false,"info":""},{"id":"44cf658.7afaf9c","type":"ui_text","z":"5e8dedd6.614734","group":"91d2fda.3af11","order":0,"width":0,"height":0,"name":"","label":"Simulation data:","format":"{{msg.payload}}","layout":"row-spread","x":490,"y":120,"wires":[],"icon":"node-red/arrow-in.svg"},{"id":"bfd34f70.39263","type":"ui_slider","z":"5e8dedd6.614734","name":"","label":"Flower 1 Data 1","tooltip":"","group":"8dfb009f.707","order":1,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","min":0,"max":10,"step":1,"x":150,"y":260,"wires":[[]]},{"id":"be94fa29.7caac8","type":"ui_slider","z":"5e8dedd6.614734","name":"","label":"Flower 1 Data 2","tooltip":"","group":"8dfb009f.707","order":2,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","min":0,"max":10,"step":1,"x":150,"y":300,"wires":[[]]},{"id":"823bfb07.766198","type":"ui_slider","z":"5e8dedd6.614734","name":"","label":"Flower 1 Data 3","tooltip":"","group":"8dfb009f.707","order":2,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","min":0,"max":10,"step":1,"x":150,"y":340,"wires":[[]]},{"id":"794dbd25.8d2be4","type":"ui_slider","z":"5e8dedd6.614734","name":"","label":"Flower 2 Data 1","tooltip":"","group":"4a2972e7.ea52ec","order":4,"width":0,"height":0,"passthru":true,"outs":"all","topic":"","min":0,"max":10,"step":1,"x":150,"y":380,"wires":[[]]},{"id":"2eaf30d4.5214e","type":"ui_switch","z":"5e8dedd6.614734","name":"","label":"Flower 2 Data 2","tooltip":"","group":"4a2972e7.ea52ec","order":1,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","style":"","onvalue":"true","onvalueType":"bool","onicon":"","oncolor":"","offvalue":"false","offvalueType":"bool","officon":"","offcolor":"","x":150,"y":420,"wires":[[]]},{"id":"e0a6ac13.3a61e","type":"ui_switch","z":"5e8dedd6.614734","name":"","label":"Flower 2 Data 3","tooltip":"","group":"4a2972e7.ea52ec","order":2,"width":0,"height":0,"passthru":true,"decouple":"false","topic":"","style":"","onvalue":"true","onvalueType":"bool","onicon":"","oncolor":"","offvalue":"false","offvalueType":"bool","officon":"","offcolor":"","x":150,"y":460,"wires":[[]]},{"id":"7737c9c5.c2c8a8","type":"mqtt in","z":"5e8dedd6.614734","name":"","topic":"/lifeboxPollinatorData/flowerData","qos":"2","datatype":"auto","broker":"4e1f1e87.c398a","x":190,"y":120,"wires":[["44cf658.7afaf9c"]]},{"id":"91d2fda.3af11","type":"ui_group","name":"Information","tab":"20a2a0e5.708e6","order":3,"disp":false,"width":"6","collapse":false},{"id":"8dfb009f.707","type":"ui_group","name":"Flower 1","tab":"20a2a0e5.708e6","order":1,"disp":false,"width":"6","collapse":false},{"id":"4a2972e7.ea52ec","type":"ui_group","name":"Flower 2","tab":"20a2a0e5.708e6","order":2,"disp":false,"width":"6","collapse":false},{"id":"4e1f1e87.c398a","type":"mqtt-broker","name":"","broker":"test.mosquitto.org","port":"1883","clientid":"","usetls":false,"compatmode":false,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"20a2a0e5.708e6","type":"ui_tab","name":"Lifebox Pollinators Controller","icon":"dashboard","order":1,"disabled":false,"hidden":false}]
+[
+    {
+        "id": "5e8dedd6.614734",
+        "type": "tab",
+        "label": "Lifebox Pollinators",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "44cf658.7afaf9c",
+        "type": "ui_text",
+        "z": "5e8dedd6.614734",
+        "group": "91d2fda.3af11",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Simulation data:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 550,
+        "y": 120,
+        "wires": [],
+        "icon": "node-red/arrow-in.svg"
+    },
+    {
+        "id": "bfd34f70.39263",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Life expectancy",
+        "tooltip": "",
+        "group": "8dfb009f.707",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": "100",
+        "max": "800",
+        "step": 1,
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "480c2d.2c6fd3d4"
+            ]
+        ]
+    },
+    {
+        "id": "be94fa29.7caac8",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Pollination efficency",
+        "tooltip": "",
+        "group": "8dfb009f.707",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 170,
+        "y": 300,
+        "wires": [
+            [
+                "aa3603aa.6dc4f"
+            ]
+        ]
+    },
+    {
+        "id": "823bfb07.766198",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Wind reproduction",
+        "tooltip": "",
+        "group": "8dfb009f.707",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": "1500",
+        "max": "500",
+        "step": "-1",
+        "x": 150,
+        "y": 340,
+        "wires": [
+            [
+                "21279982.9a87d6"
+            ]
+        ]
+    },
+    {
+        "id": "794dbd25.8d2be4",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Life expectancy",
+        "tooltip": "",
+        "group": "4a2972e7.ea52ec",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": "100",
+        "max": "800",
+        "step": 1,
+        "x": 150,
+        "y": 380,
+        "wires": [
+            [
+                "821a9f8e.72421"
+            ]
+        ]
+    },
+    {
+        "id": "7737c9c5.c2c8a8",
+        "type": "mqtt in",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flowersData",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "4e1f1e87.c398a",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "44cf658.7afaf9c"
+            ]
+        ]
+    },
+    {
+        "id": "5fbb8296.e1d0ec",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Life expectancy",
+        "tooltip": "",
+        "group": "6eb274bd.da394c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": "100",
+        "max": "800",
+        "step": 1,
+        "x": 150,
+        "y": 500,
+        "wires": [
+            [
+                "fd275efe.edf14"
+            ]
+        ]
+    },
+    {
+        "id": "b14dd7dc.a64118",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Pollination efficency",
+        "tooltip": "",
+        "group": "6eb274bd.da394c",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 170,
+        "y": 540,
+        "wires": [
+            [
+                "50b94a7.ddbc3b4"
+            ]
+        ]
+    },
+    {
+        "id": "94cb5ef4.e62e7",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Wind reproduction",
+        "tooltip": "",
+        "group": "6eb274bd.da394c",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": "1500",
+        "max": "500",
+        "step": "-1",
+        "x": 150,
+        "y": 580,
+        "wires": [
+            [
+                "211254be.6c0abc"
+            ]
+        ]
+    },
+    {
+        "id": "79add261.d2e95c",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Pollination efficency",
+        "tooltip": "",
+        "group": "4a2972e7.ea52ec",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 170,
+        "y": 420,
+        "wires": [
+            [
+                "b7decfb6.217d7"
+            ]
+        ]
+    },
+    {
+        "id": "9fd6ce4f.db932",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Wind reproduction",
+        "tooltip": "",
+        "group": "4a2972e7.ea52ec",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": "1500",
+        "max": "500",
+        "step": "-1",
+        "x": 150,
+        "y": 460,
+        "wires": [
+            [
+                "b1f0e272.30be6"
+            ]
+        ]
+    },
+    {
+        "id": "480c2d.2c6fd3d4",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower1/life",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 620,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "821a9f8e.72421",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower2/life",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 620,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "fd275efe.edf14",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower3/life",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 620,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "aa3603aa.6dc4f",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower1/pollination",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 640,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "b7decfb6.217d7",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower2/pollination",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 640,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "50b94a7.ddbc3b4",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower3/pollination",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 640,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "21279982.9a87d6",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower1/windreproduction",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 660,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b1f0e272.30be6",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower2/windreproduction",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 660,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "211254be.6c0abc",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/flower3/windreproduction",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 660,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "64097786.a478a8",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Pollinators individuals",
+        "tooltip": "",
+        "group": "439984db.bdd99c",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": "50",
+        "step": 1,
+        "x": 170,
+        "y": 660,
+        "wires": [
+            [
+                "a1f2947b.e9d6e8"
+            ]
+        ]
+    },
+    {
+        "id": "ccf0bb56.82eeb8",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Pollination efficency",
+        "tooltip": "",
+        "group": "ef370840.8af028",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 170,
+        "y": 720,
+        "wires": [
+            [
+                "cbd35755.dcab28"
+            ]
+        ]
+    },
+    {
+        "id": "32210912.db6666",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Movement rate",
+        "tooltip": "",
+        "group": "ef370840.8af028",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 140,
+        "y": 760,
+        "wires": [
+            [
+                "a5659f21.ffddc"
+            ]
+        ]
+    },
+    {
+        "id": "2935f89d.cc8558",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Pollination efficency",
+        "tooltip": "",
+        "group": "9793f79c.ad21c8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 170,
+        "y": 800,
+        "wires": [
+            [
+                "68707398.c1b84c"
+            ]
+        ]
+    },
+    {
+        "id": "7882c914.4007a8",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Movement rate",
+        "tooltip": "",
+        "group": "9793f79c.ad21c8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 140,
+        "y": 840,
+        "wires": [
+            [
+                "787faa91.72f994"
+            ]
+        ]
+    },
+    {
+        "id": "ada22597.a683c8",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Movement rate",
+        "tooltip": "",
+        "group": "ffad160a.b1c138",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 140,
+        "y": 920,
+        "wires": [
+            [
+                "2059bbfb.6767f4"
+            ]
+        ]
+    },
+    {
+        "id": "c7a22629.286948",
+        "type": "ui_slider",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "label": "Pollination efficency",
+        "tooltip": "",
+        "group": "ffad160a.b1c138",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "all",
+        "topic": "",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 170,
+        "y": 880,
+        "wires": [
+            [
+                "4e95d1db.1eb3e"
+            ]
+        ]
+    },
+    {
+        "id": "a1f2947b.e9d6e8",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/pollinators/individuals",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 650,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "cbd35755.dcab28",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/pollinator1/pollination",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 650,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "68707398.c1b84c",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/pollinator2/pollination",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 650,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "4e95d1db.1eb3e",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/pollinator3/pollination",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 650,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "a5659f21.ffddc",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/pollinator1/movement",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 640,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "787faa91.72f994",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/pollinator2/movement",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 640,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "2059bbfb.6767f4",
+        "type": "mqtt out",
+        "z": "5e8dedd6.614734",
+        "name": "",
+        "topic": "/lifeboxPollinatorData/pollinator3/movement",
+        "qos": "",
+        "retain": "",
+        "broker": "4e1f1e87.c398a",
+        "x": 640,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "91d2fda.3af11",
+        "type": "ui_group",
+        "name": "Real-time information",
+        "tab": "20a2a0e5.708e6",
+        "order": 8,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "8dfb009f.707",
+        "type": "ui_group",
+        "name": "Blue flowers",
+        "tab": "20a2a0e5.708e6",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "4a2972e7.ea52ec",
+        "type": "ui_group",
+        "name": "Red flowers",
+        "tab": "20a2a0e5.708e6",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "4e1f1e87.c398a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "6eb274bd.da394c",
+        "type": "ui_group",
+        "name": "Green flowers",
+        "tab": "20a2a0e5.708e6",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "439984db.bdd99c",
+        "type": "ui_group",
+        "name": "Pollinators (generic)",
+        "tab": "20a2a0e5.708e6",
+        "order": 7,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "ef370840.8af028",
+        "type": "ui_group",
+        "name": "Pollinator 1",
+        "tab": "20a2a0e5.708e6",
+        "order": 4,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "9793f79c.ad21c8",
+        "type": "ui_group",
+        "name": "Pollinator 2",
+        "tab": "20a2a0e5.708e6",
+        "order": 5,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "ffad160a.b1c138",
+        "type": "ui_group",
+        "name": "Pollinator 3",
+        "tab": "20a2a0e5.708e6",
+        "order": 6,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "20a2a0e5.708e6",
+        "type": "ui_tab",
+        "name": "Lifebox Pollinators Controller",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    }
+]

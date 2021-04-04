@@ -9,11 +9,55 @@
 class Adapter implements MQTTListener {
   void clientConnected() {
     println("client connected");
-    client.subscribe("/lifeboxPollinatorData/data1");
-    client.subscribe("/lifeboxPollinatorData/data2");
+    client.subscribe("/lifeboxPollinatorData/flower1/life");
+    client.subscribe("/lifeboxPollinatorData/flower2/life");
+    client.subscribe("/lifeboxPollinatorData/flower3/life");
+    client.subscribe("/lifeboxPollinatorData/flower1/pollination");
+    client.subscribe("/lifeboxPollinatorData/flower2/pollination");
+    client.subscribe("/lifeboxPollinatorData/flower3/pollination");
+    client.subscribe("/lifeboxPollinatorData/flower1/windreproduction");
+    client.subscribe("/lifeboxPollinatorData/flower2/windreproduction");
+    client.subscribe("/lifeboxPollinatorData/flower3/windreproduction");
+    client.subscribe("/lifeboxPollinatorData/pollinators/individuals");
+    client.subscribe("/lifeboxPollinatorData/pollinator1/pollination");
+    client.subscribe("/lifeboxPollinatorData/pollinator2/pollination");
+    client.subscribe("/lifeboxPollinatorData/pollinator3/pollination");
+    client.subscribe("/lifeboxPollinatorData/pollinator1/movement");
+    client.subscribe("/lifeboxPollinatorData/pollinator2/movement");
+    client.subscribe("/lifeboxPollinatorData/pollinator3/movement");
   }
   void messageReceived(String topic, byte[] payload) {
-    println("new message: " + topic + " - " + new String(payload));
+    String dataString = new String(payload);
+    println("new message: " + topic + " - " + dataString );
+    
+    if (topic.equals("/lifeboxPollinatorData/flower1/life")) {
+      flower1Parameters[0] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/flower2/life")) {
+      flower2Parameters[0] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/flower3/life")) {
+      flower3Parameters[0] = int(dataString);
+    }
+    
+    if (topic.equals("/lifeboxPollinatorData/flower1/windreproduction")) {
+      flower1Parameters[1] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/flower2/windreproduction")) {
+      flower2Parameters[1] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/flower3/windreproduction")) {
+      flower3Parameters[1] = int(dataString);
+    }
+    
+    if (topic.equals("/lifeboxPollinatorData/pollinators/individuals")) {
+      pollinator1Parameters[0] = int(dataString);
+      pollinator2Parameters[0] = int(dataString);
+      pollinator3Parameters[0] = int(dataString);
+    }
+    
+    //println(dataString);
+    
   }
 
   void connectionLost() {
@@ -167,6 +211,11 @@ void setup() {
       flower2Matrix[x][y][4]=0; // set energy (nectar) available to 0
       flower2Matrix[x][y][2]=((x)*(shapeSize+padding));
       flower2Matrix[x][y][3]=((y)*(shapeSize+padding));
+      flower3Matrix[x][y][0]=0; // set age to 0
+      flower3Matrix[x][y][1]=0; // set pollen to 0
+      flower3Matrix[x][y][4]=0; // set energy (nectar) available to 0
+      flower3Matrix[x][y][2]=((x)*(shapeSize+padding));
+      flower3Matrix[x][y][3]=((y)*(shapeSize+padding));
     }
   }
   noStroke();
@@ -227,7 +276,7 @@ void draw() {
     ellipse((pollinator3Individuals.get(i).getX()+1)*(shapeSize+padding), (pollinator3Individuals.get(i).getY()+1)*(shapeSize+padding), shapeSize, shapeSize);
   }
   if (enableMQTT) {
-  client.publish("/lifeboxPollinatorData/flowerData", "Blue flowers:"+str(flowerCount[0])+"/"+str(totalPollinations[0])+" Red flowers:"+str(flowerCount[1])+"/"+str(totalPollinations[1])+" Green flowers:"+str(flowerCount[2])+"/"+str(totalPollinations[2]));
+  client.publish("/lifeboxPollinatorData/flowersData", "Blue flowers:"+str(flowerCount[0])+"/"+str(totalPollinations[0])+"      Red flowers:"+str(flowerCount[1])+"/"+str(totalPollinations[1])+"      Green flowers:"+str(flowerCount[2])+"/"+str(totalPollinations[2]));
   }
   if (debug) {
     fill(150, 150, 150, 255);
