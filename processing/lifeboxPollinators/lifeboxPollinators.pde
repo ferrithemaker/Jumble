@@ -1,6 +1,20 @@
 /**
- * Lifebox pollinators version 
+ * Lifebox pollinators version (iteration 2)
  */
+ 
+/*
+
+Range of parameters:
+
+Flowers life [100-800]
+Flowers pollen generation x cycle [0-10]
+Flowers wind reproduction [1500-500]
+
+Pollinators individuals [0-50]
+Pollinator movement rate [40000-20000]
+Pollinator efficency (gathering x cycle [0-10]
+
+*/
  
  import mqtt.*; // you will need to install mqtt library to connect to lifebox app
  
@@ -50,13 +64,41 @@ class Adapter implements MQTTListener {
       flower3Parameters[1] = int(dataString);
     }
     
+    if (topic.equals("/lifeboxPollinatorData/flower1/pollination")) {
+      flower1Parameters[3] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/flower2/pollination")) {
+      flower2Parameters[3] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/flower3/pollination")) {
+      flower3Parameters[3] = int(dataString);
+    }
+    
     if (topic.equals("/lifeboxPollinatorData/pollinators/individuals")) {
       pollinator1Parameters[0] = int(dataString);
       pollinator2Parameters[0] = int(dataString);
       pollinator3Parameters[0] = int(dataString);
     }
     
-    //println(dataString);
+    if (topic.equals("/lifeboxPollinatorData/pollinator1/movement")) {
+      pollinator1Parameters[1] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator2/movement")) {
+      pollinator2Parameters[1] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator3/movement")) {
+      pollinator3Parameters[1] = int(dataString);
+    }
+    
+    if (topic.equals("/lifeboxPollinatorData/pollinator1/pollination")) {
+      pollinator1Parameters[3] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator2/pollination")) {
+      pollinator2Parameters[3] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator3/pollination")) {
+      pollinator3Parameters[3] = int(dataString);
+    }
     
   }
 
@@ -166,13 +208,13 @@ int[] flowerCountLastIteration = {0,0,0};
 
 
 // hardcoded web app controller parameters (only for testing)
-int[] flower1Parameters = { 400, 1000, 2, 3, 5000}; // life expectancy [max cycles of flower life], reproduction [marginal reproduction chances high value>slow rate 2-X], pollen propagation [quantity of pollen allowed to be relased from flower], pollen generation [quantity of pollen generated per cycle]
-int[] flower2Parameters = { 400, 1000, 2, 3, 5000}; // life expectancy, reproduction, pollen propagation, pollen generation, random born chances
+int[] flower1Parameters = { 400, 1000, 2, 3, 5000}; // life expectancy [max cycles of flower life], reproduction [marginal reproduction chances high value>slow rate 2-X], pollen propagation [quantity of pollen allowed to be relased from flower] [NOT USED], pollen generation [quantity of pollen generated per cycle]
+int[] flower2Parameters = { 400, 1000, 2, 3, 5000}; // life expectancy, reproduction, pollen propagation [NOT USED], pollen generation, random born chances
 int[] flower3Parameters = { 400, 1000, 2, 3, 5000};
 
-int[] pollinator1Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
-int[] pollinator2Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
-int[] pollinator3Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate, pollen gathering, energy gatherning
+int[] pollinator1Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate [NOT USED], pollen gathering, energy gatherning
+int[] pollinator2Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate [NOT USED], pollen gathering, energy gatherning
+int[] pollinator3Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate [NOT USED], pollen gathering, energy gatherning
 
 final int FLOWER_ENERGY_GENERATION = 1000;
 
