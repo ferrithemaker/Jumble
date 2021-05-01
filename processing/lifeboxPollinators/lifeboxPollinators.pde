@@ -39,6 +39,17 @@ class Adapter implements MQTTListener {
     client.subscribe("/lifeboxPollinatorData/pollinator1/movement");
     client.subscribe("/lifeboxPollinatorData/pollinator2/movement");
     client.subscribe("/lifeboxPollinatorData/pollinator3/movement");
+    // affinity
+    client.subscribe("/lifeboxPollinatorData/pollinator1/Af_red");
+    client.subscribe("/lifeboxPollinatorData/pollinator1/Af_blue");
+    client.subscribe("/lifeboxPollinatorData/pollinator1/Af_green");
+    client.subscribe("/lifeboxPollinatorData/pollinator2/Af_red");
+    client.subscribe("/lifeboxPollinatorData/pollinator2/Af_blue");
+    client.subscribe("/lifeboxPollinatorData/pollinator2/Af_green");
+    client.subscribe("/lifeboxPollinatorData/pollinator3/Af_red");
+    client.subscribe("/lifeboxPollinatorData/pollinator3/Af_blue");
+    client.subscribe("/lifeboxPollinatorData/pollinator3/Af_green");
+    
   }
   void messageReceived(String topic, byte[] payload) {
     String dataString = new String(payload);
@@ -98,6 +109,35 @@ class Adapter implements MQTTListener {
     }
     if (topic.equals("/lifeboxPollinatorData/pollinator3/pollination")) {
       pollinator3Parameters[3] = int(dataString);
+    }
+    
+    // affinity topics
+    if (topic.equals("/lifeboxPollinatorData/pollinator1/Af_red")) {
+      pollinator1AffinityParameters[0] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator1/Af_blue")) {
+      pollinator1AffinityParameters[1] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator1/Af_green")) {
+      pollinator1AffinityParameters[2] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator2/Af_red")) {
+      pollinator2AffinityParameters[0] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator2/Af_blue")) {
+      pollinator2AffinityParameters[1] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator2/Af_green")) {
+      pollinator2AffinityParameters[2] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator3/Af_red")) {
+      pollinator3AffinityParameters[0] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator3/Af_blue")) {
+      pollinator3AffinityParameters[1] = int(dataString);
+    }
+    if (topic.equals("/lifeboxPollinatorData/pollinator3/Af_green")) {
+      pollinator3AffinityParameters[2] = int(dataString);
     }
     
   }
@@ -171,6 +211,9 @@ Adapter adapter;
 // debug mode
 boolean debug = true;
 
+// endless mode
+boolean endless = true;
+
 // enable mqtt?
 boolean enableMQTT = true;
 
@@ -207,7 +250,7 @@ int[] flowerCount = {0,0,0};
 int[] flowerCountLastIteration = {0,0,0};
 
 
-// hardcoded web app controller parameters (only for testing)
+// default web app controller parameters
 int[] flower1Parameters = { 400, 1000, 2, 3, 5000}; // life expectancy [max cycles of flower life], reproduction [marginal reproduction chances high value>slow rate 2-X], pollen propagation [quantity of pollen allowed to be relased from flower] [NOT USED], pollen generation [quantity of pollen generated per cycle]
 int[] flower2Parameters = { 400, 1000, 2, 3, 5000}; // life expectancy, reproduction, pollen propagation [NOT USED], pollen generation, random born chances
 int[] flower3Parameters = { 400, 1000, 2, 3, 5000};
@@ -215,6 +258,10 @@ int[] flower3Parameters = { 400, 1000, 2, 3, 5000};
 int[] pollinator1Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate [NOT USED], pollen gathering, energy gatherning
 int[] pollinator2Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate [NOT USED], pollen gathering, energy gatherning
 int[] pollinator3Parameters = { 10, 20000, 2, 4, 1000 }; // number of individuals, movement rate, pollination rate [NOT USED], pollen gathering, energy gatherning
+
+int[] pollinator1AffinityParameters = { 100, 100, 100 }; // affinity to red, blue and green flowers (0 no affinity - 100 total affinity)
+int[] pollinator2AffinityParameters = { 100, 100, 100 }; // affinity to red, blue and green flowers
+int[] pollinator3AffinityParameters = { 100, 100, 100 }; // affinity to red, blue and green flowers
 
 final int FLOWER_ENERGY_GENERATION = 1000;
 
@@ -280,9 +327,9 @@ void draw() {
       flower1Matrix = calculateFlowerNextIteration(x, y,flower1Matrix,flower1Parameters,0);
       flower2Matrix = calculateFlowerNextIteration(x, y,flower2Matrix,flower2Parameters,1);
       flower3Matrix = calculateFlowerNextIteration(x, y,flower3Matrix,flower3Parameters,2);
-      pollinator1Individuals = calculatePollinatorNextIteration(pollinator1Individuals,pollinator1Parameters);
-      pollinator2Individuals = calculatePollinatorNextIteration(pollinator2Individuals,pollinator2Parameters);
-      pollinator3Individuals = calculatePollinatorNextIteration(pollinator3Individuals,pollinator3Parameters);
+      pollinator1Individuals = calculatePollinatorNextIteration(pollinator1Individuals,pollinator1Parameters,pollinator1AffinityParameters);
+      pollinator2Individuals = calculatePollinatorNextIteration(pollinator2Individuals,pollinator2Parameters,pollinator2AffinityParameters);
+      pollinator3Individuals = calculatePollinatorNextIteration(pollinator3Individuals,pollinator3Parameters,pollinator3AffinityParameters);
       //println(plantsMatrix[x][y][1]);
       draw = false;
       if (flower1Matrix[x][y][0]>0) {
@@ -483,20 +530,22 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
     }
   }
   // spontaneous generation
-  if (flowerMatrix[x][y][0] == 0 && flower_neighbours == 0 && flowerCount[numberOfFlower] == 0 && flowerCountLastIteration[numberOfFlower] == 0) {
-    randomNumber = int(random(1, flowerRandomBornChances));
-    if (randomNumber == 1) {
-      flowerMatrix[x][y][0] = 1;
-      flowerMatrix[x][y][1] = flowerPollenGeneration;
-      flower1Matrix[x][y][4] = FLOWER_ENERGY_GENERATION;
-      flowerCount[numberOfFlower] += 1;
+  if (endless) {
+    if (flowerMatrix[x][y][0] == 0 && flower_neighbours == 0 && flowerCount[numberOfFlower] == 0 && flowerCountLastIteration[numberOfFlower] == 0) {
+      randomNumber = int(random(1, flowerRandomBornChances));
+      if (randomNumber == 1) {
+        flowerMatrix[x][y][0] = 1;
+        flowerMatrix[x][y][1] = flowerPollenGeneration;
+        flower1Matrix[x][y][4] = FLOWER_ENERGY_GENERATION;
+        flowerCount[numberOfFlower] += 1;
+      }
     }
   }
   return flowerMatrix;
 }
 
 
-ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pollinatorIndividuals,int[] pollinatorParameters) {
+ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pollinatorIndividuals,int[] pollinatorParameters, int[] pollinatorAffinityParameters) {
   
   int pollinatorNumber = pollinatorParameters[0];
   int pollinatorMovementRate = pollinatorParameters[1];
@@ -522,6 +571,8 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
     pollinatorIndividuals.remove(i-1);
   }
   
+  // pollinator loop
+  
   for (int i=0; i < pollinatorIndividuals.size(); i++) {
     int pollinatorXpos = pollinatorIndividuals.get(i).getX();
     int pollinatorYpos = pollinatorIndividuals.get(i).getY();   
@@ -531,7 +582,7 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
       int flower2pollenQuantity = flower2Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1];
       int flower3pollenQuantity = flower3Matrix[pollinatorIndividuals.get(i).getX()][pollinatorIndividuals.get(i).getY()][1];
       
-      if (flower1pollenQuantity>0) {
+      if (flower1pollenQuantity>0 && int(random(1,100)) <= pollinatorAffinityParameters[0]) {
         pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, start local movement instead of "big jumps"
         int remainPollenFlower1 = flower1pollenQuantity - flower1PollenPropagation;
         if (remainPollenFlower1 < 0) {
@@ -549,7 +600,7 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
         }     
       }
       
-      if (flower2pollenQuantity>0) {
+      if (flower2pollenQuantity>0 && int(random(1,100)) <= pollinatorAffinityParameters[1]) {
         pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, start local movement instead of "big jumps"
         int remainPollenFlower2 = flower2pollenQuantity - flower2PollenPropagation;
         if (remainPollenFlower2 < 0) {
@@ -567,7 +618,7 @@ ArrayList<Pollinator> calculatePollinatorNextIteration(ArrayList<Pollinator> pol
         }
       }
       
-      if (flower3pollenQuantity>0) {
+      if (flower3pollenQuantity>0 && int(random(1,100)) <= pollinatorAffinityParameters[2]) {
         pollinatorIndividuals.get(i).setLocalMovement(500000); // if pollinator find pollen, start local movement instead of "big jumps"
         int remainPollenFlower3 = flower3pollenQuantity - flower3PollenPropagation;
         if (remainPollenFlower3 < 0) {
