@@ -12,7 +12,7 @@ Flowers wind reproduction [1500-500]
 
 Pollinators individuals [0-50]
 Pollinator movement rate [40000-20000]
-Pollinator efficency (gathering x cycle [0-10]
+Pollinator efficency (gathering x cycle [0-10])
 
 */
  
@@ -214,6 +214,8 @@ boolean debug = true;
 // endless mode
 boolean endless = true;
 
+boolean firstborn = true; // don't change it!
+
 // enable mqtt?
 boolean enableMQTT = true;
 
@@ -318,6 +320,9 @@ void draw() {
   flowerCount[0] = 0;
   flowerCount[1] = 0;
   flowerCount[2] = 0;
+  
+  
+  if (flowerCount[0] > 0 && flowerCount[1] > 0 && flowerCount[2] >0) { firstborn=false; }
   
   background(0);
  
@@ -530,7 +535,7 @@ int[][][] calculateFlowerNextIteration(int x,int y, int[][][] flowerMatrix, int[
     }
   }
   // spontaneous generation
-  if (endless) {
+  if (endless || firstborn) {
     if (flowerMatrix[x][y][0] == 0 && flower_neighbours == 0 && flowerCount[numberOfFlower] == 0 && flowerCountLastIteration[numberOfFlower] == 0) {
       randomNumber = int(random(1, flowerRandomBornChances));
       if (randomNumber == 1) {
