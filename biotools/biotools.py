@@ -1,28 +1,29 @@
 # Elimina cualquier caracter que no sea nucleotido
 def limpiarCadena(cadena):
     cadenaLimpia = ""
-    nucleotidos = ['a','c','g','t','u']
+    nucleotidos = ['a', 'c', 'g', 't', 'u']
     for letra in cadena.lower():
         if letra in nucleotidos:
             cadenaLimpia = cadenaLimpia + letra
     return cadenaLimpia
 
+
 # Lee la cadena de nucleotidos de un archivo de texto plano
 def readString(file):
     f = open(file, "r")
-    return f.read().strip()
+    cadena = f.read().strip()
+    f.close()
+    return cadena
+
 
 # Retorna un segmento de la cadena original
-def segmento(inicio,final,cadena):
-    return cadena[inicio-1:final]
+def segmento(inicio, final, cadena):
+    return cadena[inicio - 1:final]
 
-# Nos devuelve el numero de nucleotidos de una cadena
-def numeroNucleotidos(cadena):
-    a = 0
-    c = 0
-    g = 0
-    t = 0
-    u = 0
+
+# Nos devuelve la cantidad de cada tipo de nucleotido de una cadena
+def nucleotidos(cadena):
+    a, c, g, t, u = 0, 0, 0, 0, 0
     for n in cadena:
         if n.lower() == 'a':
             a = a + 1
@@ -34,7 +35,8 @@ def numeroNucleotidos(cadena):
             t = t + 1
         if n.lower() == 'u':
             u = u + 1
-    return {"a":a,"c":c,"g":g,"t":t,"u":u}
+    return {"a": a, "c": c, "g": g, "t": t, "u": u}
+
 
 # Nos devuelve la cadena complementaria, tanto para ARN como para ADN
 def complementaria(cadena, tipus="adn"):
@@ -57,17 +59,21 @@ def complementaria(cadena, tipus="adn"):
             cc = cc + " "
     return cc
 
+
 # Nos retorna la cadena inversa
 def inversa(cadena):
     return cadena[::-1]
 
-# Nos retorna el numero de bases
+
+# Nos retorna el numero de bases (longitud)
 def numeroPB(cadena):
     return len(cadena)
 
+
 # Nos retorna la cadena transcrita
 def transcripcion(cadena):
-    return cadena.lower().replace('t','u')
+    return cadena.lower().replace('t', 'u')
+
 
 # Nos retorna los aminoacidos de una cadena (traducción)
 def traduccion(cadena):
