@@ -93,7 +93,7 @@ def traduccion(cadena):
                 proteina = proteina + "R"
             if codon == "aac" or codon == "aau":
                 proteina = proteina + "N"
-            if codon == "ucg" or codon == "ugu":
+            if codon == "ugc" or codon == "ugu":
                 proteina = proteina + "C"
             if codon == "uuc" or codon == "uuu":
                 proteina = proteina + "F"
