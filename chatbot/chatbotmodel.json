@@ -1,0 +1,24 @@
+{
+  "intents": [
+    {"tag": "salutacions",
+      "class": 0,
+      "patterns": ["hola","salutacions","com va?","bones","bon dia","ei"],
+      "responses": ["Hola!","Benvingut!","Bones!"]
+    },
+    {"tag": "nom",
+      "class": 1,
+      "patterns": ["Com et dius?","Qui ets?"],
+      "responses": ["El meu nom es Catalanix"]
+    },
+    {"tag": "adeu",
+      "class": 2,
+      "patterns": ["adeu","fins aviat","marxo","que vaigi be","a reveure"],
+      "responses": ["A reveure","Adeu!","Fins aviat!"]
+    },
+    {"tag": "activitat",
+      "class": 3,
+      "patterns": ["a que et dediques?","que fas?","de que treballes?","com funciones?"],
+      "responses": ["Ara mateix estic aprenent","Passo una estona, i tu?"]
+    }
+  ]
+}
