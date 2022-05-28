@@ -5,23 +5,22 @@ import numpy as np
 import spacy
 from tensorflow.keras.models import load_model
 
+ERROR_THRESHOLD = 0.75
+
 nlp = spacy.load("ca_core_news_sm")
 
 intents = json.loads(open("chatbotmodel.json").read())
 
-words = []
 words_lemma = []
 classes = []
 documents = []
-ignore_list = ['?','¿',':',',','.','i','o','!','¡']
 
 for intent in intents["intents"]:
     for pattern in intent["patterns"]:
         word_list = nlp(pattern)
         for token in word_list:
             #print(token.lemma_)
-            words.append(token.text)
-            if token.text not in ignore_list:
+            if token.pos_ in ['ADJ', 'ADV', 'NOUN', 'VERB', 'PROPN', 'INTJ']:
                 words_lemma.append(token.lemma_)
         documents.append((word_list, intent["class"]))
         if intent["class"] not in classes:
@@ -34,7 +33,7 @@ def clean_up_sentence(sentence):
     list_of_words = []
     sentence_word_list = nlp(sentence)
     for token in sentence_word_list:
-        if token.text not in ignore_list:
+        if token.pos_ in ['ADJ', 'ADV', 'NOUN', 'VERB', 'PROPN', 'INTJ']:
             list_of_words.append(token.lemma_)
     return list_of_words
 
@@ -50,12 +49,19 @@ def bag_of_words(sentence):
 def predict_class(sentence):
     bag = bag_of_words(sentence)
     res = model.predict(np.array([bag]), verbose=0)
-    return np.argmax(res)
+    if (np.max(res) < ERROR_THRESHOLD):
+        ret = -1
+    else:
+        ret = np.argmax(res)
+    return ret
 
 def get_response(predicted_class):
-    for intent in intents["intents"]:
-        if intent["class"] == predicted_class:
-            response = random.choice(intent["responses"])
+    if predicted_class == -1:
+        response = "Ho sento, no t'entenc."
+    else:
+        for intent in intents["intents"]:
+            if intent["class"] == predicted_class:
+                response = random.choice(intent["responses"])
     return response
 
 

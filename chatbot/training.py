@@ -14,26 +14,24 @@ nlp = spacy.load("ca_core_news_sm")
 
 intents = json.loads(open("chatbotmodel.json").read())
 
-words = []
 words_lemma = []
 classes = []
 documents = []
-ignore_list = ['?','¿',':',',','.','i','o','!','¡']
 
 for intent in intents["intents"]:
     for pattern in intent["patterns"]:
         word_list = nlp(pattern)
         for token in word_list:
             print(token.lemma_)
-            words.append(token.text)
-            if token.text not in ignore_list:
+            print(token.pos_)
+            # get only open class words
+            if token.pos_ in ['ADJ','ADV','NOUN','VERB','PROPN','INTJ']:
                 words_lemma.append(token.lemma_)
         documents.append((word_list, intent["class"]))
         if intent["class"] not in classes:
             classes.append(intent["class"])
 print(documents)
 print(classes)
-print(words)
 print(words_lemma)
 
 words_lemma = sorted(set(words_lemma))
@@ -42,6 +40,8 @@ print(words_lemma)
 training_data = []
 training_labels = []
 
+
+# creem el bag_of_words de cada frase (hi ha una frase per document + la seva classe)
 for document in documents:
     bag = [0] * len(words_lemma)
     word_patterns = document[0]
@@ -49,7 +49,8 @@ for document in documents:
     word_list = nlp(word_patterns)
     word_patterns_lemma = []
     for token in word_list:
-        word_patterns_lemma.append(token.lemma_)
+        if token.pos_ in ['ADJ', 'ADV', 'NOUN', 'VERB', 'PROPN', 'INTJ']:
+            word_patterns_lemma.append(token.lemma_)
     for index, word_lemma in enumerate(words_lemma):
         if word_lemma in word_patterns_lemma:
             bag[index] = bag[index] + 1
@@ -58,7 +59,8 @@ for document in documents:
     training_data.append(bag)
 training_data = np.array(training_data)
 training_labels = np.array(training_labels)
-training_labels = to_categorical(training_labels,num_classes=4)
+training_labels = to_categorical(training_labels,num_classes=len(classes))
+
 print(training_data)
 print(training_labels)
 print(len(words_lemma))
@@ -76,5 +78,6 @@ model.compile(loss="categorical_crossentropy",optimizer=SGD(lr=0.01,decay=1e-6,m
 #model.compile(loss="categorical_crossentropy",optimizer="adam", metrics=['accuracy'])
 
 
-pretrained_model = model.fit(training_data, training_labels, epochs=200, batch_size=5, verbose=1)
+pretrained_model = model.fit(training_data, training_labels, epochs=300, batch_size=5, verbose=1)
 model.save("chatbot.h5", pretrained_model)
+

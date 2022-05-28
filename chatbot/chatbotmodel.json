@@ -2,7 +2,7 @@
   "intents": [
     {"tag": "salutacions",
       "class": 0,
-      "patterns": ["hola","salutacions","com va?","bones","bon dia","ei"],
+      "patterns": ["hola","salutacions","bones","bon dia","ei"],
       "responses": ["Hola!","Benvingut!","Bones!"]
     },
     {"tag": "nom",
@@ -15,8 +15,13 @@
       "patterns": ["adeu","fins aviat","marxo","que vaigi be","a reveure"],
       "responses": ["A reveure","Adeu!","Fins aviat!"]
     },
-    {"tag": "activitat",
+    {"tag": "desconeixement",
       "class": 3,
+      "patterns": ["no ho se","no ho tinc clar","ho desconec","no tinc informació","ho ignoro"],
+      "responses": ["Jo tampoc ho tinc clar","El mateix dic","Carai...","Ja ho descobrirem."]
+    },
+    {"tag": "activitat",
+      "class": 4,
       "patterns": ["a que et dediques?","que fas?","de que treballes?","com funciones?"],
       "responses": ["Ara mateix estic aprenent","Passo una estona, i tu?"]
     }
