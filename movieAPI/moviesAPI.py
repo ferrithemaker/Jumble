@@ -44,6 +44,21 @@ class MoviesQuery(BaseModel):
 class MovieQuery(BaseModel):
     idmovie: str = Field(description="ID (tconst) of the movie")
 
+@app.route('/movies/<id>')
+def movieid(id):
+    movie = collection.find_one({"tconst": id})
+    if (movie):
+        output_json = {
+            "title": movie["primaryTitle"],
+            "release_date": movie["startYear"],
+            "genres": movie["genres"],
+            "length": movie["runtimeMinutes"],
+            "rating": movie["averageRating"],
+            "link": "https://www.imdb.com/title/" + movie["tconst"] + "/"
+        }
+        return jsonify({"result": output_json})
+    else:
+        return jsonify({"result": "id not found"})
 
 @app.get('/movies',tags=[Tag(name="movies API", description="Get movies data from IMDB")])
 def get_movies(query:MoviesQuery):
@@ -102,16 +117,18 @@ def get_movie(query:MovieQuery):
     get movie from IMDB database by id (tconst)
     """
     movie = collection.find_one({"tconst": query.idmovie})
-    output_json =  {
-            "title": movie["primaryTitle"],
-            "release_date": movie["startYear"],
-            "genres": movie["genres"],
-            "length": movie["runtimeMinutes"],
-            "rating": movie["averageRating"],
-            "link": "https://www.imdb.com/title/" + movie["tconst"] + "/"
-        }
-    return jsonify({"result": output_json})
-
+    if movie:
+        output_json =  {
+                "title": movie["primaryTitle"],
+                "release_date": movie["startYear"],
+                "genres": movie["genres"],
+                "length": movie["runtimeMinutes"],
+                "rating": movie["averageRating"],
+                "link": "https://www.imdb.com/title/" + movie["tconst"] + "/"
+            }
+        return jsonify({"result": output_json})
+    else:
+        return jsonify({"result": "id not found"})
 
 @app.post('/movies',tags=[Tag(name="movies API [POST]", description="Get movies data from IMDB")])
 def post_movie(query:MoviesQuery):
